@@ -36,7 +36,7 @@ class TestListHarvesterSchedules200Response(unittest.TestCase):
         model = ListHarvesterSchedules200Response()
         if include_optional:
             return ListHarvesterSchedules200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

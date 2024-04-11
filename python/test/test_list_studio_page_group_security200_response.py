@@ -36,7 +36,7 @@ class TestListStudioPageGroupSecurity200Response(unittest.TestCase):
         model = ListStudioPageGroupSecurity200Response()
         if include_optional:
             return ListStudioPageGroupSecurity200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

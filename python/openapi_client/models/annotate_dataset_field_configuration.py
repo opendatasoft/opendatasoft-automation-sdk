@@ -21,6 +21,7 @@ import json
 from pydantic import ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from openapi_client.models.annotate_dataset_field_configuration1_args import AnnotateDatasetFieldConfiguration1Args
 from openapi_client.models.dataset_field_configuration import DatasetFieldConfiguration
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,7 @@ class AnnotateDatasetFieldConfiguration(DatasetFieldConfiguration):
     """ # noqa: E501
     field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field whose annotation you want to configure")
     annotation: StrictStr = Field(description="Annotations are a mean to configure special behavior for the fields.  Some annotations are only available for certain field types. Setting the facet annotation on a field unlocks other annotations for the field. | Annotation name     | Field type                                   | Description                                                                                                                                                                                     | |---------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | id                  | all field types                              | Whether this field should constitute one of the keys of the records unique IDs. If no field has this annotation, all fields contribute to the creation of the records unique ID.                | | facet               | `date`, `datetime`, `int`, `decimal`, `text` | Whether the field can serve as a filter                                                                                                                                                         | | facetsort           | all field types, facet only                  | How to sort the facets. Possible arguments are `count` and `-count` for all field types, `alphanum` and `-alphanum` for `date`, `datetime` and `text`, `num` and `-num` for `decimal` and `int` | | disjunctive         | `decimal`, `int` and `text`, facet only      | Whether multiple values can be selected for the facet                                                                                                                                           | | timeserie_precision | `date` and `datetime`                        | display precision of the field. Possible arguments are `year`, `month` and `day` for `date`, `hour` and `minute` for `datetime`                                                                 | | timerangeFilter     | `date` and `datetime`, facet only            | Whether to activate the timerange filter                                                                                                                                                        | | unit                | `int` and `decimal`                          | The unit of the field                                                                                                                                                                           | | decimals            | `decimal`                                    | The argument is the number of digits to appear after the decimal point                                                                                                                          | | sortable            | `text`                                       | whether the field should be sortable in table view                                                                                                                                              | | multivalued         | `text`                                       | whether the field contains multiple values separated by a character. The separator must be given as the argument                                                                                | | hierarchical        | `text`, facet only                           | whether the field is hierarchical. The separator must be given as the argument                                                                                                                  |")
-    args: Optional[List[StrictStr]] = None
+    args: Optional[List[AnnotateDatasetFieldConfiguration1Args]] = None
     __properties: ClassVar[List[str]] = ["uid", "type", "label", "field", "annotation", "args"]
 
     @field_validator('annotation')
@@ -80,6 +81,13 @@ class AnnotateDatasetFieldConfiguration(DatasetFieldConfiguration):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in args (list)
+        _items = []
+        if self.args:
+            for _item in self.args:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['args'] = _items
         return _dict
 
     @classmethod
@@ -97,7 +105,7 @@ class AnnotateDatasetFieldConfiguration(DatasetFieldConfiguration):
             "label": obj.get("label"),
             "field": obj.get("field"),
             "annotation": obj.get("annotation"),
-            "args": obj.get("args")
+            "args": [AnnotateDatasetFieldConfiguration1Args.from_dict(_item) for _item in obj["args"]] if obj.get("args") is not None else None
         })
         return _obj
 

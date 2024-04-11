@@ -36,7 +36,7 @@ class TestListConnections200Response(unittest.TestCase):
         model = ListConnections200Response()
         if include_optional:
             return ListConnections200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

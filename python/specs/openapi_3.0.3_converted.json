@@ -1,5 +1,5 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.3",
   "info": {
     "title": "Opendatasoft's Automation API Documentation",
     "version": "1.0",
@@ -7755,10 +7755,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserGroup",
-                "required": [
-                  "title"
-                ]
+                "$ref": "#/components/schemas/UserGroup"
               }
             }
           }
@@ -8373,11 +8370,9 @@
                   "type": "object",
                   "properties": {
                     "harvester": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "example": "A fatal error occured. Please check the harvester configuration."
+                      "type": "string",
+                      "example": "A fatal error occured. Please check the harvester configuration.",
+                      "nullable": true
                     },
                     "resources": {
                       "type": "object",
@@ -9186,12 +9181,26 @@
                   "description": "Date when the dataset entered the current status"
                 },
                 "is_published": {
-                  "type": "boolean",
+                  "oneOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ],
                   "example": true,
                   "description": "will be `true` if the dataset is available in the explore API"
                 },
                 "message": {
-                  "type": "string",
+                  "oneOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
                   "example": null
                 },
                 "records_errors": {
@@ -9375,35 +9384,40 @@
         "type": "object",
         "properties": {
           "total_count": {
-            "description": "The total number of results that can be queried.",
-            "type": [
-              "string",
-              "null"
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "integer"
+              }
             ],
+            "description": "The total number of results that can be queried.",
             "example": 18
           },
           "next": {
-            "description": "Link to the next page of results if any.",
-            "type": [
-              "string",
-              "null"
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
             ],
+            "description": "Link to the next page of results if any.",
             "example": null
           },
           "previous": {
-            "description": "Link to the previous page of results if any.",
-            "type": [
-              "string",
-              "null"
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
             ],
+            "description": "Link to the previous page of results if any.",
             "example": null
-          },
-          "results": {
-            "description": "List of results.",
-            "type": "array",
-            "items": {
-              "type": null
-            }
           }
         }
       },
@@ -9437,224 +9451,43 @@
         "type": "object",
         "properties": {
           "title": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Title of the dataset."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "description": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Description of the dataset."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "keyword": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Keywords to define the dataset and better find it through searches.  Keywords are one of the catalog filters available in the front office of an Opendatasoft portal."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "modified": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1,
-                "format": "date-time"
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1,
-                "format": "date-time"
-              }
-            },
-            "description": "Date indicating when the dataset was last modified."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "modified_updates_on_metadata_change": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "If the `modified` date should automatically be updated on metadata changes."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "modified_updates_on_data_change": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "If the `modified` date should automatically be updated on data changes."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "geographic_reference": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Geographic References."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "geographic_reference_auto": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Geographic References automatic computation."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "language": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "enum": [
-                  "en",
-                  "fr",
-                  "nl",
-                  "pt",
-                  "it",
-                  "ar",
-                  "de",
-                  "es",
-                  "ca",
-                  "eu",
-                  "sv"
-                ]
-              },
-              "remote_value": {
-                "type": "string",
-                "enum": [
-                  "en",
-                  "fr",
-                  "nl",
-                  "pt",
-                  "it",
-                  "ar",
-                  "de",
-                  "es",
-                  "ca",
-                  "eu",
-                  "sv"
-                ]
-              }
-            },
-            "description": "Language of the data in the dataset."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "timezone": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Forces the dataset visualizations to use the defined timezone for the date and datetime fields.  It avoids the dataset visualizations to depend on the timezone on which the user's computer is set."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "publisher": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Name of the person or organization who published the dataset."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "references": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Link to the source of the dataset."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "attributions": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Link to a source of the dataset that should be mentioned for legal reasons  (e.g. if the license demands the mention of a specific source or organization)."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           }
         },
         "required": [
@@ -9756,566 +9589,121 @@
         "type": "object",
         "properties": {
           "analyze_disabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Toggle for the analyze tab in explore."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "analyze_default": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Default analyze chart."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "table_fields": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Fields displayed in Table visualization."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "table_default_sort_field": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Default initial sort field in Table visualization."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "table_default_sort_direction": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Default initial sort direction in Table visualization."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_disabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Toggle for the map tab in explore."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_marker_picto": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Picto used for markers on maps."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_marker_color": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Color used for markers on maps (#xxxxxx hex code)."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_marker_hidemarkershape": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Hide the marker shape and only show the icon."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_title": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Field used as title of the Map visualization tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_fields": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Fields displayed in Map visualization tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_disabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Disable map tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_html_enabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Use the HTML template for the map tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_html": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "HTML template of the tooltip."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_sort_field": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Sort field in map tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_tooltip_sort_direction": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Sort direction in map tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "map_basemap": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Default basemap identifier."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "images_disabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Toggle for the image tab in explore."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "media_gallery_fields": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Fields used to generate the media gallery."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "image_title": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Field used as title on the image thumbnail."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "image_fields": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Fields displayed when the image is clicked."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "image_tooltip_html_enabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Use the HTML template for the image tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "image_tooltip_html": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "HTML template of the image tooltip."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_enabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Field used as title on the calendars."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_event_title": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Field used as title on the calendars."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_event_start": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Field used as start date on calendars."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_event_end": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Field used as end date on calendars."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_tooltip_html_enabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Use the HTML template for the calendar tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_tooltip_html": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "HTML template of the tooltip."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_tooltip_fields": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "Fields displayed in Calendar visualization tooltips."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_event_color": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Color used for events on calendars."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_available_views": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Available views for the calendar."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "calendar_default_view": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Default view for the calendar."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "custom_view_enabled": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "Toggle for the custom view."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "custom_view_html": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "HTML content for the custom view."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "custom_view_css": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "CSS style for the custom view."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "custom_view_icon": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Name of the font-awesome icon used as title."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "custom_view_title": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Title of the custom tab."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "custom_view_slug": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "Slug of the custom tab."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           }
         },
         "example": {}
@@ -10326,50 +9714,13 @@
         "type": "object",
         "properties": {
           "license_id": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "remote_value": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "description": "The license identifier. The identifier refers to the list of configured licenses in the domain."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "theme_id": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "remote_value": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "description": "The list of theme identifiers. The identifiers refer to the list of configured theme in the domain."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           },
           "draft": {
-            "$ref": "#/components/schemas/DatasetMetadataValue",
-            "properties": {
-              "value": {
-                "type": "boolean"
-              },
-              "remote_value": {
-                "type": "boolean"
-              }
-            },
-            "description": "If the dataset is a draft, it isn't visible in the dataset list and can't be published."
+            "$ref": "#/components/schemas/DatasetMetadataValue"
           }
         },
         "example": {
@@ -10399,8 +9750,7 @@
         "description": "Additional values for custom metadata templates you have configured on your portal.",
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/DatasetMetadataValue",
-          "type": "object"
+          "$ref": "#/components/schemas/DatasetMetadataValue"
         },
         "example": {
           "field_name_1": {
@@ -10447,10 +9797,7 @@
             "description": "Flag indicating whether the target will have access to the records of the dataset or not."
           },
           "visible_fields": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "description": "The target will only have access to the fields from this list.\n`null` means that the target has access to all fields.\nAn empty list means that the target won't see any field (empty dataset schema).",
             "uniqueItems": true,
             "items": {
@@ -10460,7 +9807,8 @@
             "example": [
               "year",
               "coty_code"
-            ]
+            ],
+            "nullable": true
           },
           "filter_query": {
             "type": "string",
@@ -10468,10 +9816,7 @@
             "description": "The target will only have access to the records matching this query. An empty query means that all records are accessible."
           },
           "api_calls_quota": {
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "description": "Upper limit set on the number of API calls the target can make to this dataset in a given timeframe. Can be set to null for no specific quota.",
             "properties": {
               "unit": {
@@ -10489,7 +9834,8 @@
                 "type": "number",
                 "example": 12000
               }
-            }
+            },
+            "nullable": true
           }
         }
       },
@@ -10537,8 +9883,7 @@
             "$ref": "#/components/schemas/DatasetMetadata"
           },
           "default_security": {
-            "$ref": "#/components/schemas/DatasetSecurity",
-            "description": "The dataset default security ruleset when the dataset is restricted. This ruleset applies to all users who do not  have any ruleset declared for them"
+            "$ref": "#/components/schemas/DatasetSecurity"
           }
         },
         "required": [
@@ -10577,8 +9922,7 @@
             "description": "ID of the record on which the feedback was made"
           },
           "user": {
-            "$ref": "#/components/schemas/RelatedUser",
-            "description": "The user who submitted the feedback"
+            "$ref": "#/components/schemas/RelatedUser"
           },
           "comment": {
             "type": "string",
@@ -10811,7 +10155,14 @@
               "args": {
                 "type": "array",
                 "items": {
-                  "type": "string"
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
                 },
                 "example": [
                   "km2"
@@ -11250,11 +10601,9 @@
             "type": "string"
           },
           "password": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "The password for the user. The API returns null to hide this sensitive value."
+            "type": "string",
+            "description": "The password for the user. The API returns null to hide this sensitive value.",
+            "nullable": true
           }
         },
         "required": [
@@ -11487,11 +10836,9 @@
             "type": "string"
           },
           "secret_access_key": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "The access key. The API returns null to hide this sensitive value."
+            "type": "string",
+            "description": "The access key. The API returns null to hide this sensitive value.",
+            "nullable": true
           },
           "region": {
             "type": "string"
@@ -11638,11 +10985,9 @@
                 "type": "string"
               },
               "shared_key": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "description": "The account shared key. The API returns null to hide this sensitive value."
+                "type": "string",
+                "description": "The account shared key. The API returns null to hide this sensitive value.",
+                "nullable": true
               }
             },
             "required": [
@@ -12128,12 +11473,10 @@
             "example": "fromages.csv"
           },
           "mimetype": {
-            "type": [
-              "string",
-              "null"
-            ],
+            "type": "string",
             "readOnly": true,
-            "example": "text/csv"
+            "example": "text/csv",
+            "nullable": true
           },
           "created_at": {
             "type": "string",
@@ -12499,8 +11842,7 @@
             }
           },
           "user": {
-            "$ref": "#/components/schemas/RelatedUser",
-            "description": "The user targeted by this ruleset."
+            "$ref": "#/components/schemas/RelatedUser"
           }
         },
         "required": [
@@ -12574,8 +11916,7 @@
             ]
           },
           "created_by": {
-            "$ref": "#/components/schemas/RelatedUserReadOnly",
-            "description": "User who made the change"
+            "$ref": "#/components/schemas/RelatedUserReadOnly"
           },
           "can_restore": {
             "type": "boolean",
@@ -12649,8 +11990,7 @@
         "type": "object",
         "properties": {
           "user": {
-            "$ref": "#/components/schemas/RelatedUser",
-            "description": "The user targeted by this ruleset."
+            "$ref": "#/components/schemas/RelatedUser"
           },
           "permissions": {
             "type": "array",
@@ -12778,12 +12118,10 @@
             "description": "Defines if the page is archived. An archived page isn't included in the license quota, but can't be edited and isn't available to users."
           },
           "created_by": {
-            "$ref": "#/components/schemas/RelatedUserReadOnly",
-            "description": "The user who created the page"
+            "$ref": "#/components/schemas/RelatedUserReadOnly"
           },
           "updated_by": {
-            "$ref": "#/components/schemas/RelatedUserReadOnly",
-            "description": "The user who last modified the page"
+            "$ref": "#/components/schemas/RelatedUserReadOnly"
           },
           "updated_at": {
             "type": "string",
@@ -12844,8 +12182,7 @@
         "type": "object",
         "properties": {
           "user": {
-            "$ref": "#/components/schemas/RelatedUser",
-            "description": "The user targeted by this ruleset."
+            "$ref": "#/components/schemas/RelatedUser"
           },
           "permissions": {
             "type": "array",
@@ -12940,8 +12277,7 @@
             "description": "Date when the page was last edited"
           },
           "created_by": {
-            "$ref": "#/components/schemas/RelatedUserReadOnly",
-            "description": "The user who created the page"
+            "$ref": "#/components/schemas/RelatedUserReadOnly"
           }
         }
       },
@@ -12986,8 +12322,7 @@
         "type": "object",
         "properties": {
           "user": {
-            "$ref": "#/components/schemas/RelatedUser",
-            "description": "The user targeted by this ruleset."
+            "$ref": "#/components/schemas/RelatedUser"
           },
           "permissions": {
             "type": "array",
@@ -13165,12 +12500,10 @@
             ]
           },
           "explore_limits": {
-            "$ref": "#/components/schemas/ExploreLimits",
-            "description": "An object holding the group's quotas on this domain"
+            "$ref": "#/components/schemas/ExploreLimits"
           },
           "management_limits": {
-            "$ref": "#/components/schemas/ManagementLimits",
-            "description": "An object holding the group's limits on this domain"
+            "$ref": "#/components/schemas/ManagementLimits"
           },
           "created_at": {
             "type": "string",
@@ -13293,12 +12626,10 @@
             "example": null
           },
           "explore_limits": {
-            "$ref": "#/components/schemas/ExploreLimits",
-            "description": "An object holding the user's quotas on this domain"
+            "$ref": "#/components/schemas/ExploreLimits"
           },
           "management_limits": {
-            "$ref": "#/components/schemas/ManagementLimits",
-            "description": "An object holding the user's limits on this domain"
+            "$ref": "#/components/schemas/ManagementLimits"
           },
           "gravatar_url": {
             "type": "string",
@@ -13533,8 +12864,7 @@
             "description": "Date when the template was created"
           },
           "created_by": {
-            "$ref": "#/components/schemas/RelatedUserReadOnly",
-            "description": "The user who created the template"
+            "$ref": "#/components/schemas/RelatedUserReadOnly"
           },
           "updated_at": {
             "type": "string",
@@ -13543,8 +12873,7 @@
             "description": "Date when the template was last edited"
           },
           "updated_by": {
-            "$ref": "#/components/schemas/RelatedUserReadOnly",
-            "description": "The user who last modified the template"
+            "$ref": "#/components/schemas/RelatedUserReadOnly"
           }
         },
         "required": [
@@ -13609,77 +12938,60 @@
       },
       "MetadataTemplateFieldSuggestions": {
         "description": "Suggested values provided when calling the suggest_url with the appropriate parameters.",
-        "oneOf": [
-          {
+        "type": "object",
+        "properties": {
+          "hits": {
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nb_hits": {
+            "readOnly": true,
+            "type": "number"
+          },
+          "page": {
+            "readOnly": true,
+            "type": "number"
+          },
+          "hits_per_page": {
+            "readOnly": true,
+            "type": "number"
+          },
+          "exhaustive_nb_hits": {
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "exhaustive_typo": {
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "exhaustive": {
+            "readOnly": true,
             "type": "object",
             "properties": {
-              "hits": {
-                "readOnly": true,
-                "type": "array",
-                "description": "Empty list",
-                "items": {
-                  "type": "string"
-                }
+              "nb_hits": {
+                "type": "boolean"
+              },
+              "typo": {
+                "type": "boolean"
               }
             }
           },
-          {
-            "type": "object",
-            "properties": {
-              "hits": {
-                "readOnly": true,
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "nb_hits": {
-                "readOnly": true,
-                "type": "number"
-              },
-              "page": {
-                "readOnly": true,
-                "type": "number"
-              },
-              "hits_per_page": {
-                "readOnly": true,
-                "type": "number"
-              },
-              "exhaustive_nb_hits": {
-                "readOnly": true,
-                "type": "boolean"
-              },
-              "exhaustive_typo": {
-                "readOnly": true,
-                "type": "boolean"
-              },
-              "exhaustive": {
-                "readOnly": true,
-                "type": "object",
-                "properties": {
-                  "nb_hits": {
-                    "type": "boolean"
-                  },
-                  "typo": {
-                    "type": "boolean"
-                  }
-                }
-              },
-              "query": {
-                "readOnly": true,
-                "type": "string"
-              },
-              "params": {
-                "readOnly": true,
-                "type": "string"
-              },
-              "processing_time_ms": {
-                "readOnly": true,
-                "type": "number"
-              }
-            }
+          "query": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "params": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "processing_time_ms": {
+            "readOnly": true,
+            "type": "number"
           }
-        ]
+        }
       },
       "Harvester": {
         "type": "object",
@@ -13818,24 +13130,20 @@
             "$ref": "#/components/schemas/RelatedUserReadOnly"
           },
           "last_started_at": {
-            "type": [
-              "string",
-              "null"
-            ],
+            "type": "string",
             "minLength": 1,
             "format": "date-time",
             "readOnly": true,
-            "description": "The last time the harvester was started"
+            "description": "The last time the harvester was started",
+            "nullable": true
           },
           "last_success_at": {
-            "type": [
-              "string",
-              "null"
-            ],
+            "type": "string",
             "minLength": 1,
             "format": "date-time",
             "readOnly": true,
-            "description": "The last time the harvesting has been succcesful"
+            "description": "The last time the harvesting has been succcesful",
+            "nullable": true
           }
         },
         "required": [
@@ -13963,19 +13271,17 @@
               },
               "sort": {
                 "type": "string",
-                "default": "relevance desc'"
+                "default": "relevance desc"
               },
               "api_key": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "default": "",
-                "description": "The service API key. If it isn't blank, the API returns null to hide this sensitive value."
+                "description": "The service API key. If it isn't blank, the API returns null to hide this sensitive value.",
+                "nullable": true
               },
               "group": {
                 "type": "string",
-                "default": "education'"
+                "default": "education"
               },
               "language": {
                 "type": "string",
@@ -14136,11 +13442,9 @@
                 "example": "https://data.townofcary.org/"
               },
               "number_of_datasets": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "default": null
+                "type": "integer",
+                "default": null,
+                "nullable": true
               },
               "download_resources": {
                 "$ref": "#/components/schemas/download_resources"
@@ -14179,13 +13483,11 @@
                 "example": "username"
               },
               "password": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "minLength": 1,
                 "example": "secret_password",
-                "description": "The password for the user. The API returns null to hide this sensitive value."
+                "description": "The password for the user. The API returns null to hide this sensitive value.",
+                "nullable": true
               },
               "directory": {
                 "type": "string",
@@ -14235,13 +13537,11 @@
                 "example": "username"
               },
               "password": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "minLength": 1,
                 "example": "secret_password",
-                "description": "The password for the user. The API returns null to hide this sensitive value."
+                "description": "The password for the user. The API returns null to hide this sensitive value.",
+                "nullable": true
               },
               "directory": {
                 "type": "string",
@@ -14296,12 +13596,10 @@
                 "example": "username"
               },
               "password": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "example": "secret_password",
-                "description": "The password for the user. The API returns null to hide this sensitive value."
+                "description": "The password for the user. The API returns null to hide this sensitive value.",
+                "nullable": true
               },
               "directory": {
                 "type": "string",
@@ -14360,12 +13658,10 @@
                 "example": "https://your-junar-portal.com"
               },
               "auth_key": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "example": "secret_key",
-                "description": "The Junar auth key. The API returns null to hide this sensitive value."
+                "description": "The Junar auth key. The API returns null to hide this sensitive value.",
+                "nullable": true
               },
               "query_string": {
                 "type": "string",
@@ -14408,11 +13704,9 @@
                 "example": "https://your-omi-node-service.com"
               },
               "infoitems_limit": {
-                "type": [
-                  "integer",
-                  "null"
-                ],
-                "default": null
+                "type": "integer",
+                "default": null,
+                "nullable": true
               },
               "omi_node_version": {
                 "type": "string",
@@ -14455,12 +13749,10 @@
                 "example": "refine.destination=Asia&refine.origin=France"
               },
               "api_key": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "default": "",
-                "description": "The API key for the remote portal. If it isn't blank, the API returns null to hide this sensitive value. The API key must be linked to a user which has the permissions to browse datasets on the remote portal, and the permissions to create, edit and publish datasets on the local portal."
+                "description": "The API key for the remote portal. If it isn't blank, the API returns null to hide this sensitive value. The API key must be linked to a user which has the permissions to browse datasets on the remote portal, and the permissions to create, edit and publish datasets on the local portal.",
+                "nullable": true
               }
             },
             "required": [
@@ -14488,12 +13780,10 @@
                 "example": "ECMCI"
               },
               "api_key": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
                 "example": "secret_key",
-                "description": "The API key for the Quandl service. The API returns null to hide this sensitive value."
+                "description": "The API key for the Quandl service. The API returns null to hide this sensitive value.",
+                "nullable": true
               },
               "number_of_datasets": {
                 "type": "integer",

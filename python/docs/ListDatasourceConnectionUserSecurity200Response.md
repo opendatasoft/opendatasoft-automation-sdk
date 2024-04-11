@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_count** | **str** | The total number of results that can be queried. | [optional] 
-**next** | **str** | Link to the next page of results if any. | [optional] 
-**previous** | **str** | Link to the previous page of results if any. | [optional] 
+**total_count** | **int** |  | [optional] 
+**next** | **str** |  | [optional] 
+**previous** | **str** |  | [optional] 
 **results** | [**List[UserSecurity]**](UserSecurity.md) |  | [optional] 
 
 ## Example

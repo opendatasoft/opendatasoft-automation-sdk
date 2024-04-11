@@ -15,10 +15,10 @@
 
 import unittest
 
-from openapi_client.models.metadata_template_field_suggestions_one_of import MetadataTemplateFieldSuggestionsOneOf
+from openapi_client.models.annotate_dataset_field_configuration1_args import AnnotateDatasetFieldConfiguration1Args
 
-class TestMetadataTemplateFieldSuggestionsOneOf(unittest.TestCase):
-    """MetadataTemplateFieldSuggestionsOneOf unit test stubs"""
+class TestAnnotateDatasetFieldConfiguration1Args(unittest.TestCase):
+    """AnnotateDatasetFieldConfiguration1Args unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,24 @@ class TestMetadataTemplateFieldSuggestionsOneOf(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MetadataTemplateFieldSuggestionsOneOf:
-        """Test MetadataTemplateFieldSuggestionsOneOf
+    def make_instance(self, include_optional) -> AnnotateDatasetFieldConfiguration1Args:
+        """Test AnnotateDatasetFieldConfiguration1Args
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `MetadataTemplateFieldSuggestionsOneOf`
+        # uncomment below to create an instance of `AnnotateDatasetFieldConfiguration1Args`
         """
-        model = MetadataTemplateFieldSuggestionsOneOf()
+        model = AnnotateDatasetFieldConfiguration1Args()
         if include_optional:
-            return MetadataTemplateFieldSuggestionsOneOf(
-                hits = [
-                    ''
-                    ]
+            return AnnotateDatasetFieldConfiguration1Args(
             )
         else:
-            return MetadataTemplateFieldSuggestionsOneOf(
+            return AnnotateDatasetFieldConfiguration1Args(
         )
         """
 
-    def testMetadataTemplateFieldSuggestionsOneOf(self):
-        """Test MetadataTemplateFieldSuggestionsOneOf"""
+    def testAnnotateDatasetFieldConfiguration1Args(self):
+        """Test AnnotateDatasetFieldConfiguration1Args"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

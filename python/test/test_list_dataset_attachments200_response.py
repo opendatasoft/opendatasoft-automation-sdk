@@ -36,7 +36,7 @@ class TestListDatasetAttachments200Response(unittest.TestCase):
         model = ListDatasetAttachments200Response()
         if include_optional:
             return ListDatasetAttachments200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

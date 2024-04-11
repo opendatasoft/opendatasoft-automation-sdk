@@ -36,12 +36,9 @@ class TestPaginatedResults(unittest.TestCase):
         model = PaginatedResults()
         if include_optional:
             return PaginatedResults(
-                total_count = '18',
+                total_count = 56,
                 next = '',
-                previous = '',
-                results = [
-                    null
-                    ]
+                previous = ''
             )
         else:
             return PaginatedResults(

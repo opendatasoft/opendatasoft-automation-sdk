@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **hits_per_page** | **float** |  | [optional] [readonly] 
 **exhaustive_nb_hits** | **bool** |  | [optional] [readonly] 
 **exhaustive_typo** | **bool** |  | [optional] [readonly] 
-**exhaustive** | [**MetadataTemplateFieldSuggestionsOneOf1Exhaustive**](MetadataTemplateFieldSuggestionsOneOf1Exhaustive.md) |  | [optional] 
+**exhaustive** | [**MetadataTemplateFieldSuggestionsExhaustive**](MetadataTemplateFieldSuggestionsExhaustive.md) |  | [optional] 
 **query** | **str** |  | [optional] [readonly] 
 **params** | **str** |  | [optional] [readonly] 
 **processing_time_ms** | **float** |  | [optional] [readonly] 

@@ -36,7 +36,7 @@ class TestListDatasetSchedules200Response(unittest.TestCase):
         model = ListDatasetSchedules200Response()
         if include_optional:
             return ListDatasetSchedules200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

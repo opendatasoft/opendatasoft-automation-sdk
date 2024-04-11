@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **url** | **str** |  | 
 **limit** | **int** |  | [optional] [default to 5]
 **offset** | **int** |  | [optional] [default to 3]
-**sort** | **str** |  | [optional] [default to 'relevance desc'']
+**sort** | **str** |  | [optional] [default to 'relevance desc']
 **api_key** | **str** | The service API key. If it isn&#39;t blank, the API returns null to hide this sensitive value. | [optional] [default to '']
-**group** | **str** |  | [optional] [default to 'education'']
+**group** | **str** |  | [optional] [default to 'education']
 **language** | **str** |  | [optional] [default to '']
 **query** | **str** |  | [optional] [default to '']
 **download_resources** | **bool** | If you want to download resources instead of attaching them via URL. | [optional] [default to False]

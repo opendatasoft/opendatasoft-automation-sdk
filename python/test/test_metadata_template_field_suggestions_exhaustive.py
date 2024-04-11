@@ -15,10 +15,10 @@
 
 import unittest
 
-from openapi_client.models.metadata_template_field_suggestions_one_of1_exhaustive import MetadataTemplateFieldSuggestionsOneOf1Exhaustive
+from openapi_client.models.metadata_template_field_suggestions_exhaustive import MetadataTemplateFieldSuggestionsExhaustive
 
-class TestMetadataTemplateFieldSuggestionsOneOf1Exhaustive(unittest.TestCase):
-    """MetadataTemplateFieldSuggestionsOneOf1Exhaustive unit test stubs"""
+class TestMetadataTemplateFieldSuggestionsExhaustive(unittest.TestCase):
+    """MetadataTemplateFieldSuggestionsExhaustive unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,26 @@ class TestMetadataTemplateFieldSuggestionsOneOf1Exhaustive(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MetadataTemplateFieldSuggestionsOneOf1Exhaustive:
-        """Test MetadataTemplateFieldSuggestionsOneOf1Exhaustive
+    def make_instance(self, include_optional) -> MetadataTemplateFieldSuggestionsExhaustive:
+        """Test MetadataTemplateFieldSuggestionsExhaustive
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `MetadataTemplateFieldSuggestionsOneOf1Exhaustive`
+        # uncomment below to create an instance of `MetadataTemplateFieldSuggestionsExhaustive`
         """
-        model = MetadataTemplateFieldSuggestionsOneOf1Exhaustive()
+        model = MetadataTemplateFieldSuggestionsExhaustive()
         if include_optional:
-            return MetadataTemplateFieldSuggestionsOneOf1Exhaustive(
+            return MetadataTemplateFieldSuggestionsExhaustive(
                 nb_hits = True,
                 typo = True
             )
         else:
-            return MetadataTemplateFieldSuggestionsOneOf1Exhaustive(
+            return MetadataTemplateFieldSuggestionsExhaustive(
         )
         """
 
-    def testMetadataTemplateFieldSuggestionsOneOf1Exhaustive(self):
-        """Test MetadataTemplateFieldSuggestionsOneOf1Exhaustive"""
+    def testMetadataTemplateFieldSuggestionsExhaustive(self):
+        """Test MetadataTemplateFieldSuggestionsExhaustive"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

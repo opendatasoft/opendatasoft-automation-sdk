@@ -33,7 +33,7 @@ class GetDatasetStatus200Response(BaseModel):
     previous: Optional[StrictStr] = None
     next: Optional[StrictStr] = None
     since: Optional[datetime] = Field(default=None, description="Date when the dataset entered the current status")
-    is_published: Optional[StrictBool] = Field(default=None, description="will be `true` if the dataset is available in the explore API")
+    is_published: Optional[StrictBool] = None
     message: Optional[StrictStr] = None
     records_errors: Optional[List[GetDatasetStatus200ResponseRecordsErrorsInner]] = Field(default=None, description="The record error describes errors which occurred during the processing. An error comes from: - a processor: when a value is invalid or an operation failed - a type conversion: when a value cannot be converted. For example the string \"s\" converted to an integer.")
     params: Optional[Dict[str, Any]] = Field(default=None, description="Status-dependent additional information. For example, if `status` is `limit reached`, this will contain an `error` object that contains a `limit_type`, a `limit` and a `value`.")
@@ -124,6 +124,16 @@ class GetDatasetStatus200Response(BaseModel):
         # and model_fields_set contains the field
         if self.next is None and "next" in self.model_fields_set:
             _dict['next'] = None
+
+        # set to None if is_published (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_published is None and "is_published" in self.model_fields_set:
+            _dict['is_published'] = None
+
+        # set to None if message (nullable) is None
+        # and model_fields_set contains the field
+        if self.message is None and "message" in self.model_fields_set:
+            _dict['message'] = None
 
         return _dict
 

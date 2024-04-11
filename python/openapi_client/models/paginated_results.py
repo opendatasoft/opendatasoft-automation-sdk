@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,10 @@ class PaginatedResults(BaseModel):
     """
     PaginatedResults
     """ # noqa: E501
-    total_count: Optional[StrictStr] = Field(default=None, description="The total number of results that can be queried.")
-    next: Optional[StrictStr] = Field(default=None, description="Link to the next page of results if any.")
-    previous: Optional[StrictStr] = Field(default=None, description="Link to the previous page of results if any.")
-    results: Optional[List[Any]] = Field(default=None, description="List of results.")
-    __properties: ClassVar[List[str]] = ["total_count", "next", "previous", "results"]
+    total_count: Optional[StrictInt] = None
+    next: Optional[StrictStr] = None
+    previous: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["total_count", "next", "previous"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,8 +100,7 @@ class PaginatedResults(BaseModel):
         _obj = cls.model_validate({
             "total_count": obj.get("total_count"),
             "next": obj.get("next"),
-            "previous": obj.get("previous"),
-            "results": obj.get("results")
+            "previous": obj.get("previous")
         })
         return _obj
 

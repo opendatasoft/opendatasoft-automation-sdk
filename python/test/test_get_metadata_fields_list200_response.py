@@ -36,7 +36,7 @@ class TestGetMetadataFieldsList200Response(unittest.TestCase):
         model = GetMetadataFieldsList200Response()
         if include_optional:
             return GetMetadataFieldsList200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

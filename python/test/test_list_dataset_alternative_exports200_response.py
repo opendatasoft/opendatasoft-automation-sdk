@@ -36,7 +36,7 @@ class TestListDatasetAlternativeExports200Response(unittest.TestCase):
         model = ListDatasetAlternativeExports200Response()
         if include_optional:
             return ListDatasetAlternativeExports200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

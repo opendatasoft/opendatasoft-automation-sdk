@@ -36,7 +36,7 @@ class TestListDatasetFieldConfigurations200Response(unittest.TestCase):
         model = ListDatasetFieldConfigurations200Response()
         if include_optional:
             return ListDatasetFieldConfigurations200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

@@ -44,7 +44,7 @@ class TestMetadataTemplateFieldSuggestions(unittest.TestCase):
                 hits_per_page = 1.337,
                 exhaustive_nb_hits = True,
                 exhaustive_typo = True,
-                exhaustive = openapi_client.models.metadata_template_field_suggestions_one_of_1_exhaustive.MetadataTemplateFieldSuggestions_oneOf_1_exhaustive(
+                exhaustive = openapi_client.models.metadata_template_field_suggestions_exhaustive.MetadataTemplateFieldSuggestions_exhaustive(
                     nb_hits = True, 
                     typo = True, ),
                 query = '',

@@ -36,7 +36,7 @@ class TestListDatasetFeedbacks200Response(unittest.TestCase):
         model = ListDatasetFeedbacks200Response()
         if include_optional:
             return ListDatasetFeedbacks200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

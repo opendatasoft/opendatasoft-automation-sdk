@@ -36,7 +36,7 @@ class TestGetApikeys200Response(unittest.TestCase):
         model = GetApikeys200Response()
         if include_optional:
             return GetApikeys200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

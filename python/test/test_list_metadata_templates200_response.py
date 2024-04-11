@@ -36,7 +36,7 @@ class TestListMetadataTemplates200Response(unittest.TestCase):
         model = ListMetadataTemplates200Response()
         if include_optional:
             return ListMetadataTemplates200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

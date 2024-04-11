@@ -36,7 +36,7 @@ class TestListStudioPages200Response(unittest.TestCase):
         model = ListStudioPages200Response()
         if include_optional:
             return ListStudioPages200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

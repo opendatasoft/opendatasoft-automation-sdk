@@ -36,7 +36,7 @@ class TestListDatasourceConnectionUserSecurity200Response(unittest.TestCase):
         model = ListDatasourceConnectionUserSecurity200Response()
         if include_optional:
             return ListDatasourceConnectionUserSecurity200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

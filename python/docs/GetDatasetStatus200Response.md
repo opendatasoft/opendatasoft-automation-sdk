@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **previous** | **str** |  | [optional] 
 **next** | **str** |  | [optional] 
 **since** | **datetime** | Date when the dataset entered the current status | [optional] 
-**is_published** | **bool** | will be &#x60;true&#x60; if the dataset is available in the explore API | [optional] 
+**is_published** | **bool** |  | [optional] 
 **message** | **str** |  | [optional] 
 **records_errors** | [**List[GetDatasetStatus200ResponseRecordsErrorsInner]**](GetDatasetStatus200ResponseRecordsErrorsInner.md) | The record error describes errors which occurred during the processing. An error comes from: - a processor: when a value is invalid or an operation failed - a type conversion: when a value cannot be converted. For example the string \&quot;s\&quot; converted to an integer. | [optional] 
 **params** | **object** | Status-dependent additional information. For example, if &#x60;status&#x60; is &#x60;limit reached&#x60;, this will contain an &#x60;error&#x60; object that contains a &#x60;limit_type&#x60;, a &#x60;limit&#x60; and a &#x60;value&#x60;. | [optional] 

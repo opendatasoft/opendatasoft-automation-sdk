@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from openapi_client.models.dataset_alternative_export import DatasetAlternativeExport
 from typing import Optional, Set
@@ -28,9 +28,9 @@ class ListDatasetAlternativeExports200Response(BaseModel):
     """
     ListDatasetAlternativeExports200Response
     """ # noqa: E501
-    total_count: Optional[StrictStr] = Field(default=None, description="The total number of results that can be queried.")
-    next: Optional[StrictStr] = Field(default=None, description="Link to the next page of results if any.")
-    previous: Optional[StrictStr] = Field(default=None, description="Link to the previous page of results if any.")
+    total_count: Optional[StrictInt] = None
+    next: Optional[StrictStr] = None
+    previous: Optional[StrictStr] = None
     results: Optional[List[DatasetAlternativeExport]] = None
     __properties: ClassVar[List[str]] = ["total_count", "next", "previous", "results"]
 

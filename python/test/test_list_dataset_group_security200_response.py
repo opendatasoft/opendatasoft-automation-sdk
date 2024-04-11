@@ -36,7 +36,7 @@ class TestListDatasetGroupSecurity200Response(unittest.TestCase):
         model = ListDatasetGroupSecurity200Response()
         if include_optional:
             return ListDatasetGroupSecurity200Response(
-                total_count = '18',
+                total_count = 56,
                 next = '',
                 previous = '',
                 results = [

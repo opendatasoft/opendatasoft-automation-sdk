@@ -33,9 +33,9 @@ class CKANHarvester(Harvester):
     url: Annotated[str, Field(min_length=1, strict=True)]
     limit: Optional[StrictInt] = 5
     offset: Optional[StrictInt] = 3
-    sort: Optional[StrictStr] = 'relevance desc''
+    sort: Optional[StrictStr] = 'relevance desc'
     api_key: Optional[StrictStr] = Field(default='', description="The service API key. If it isn't blank, the API returns null to hide this sensitive value.")
-    group: Optional[StrictStr] = 'education''
+    group: Optional[StrictStr] = 'education'
     language: Optional[StrictStr] = ''
     query: Optional[StrictStr] = ''
     download_resources: Optional[StrictBool] = Field(default=False, description="If you want to download resources instead of attaching them via URL.")
@@ -133,9 +133,9 @@ class CKANHarvester(Harvester):
             "url": obj.get("url"),
             "limit": obj.get("limit") if obj.get("limit") is not None else 5,
             "offset": obj.get("offset") if obj.get("offset") is not None else 3,
-            "sort": obj.get("sort") if obj.get("sort") is not None else 'relevance desc'',
+            "sort": obj.get("sort") if obj.get("sort") is not None else 'relevance desc',
             "api_key": obj.get("api_key") if obj.get("api_key") is not None else '',
-            "group": obj.get("group") if obj.get("group") is not None else 'education'',
+            "group": obj.get("group") if obj.get("group") is not None else 'education',
             "language": obj.get("language") if obj.get("language") is not None else '',
             "query": obj.get("query") if obj.get("query") is not None else '',
             "download_resources": obj.get("download_resources") if obj.get("download_resources") is not None else False,

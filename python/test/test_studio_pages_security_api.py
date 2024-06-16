@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.studio_pages_security_api import StudioPagesSecurityApi
+from opendatasoft_automation.api.studio_pages_security_api import StudioPagesSecurityApi
 
 
 class TestStudioPagesSecurityApi(unittest.TestCase):

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.http_connection import HTTPConnection
+from opendatasoft_automation.models.http_connection import HTTPConnection
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# openapi_client.CodeEditorPagesApi
+# opendatasoft_automation.CodeEditorPagesApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -27,14 +27,14 @@ Archive a code editor page
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -56,9 +56,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     page_slug = 'page_slug' # str | 
 
     try:
@@ -115,13 +115,13 @@ Delete all code editor pages matching the search defined by the `search` and `sl
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -143,9 +143,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     slug = ['[\"slug1\",\"slug2\"]'] # List[str] | List of page slug to be removed. (optional)
     search = 'My Page Title' # str | A search term to delete matching pages. (optional)
 
@@ -203,14 +203,14 @@ Create a code editor page
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.code_editor_page import CodeEditorPage
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.code_editor_page import CodeEditorPage
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -232,10 +232,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
-    code_editor_page = openapi_client.CodeEditorPage() # CodeEditorPage |  (optional)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
+    code_editor_page = opendatasoft_automation.CodeEditorPage() # CodeEditorPage |  (optional)
 
     try:
         # Create page
@@ -291,13 +291,13 @@ Delete a code editor page
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -319,9 +319,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     page_slug = 'page_slug' # str | 
 
     try:
@@ -376,14 +376,14 @@ List code editor pages
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_code_editor_pages200_response import ListCodeEditorPages200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_code_editor_pages200_response import ListCodeEditorPages200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -405,9 +405,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
 
@@ -465,14 +465,14 @@ Retrieve a code editor page
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.code_editor_page import CodeEditorPage
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.code_editor_page import CodeEditorPage
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -494,9 +494,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     page_slug = 'page_slug' # str | 
 
     try:
@@ -553,14 +553,14 @@ Unarchive a code editor page
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -582,9 +582,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     page_slug = 'page_slug' # str | 
 
     try:
@@ -641,14 +641,14 @@ Update a code editor page
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.code_editor_page import CodeEditorPage
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.code_editor_page import CodeEditorPage
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -670,11 +670,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesApi(api_client)
     page_slug = 'page_slug' # str | 
-    code_editor_page = openapi_client.CodeEditorPage() # CodeEditorPage |  (optional)
+    code_editor_page = opendatasoft_automation.CodeEditorPage() # CodeEditorPage |  (optional)
 
     try:
         # Update page

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.amazon_s3_auth import AmazonS3Auth
+from opendatasoft_automation.models.amazon_s3_auth import AmazonS3Auth
 
 # TODO update the JSON string below
 json = "{}"

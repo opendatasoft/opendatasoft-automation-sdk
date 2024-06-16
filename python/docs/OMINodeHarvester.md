@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.omi_node_harvester import OMINodeHarvester
+from opendatasoft_automation.models.omi_node_harvester import OMINodeHarvester
 
 # TODO update the JSON string below
 json = "{}"

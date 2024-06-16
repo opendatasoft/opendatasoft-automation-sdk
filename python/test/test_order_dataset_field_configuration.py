@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration
+from opendatasoft_automation.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration
 
 class TestOrderDatasetFieldConfiguration(unittest.TestCase):
     """OrderDatasetFieldConfiguration unit test stubs"""

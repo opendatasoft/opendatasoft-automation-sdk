@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ftp_datasource import FTPDatasource
+from opendatasoft_automation.models.ftp_datasource import FTPDatasource
 
 # TODO update the JSON string below
 json = "{}"

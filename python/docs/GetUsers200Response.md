@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.get_users200_response import GetUsers200Response
+from opendatasoft_automation.models.get_users200_response import GetUsers200Response
 
 # TODO update the JSON string below
 json = "{}"

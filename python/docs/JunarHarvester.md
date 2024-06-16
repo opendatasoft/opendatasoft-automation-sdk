@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.junar_harvester import JunarHarvester
+from opendatasoft_automation.models.junar_harvester import JunarHarvester
 
 # TODO update the JSON string below
 json = "{}"

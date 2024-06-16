@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.user_security3 import UserSecurity3
+from opendatasoft_automation.models.user_security3 import UserSecurity3
 
 class TestUserSecurity3(unittest.TestCase):
     """UserSecurity3 unit test stubs"""
@@ -36,7 +36,7 @@ class TestUserSecurity3(unittest.TestCase):
         model = UserSecurity3()
         if include_optional:
             return UserSecurity3(
-                user = openapi_client.models.related_user.Related user(
+                user = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 permissions = [
                     'edit_page'

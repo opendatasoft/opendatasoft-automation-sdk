@@ -1,4 +1,4 @@
-# openapi_client.HarvesterSchedulesApi
+# opendatasoft_automation.HarvesterSchedulesApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -24,14 +24,14 @@ Create a harvester schedule. A harvester can only have one schedule.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester_schedule import HarvesterSchedule
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester_schedule import HarvesterSchedule
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -53,11 +53,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvesterSchedulesApi(api_client)
+    api_instance = opendatasoft_automation.HarvesterSchedulesApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
-    harvester_schedule = openapi_client.HarvesterSchedule() # HarvesterSchedule |  (optional)
+    harvester_schedule = opendatasoft_automation.HarvesterSchedule() # HarvesterSchedule |  (optional)
 
     try:
         # Create harvester schedule
@@ -115,13 +115,13 @@ Delete a harvester schedule.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -143,9 +143,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvesterSchedulesApi(api_client)
+    api_instance = opendatasoft_automation.HarvesterSchedulesApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
     schedule_uid = 'harvester_uid' # str | 
 
@@ -202,14 +202,14 @@ List harvester schedules.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -231,9 +231,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvesterSchedulesApi(api_client)
+    api_instance = opendatasoft_automation.HarvesterSchedulesApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -294,14 +294,14 @@ Retrieve a harvester schedule.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester_schedule import HarvesterSchedule
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester_schedule import HarvesterSchedule
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -323,9 +323,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvesterSchedulesApi(api_client)
+    api_instance = opendatasoft_automation.HarvesterSchedulesApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
     schedule_uid = 'harvester_uid' # str | 
 
@@ -384,14 +384,14 @@ Update a harvester schedule.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester_schedule import HarvesterSchedule
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester_schedule import HarvesterSchedule
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -413,12 +413,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvesterSchedulesApi(api_client)
+    api_instance = opendatasoft_automation.HarvesterSchedulesApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
     schedule_uid = 'harvester_uid' # str | 
-    harvester_schedule = openapi_client.HarvesterSchedule() # HarvesterSchedule |  (optional)
+    harvester_schedule = opendatasoft_automation.HarvesterSchedule() # HarvesterSchedule |  (optional)
 
     try:
         # Update harvester schedule

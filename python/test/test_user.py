@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.user import User
+from opendatasoft_automation.models.user import User
 
 class TestUser(unittest.TestCase):
     """User unit test stubs"""
@@ -49,15 +49,15 @@ class TestUser(unittest.TestCase):
                 last_seen_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 last_login_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 expires_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                explore_limits = openapi_client.models.explore_limits.ExploreLimits(
-                    api_calls = openapi_client.models.explore_limits_api_calls.ExploreLimits_api_calls(
+                explore_limits = opendatasoft_automation.models.explore_limits.ExploreLimits(
+                    api_calls = opendatasoft_automation.models.explore_limits_api_calls.ExploreLimits_api_calls(
                         limit = 2000, 
                         unit = 'day', ), ),
                 management_limits = {},
                 gravatar_url = '//www.gravatar.com/avatar/6dde1de523fc80569f3dd80548e3eb9c?d=mm&s=80',
                 groups = None,
                 identity_providers = [
-                    openapi_client.models.user_identity_providers_inner.User_identity_providers_inner(
+                    opendatasoft_automation.models.user_identity_providers_inner.User_identity_providers_inner(
                         uid = 'opendatasoft', )
                     ]
             )

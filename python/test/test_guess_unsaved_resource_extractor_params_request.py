@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
+from opendatasoft_automation.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
 
 class TestGuessUnsavedResourceExtractorParamsRequest(unittest.TestCase):
     """GuessUnsavedResourceExtractorParamsRequest unit test stubs"""

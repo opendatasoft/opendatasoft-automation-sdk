@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
+from opendatasoft_automation.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
 
 class TestMetadataTemplateFieldSuggestions(unittest.TestCase):
     """MetadataTemplateFieldSuggestions unit test stubs"""
@@ -44,7 +44,7 @@ class TestMetadataTemplateFieldSuggestions(unittest.TestCase):
                 hits_per_page = 1.337,
                 exhaustive_nb_hits = True,
                 exhaustive_typo = True,
-                exhaustive = openapi_client.models.metadata_template_field_suggestions_exhaustive.MetadataTemplateFieldSuggestions_exhaustive(
+                exhaustive = opendatasoft_automation.models.metadata_template_field_suggestions_exhaustive.MetadataTemplateFieldSuggestions_exhaustive(
                     nb_hits = True, 
                     typo = True, ),
                 query = '',

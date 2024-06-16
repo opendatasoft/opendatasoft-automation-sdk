@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.harvester import Harvester
+from opendatasoft_automation.models.harvester import Harvester
 
 class TestHarvester(unittest.TestCase):
     """Harvester unit test stubs"""
@@ -52,7 +52,7 @@ class TestHarvester(unittest.TestCase):
                 resource_errors_count = 2,
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated_by = openapi_client.models.related_user.Related user(
+                updated_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 last_started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 last_success_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
@@ -71,7 +71,7 @@ class TestHarvester(unittest.TestCase):
                 resource_errors_count = 2,
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated_by = openapi_client.models.related_user.Related user(
+                updated_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 last_started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 last_success_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

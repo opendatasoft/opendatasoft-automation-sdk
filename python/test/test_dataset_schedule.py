@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_schedule import DatasetSchedule
+from opendatasoft_automation.models.dataset_schedule import DatasetSchedule
 
 class TestDatasetSchedule(unittest.TestCase):
     """DatasetSchedule unit test stubs"""

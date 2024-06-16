@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.odsoidc_auth import ODSOIDCAuth
+from opendatasoft_automation.models.odsoidc_auth import ODSOIDCAuth
 
 # TODO update the JSON string below
 json = "{}"

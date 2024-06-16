@@ -6,15 +6,15 @@ The standard set of metadata common to all Opendatasoft datasets.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
+**title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **description** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **keyword** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**modified** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
+**modified** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **modified_updates_on_metadata_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **modified_updates_on_data_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference_auto** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
+**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **timezone** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **publisher** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **references** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dataset_metadata_default import DatasetMetadataDefault
+from opendatasoft_automation.models.dataset_metadata_default import DatasetMetadataDefault
 
 # TODO update the JSON string below
 json = "{}"

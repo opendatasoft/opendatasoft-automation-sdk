@@ -1,4 +1,4 @@
-# openapi_client.DatasourcesConnectionsApi
+# opendatasoft_automation.DatasourcesConnectionsApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -24,14 +24,14 @@ Create a datasource connection
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.connection import Connection
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.connection import Connection
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -53,10 +53,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasourcesConnectionsApi(api_client)
-    connection = openapi_client.Connection() # Connection |  (optional)
+    api_instance = opendatasoft_automation.DatasourcesConnectionsApi(api_client)
+    connection = opendatasoft_automation.Connection() # Connection |  (optional)
 
     try:
         # Create connection
@@ -112,13 +112,13 @@ Delete a datasource connection
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -140,9 +140,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasourcesConnectionsApi(api_client)
+    api_instance = opendatasoft_automation.DatasourcesConnectionsApi(api_client)
     connection_uid = 'co_qf2hyt' # str | 
 
     try:
@@ -197,14 +197,14 @@ List the datasources connections
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_connections200_response import ListConnections200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_connections200_response import ListConnections200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -226,9 +226,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasourcesConnectionsApi(api_client)
+    api_instance = opendatasoft_automation.DatasourcesConnectionsApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
     sort = 'created_at' # str | Sort results with respect to the specified properties. You can prefix the property with the minus sign (`-`) for descending order, e.g. `-created_at`. (optional) (default to 'created_at')
@@ -288,14 +288,14 @@ Retrieve a datasource connection
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.connection import Connection
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.connection import Connection
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -317,9 +317,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasourcesConnectionsApi(api_client)
+    api_instance = opendatasoft_automation.DatasourcesConnectionsApi(api_client)
     connection_uid = 'co_qf2hyt' # str | 
 
     try:
@@ -376,14 +376,14 @@ Update a datasource connection. Datasets using this connection will be impacted,
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.connection import Connection
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.connection import Connection
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -405,11 +405,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasourcesConnectionsApi(api_client)
+    api_instance = opendatasoft_automation.DatasourcesConnectionsApi(api_client)
     connection_uid = 'co_qf2hyt' # str | 
-    connection = openapi_client.Connection() # Connection |  (optional)
+    connection = opendatasoft_automation.Connection() # Connection |  (optional)
 
     try:
         # Update Connection

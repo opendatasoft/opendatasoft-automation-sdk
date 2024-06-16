@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_connection import HTTPConnection
+from opendatasoft_automation.models.http_connection import HTTPConnection
 
 class TestHTTPConnection(unittest.TestCase):
     """HTTPConnection unit test stubs"""
@@ -38,11 +38,11 @@ class TestHTTPConnection(unittest.TestCase):
             return HTTPConnection(
                 url = 'https://my-server.com',
                 headers = [
-                    openapi_client.models.http_connection_all_of_headers.HTTPConnection_allOf_headers(
+                    opendatasoft_automation.models.http_connection_all_of_headers.HTTPConnection_allOf_headers(
                         name = 'header-name', 
                         value = 'header-value', )
                     ],
-                auth = openapi_client.models.http_auth.HTTPAuth(
+                auth = opendatasoft_automation.models.http_auth.HTTPAuth(
                     type = '0', )
             )
         else:

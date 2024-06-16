@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf
+from opendatasoft_automation.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf
 
 # TODO update the JSON string below
 json = "{}"

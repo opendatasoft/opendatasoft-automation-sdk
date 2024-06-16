@@ -1,4 +1,4 @@
-# openapi_client.HarvestersApi
+# opendatasoft_automation.HarvestersApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -31,14 +31,14 @@ Abort the harvesting of a harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester import Harvester
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester import Harvester
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -60,9 +60,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -120,14 +120,14 @@ Create a harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester import Harvester
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester import Harvester
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -149,10 +149,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
-    harvester = openapi_client.Harvester() # Harvester |  (optional)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
+    harvester = opendatasoft_automation.Harvester() # Harvester |  (optional)
 
     try:
         # Create harvester
@@ -208,13 +208,13 @@ Delete the harvester. If delete_attached_datasets=true, also delete all its atta
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -236,9 +236,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
     delete_attached_datasets = false # bool | Control whether all attached datasets should be deleted with the harvester, or detached from it.
 
@@ -295,14 +295,14 @@ List errors which occurred during the last or current harvesting.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester_list_errors200_response import HarvesterListErrors200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester_list_errors200_response import HarvesterListErrors200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -324,9 +324,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -384,14 +384,14 @@ Preview the datasets which will be harvested.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester_preview_result import HarvesterPreviewResult
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -413,9 +413,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -472,15 +472,15 @@ Preview the datasets which will be harvested with a given configuration. At the 
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester import Harvester
-from openapi_client.models.harvester_preview_result import HarvesterPreviewResult
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester import Harvester
+from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -502,11 +502,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
-    harvester = openapi_client.Harvester() # Harvester |  (optional)
+    harvester = opendatasoft_automation.Harvester() # Harvester |  (optional)
 
     try:
         # Preview harvesting configuration
@@ -563,14 +563,14 @@ List the harvesters.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_harvesters200_response import ListHarvesters200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_harvesters200_response import ListHarvesters200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -592,9 +592,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
 
@@ -652,14 +652,14 @@ Publish all datasets attached to the harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -681,9 +681,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -740,14 +740,14 @@ Retrieve a harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester import Harvester
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester import Harvester
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -769,9 +769,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -828,14 +828,14 @@ Start a harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester import Harvester
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester import Harvester
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -857,9 +857,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -917,14 +917,14 @@ Unpublish all datasets attached to the harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -946,9 +946,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
 
     try:
@@ -1005,14 +1005,14 @@ Update a harvester.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.harvester import Harvester
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.harvester import Harvester
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1034,11 +1034,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.HarvestersApi(api_client)
+    api_instance = opendatasoft_automation.HarvestersApi(api_client)
     harvester_uid = 'harvester_uid' # str | 
-    harvester = openapi_client.Harvester() # Harvester |  (optional)
+    harvester = opendatasoft_automation.Harvester() # Harvester |  (optional)
 
     try:
         # Update harvester

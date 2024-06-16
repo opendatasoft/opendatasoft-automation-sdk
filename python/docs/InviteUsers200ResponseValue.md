@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.invite_users200_response_value import InviteUsers200ResponseValue
+from opendatasoft_automation.models.invite_users200_response_value import InviteUsers200ResponseValue
 
 # TODO update the JSON string below
 json = "{}"

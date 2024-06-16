@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_datasource1_headers import HTTPDatasource1Headers
+from opendatasoft_automation.models.http_datasource1_headers import HTTPDatasource1Headers
 
 class TestHTTPDatasource1Headers(unittest.TestCase):
     """HTTPDatasource1Headers unit test stubs"""

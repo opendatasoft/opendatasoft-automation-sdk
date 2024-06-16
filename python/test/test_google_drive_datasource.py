@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.google_drive_datasource import GoogleDriveDatasource
+from opendatasoft_automation.models.google_drive_datasource import GoogleDriveDatasource
 
 class TestGoogleDriveDatasource(unittest.TestCase):
     """GoogleDriveDatasource unit test stubs"""

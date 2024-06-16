@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.code_editor_pages_security_api import CodeEditorPagesSecurityApi
+from opendatasoft_automation.api.code_editor_pages_security_api import CodeEditorPagesSecurityApi
 
 
 class TestCodeEditorPagesSecurityApi(unittest.TestCase):

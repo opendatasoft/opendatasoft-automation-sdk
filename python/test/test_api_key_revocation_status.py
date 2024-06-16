@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.api_key_revocation_status import APIKeyRevocationStatus
+from opendatasoft_automation.models.api_key_revocation_status import APIKeyRevocationStatus
 
 class TestAPIKeyRevocationStatus(unittest.TestCase):
     """APIKeyRevocationStatus unit test stubs"""

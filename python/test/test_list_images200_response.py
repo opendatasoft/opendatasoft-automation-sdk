@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_images200_response import ListImages200Response
+from opendatasoft_automation.models.list_images200_response import ListImages200Response
 
 class TestListImages200Response(unittest.TestCase):
     """ListImages200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListImages200Response(unittest.TestCase):
         model = ListImages200Response()
         if include_optional:
             return ListImages200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.list_images_200_response_all_of_results_inner.list_images_200_response_allOf_results_inner(
+                    opendatasoft_automation.models.list_images_200_response_all_of_results_inner.list_images_200_response_allOf_results_inner(
                         url = '/assets/theme_image/Acronym-Turquoise.svg', )
                     ]
             )

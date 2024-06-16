@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.awsiam_role_auth import AWSIAMRoleAuth
+from opendatasoft_automation.models.awsiam_role_auth import AWSIAMRoleAuth
 
 class TestAWSIAMRoleAuth(unittest.TestCase):
     """AWSIAMRoleAuth unit test stubs"""

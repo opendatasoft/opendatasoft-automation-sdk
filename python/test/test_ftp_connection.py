@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.ftp_connection import FTPConnection
+from opendatasoft_automation.models.ftp_connection import FTPConnection
 
 class TestFTPConnection(unittest.TestCase):
     """FTPConnection unit test stubs"""
@@ -37,7 +37,7 @@ class TestFTPConnection(unittest.TestCase):
         if include_optional:
             return FTPConnection(
                 url = 'ftps://my-server.com',
-                auth = openapi_client.models.ftp_auth.FTPAuth(
+                auth = opendatasoft_automation.models.ftp_auth.FTPAuth(
                     type = '0', )
             )
         else:

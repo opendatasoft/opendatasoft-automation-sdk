@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.httpoidc_auth import HTTPOIDCAuth
+from opendatasoft_automation.models.httpoidc_auth import HTTPOIDCAuth
 
 class TestHTTPOIDCAuth(unittest.TestCase):
     """HTTPOIDCAuth unit test stubs"""
@@ -42,7 +42,7 @@ class TestHTTPOIDCAuth(unittest.TestCase):
                 token_endpoint = '',
                 grant_type = 'authorization_code',
                 code = '',
-                claims = openapi_client.models.claims.claims()
+                claims = opendatasoft_automation.models.claims.claims()
             )
         else:
             return HTTPOIDCAuth(

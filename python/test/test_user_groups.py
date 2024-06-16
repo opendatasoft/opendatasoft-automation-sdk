@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.user_groups import UserGroups
+from opendatasoft_automation.models.user_groups import UserGroups
 
 class TestUserGroups(unittest.TestCase):
     """UserGroups unit test stubs"""

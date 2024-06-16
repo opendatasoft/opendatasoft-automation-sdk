@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.list_studio_page_group_security200_response import ListStudioPageGroupSecurity200Response
+from opendatasoft_automation.models.list_studio_page_group_security200_response import ListStudioPageGroupSecurity200Response
 
 # TODO update the JSON string below
 json = "{}"

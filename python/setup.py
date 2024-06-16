@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "opendatasoft-automation-sdk"
+NAME = "Opendatasoft Automation API Client"
 VERSION = "10.0.1"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
@@ -47,5 +47,5 @@ setup(
     long_description="""\
     Opendatasoft REST API to manage your portal and its catalog
     """,  # noqa: E501
-    package_data={"openapi_client": ["py.typed"]},
+    package_data={"opendatasoft_automation": ["py.typed"]},
 )

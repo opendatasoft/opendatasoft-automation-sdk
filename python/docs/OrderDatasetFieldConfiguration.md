@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration
+from opendatasoft_automation.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration
 
 # TODO update the JSON string below
 json = "{}"

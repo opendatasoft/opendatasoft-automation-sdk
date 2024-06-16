@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_user_groups200_response import ListUserGroups200Response
+from opendatasoft_automation.models.list_user_groups200_response import ListUserGroups200Response
 
 class TestListUserGroups200Response(unittest.TestCase):
     """ListUserGroups200Response unit test stubs"""
@@ -36,26 +36,26 @@ class TestListUserGroups200Response(unittest.TestCase):
         model = ListUserGroups200Response()
         if include_optional:
             return ListUserGroups200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.user_group_schema.User group schema(
+                    opendatasoft_automation.models.user_group_schema.User group schema(
                         uid = 'content_designers', 
                         title = 'Content Designers', 
                         description = 'This wonderful group is for designers only.', 
                         user_count = 42, 
                         permissions = ["explore_restricted_dataset"], 
-                        explore_limits = openapi_client.models.explore_limits.ExploreLimits(
-                            api_calls = openapi_client.models.explore_limits_api_calls.ExploreLimits_api_calls(
+                        explore_limits = opendatasoft_automation.models.explore_limits.ExploreLimits(
+                            api_calls = opendatasoft_automation.models.explore_limits_api_calls.ExploreLimits_api_calls(
                                 limit = 2000, 
                                 unit = 'day', ), ), 
                         management_limits = {}, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        created_by = openapi_client.models.related_user.Related user(
+                        created_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
-                        updated_by = openapi_client.models.related_user.Related user(
+                        updated_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), )
                     ]
             )

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_user_security import DatasetUserSecurity
+from opendatasoft_automation.models.dataset_user_security import DatasetUserSecurity
 
 class TestDatasetUserSecurity(unittest.TestCase):
     """DatasetUserSecurity unit test stubs"""
@@ -36,22 +36,22 @@ class TestDatasetUserSecurity(unittest.TestCase):
         model = DatasetUserSecurity()
         if include_optional:
             return DatasetUserSecurity(
-                security = openapi_client.models.dataset_security.DatasetSecurity(
+                security = opendatasoft_automation.models.dataset_security.DatasetSecurity(
                     is_data_visible = True, 
                     visible_fields = ["year","coty_code"], 
                     filter_query = 'year!=2022', 
-                    api_calls_quota = openapi_client.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
+                    api_calls_quota = opendatasoft_automation.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
                         unit = 'month', 
                         limit = 12000, ), ),
                 permissions = [
                     'explore_restricted_dataset'
                     ],
-                user = openapi_client.models.related_user.Related user(
+                user = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', )
             )
         else:
             return DatasetUserSecurity(
-                user = openapi_client.models.related_user.Related user(
+                user = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
         )
         """

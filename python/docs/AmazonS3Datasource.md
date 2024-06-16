@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.amazon_s3_datasource import AmazonS3Datasource
+from opendatasoft_automation.models.amazon_s3_datasource import AmazonS3Datasource
 
 # TODO update the JSON string below
 json = "{}"

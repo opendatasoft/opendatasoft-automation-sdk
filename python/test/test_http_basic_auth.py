@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_basic_auth import HTTPBasicAuth
+from opendatasoft_automation.models.http_basic_auth import HTTPBasicAuth
 
 class TestHTTPBasicAuth(unittest.TestCase):
     """HTTPBasicAuth unit test stubs"""

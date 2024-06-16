@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.related_user_read_only import RelatedUserReadOnly
+from opendatasoft_automation.models.related_user_read_only import RelatedUserReadOnly
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.create_dataset400_response import CreateDataset400Response
+from opendatasoft_automation.models.create_dataset400_response import CreateDataset400Response
 
 class TestCreateDataset400Response(unittest.TestCase):
     """CreateDataset400Response unit test stubs"""

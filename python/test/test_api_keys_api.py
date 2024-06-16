@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.api_keys_api import APIKeysApi
+from opendatasoft_automation.api.api_keys_api import APIKeysApi
 
 
 class TestAPIKeysApi(unittest.TestCase):

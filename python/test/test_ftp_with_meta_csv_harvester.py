@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.ftp_with_meta_csv_harvester import FTPWithMetaCSVHarvester
+from opendatasoft_automation.models.ftp_with_meta_csv_harvester import FTPWithMetaCSVHarvester
 
 class TestFTPWithMetaCSVHarvester(unittest.TestCase):
     """FTPWithMetaCSVHarvester unit test stubs"""

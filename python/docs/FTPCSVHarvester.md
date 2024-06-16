@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ftpcsv_harvester import FTPCSVHarvester
+from opendatasoft_automation.models.ftpcsv_harvester import FTPCSVHarvester
 
 # TODO update the JSON string below
 json = "{}"

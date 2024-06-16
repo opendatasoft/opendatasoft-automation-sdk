@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dataset_group_security_group import DatasetGroupSecurityGroup
+from opendatasoft_automation.models.dataset_group_security_group import DatasetGroupSecurityGroup
 
 # TODO update the JSON string below
 json = "{}"

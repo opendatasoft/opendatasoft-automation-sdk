@@ -1,4 +1,4 @@
-# openapi_client.DatasetsApi
+# opendatasoft_automation.DatasetsApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -30,14 +30,14 @@ Stop the current processing job and keep the processed records available in the 
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -59,9 +59,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -119,14 +119,14 @@ Copy a dataset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset import Dataset
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset import Dataset
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -148,9 +148,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -207,14 +207,14 @@ Create a dataset.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset import Dataset
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset import Dataset
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -236,10 +236,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
-    dataset = openapi_client.Dataset() # Dataset |  (optional)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
+    dataset = opendatasoft_automation.Dataset() # Dataset |  (optional)
 
     try:
         # Create dataset
@@ -295,13 +295,13 @@ Delete the dataset.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -323,9 +323,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -380,14 +380,14 @@ Retrieves the current dataset status.  The dataset status describes the current 
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.get_dataset_status200_response import GetDatasetStatus200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.get_dataset_status200_response import GetDatasetStatus200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -409,9 +409,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -468,14 +468,14 @@ List all the datasets that can be edited by this user.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_datasets200_response import ListDatasets200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_datasets200_response import ListDatasets200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -497,9 +497,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
     dataset_id = 'dataset_id_example' # str | Find a dataset from its `dataset_id` (optional)
@@ -559,14 +559,14 @@ Make the dataset modifications available through the explore API. It may entail 
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -588,9 +588,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -648,14 +648,14 @@ Publish dataset metadata
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -677,9 +677,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -737,14 +737,14 @@ Retrieve a dataset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset import Dataset
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset import Dataset
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -766,9 +766,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -825,14 +825,14 @@ Remove the dataset from the explore API. Unpublishing a dataset does not delete 
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -854,9 +854,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -914,14 +914,14 @@ Update a dataset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset import Dataset
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset import Dataset
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -943,11 +943,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetsApi(api_client)
+    api_instance = opendatasoft_automation.DatasetsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    dataset = openapi_client.Dataset() # Dataset |  (optional)
+    dataset = opendatasoft_automation.Dataset() # Dataset |  (optional)
 
     try:
         # Update Dataset

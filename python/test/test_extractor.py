@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.extractor import Extractor
+from opendatasoft_automation.models.extractor import Extractor
 
 class TestExtractor(unittest.TestCase):
     """Extractor unit test stubs"""

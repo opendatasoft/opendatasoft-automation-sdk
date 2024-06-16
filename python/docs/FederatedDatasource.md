@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.federated_datasource import FederatedDatasource
+from opendatasoft_automation.models.federated_datasource import FederatedDatasource
 
 # TODO update the JSON string below
 json = "{}"

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ftp_auth import FTPAuth
+from opendatasoft_automation.models.ftp_auth import FTPAuth
 
 # TODO update the JSON string below
 json = "{}"

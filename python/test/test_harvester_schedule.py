@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.harvester_schedule import HarvesterSchedule
+from opendatasoft_automation.models.harvester_schedule import HarvesterSchedule
 
 class TestHarvesterSchedule(unittest.TestCase):
     """HarvesterSchedule unit test stubs"""

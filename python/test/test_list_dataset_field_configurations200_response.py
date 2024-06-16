@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_field_configurations200_response import ListDatasetFieldConfigurations200Response
+from opendatasoft_automation.models.list_dataset_field_configurations200_response import ListDatasetFieldConfigurations200Response
 
 class TestListDatasetFieldConfigurations200Response(unittest.TestCase):
     """ListDatasetFieldConfigurations200Response unit test stubs"""
@@ -36,7 +36,7 @@ class TestListDatasetFieldConfigurations200Response(unittest.TestCase):
         model = ListDatasetFieldConfigurations200Response()
         if include_optional:
             return ListDatasetFieldConfigurations200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [

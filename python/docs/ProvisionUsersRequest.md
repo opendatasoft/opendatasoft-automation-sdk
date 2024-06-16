@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.provision_users_request import ProvisionUsersRequest
+from opendatasoft_automation.models.provision_users_request import ProvisionUsersRequest
 
 # TODO update the JSON string below
 json = "{}"

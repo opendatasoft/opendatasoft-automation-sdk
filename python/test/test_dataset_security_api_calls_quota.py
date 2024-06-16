@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_security_api_calls_quota import DatasetSecurityApiCallsQuota
+from opendatasoft_automation.models.dataset_security_api_calls_quota import DatasetSecurityApiCallsQuota
 
 class TestDatasetSecurityApiCallsQuota(unittest.TestCase):
     """DatasetSecurityApiCallsQuota unit test stubs"""

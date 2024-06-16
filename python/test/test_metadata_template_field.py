@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.metadata_template_field import MetadataTemplateField
+from opendatasoft_automation.models.metadata_template_field import MetadataTemplateField
 
 class TestMetadataTemplateField(unittest.TestCase):
     """MetadataTemplateField unit test stubs"""

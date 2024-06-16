@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_security import DatasetSecurity
+from opendatasoft_automation.models.dataset_security import DatasetSecurity
 
 class TestDatasetSecurity(unittest.TestCase):
     """DatasetSecurity unit test stubs"""
@@ -39,7 +39,7 @@ class TestDatasetSecurity(unittest.TestCase):
                 is_data_visible = True,
                 visible_fields = ["year","coty_code"],
                 filter_query = 'year!=2022',
-                api_calls_quota = openapi_client.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
+                api_calls_quota = opendatasoft_automation.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
                     unit = 'month', 
                     limit = 12000, )
             )

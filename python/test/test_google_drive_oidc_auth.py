@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.google_drive_oidc_auth import GoogleDriveOIDCAuth
+from opendatasoft_automation.models.google_drive_oidc_auth import GoogleDriveOIDCAuth
 
 class TestGoogleDriveOIDCAuth(unittest.TestCase):
     """GoogleDriveOIDCAuth unit test stubs"""
@@ -39,7 +39,7 @@ class TestGoogleDriveOIDCAuth(unittest.TestCase):
                 nonce = '',
                 grant_type = 'authorization_code',
                 code = '',
-                claims = openapi_client.models.claims.claims(),
+                claims = opendatasoft_automation.models.claims.claims(),
                 application_id = ''
             )
         else:
@@ -47,7 +47,7 @@ class TestGoogleDriveOIDCAuth(unittest.TestCase):
                 nonce = '',
                 grant_type = 'authorization_code',
                 code = '',
-                claims = openapi_client.models.claims.claims(),
+                claims = opendatasoft_automation.models.claims.claims(),
                 application_id = '',
         )
         """

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dataset_security_api_calls_quota import DatasetSecurityApiCallsQuota
+from opendatasoft_automation.models.dataset_security_api_calls_quota import DatasetSecurityApiCallsQuota
 
 # TODO update the JSON string below
 json = "{}"

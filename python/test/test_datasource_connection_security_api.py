@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.datasource_connection_security_api import DatasourceConnectionSecurityApi
+from opendatasoft_automation.api.datasource_connection_security_api import DatasourceConnectionSecurityApi
 
 
 class TestDatasourceConnectionSecurityApi(unittest.TestCase):

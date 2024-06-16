@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.arcgis_opendata_harvester import ArcgisOpendataHarvester
+from opendatasoft_automation.models.arcgis_opendata_harvester import ArcgisOpendataHarvester
 
 # TODO update the JSON string below
 json = "{}"

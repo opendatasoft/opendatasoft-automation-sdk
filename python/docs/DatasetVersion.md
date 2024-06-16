@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dataset_version import DatasetVersion
+from opendatasoft_automation.models.dataset_version import DatasetVersion
 
 # TODO update the JSON string below
 json = "{}"

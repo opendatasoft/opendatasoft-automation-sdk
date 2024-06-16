@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_metadata_default import DatasetMetadataDefault
+from opendatasoft_automation.models.dataset_metadata_default import DatasetMetadataDefault
 
 class TestDatasetMetadataDefault(unittest.TestCase):
     """DatasetMetadataDefault unit test stubs"""

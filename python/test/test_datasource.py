@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.datasource import Datasource
+from opendatasoft_automation.models.datasource import Datasource
 
 class TestDatasource(unittest.TestCase):
     """Datasource unit test stubs"""

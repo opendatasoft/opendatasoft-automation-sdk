@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.amazon_s3_connection import AmazonS3Connection
+from opendatasoft_automation.models.amazon_s3_connection import AmazonS3Connection
 
 # TODO update the JSON string below
 json = "{}"

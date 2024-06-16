@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
+from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
 
 class TestResourceUnsavedPreviewRequest(unittest.TestCase):
     """ResourceUnsavedPreviewRequest unit test stubs"""

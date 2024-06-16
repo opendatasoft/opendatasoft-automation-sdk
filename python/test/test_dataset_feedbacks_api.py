@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_feedbacks_api import DatasetFeedbacksApi
+from opendatasoft_automation.api.dataset_feedbacks_api import DatasetFeedbacksApi
 
 
 class TestDatasetFeedbacksApi(unittest.TestCase):

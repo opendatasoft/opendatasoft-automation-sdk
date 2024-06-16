@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.amazon_s3_awsiam_role_auth import AmazonS3AWSIAMRoleAuth
+from opendatasoft_automation.models.amazon_s3_awsiam_role_auth import AmazonS3AWSIAMRoleAuth
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.datajson_harvester import DatajsonHarvester
+from opendatasoft_automation.models.datajson_harvester import DatajsonHarvester
 
 class TestDatajsonHarvester(unittest.TestCase):
     """DatajsonHarvester unit test stubs"""

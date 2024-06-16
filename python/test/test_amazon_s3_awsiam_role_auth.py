@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.amazon_s3_awsiam_role_auth import AmazonS3AWSIAMRoleAuth
+from opendatasoft_automation.models.amazon_s3_awsiam_role_auth import AmazonS3AWSIAMRoleAuth
 
 class TestAmazonS3AWSIAMRoleAuth(unittest.TestCase):
     """AmazonS3AWSIAMRoleAuth unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_group_security_group import DatasetGroupSecurityGroup
+from opendatasoft_automation.models.dataset_group_security_group import DatasetGroupSecurityGroup
 
 class TestDatasetGroupSecurityGroup(unittest.TestCase):
     """DatasetGroupSecurityGroup unit test stubs"""

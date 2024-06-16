@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.csw_harvester import CSWHarvester
+from opendatasoft_automation.models.csw_harvester import CSWHarvester
 
 # TODO update the JSON string below
 json = "{}"

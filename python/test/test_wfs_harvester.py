@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.wfs_harvester import WFSHarvester
+from opendatasoft_automation.models.wfs_harvester import WFSHarvester
 
 class TestWFSHarvester(unittest.TestCase):
     """WFSHarvester unit test stubs"""

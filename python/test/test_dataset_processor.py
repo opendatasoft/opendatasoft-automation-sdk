@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_processor import DatasetProcessor
+from opendatasoft_automation.models.dataset_processor import DatasetProcessor
 
 class TestDatasetProcessor(unittest.TestCase):
     """DatasetProcessor unit test stubs"""

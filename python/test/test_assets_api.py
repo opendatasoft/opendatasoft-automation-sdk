@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.assets_api import AssetsApi
+from opendatasoft_automation.api.assets_api import AssetsApi
 
 
 class TestAssetsApi(unittest.TestCase):

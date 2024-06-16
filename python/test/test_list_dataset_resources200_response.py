@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_resources200_response import ListDatasetResources200Response
+from opendatasoft_automation.models.list_dataset_resources200_response import ListDatasetResources200Response
 
 class TestListDatasetResources200Response(unittest.TestCase):
     """ListDatasetResources200Response unit test stubs"""
@@ -36,7 +36,7 @@ class TestListDatasetResources200Response(unittest.TestCase):
         model = ListDatasetResources200Response()
         if include_optional:
             return ListDatasetResources200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.socrata_harvester import SocrataHarvester
+from opendatasoft_automation.models.socrata_harvester import SocrataHarvester
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.user_groups_api import UserGroupsApi
+from opendatasoft_automation.api.user_groups_api import UserGroupsApi
 
 
 class TestUserGroupsApi(unittest.TestCase):

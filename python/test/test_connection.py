@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.connection import Connection
+from opendatasoft_automation.models.connection import Connection
 
 class TestConnection(unittest.TestCase):
     """Connection unit test stubs"""

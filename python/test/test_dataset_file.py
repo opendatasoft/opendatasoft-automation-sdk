@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_file import DatasetFile
+from opendatasoft_automation.models.dataset_file import DatasetFile
 
 class TestDatasetFile(unittest.TestCase):
     """DatasetFile unit test stubs"""

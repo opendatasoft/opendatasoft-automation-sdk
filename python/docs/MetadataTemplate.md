@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.metadata_template import MetadataTemplate
+from opendatasoft_automation.models.metadata_template import MetadataTemplate
 
 # TODO update the JSON string below
 json = "{}"

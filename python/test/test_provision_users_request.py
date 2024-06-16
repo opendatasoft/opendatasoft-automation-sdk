@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.provision_users_request import ProvisionUsersRequest
+from opendatasoft_automation.models.provision_users_request import ProvisionUsersRequest
 
 class TestProvisionUsersRequest(unittest.TestCase):
     """ProvisionUsersRequest unit test stubs"""
@@ -49,25 +49,25 @@ class TestProvisionUsersRequest(unittest.TestCase):
                 last_seen_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 last_login_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 expires_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                explore_limits = openapi_client.models.explore_limits.ExploreLimits(
-                    api_calls = openapi_client.models.explore_limits_api_calls.ExploreLimits_api_calls(
+                explore_limits = opendatasoft_automation.models.explore_limits.ExploreLimits(
+                    api_calls = opendatasoft_automation.models.explore_limits_api_calls.ExploreLimits_api_calls(
                         limit = 2000, 
                         unit = 'day', ), ),
                 management_limits = {},
                 gravatar_url = '//www.gravatar.com/avatar/6dde1de523fc80569f3dd80548e3eb9c?d=mm&s=80',
                 groups = None,
                 identity_providers = [
-                    openapi_client.models.user_identity_providers_inner.User_identity_providers_inner(
+                    opendatasoft_automation.models.user_identity_providers_inner.User_identity_providers_inner(
                         uid = 'opendatasoft', )
                     ],
-                identity_provider = openapi_client.models.provision_users_request_all_of_identity_provider.provision_users_request_allOf_identity_provider(
+                identity_provider = opendatasoft_automation.models.provision_users_request_all_of_identity_provider.provision_users_request_allOf_identity_provider(
                     uid = 'opendatasoft', ),
                 identity_provider_attributes = None
             )
         else:
             return ProvisionUsersRequest(
                 email = 'contact@email.com',
-                identity_provider = openapi_client.models.provision_users_request_all_of_identity_provider.provision_users_request_allOf_identity_provider(
+                identity_provider = opendatasoft_automation.models.provision_users_request_all_of_identity_provider.provision_users_request_allOf_identity_provider(
                     uid = 'opendatasoft', ),
         )
         """

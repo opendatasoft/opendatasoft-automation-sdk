@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_resources_api import DatasetResourcesApi
+from opendatasoft_automation.api.dataset_resources_api import DatasetResourcesApi
 
 
 class TestDatasetResourcesApi(unittest.TestCase):

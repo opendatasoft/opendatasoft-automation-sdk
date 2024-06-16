@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.azure_blob_storage_auth import AzureBlobStorageAuth
+from opendatasoft_automation.models.azure_blob_storage_auth import AzureBlobStorageAuth
 
 # TODO update the JSON string below
 json = "{}"

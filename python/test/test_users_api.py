@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.users_api import UsersApi
+from opendatasoft_automation.api.users_api import UsersApi
 
 
 class TestUsersApi(unittest.TestCase):

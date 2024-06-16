@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.explore_limits import ExploreLimits
+from opendatasoft_automation.models.explore_limits import ExploreLimits
 
 class TestExploreLimits(unittest.TestCase):
     """ExploreLimits unit test stubs"""
@@ -36,7 +36,7 @@ class TestExploreLimits(unittest.TestCase):
         model = ExploreLimits()
         if include_optional:
             return ExploreLimits(
-                api_calls = openapi_client.models.explore_limits_api_calls.ExploreLimits_api_calls(
+                api_calls = opendatasoft_automation.models.explore_limits_api_calls.ExploreLimits_api_calls(
                     limit = 2000, 
                     unit = 'day', )
             )

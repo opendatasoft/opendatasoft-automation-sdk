@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.google_drive_connection import GoogleDriveConnection
+from opendatasoft_automation.models.google_drive_connection import GoogleDriveConnection
 
 class TestGoogleDriveConnection(unittest.TestCase):
     """GoogleDriveConnection unit test stubs"""

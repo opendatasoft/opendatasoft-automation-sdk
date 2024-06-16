@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.related_user import RelatedUser
+from opendatasoft_automation.models.related_user import RelatedUser
 
 class TestRelatedUser(unittest.TestCase):
     """RelatedUser unit test stubs"""

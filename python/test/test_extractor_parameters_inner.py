@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.extractor_parameters_inner import ExtractorParametersInner
+from opendatasoft_automation.models.extractor_parameters_inner import ExtractorParametersInner
 
 class TestExtractorParametersInner(unittest.TestCase):
     """ExtractorParametersInner unit test stubs"""

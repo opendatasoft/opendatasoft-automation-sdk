@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.type_dataset_field_configuration import TypeDatasetFieldConfiguration
+from opendatasoft_automation.models.type_dataset_field_configuration import TypeDatasetFieldConfiguration
 
 class TestTypeDatasetFieldConfiguration(unittest.TestCase):
     """TypeDatasetFieldConfiguration unit test stubs"""

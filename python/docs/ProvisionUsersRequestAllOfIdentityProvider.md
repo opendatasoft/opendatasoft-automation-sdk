@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.provision_users_request_all_of_identity_provider import ProvisionUsersRequestAllOfIdentityProvider
+from opendatasoft_automation.models.provision_users_request_all_of_identity_provider import ProvisionUsersRequestAllOfIdentityProvider
 
 # TODO update the JSON string below
 json = "{}"

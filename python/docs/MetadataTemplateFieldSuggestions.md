@@ -6,7 +6,7 @@ Suggested values provided when calling the suggest_url with the appropriate para
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hits** | **List[str]** |  | [optional] [readonly] 
+**hits** | **List[str]** | Empty list | [optional] [readonly] 
 **nb_hits** | **float** |  | [optional] [readonly] 
 **page** | **float** |  | [optional] [readonly] 
 **hits_per_page** | **float** |  | [optional] [readonly] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
+from opendatasoft_automation.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
 
 # TODO update the JSON string below
 json = "{}"

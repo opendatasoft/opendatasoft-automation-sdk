@@ -6,7 +6,7 @@ The data describing the dataset itself.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**default** | [**DatasetMetadataDefault**](DatasetMetadataDefault.md) |  | 
+**default** | [**DatasetMetadataDefault**](DatasetMetadataDefault.md) |  | [optional] 
 **visualization** | [**DatasetMetadataVisualization**](DatasetMetadataVisualization.md) |  | [optional] 
 **internal** | [**DatasetMetadataInternal**](DatasetMetadataInternal.md) |  | [optional] 
 **custom_template_name** | [**Dict[str, DatasetMetadataValue]**](DatasetMetadataValue.md) | Additional values for custom metadata templates you have configured on your portal. | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dataset_metadata import DatasetMetadata
+from opendatasoft_automation.models.dataset_metadata import DatasetMetadata
 
 # TODO update the JSON string below
 json = "{}"

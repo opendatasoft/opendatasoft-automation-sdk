@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.ftp_basic_auth import FTPBasicAuth
+from opendatasoft_automation.models.ftp_basic_auth import FTPBasicAuth
 
 class TestFTPBasicAuth(unittest.TestCase):
     """FTPBasicAuth unit test stubs"""

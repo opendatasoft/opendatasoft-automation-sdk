@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.azure_blob_storage_connection import AzureBlobStorageConnection
+from opendatasoft_automation.models.azure_blob_storage_connection import AzureBlobStorageConnection
 
 class TestAzureBlobStorageConnection(unittest.TestCase):
     """AzureBlobStorageConnection unit test stubs"""
@@ -37,7 +37,7 @@ class TestAzureBlobStorageConnection(unittest.TestCase):
         if include_optional:
             return AzureBlobStorageConnection(
                 headers = [
-                    openapi_client.models.http_connection_all_of_headers.HTTPConnection_allOf_headers(
+                    opendatasoft_automation.models.http_connection_all_of_headers.HTTPConnection_allOf_headers(
                         name = 'header-name', 
                         value = 'header-value', )
                     ],

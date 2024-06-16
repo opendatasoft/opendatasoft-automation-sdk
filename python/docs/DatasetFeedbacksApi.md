@@ -1,4 +1,4 @@
-# openapi_client.DatasetFeedbacksApi
+# opendatasoft_automation.DatasetFeedbacksApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -22,14 +22,14 @@ Archive a dataset feedback
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_feedback import DatasetFeedback
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_feedback import DatasetFeedback
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -51,9 +51,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetFeedbacksApi(api_client)
+    api_instance = opendatasoft_automation.DatasetFeedbacksApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     feedback_uid = 'df_qf2hyt' # str | Unique identifier for the feedback
 
@@ -112,14 +112,14 @@ List all dataset feedbacks. Archived feedbacks aren't listed by default, use the
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_dataset_feedbacks200_response import ListDatasetFeedbacks200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_dataset_feedbacks200_response import ListDatasetFeedbacks200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -141,9 +141,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetFeedbacksApi(api_client)
+    api_instance = opendatasoft_automation.DatasetFeedbacksApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     record_id = 'record_id_example' # str | Find feedbacks made on a record with this id (optional)
     is_archived = True # bool | If true, list only archived feedbacks (optional)
@@ -206,14 +206,14 @@ Retrieve a dataset feedback
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_feedback import DatasetFeedback
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_feedback import DatasetFeedback
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -235,9 +235,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetFeedbacksApi(api_client)
+    api_instance = opendatasoft_automation.DatasetFeedbacksApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     feedback_uid = 'df_qf2hyt' # str | Unique identifier for the feedback
 

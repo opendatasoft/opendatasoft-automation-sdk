@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.datagouv_harvester import DatagouvHarvester
+from opendatasoft_automation.models.datagouv_harvester import DatagouvHarvester
 
 class TestDatagouvHarvester(unittest.TestCase):
     """DatagouvHarvester unit test stubs"""

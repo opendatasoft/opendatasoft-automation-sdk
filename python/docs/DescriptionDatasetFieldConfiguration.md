@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.description_dataset_field_configuration import DescriptionDatasetFieldConfiguration
+from opendatasoft_automation.models.description_dataset_field_configuration import DescriptionDatasetFieldConfiguration
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.sharepoint_oidc_auth import SharepointOIDCAuth
+from opendatasoft_automation.models.sharepoint_oidc_auth import SharepointOIDCAuth
 
 class TestSharepointOIDCAuth(unittest.TestCase):
     """SharepointOIDCAuth unit test stubs"""
@@ -39,14 +39,14 @@ class TestSharepointOIDCAuth(unittest.TestCase):
                 nonce = '',
                 grant_type = 'authorization_code',
                 code = '',
-                claims = openapi_client.models.claims.claims()
+                claims = opendatasoft_automation.models.claims.claims()
             )
         else:
             return SharepointOIDCAuth(
                 nonce = '',
                 grant_type = 'authorization_code',
                 code = '',
-                claims = openapi_client.models.claims.claims(),
+                claims = opendatasoft_automation.models.claims.claims(),
         )
         """
 

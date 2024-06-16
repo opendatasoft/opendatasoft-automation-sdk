@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_datasets_default_response import ListDatasetsDefaultResponse
+from opendatasoft_automation.models.list_datasets_default_response import ListDatasetsDefaultResponse
 
 class TestListDatasetsDefaultResponse(unittest.TestCase):
     """ListDatasetsDefaultResponse unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
 
 class TestPublishDataset200Response(unittest.TestCase):
     """PublishDataset200Response unit test stubs"""

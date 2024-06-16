@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.azure_blob_storage_auth import AzureBlobStorageAuth
+from opendatasoft_automation.models.azure_blob_storage_auth import AzureBlobStorageAuth
 
 class TestAzureBlobStorageAuth(unittest.TestCase):
     """AzureBlobStorageAuth unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_studio_page_group_security200_response import ListStudioPageGroupSecurity200Response
+from opendatasoft_automation.models.list_studio_page_group_security200_response import ListStudioPageGroupSecurity200Response
 
 class TestListStudioPageGroupSecurity200Response(unittest.TestCase):
     """ListStudioPageGroupSecurity200Response unit test stubs"""
@@ -36,12 +36,12 @@ class TestListStudioPageGroupSecurity200Response(unittest.TestCase):
         model = ListStudioPageGroupSecurity200Response()
         if include_optional:
             return ListStudioPageGroupSecurity200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.group_ruleset.Group ruleset(
-                        group = openapi_client.models.group_security_group.GroupSecurity_group(
+                    opendatasoft_automation.models.group_ruleset.Group ruleset(
+                        group = opendatasoft_automation.models.group_security_group.GroupSecurity_group(
                             uid = 'content_designers', ), 
                         permissions = [
                             'edit_page'

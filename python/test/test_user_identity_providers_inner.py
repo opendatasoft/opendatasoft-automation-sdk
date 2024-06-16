@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.user_identity_providers_inner import UserIdentityProvidersInner
+from opendatasoft_automation.models.user_identity_providers_inner import UserIdentityProvidersInner
 
 class TestUserIdentityProvidersInner(unittest.TestCase):
     """UserIdentityProvidersInner unit test stubs"""

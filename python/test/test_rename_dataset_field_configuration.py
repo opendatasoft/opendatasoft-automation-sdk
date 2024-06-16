@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.rename_dataset_field_configuration import RenameDatasetFieldConfiguration
+from opendatasoft_automation.models.rename_dataset_field_configuration import RenameDatasetFieldConfiguration
 
 class TestRenameDatasetFieldConfiguration(unittest.TestCase):
     """RenameDatasetFieldConfiguration unit test stubs"""

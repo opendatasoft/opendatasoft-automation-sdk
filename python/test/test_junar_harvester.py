@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.junar_harvester import JunarHarvester
+from opendatasoft_automation.models.junar_harvester import JunarHarvester
 
 class TestJunarHarvester(unittest.TestCase):
     """JunarHarvester unit test stubs"""

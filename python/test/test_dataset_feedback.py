@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_feedback import DatasetFeedback
+from opendatasoft_automation.models.dataset_feedback import DatasetFeedback
 
 class TestDatasetFeedback(unittest.TestCase):
     """DatasetFeedback unit test stubs"""
@@ -38,10 +38,10 @@ class TestDatasetFeedback(unittest.TestCase):
             return DatasetFeedback(
                 uid = '',
                 record_id = '',
-                user = openapi_client.models.related_user.Related user(
+                user = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 comment = '',
-                values = openapi_client.models.dataset_feedback_values.DatasetFeedback_values(
+                values = opendatasoft_automation.models.dataset_feedback_values.DatasetFeedback_values(
                     value = '', 
                     type = 'text', ),
                 is_archived = True,
@@ -51,7 +51,7 @@ class TestDatasetFeedback(unittest.TestCase):
             return DatasetFeedback(
                 uid = '',
                 record_id = '',
-                user = openapi_client.models.related_user.Related user(
+                user = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 comment = '',
         )

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.datasource import Datasource
+from opendatasoft_automation.models.datasource import Datasource
 
 # TODO update the JSON string below
 json = "{}"

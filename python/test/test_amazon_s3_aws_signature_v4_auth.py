@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.amazon_s3_aws_signature_v4_auth import AmazonS3AWSSignatureV4Auth
+from opendatasoft_automation.models.amazon_s3_aws_signature_v4_auth import AmazonS3AWSSignatureV4Auth
 
 class TestAmazonS3AWSSignatureV4Auth(unittest.TestCase):
     """AmazonS3AWSSignatureV4Auth unit test stubs"""

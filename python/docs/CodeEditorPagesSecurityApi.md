@@ -1,4 +1,4 @@
-# openapi_client.CodeEditorPagesSecurityApi
+# opendatasoft_automation.CodeEditorPagesSecurityApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -29,14 +29,14 @@ Create a code editor page group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.group_security2 import GroupSecurity2
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.group_security2 import GroupSecurity2
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -58,11 +58,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
-    group_security2 = openapi_client.GroupSecurity2() # GroupSecurity2 |  (optional)
+    group_security2 = opendatasoft_automation.GroupSecurity2() # GroupSecurity2 |  (optional)
 
     try:
         # Create group ruleset
@@ -120,14 +120,14 @@ Create a code editor page user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user_security2 import UserSecurity2
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user_security2 import UserSecurity2
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -149,11 +149,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
-    user_security2 = openapi_client.UserSecurity2() # UserSecurity2 |  (optional)
+    user_security2 = opendatasoft_automation.UserSecurity2() # UserSecurity2 |  (optional)
 
     try:
         # Create user ruleset
@@ -211,13 +211,13 @@ Delete a code editor page group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -239,9 +239,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     group_uid = 'group_identifier' # str | 
 
@@ -298,13 +298,13 @@ Delete a code editor page user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -326,9 +326,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     username = 'louise.data' # str | 
 
@@ -385,14 +385,14 @@ List the code editor page group level security rulesets
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_code_editor_page_group_security200_response import ListCodeEditorPageGroupSecurity200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_code_editor_page_group_security200_response import ListCodeEditorPageGroupSecurity200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -414,9 +414,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -477,14 +477,14 @@ List the code editor page user-level permissions
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_code_editor_page_user_security200_response import ListCodeEditorPageUserSecurity200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_code_editor_page_user_security200_response import ListCodeEditorPageUserSecurity200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -506,9 +506,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -569,14 +569,14 @@ Retrieve a code editor page group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.group_security2 import GroupSecurity2
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.group_security2 import GroupSecurity2
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -598,9 +598,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     group_uid = 'group_identifier' # str | 
 
@@ -659,14 +659,14 @@ Retrieve a code editor page user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user_security2 import UserSecurity2
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user_security2 import UserSecurity2
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -688,9 +688,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     username = 'louise.data' # str | 
 
@@ -749,14 +749,14 @@ Update a code editor page group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.group_security2 import GroupSecurity2
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.group_security2 import GroupSecurity2
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -778,12 +778,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     group_uid = 'group_identifier' # str | 
-    group_security2 = openapi_client.GroupSecurity2() # GroupSecurity2 |  (optional)
+    group_security2 = opendatasoft_automation.GroupSecurity2() # GroupSecurity2 |  (optional)
 
     try:
         # Update group ruleset
@@ -842,14 +842,14 @@ Update a code editor page user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user_security2 import UserSecurity2
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user_security2 import UserSecurity2
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -871,12 +871,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CodeEditorPagesSecurityApi(api_client)
+    api_instance = opendatasoft_automation.CodeEditorPagesSecurityApi(api_client)
     page_slug = 'page_slug' # str | 
     username = 'louise.data' # str | 
-    user_security2 = openapi_client.UserSecurity2() # UserSecurity2 |  (optional)
+    user_security2 = opendatasoft_automation.UserSecurity2() # UserSecurity2 |  (optional)
 
     try:
         # Update user ruleset

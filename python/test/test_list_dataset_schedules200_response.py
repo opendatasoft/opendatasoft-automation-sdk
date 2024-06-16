@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_schedules200_response import ListDatasetSchedules200Response
+from opendatasoft_automation.models.list_dataset_schedules200_response import ListDatasetSchedules200Response
 
 class TestListDatasetSchedules200Response(unittest.TestCase):
     """ListDatasetSchedules200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListDatasetSchedules200Response(unittest.TestCase):
         model = ListDatasetSchedules200Response()
         if include_optional:
             return ListDatasetSchedules200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.schedule_schema.Schedule schema(
+                    opendatasoft_automation.models.schedule_schema.Schedule schema(
                         uid = 'sc_qf2hyt', 
                         cron_schedule = '0 * * * *', )
                     ]

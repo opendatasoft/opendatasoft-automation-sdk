@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.code_editor_page_content import CodeEditorPageContent
+from opendatasoft_automation.models.code_editor_page_content import CodeEditorPageContent
 
 class TestCodeEditorPageContent(unittest.TestCase):
     """CodeEditorPageContent unit test stubs"""

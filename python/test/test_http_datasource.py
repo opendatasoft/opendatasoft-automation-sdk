@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_datasource import HTTPDatasource
+from opendatasoft_automation.models.http_datasource import HTTPDatasource
 
 class TestHTTPDatasource(unittest.TestCase):
     """HTTPDatasource unit test stubs"""
@@ -38,7 +38,7 @@ class TestHTTPDatasource(unittest.TestCase):
             return HTTPDatasource(
                 relative_url = '',
                 headers = [
-                    openapi_client.models.http_datasource_1_headers.HTTPDatasource_1_headers(
+                    opendatasoft_automation.models.http_datasource_1_headers.HTTPDatasource_1_headers(
                         name = '', 
                         value = '', )
                     ],

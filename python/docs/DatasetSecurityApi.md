@@ -1,4 +1,4 @@
-# openapi_client.DatasetSecurityApi
+# opendatasoft_automation.DatasetSecurityApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -29,14 +29,14 @@ Create a dataset group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_group_security import DatasetGroupSecurity
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_group_security import DatasetGroupSecurity
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -58,11 +58,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    dataset_group_security = openapi_client.DatasetGroupSecurity() # DatasetGroupSecurity |  (optional)
+    dataset_group_security = opendatasoft_automation.DatasetGroupSecurity() # DatasetGroupSecurity |  (optional)
 
     try:
         # Create dataset group ruleset
@@ -120,14 +120,14 @@ Create a dataset user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_user_security import DatasetUserSecurity
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_user_security import DatasetUserSecurity
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -149,11 +149,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    dataset_user_security = openapi_client.DatasetUserSecurity() # DatasetUserSecurity |  (optional)
+    dataset_user_security = opendatasoft_automation.DatasetUserSecurity() # DatasetUserSecurity |  (optional)
 
     try:
         # Create dataset user ruleset
@@ -211,13 +211,13 @@ Delete a dataset group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -239,9 +239,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     group_uid = 'group_identifier' # str | 
 
@@ -298,13 +298,13 @@ Delete a dataset user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -326,9 +326,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     username = 'louise.data' # str | 
 
@@ -385,14 +385,14 @@ List the dataset group level security rulesets
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_dataset_group_security200_response import ListDatasetGroupSecurity200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_dataset_group_security200_response import ListDatasetGroupSecurity200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -414,9 +414,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -477,14 +477,14 @@ List the dataset user-level security rulesets
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_dataset_user_security200_response import ListDatasetUserSecurity200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_dataset_user_security200_response import ListDatasetUserSecurity200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -506,9 +506,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -569,14 +569,14 @@ Retrieve a dataset group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_group_security import DatasetGroupSecurity
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_group_security import DatasetGroupSecurity
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -598,12 +598,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     group_uid = 'group_identifier' # str | 
-    dataset_group_security = openapi_client.DatasetGroupSecurity() # DatasetGroupSecurity |  (optional)
+    dataset_group_security = opendatasoft_automation.DatasetGroupSecurity() # DatasetGroupSecurity |  (optional)
 
     try:
         # Retrieve dataset group ruleset
@@ -661,14 +661,14 @@ Retrieve a dataset user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_user_security import DatasetUserSecurity
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_user_security import DatasetUserSecurity
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -690,12 +690,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     username = 'louise.data' # str | 
-    dataset_user_security = openapi_client.DatasetUserSecurity() # DatasetUserSecurity |  (optional)
+    dataset_user_security = opendatasoft_automation.DatasetUserSecurity() # DatasetUserSecurity |  (optional)
 
     try:
         # Retrieve dataset user ruleset
@@ -753,14 +753,14 @@ Update a dataset group level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_group_security import DatasetGroupSecurity
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_group_security import DatasetGroupSecurity
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -782,12 +782,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     group_uid = 'group_identifier' # str | 
-    dataset_group_security = openapi_client.DatasetGroupSecurity() # DatasetGroupSecurity |  (optional)
+    dataset_group_security = opendatasoft_automation.DatasetGroupSecurity() # DatasetGroupSecurity |  (optional)
 
     try:
         # Update dataset group ruleset
@@ -846,14 +846,14 @@ Update a dataset user-level security ruleset
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_user_security import DatasetUserSecurity
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_user_security import DatasetUserSecurity
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -875,12 +875,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetSecurityApi(api_client)
+    api_instance = opendatasoft_automation.DatasetSecurityApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     username = 'louise.data' # str | 
-    dataset_user_security = openapi_client.DatasetUserSecurity() # DatasetUserSecurity |  (optional)
+    dataset_user_security = opendatasoft_automation.DatasetUserSecurity() # DatasetUserSecurity |  (optional)
 
     try:
         # Update dataset user ruleset

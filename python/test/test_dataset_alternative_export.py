@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_alternative_export import DatasetAlternativeExport
+from opendatasoft_automation.models.dataset_alternative_export import DatasetAlternativeExport
 
 class TestDatasetAlternativeExport(unittest.TestCase):
     """DatasetAlternativeExport unit test stubs"""

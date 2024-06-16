@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.code_editor_page import CodeEditorPage
+from opendatasoft_automation.models.code_editor_page import CodeEditorPage
 
 class TestCodeEditorPage(unittest.TestCase):
     """CodeEditorPage unit test stubs"""
@@ -46,9 +46,9 @@ class TestCodeEditorPage(unittest.TestCase):
                 is_pushed_by_parent = False,
                 is_restricted = True,
                 is_archived = False,
-                created_by = openapi_client.models.related_user.Related user(
+                created_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
-                updated_by = openapi_client.models.related_user.Related user(
+                updated_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')

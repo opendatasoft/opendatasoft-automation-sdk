@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.amazon_s3_auth import AmazonS3Auth
+from opendatasoft_automation.models.amazon_s3_auth import AmazonS3Auth
 
 class TestAmazonS3Auth(unittest.TestCase):
     """AmazonS3Auth unit test stubs"""

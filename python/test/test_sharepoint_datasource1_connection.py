@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.sharepoint_datasource1_connection import SharepointDatasource1Connection
+from opendatasoft_automation.models.sharepoint_datasource1_connection import SharepointDatasource1Connection
 
 class TestSharepointDatasource1Connection(unittest.TestCase):
     """SharepointDatasource1Connection unit test stubs"""

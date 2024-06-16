@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.csw_harvester import CSWHarvester
+from opendatasoft_automation.models.csw_harvester import CSWHarvester
 
 class TestCSWHarvester(unittest.TestCase):
     """CSWHarvester unit test stubs"""

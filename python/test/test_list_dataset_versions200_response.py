@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_versions200_response import ListDatasetVersions200Response
+from opendatasoft_automation.models.list_dataset_versions200_response import ListDatasetVersions200Response
 
 class TestListDatasetVersions200Response(unittest.TestCase):
     """ListDatasetVersions200Response unit test stubs"""
@@ -36,14 +36,14 @@ class TestListDatasetVersions200Response(unittest.TestCase):
         model = ListDatasetVersions200Response()
         if include_optional:
             return ListDatasetVersions200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.dataset_version_schema.Dataset version schema(
+                    opendatasoft_automation.models.dataset_version_schema.Dataset version schema(
                         uid = 'ch_qf2hyt', 
                         sections = ["data"], 
-                        created_by = openapi_client.models.related_user.Related user(
+                        created_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
                         can_restore = True, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

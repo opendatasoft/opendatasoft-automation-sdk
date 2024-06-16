@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_alternative_exports200_response import ListDatasetAlternativeExports200Response
+from opendatasoft_automation.models.list_dataset_alternative_exports200_response import ListDatasetAlternativeExports200Response
 
 class TestListDatasetAlternativeExports200Response(unittest.TestCase):
     """ListDatasetAlternativeExports200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListDatasetAlternativeExports200Response(unittest.TestCase):
         model = ListDatasetAlternativeExports200Response()
         if include_optional:
             return ListDatasetAlternativeExports200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.alternative_export_schema.Alternative export schema(
+                    opendatasoft_automation.models.alternative_export_schema.Alternative export schema(
                         uid = 'ae_mm8lbn', 
                         title = 'Alternative export title', 
                         description = 'Alternative export description', 

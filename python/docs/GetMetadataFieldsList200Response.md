@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
+from opendatasoft_automation.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
 
 # TODO update the JSON string below
 json = "{}"

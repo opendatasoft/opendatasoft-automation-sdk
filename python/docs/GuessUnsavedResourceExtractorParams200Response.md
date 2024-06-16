@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
+from opendatasoft_automation.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
 
 # TODO update the JSON string below
 json = "{}"

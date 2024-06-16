@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_attachments200_response import ListDatasetAttachments200Response
+from opendatasoft_automation.models.list_dataset_attachments200_response import ListDatasetAttachments200Response
 
 class TestListDatasetAttachments200Response(unittest.TestCase):
     """ListDatasetAttachments200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListDatasetAttachments200Response(unittest.TestCase):
         model = ListDatasetAttachments200Response()
         if include_optional:
             return ListDatasetAttachments200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.attachment_schema.Attachment schema()
+                    opendatasoft_automation.models.attachment_schema.Attachment schema()
                     ]
             )
         else:

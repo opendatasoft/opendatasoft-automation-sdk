@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.amazon_s3_connection import AmazonS3Connection
+from opendatasoft_automation.models.amazon_s3_connection import AmazonS3Connection
 
 class TestAmazonS3Connection(unittest.TestCase):
     """AmazonS3Connection unit test stubs"""
@@ -37,7 +37,7 @@ class TestAmazonS3Connection(unittest.TestCase):
         if include_optional:
             return AmazonS3Connection(
                 headers = [
-                    openapi_client.models.http_connection_all_of_headers.HTTPConnection_allOf_headers(
+                    opendatasoft_automation.models.http_connection_all_of_headers.HTTPConnection_allOf_headers(
                         name = 'header-name', 
                         value = 'header-value', )
                     ],

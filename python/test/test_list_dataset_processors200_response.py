@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_processors200_response import ListDatasetProcessors200Response
+from opendatasoft_automation.models.list_dataset_processors200_response import ListDatasetProcessors200Response
 
 class TestListDatasetProcessors200Response(unittest.TestCase):
     """ListDatasetProcessors200Response unit test stubs"""
@@ -36,7 +36,7 @@ class TestListDatasetProcessors200Response(unittest.TestCase):
         model = ListDatasetProcessors200Response()
         if include_optional:
             return ListDatasetProcessors200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [

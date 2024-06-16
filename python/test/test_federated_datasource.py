@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.federated_datasource import FederatedDatasource
+from opendatasoft_automation.models.federated_datasource import FederatedDatasource
 
 class TestFederatedDatasource(unittest.TestCase):
     """FederatedDatasource unit test stubs"""
@@ -36,17 +36,17 @@ class TestFederatedDatasource(unittest.TestCase):
         model = FederatedDatasource()
         if include_optional:
             return FederatedDatasource(
-                domain = openapi_client.models.federated_datasource_all_of_domain.FederatedDatasource_allOf_domain(
+                domain = opendatasoft_automation.models.federated_datasource_all_of_domain.FederatedDatasource_allOf_domain(
                     domain_id = '', ),
                 dataset = None,
-                permissions_user = openapi_client.models.related_user.Related user(
+                permissions_user = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 impersonate_permissions = True,
                 parameters = None
             )
         else:
             return FederatedDatasource(
-                domain = openapi_client.models.federated_datasource_all_of_domain.FederatedDatasource_allOf_domain(
+                domain = opendatasoft_automation.models.federated_datasource_all_of_domain.FederatedDatasource_allOf_domain(
                     domain_id = '', ),
                 dataset = None,
                 impersonate_permissions = True,

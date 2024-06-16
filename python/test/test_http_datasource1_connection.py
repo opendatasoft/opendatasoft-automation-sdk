@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_datasource1_connection import HTTPDatasource1Connection
+from opendatasoft_automation.models.http_datasource1_connection import HTTPDatasource1Connection
 
 class TestHTTPDatasource1Connection(unittest.TestCase):
     """HTTPDatasource1Connection unit test stubs"""

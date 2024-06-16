@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
+from opendatasoft_automation.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.resource_unsaved_preview200_response_fields_inner_annotations_inner import ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner
+from opendatasoft_automation.models.resource_unsaved_preview200_response_fields_inner_annotations_inner import ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner
 
 # TODO update the JSON string below
 json = "{}"

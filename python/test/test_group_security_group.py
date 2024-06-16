@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.group_security_group import GroupSecurityGroup
+from opendatasoft_automation.models.group_security_group import GroupSecurityGroup
 
 class TestGroupSecurityGroup(unittest.TestCase):
     """GroupSecurityGroup unit test stubs"""

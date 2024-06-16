@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_connections200_response import ListConnections200Response
+from opendatasoft_automation.models.list_connections200_response import ListConnections200Response
 
 class TestListConnections200Response(unittest.TestCase):
     """ListConnections200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListConnections200Response(unittest.TestCase):
         model = ListConnections200Response()
         if include_optional:
             return ListConnections200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.connection_schema.Connection schema(
+                    opendatasoft_automation.models.connection_schema.Connection schema(
                         uid = 'co_qf2hyt', 
                         type = '0', 
                         is_reusable = True, 

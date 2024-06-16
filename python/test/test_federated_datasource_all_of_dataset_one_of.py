@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf
+from opendatasoft_automation.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf
 
 class TestFederatedDatasourceAllOfDatasetOneOf(unittest.TestCase):
     """FederatedDatasourceAllOfDatasetOneOf unit test stubs"""

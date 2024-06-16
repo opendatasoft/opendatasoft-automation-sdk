@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
+from opendatasoft_automation.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
 
 class TestGetMetadataFieldsList200Response(unittest.TestCase):
     """GetMetadataFieldsList200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestGetMetadataFieldsList200Response(unittest.TestCase):
         model = GetMetadataFieldsList200Response()
         if include_optional:
             return GetMetadataFieldsList200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.metadata_template_field.MetadataTemplateField(
+                    opendatasoft_automation.models.metadata_template_field.MetadataTemplateField(
                         name = 'my-custom-field', 
                         type = 'text', 
                         label = 'My custom field', 

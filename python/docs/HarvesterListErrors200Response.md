@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.harvester_list_errors200_response import HarvesterListErrors200Response
+from opendatasoft_automation.models.harvester_list_errors200_response import HarvesterListErrors200Response
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.ftp_datasource import FTPDatasource
+from opendatasoft_automation.models.ftp_datasource import FTPDatasource
 
 class TestFTPDatasource(unittest.TestCase):
     """FTPDatasource unit test stubs"""

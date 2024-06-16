@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_user_security200_response import ListDatasetUserSecurity200Response
+from opendatasoft_automation.models.list_dataset_user_security200_response import ListDatasetUserSecurity200Response
 
 class TestListDatasetUserSecurity200Response(unittest.TestCase):
     """ListDatasetUserSecurity200Response unit test stubs"""
@@ -36,22 +36,22 @@ class TestListDatasetUserSecurity200Response(unittest.TestCase):
         model = ListDatasetUserSecurity200Response()
         if include_optional:
             return ListDatasetUserSecurity200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.user_ruleset_schema.User ruleset schema(
-                        security = openapi_client.models.dataset_security.DatasetSecurity(
+                    opendatasoft_automation.models.user_ruleset_schema.User ruleset schema(
+                        security = opendatasoft_automation.models.dataset_security.DatasetSecurity(
                             is_data_visible = True, 
                             visible_fields = ["year","coty_code"], 
                             filter_query = 'year!=2022', 
-                            api_calls_quota = openapi_client.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
+                            api_calls_quota = opendatasoft_automation.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
                                 unit = 'month', 
                                 limit = 12000, ), ), 
                         permissions = [
                             'explore_restricted_dataset'
                             ], 
-                        user = openapi_client.models.related_user.Related user(
+                        user = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), )
                     ]
             )

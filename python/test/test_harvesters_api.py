@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.harvesters_api import HarvestersApi
+from opendatasoft_automation.api.harvesters_api import HarvestersApi
 
 
 class TestHarvestersApi(unittest.TestCase):

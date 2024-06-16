@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.sharepoint_auth import SharepointAuth
+from opendatasoft_automation.models.sharepoint_auth import SharepointAuth
 
 class TestSharepointAuth(unittest.TestCase):
     """SharepointAuth unit test stubs"""

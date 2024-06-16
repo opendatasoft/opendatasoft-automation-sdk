@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.datasources_connections_api import DatasourcesConnectionsApi
+from opendatasoft_automation.api.datasources_connections_api import DatasourcesConnectionsApi
 
 
 class TestDatasourcesConnectionsApi(unittest.TestCase):

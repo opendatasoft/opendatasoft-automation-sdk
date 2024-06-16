@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.httpo_auth2_auth import HTTPOAuth2Auth
+from opendatasoft_automation.models.httpo_auth2_auth import HTTPOAuth2Auth
 
 class TestHTTPOAuth2Auth(unittest.TestCase):
     """HTTPOAuth2Auth unit test stubs"""

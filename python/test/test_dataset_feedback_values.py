@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_feedback_values import DatasetFeedbackValues
+from opendatasoft_automation.models.dataset_feedback_values import DatasetFeedbackValues
 
 class TestDatasetFeedbackValues(unittest.TestCase):
     """DatasetFeedbackValues unit test stubs"""

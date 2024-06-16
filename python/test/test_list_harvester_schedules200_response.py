@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
+from opendatasoft_automation.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
 
 class TestListHarvesterSchedules200Response(unittest.TestCase):
     """ListHarvesterSchedules200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListHarvesterSchedules200Response(unittest.TestCase):
         model = ListHarvesterSchedules200Response()
         if include_optional:
             return ListHarvesterSchedules200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.schedule_schema.Schedule schema(
+                    opendatasoft_automation.models.schedule_schema.Schedule schema(
                         uid = 'sc_qf2hyt', 
                         cron_schedule = '1 30 * * *', 
                         timezone = 'Europe/Berlin', )

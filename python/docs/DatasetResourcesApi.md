@@ -1,4 +1,4 @@
-# openapi_client.DatasetResourcesApi
+# opendatasoft_automation.DatasetResourcesApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -40,13 +40,13 @@ Clean the cache of a given resource.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -68,9 +68,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -128,14 +128,14 @@ Create a new resource for the dataset. For now the supported resources in the AP
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -157,9 +157,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource = {"type":"csvfile","title":"fromages.csv","params":{"doublequote":true,"encoding":"utf-8","first_row_no":1,"headers_first_row":true,"separator":";"},"datasource":{"type":"http","connection":{"type":"http","url":"https://my-server.com","auth":null},"headers":[{"name":"header-name","value":"header-value"}],"relative_url":"/fromages.csv"}} # Resource |  (optional)
 
@@ -219,13 +219,13 @@ Delete one dataset resource specified by its `uid`.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -247,9 +247,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -306,14 +306,14 @@ Delete the recovered data of a realtime resource. The dataset must be published.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -335,9 +335,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -397,14 +397,14 @@ Disable a realtime resource
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -426,9 +426,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -487,13 +487,13 @@ Download a dataset resource file
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -515,9 +515,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     file_uid = 'fromages.csv' # str | 
 
@@ -576,14 +576,14 @@ Enable a realtime resource
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -605,9 +605,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -666,15 +666,15 @@ Guess the extractor parameters
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
-from openapi_client.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
+from opendatasoft_automation.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -696,11 +696,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    guess_unsaved_resource_extractor_params_request = openapi_client.GuessUnsavedResourceExtractorParamsRequest() # GuessUnsavedResourceExtractorParamsRequest |  (optional)
+    guess_unsaved_resource_extractor_params_request = opendatasoft_automation.GuessUnsavedResourceExtractorParamsRequest() # GuessUnsavedResourceExtractorParamsRequest |  (optional)
 
     try:
         # Guess unsaved resource extractor parameters
@@ -758,15 +758,15 @@ Guess the resource extractors
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.extractor import Extractor
-from openapi_client.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.extractor import Extractor
+from opendatasoft_automation.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -788,11 +788,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    guess_unsaved_resource_extractors_request = openapi_client.GuessUnsavedResourceExtractorsRequest() # GuessUnsavedResourceExtractorsRequest |  (optional)
+    guess_unsaved_resource_extractors_request = opendatasoft_automation.GuessUnsavedResourceExtractorsRequest() # GuessUnsavedResourceExtractorsRequest |  (optional)
 
     try:
         # Guess unsaved resource extractors
@@ -850,14 +850,14 @@ List all resources that are linked to a dataset.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_dataset_resources200_response import ListDatasetResources200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_dataset_resources200_response import ListDatasetResources200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -879,9 +879,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -944,14 +944,14 @@ List available extractors
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.extractor import Extractor
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.extractor import Extractor
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -973,9 +973,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
 
     try:
         # List extractors
@@ -1027,14 +1027,14 @@ Recover the data of a realtime resource. The dataset must be published.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1056,9 +1056,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -1118,14 +1118,14 @@ Guess the resource extractor parameters
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource_guess_extractor_params200_response import ResourceGuessExtractorParams200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource_guess_extractor_params200_response import ResourceGuessExtractorParams200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1147,9 +1147,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -1208,14 +1208,14 @@ Guess the resource extractors
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.extractor import Extractor
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.extractor import Extractor
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1237,9 +1237,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -1298,14 +1298,14 @@ In order to test a resource configuration, it can be useful to preview the data.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1327,9 +1327,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -1388,14 +1388,14 @@ Renew a realtime resource API key
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1417,9 +1417,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
 
@@ -1478,15 +1478,15 @@ In order to test a resource configuration, it can be useful to preview the data.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
-from openapi_client.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
+from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1508,11 +1508,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    resource_unsaved_preview_request = openapi_client.ResourceUnsavedPreviewRequest() # ResourceUnsavedPreviewRequest |  (optional)
+    resource_unsaved_preview_request = opendatasoft_automation.ResourceUnsavedPreviewRequest() # ResourceUnsavedPreviewRequest |  (optional)
 
     try:
         # Preview unsaved resource records
@@ -1570,14 +1570,14 @@ Retrieve one dataset resource specified by its `uid`.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1599,9 +1599,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
     expand = 'expand_example' # str | The list of fields to expand. (optional)
@@ -1662,14 +1662,14 @@ Retrieve a dataset resource uploaded file
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_file import DatasetFile
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_file import DatasetFile
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1691,9 +1691,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     file_uid = 'fromages.csv' # str | 
 
@@ -1752,14 +1752,14 @@ Update one dataset resource specified by its `uid`.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.resource import Resource
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.resource import Resource
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1781,9 +1781,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     resource_uid = 're_qf2hyt' # str | 
     resource = {"type":"csvfile","title":"fromages.csv","params":{"doublequote":true,"encoding":"utf-8","first_row_no":1,"headers_first_row":true,"separator":";"},"datasource":{"type":"http","connection":{"uid":"co_qf2hyt"},"headers":[{"name":"header-name","value":"header-value"}],"relative_url":"/fromages.csv"}} # Resource |  (optional)
@@ -1845,14 +1845,14 @@ Upload a file to be used in a dataset resource. The HTTP request must be a multi
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_file import DatasetFile
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_file import DatasetFile
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -1874,9 +1874,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetResourcesApi(api_client)
+    api_instance = opendatasoft_automation.DatasetResourcesApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     file = None # bytearray | 
 

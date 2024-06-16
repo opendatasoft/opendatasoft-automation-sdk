@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.basic_auth import BasicAuth
+from opendatasoft_automation.models.basic_auth import BasicAuth
 
 # TODO update the JSON string below
 json = "{}"

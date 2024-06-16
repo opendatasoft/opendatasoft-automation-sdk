@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_group_security200_response import ListDatasetGroupSecurity200Response
+from opendatasoft_automation.models.list_dataset_group_security200_response import ListDatasetGroupSecurity200Response
 
 class TestListDatasetGroupSecurity200Response(unittest.TestCase):
     """ListDatasetGroupSecurity200Response unit test stubs"""
@@ -36,22 +36,22 @@ class TestListDatasetGroupSecurity200Response(unittest.TestCase):
         model = ListDatasetGroupSecurity200Response()
         if include_optional:
             return ListDatasetGroupSecurity200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.group_ruleset_schema.Group ruleset schema(
-                        security = openapi_client.models.dataset_security.DatasetSecurity(
+                    opendatasoft_automation.models.group_ruleset_schema.Group ruleset schema(
+                        security = opendatasoft_automation.models.dataset_security.DatasetSecurity(
                             is_data_visible = True, 
                             visible_fields = ["year","coty_code"], 
                             filter_query = 'year!=2022', 
-                            api_calls_quota = openapi_client.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
+                            api_calls_quota = opendatasoft_automation.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
                                 unit = 'month', 
                                 limit = 12000, ), ), 
                         permissions = [
                             'explore_restricted_dataset'
                             ], 
-                        group = openapi_client.models.dataset_group_security_group.DatasetGroupSecurity_group(
+                        group = opendatasoft_automation.models.dataset_group_security_group.DatasetGroupSecurity_group(
                             uid = 'content_designers', ), )
                     ]
             )

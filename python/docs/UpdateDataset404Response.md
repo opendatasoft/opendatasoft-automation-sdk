@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.update_dataset404_response import UpdateDataset404Response
+from opendatasoft_automation.models.update_dataset404_response import UpdateDataset404Response
 
 # TODO update the JSON string below
 json = "{}"

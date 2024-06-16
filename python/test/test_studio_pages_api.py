@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.studio_pages_api import StudioPagesApi
+from opendatasoft_automation.api.studio_pages_api import StudioPagesApi
 
 
 class TestStudioPagesApi(unittest.TestCase):

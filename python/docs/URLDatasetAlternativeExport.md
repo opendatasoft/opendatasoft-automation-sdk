@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.url_dataset_alternative_export import URLDatasetAlternativeExport
+from opendatasoft_automation.models.url_dataset_alternative_export import URLDatasetAlternativeExport
 
 # TODO update the JSON string below
 json = "{}"

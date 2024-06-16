@@ -1,4 +1,4 @@
-# openapi_client.UserGroupsApi
+# opendatasoft_automation.UserGroupsApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -26,15 +26,15 @@ Add a user to a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.related_user import RelatedUser
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.related_user import RelatedUser
+from opendatasoft_automation.models.user import User
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -56,11 +56,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
-    related_user = openapi_client.RelatedUser() # RelatedUser |  (optional)
+    related_user = opendatasoft_automation.RelatedUser() # RelatedUser |  (optional)
 
     try:
         # Add a user to a user group
@@ -116,15 +116,15 @@ Batch add of users to a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.invite_users200_response_value import InviteUsers200ResponseValue
-from openapi_client.models.related_user import RelatedUser
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.invite_users200_response_value import InviteUsers200ResponseValue
+from opendatasoft_automation.models.related_user import RelatedUser
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -146,11 +146,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
-    related_user = [openapi_client.RelatedUser()] # List[RelatedUser] |  (optional)
+    related_user = [opendatasoft_automation.RelatedUser()] # List[RelatedUser] |  (optional)
 
     try:
         # Batch add of users to a user group
@@ -205,14 +205,14 @@ Create a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user_group import UserGroup
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user_group import UserGroup
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -234,10 +234,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
-    user_group = openapi_client.UserGroup() # UserGroup |  (optional)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
+    user_group = opendatasoft_automation.UserGroup() # UserGroup |  (optional)
 
     try:
         # Create a user group
@@ -291,13 +291,13 @@ Delete a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -319,9 +319,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
 
     try:
@@ -374,13 +374,13 @@ Remove a user from a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -402,9 +402,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
     username = 'louise.data' # str | 
 
@@ -459,15 +459,15 @@ List user groups
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_user_groups200_response import ListUserGroups200Response
-from openapi_client.models.permission import Permission
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_user_groups200_response import ListUserGroups200Response
+from opendatasoft_automation.models.permission import Permission
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -489,14 +489,14 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
     search = 'search_example' # str | full-text search among `uid`, `title` and `description` properties (optional)
     sort = 'updated_at' # str | sort results with respect to the specified properties. (optional) (default to 'updated_at')
-    permissions = [openapi_client.Permission()] # List[Permission] | filter groups according to the specified list of permissions (optional)
+    permissions = [opendatasoft_automation.Permission()] # List[Permission] | filter groups according to the specified list of permissions (optional)
 
     try:
         # List user groups
@@ -553,14 +553,14 @@ List users of a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.get_users200_response import GetUsers200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.get_users200_response import GetUsers200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -582,9 +582,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
 
     try:
@@ -639,14 +639,14 @@ Retrieve a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user_group import UserGroup
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user_group import UserGroup
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -668,9 +668,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
 
     try:
@@ -725,14 +725,14 @@ Update a user group
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user_group import UserGroup
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user_group import UserGroup
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -754,11 +754,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserGroupsApi(api_client)
+    api_instance = opendatasoft_automation.UserGroupsApi(api_client)
     group_uid = 'group_identifier' # str | 
-    user_group = openapi_client.UserGroup() # UserGroup |  (optional)
+    user_group = opendatasoft_automation.UserGroup() # UserGroup |  (optional)
 
     try:
         # Update a user group

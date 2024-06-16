@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_key_revocation_status import APIKeyRevocationStatus
+from opendatasoft_automation.models.api_key_revocation_status import APIKeyRevocationStatus
 
 # TODO update the JSON string below
 json = "{}"

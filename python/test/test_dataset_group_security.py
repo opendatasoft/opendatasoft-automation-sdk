@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_group_security import DatasetGroupSecurity
+from opendatasoft_automation.models.dataset_group_security import DatasetGroupSecurity
 
 class TestDatasetGroupSecurity(unittest.TestCase):
     """DatasetGroupSecurity unit test stubs"""
@@ -36,22 +36,22 @@ class TestDatasetGroupSecurity(unittest.TestCase):
         model = DatasetGroupSecurity()
         if include_optional:
             return DatasetGroupSecurity(
-                security = openapi_client.models.dataset_security.DatasetSecurity(
+                security = opendatasoft_automation.models.dataset_security.DatasetSecurity(
                     is_data_visible = True, 
                     visible_fields = ["year","coty_code"], 
                     filter_query = 'year!=2022', 
-                    api_calls_quota = openapi_client.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
+                    api_calls_quota = opendatasoft_automation.models.dataset_security_api_calls_quota.DatasetSecurity_api_calls_quota(
                         unit = 'month', 
                         limit = 12000, ), ),
                 permissions = [
                     'explore_restricted_dataset'
                     ],
-                group = openapi_client.models.dataset_group_security_group.DatasetGroupSecurity_group(
+                group = opendatasoft_automation.models.dataset_group_security_group.DatasetGroupSecurity_group(
                     uid = 'content_designers', )
             )
         else:
             return DatasetGroupSecurity(
-                group = openapi_client.models.dataset_group_security_group.DatasetGroupSecurity_group(
+                group = opendatasoft_automation.models.dataset_group_security_group.DatasetGroupSecurity_group(
                     uid = 'content_designers', ),
         )
         """

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ckan_harvester import CKANHarvester
+from opendatasoft_automation.models.ckan_harvester import CKANHarvester
 
 # TODO update the JSON string below
 json = "{}"

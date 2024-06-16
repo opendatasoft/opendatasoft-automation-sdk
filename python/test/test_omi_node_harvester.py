@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.omi_node_harvester import OMINodeHarvester
+from opendatasoft_automation.models.omi_node_harvester import OMINodeHarvester
 
 class TestOMINodeHarvester(unittest.TestCase):
     """OMINodeHarvester unit test stubs"""

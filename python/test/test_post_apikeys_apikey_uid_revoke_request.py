@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.post_apikeys_apikey_uid_revoke_request import PostApikeysApikeyUidRevokeRequest
+from opendatasoft_automation.models.post_apikeys_apikey_uid_revoke_request import PostApikeysApikeyUidRevokeRequest
 
 class TestPostApikeysApikeyUidRevokeRequest(unittest.TestCase):
     """PostApikeysApikeyUidRevokeRequest unit test stubs"""

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.harvester_preview_result import HarvesterPreviewResult
+from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult
 
 # TODO update the JSON string below
 json = "{}"

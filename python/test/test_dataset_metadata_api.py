@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_metadata_api import DatasetMetadataApi
+from opendatasoft_automation.api.dataset_metadata_api import DatasetMetadataApi
 
 
 class TestDatasetMetadataApi(unittest.TestCase):

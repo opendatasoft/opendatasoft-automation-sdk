@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_metadata_internal import DatasetMetadataInternal
+from opendatasoft_automation.models.dataset_metadata_internal import DatasetMetadataInternal
 
 class TestDatasetMetadataInternal(unittest.TestCase):
     """DatasetMetadataInternal unit test stubs"""

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.delete_dataset_field_configuration import DeleteDatasetFieldConfiguration
+from opendatasoft_automation.models.delete_dataset_field_configuration import DeleteDatasetFieldConfiguration
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.federated_dataset import FederatedDataset
+from opendatasoft_automation.models.federated_dataset import FederatedDataset
 
 class TestFederatedDataset(unittest.TestCase):
     """FederatedDataset unit test stubs"""

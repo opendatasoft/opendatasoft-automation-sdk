@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.get_dataset_status200_response_records_errors_inner import GetDatasetStatus200ResponseRecordsErrorsInner
+from opendatasoft_automation.models.get_dataset_status200_response_records_errors_inner import GetDatasetStatus200ResponseRecordsErrorsInner
 
 class TestGetDatasetStatus200ResponseRecordsErrorsInner(unittest.TestCase):
     """GetDatasetStatus200ResponseRecordsErrorsInner unit test stubs"""

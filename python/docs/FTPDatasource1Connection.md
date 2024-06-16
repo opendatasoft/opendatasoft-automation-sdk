@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ftp_datasource1_connection import FTPDatasource1Connection
+from opendatasoft_automation.models.ftp_datasource1_connection import FTPDatasource1Connection
 
 # TODO update the JSON string below
 json = "{}"

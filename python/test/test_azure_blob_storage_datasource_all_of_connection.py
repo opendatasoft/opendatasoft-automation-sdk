@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.azure_blob_storage_datasource_all_of_connection import AzureBlobStorageDatasourceAllOfConnection
+from opendatasoft_automation.models.azure_blob_storage_datasource_all_of_connection import AzureBlobStorageDatasourceAllOfConnection
 
 class TestAzureBlobStorageDatasourceAllOfConnection(unittest.TestCase):
     """AzureBlobStorageDatasourceAllOfConnection unit test stubs"""

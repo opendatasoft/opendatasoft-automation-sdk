@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_attachments_api import DatasetAttachmentsApi
+from opendatasoft_automation.api.dataset_attachments_api import DatasetAttachmentsApi
 
 
 class TestDatasetAttachmentsApi(unittest.TestCase):

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.azure_blob_storage_datasource_all_of_connection import AzureBlobStorageDatasourceAllOfConnection
+from opendatasoft_automation.models.azure_blob_storage_datasource_all_of_connection import AzureBlobStorageDatasourceAllOfConnection
 
 # TODO update the JSON string below
 json = "{}"

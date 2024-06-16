@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.group_security2 import GroupSecurity2
+from opendatasoft_automation.models.group_security2 import GroupSecurity2
 
 class TestGroupSecurity2(unittest.TestCase):
     """GroupSecurity2 unit test stubs"""
@@ -36,7 +36,7 @@ class TestGroupSecurity2(unittest.TestCase):
         model = GroupSecurity2()
         if include_optional:
             return GroupSecurity2(
-                group = openapi_client.models.group_security_group.GroupSecurity_group(
+                group = opendatasoft_automation.models.group_security_group.GroupSecurity_group(
                     uid = 'content_designers', ),
                 permissions = [
                     'edit_page'

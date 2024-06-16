@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_harvesters200_response import ListHarvesters200Response
+from opendatasoft_automation.models.list_harvesters200_response import ListHarvesters200Response
 
 class TestListHarvesters200Response(unittest.TestCase):
     """ListHarvesters200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListHarvesters200Response(unittest.TestCase):
         model = ListHarvesters200Response()
         if include_optional:
             return ListHarvesters200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.harvester_schema.Harvester schema(
+                    opendatasoft_automation.models.harvester_schema.Harvester schema(
                         uid = 'harvester-uid', 
                         type = '0', 
                         name = 'Harvester title', 
@@ -57,7 +57,7 @@ class TestListHarvesters200Response(unittest.TestCase):
                         resource_errors_count = 2, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        updated_by = openapi_client.models.related_user.Related user(
+                        updated_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
                         last_started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         last_success_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

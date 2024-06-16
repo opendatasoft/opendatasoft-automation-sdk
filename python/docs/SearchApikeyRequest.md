@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.search_apikey_request import SearchApikeyRequest
+from opendatasoft_automation.models.search_apikey_request import SearchApikeyRequest
 
 # TODO update the JSON string below
 json = "{}"

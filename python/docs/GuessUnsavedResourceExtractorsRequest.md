@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
+from opendatasoft_automation.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
 
 # TODO update the JSON string below
 json = "{}"

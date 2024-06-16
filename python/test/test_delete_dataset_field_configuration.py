@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.delete_dataset_field_configuration import DeleteDatasetFieldConfiguration
+from opendatasoft_automation.models.delete_dataset_field_configuration import DeleteDatasetFieldConfiguration
 
 class TestDeleteDatasetFieldConfiguration(unittest.TestCase):
     """DeleteDatasetFieldConfiguration unit test stubs"""

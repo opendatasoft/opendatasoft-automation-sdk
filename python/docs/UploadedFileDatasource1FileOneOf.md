@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf
+from opendatasoft_automation.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf
 
 # TODO update the JSON string below
 json = "{}"

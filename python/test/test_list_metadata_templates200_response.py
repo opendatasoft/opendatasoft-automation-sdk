@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_metadata_templates200_response import ListMetadataTemplates200Response
+from opendatasoft_automation.models.list_metadata_templates200_response import ListMetadataTemplates200Response
 
 class TestListMetadataTemplates200Response(unittest.TestCase):
     """ListMetadataTemplates200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListMetadataTemplates200Response(unittest.TestCase):
         model = ListMetadataTemplates200Response()
         if include_optional:
             return ListMetadataTemplates200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.metadata_template_schema.Metadata template schema()
+                    opendatasoft_automation.models.metadata_template_schema.Metadata template schema()
                     ]
             )
         else:

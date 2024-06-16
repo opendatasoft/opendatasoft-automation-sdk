@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_datasource_connection_group_security200_response import ListDatasourceConnectionGroupSecurity200Response
+from opendatasoft_automation.models.list_datasource_connection_group_security200_response import ListDatasourceConnectionGroupSecurity200Response
 
 class TestListDatasourceConnectionGroupSecurity200Response(unittest.TestCase):
     """ListDatasourceConnectionGroupSecurity200Response unit test stubs"""
@@ -36,12 +36,12 @@ class TestListDatasourceConnectionGroupSecurity200Response(unittest.TestCase):
         model = ListDatasourceConnectionGroupSecurity200Response()
         if include_optional:
             return ListDatasourceConnectionGroupSecurity200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.group_ruleset_schema.Group ruleset schema(
-                        group = openapi_client.models.group_security_group.GroupSecurity_group(
+                    opendatasoft_automation.models.group_ruleset_schema.Group ruleset schema(
+                        group = opendatasoft_automation.models.group_security_group.GroupSecurity_group(
                             uid = 'content_designers', ), 
                         permissions = [
                             'manage_connection'

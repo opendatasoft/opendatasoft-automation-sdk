@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.datajson_harvester import DatajsonHarvester
+from opendatasoft_automation.models.datajson_harvester import DatajsonHarvester
 
 # TODO update the JSON string below
 json = "{}"

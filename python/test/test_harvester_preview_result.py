@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.harvester_preview_result import HarvesterPreviewResult
+from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult
 
 class TestHarvesterPreviewResult(unittest.TestCase):
     """HarvesterPreviewResult unit test stubs"""
@@ -38,7 +38,7 @@ class TestHarvesterPreviewResult(unittest.TestCase):
             return HarvesterPreviewResult(
                 total_count = 42,
                 results = [
-                    openapi_client.models.harvester_preview_result_results_inner.HarvesterPreviewResult_results_inner(
+                    opendatasoft_automation.models.harvester_preview_result_results_inner.HarvesterPreviewResult_results_inner(
                         id = 'georef-united-states-of-america-zc-point', 
                         title = 'US Zip Codes Points- United States of America', 
                         description = 'Contains most USPS zip codes (lat/long).', )
@@ -48,7 +48,7 @@ class TestHarvesterPreviewResult(unittest.TestCase):
             return HarvesterPreviewResult(
                 total_count = 42,
                 results = [
-                    openapi_client.models.harvester_preview_result_results_inner.HarvesterPreviewResult_results_inner(
+                    opendatasoft_automation.models.harvester_preview_result_results_inner.HarvesterPreviewResult_results_inner(
                         id = 'georef-united-states-of-america-zc-point', 
                         title = 'US Zip Codes Points- United States of America', 
                         description = 'Contains most USPS zip codes (lat/long).', )

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_processors_api import DatasetProcessorsApi
+from opendatasoft_automation.api.dataset_processors_api import DatasetProcessorsApi
 
 
 class TestDatasetProcessorsApi(unittest.TestCase):

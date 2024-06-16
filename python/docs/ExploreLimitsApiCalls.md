@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.explore_limits_api_calls import ExploreLimitsApiCalls
+from opendatasoft_automation.models.explore_limits_api_calls import ExploreLimitsApiCalls
 
 # TODO update the JSON string below
 json = "{}"

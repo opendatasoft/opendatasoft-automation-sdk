@@ -1,4 +1,4 @@
-# openapi_client.MetadataTemplatesApi
+# opendatasoft_automation.MetadataTemplatesApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -27,14 +27,14 @@ You can only create `basic` and `admin` metadata templates.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -56,10 +56,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
-    creatable_or_editable_metadata_template = openapi_client.CreatableOrEditableMetadataTemplate() # CreatableOrEditableMetadataTemplate |  (optional)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
+    creatable_or_editable_metadata_template = opendatasoft_automation.CreatableOrEditableMetadataTemplate() # CreatableOrEditableMetadataTemplate |  (optional)
 
     try:
         # Create metadata template
@@ -115,13 +115,13 @@ Only non-system templates of type `basic` or `admin` can be removed.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -143,9 +143,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     template_name = 'template_name' # str | Metadata template name
 
     try:
@@ -200,14 +200,14 @@ List suggestions (\"choices\") for the provided template field name.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -229,9 +229,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     template_name = 'template_name' # str | Metadata template name
     template_field_name = 'field_name' # str | Metadata template field name
     query = 'query_example' # str | The query to perform to the service providing the suggestions. Most likely, it will be a prefix of what you're looking for. 
@@ -293,14 +293,14 @@ List template's fields
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -322,9 +322,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     template_name = 'template_name' # str | Metadata template name
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
@@ -383,14 +383,14 @@ Retrieve metadata template field
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.metadata_template_field import MetadataTemplateField
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.metadata_template_field import MetadataTemplateField
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -412,9 +412,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     template_name = 'template_name' # str | Metadata template name
     template_field_name = 'field_name' # str | Metadata template field name
 
@@ -473,14 +473,14 @@ List all metadata templates of the current domain.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.list_metadata_templates200_response import ListMetadataTemplates200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.list_metadata_templates200_response import ListMetadataTemplates200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -502,9 +502,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
     is_active = True # bool | If provided and True then it will list only all activated templates. If provided and False it lists non-activated templates. If not provided then it will lists both activated and non-activated templates.  (optional)
@@ -564,14 +564,14 @@ Retrieve a metadata template
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.metadata_template import MetadataTemplate
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.metadata_template import MetadataTemplate
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -593,9 +593,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     template_name = 'template_name' # str | Metadata template name
 
     try:
@@ -652,14 +652,14 @@ Only non-system templates of type `basic` and `admin` can be fully editable. Oth
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -681,11 +681,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.MetadataTemplatesApi(api_client)
+    api_instance = opendatasoft_automation.MetadataTemplatesApi(api_client)
     template_name = 'template_name' # str | Metadata template name
-    creatable_or_editable_metadata_template = openapi_client.CreatableOrEditableMetadataTemplate() # CreatableOrEditableMetadataTemplate |  (optional)
+    creatable_or_editable_metadata_template = opendatasoft_automation.CreatableOrEditableMetadataTemplate() # CreatableOrEditableMetadataTemplate |  (optional)
 
     try:
         # Update metadata template

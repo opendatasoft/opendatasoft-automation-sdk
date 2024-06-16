@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
 
 # TODO update the JSON string below
 json = "{}"

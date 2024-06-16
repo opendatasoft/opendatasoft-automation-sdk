@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.sharepoint_connection import SharepointConnection
+from opendatasoft_automation.models.sharepoint_connection import SharepointConnection
 
 # TODO update the JSON string below
 json = "{}"

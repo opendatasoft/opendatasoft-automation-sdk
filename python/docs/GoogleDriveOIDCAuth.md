@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.google_drive_oidc_auth import GoogleDriveOIDCAuth
+from opendatasoft_automation.models.google_drive_oidc_auth import GoogleDriveOIDCAuth
 
 # TODO update the JSON string below
 json = "{}"

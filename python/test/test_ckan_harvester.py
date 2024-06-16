@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.ckan_harvester import CKANHarvester
+from opendatasoft_automation.models.ckan_harvester import CKANHarvester
 
 class TestCKANHarvester(unittest.TestCase):
     """CKANHarvester unit test stubs"""
@@ -39,9 +39,9 @@ class TestCKANHarvester(unittest.TestCase):
                 url = 'https://www.hri.fi/api/3',
                 limit = 56,
                 offset = 56,
-                sort = 'relevance desc'',
+                sort = 'relevance desc',
                 api_key = '',
-                group = 'education'',
+                group = 'education',
                 language = '',
                 query = '',
                 download_resources = True,

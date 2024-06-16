@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.google_drive_datasource_all_of_connection import GoogleDriveDatasourceAllOfConnection
+from opendatasoft_automation.models.google_drive_datasource_all_of_connection import GoogleDriveDatasourceAllOfConnection
 
 class TestGoogleDriveDatasourceAllOfConnection(unittest.TestCase):
     """GoogleDriveDatasourceAllOfConnection unit test stubs"""

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders
+from opendatasoft_automation.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders
 
 # TODO update the JSON string below
 json = "{}"

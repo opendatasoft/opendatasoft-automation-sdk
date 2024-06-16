@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.azure_blob_storage_shared_key_auth import AzureBlobStorageSharedKeyAuth
+from opendatasoft_automation.models.azure_blob_storage_shared_key_auth import AzureBlobStorageSharedKeyAuth
 
 # TODO update the JSON string below
 json = "{}"

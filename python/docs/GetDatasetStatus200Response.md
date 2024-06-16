@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.get_dataset_status200_response import GetDatasetStatus200Response
+from opendatasoft_automation.models.get_dataset_status200_response import GetDatasetStatus200Response
 
 # TODO update the JSON string below
 json = "{}"

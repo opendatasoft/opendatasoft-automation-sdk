@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.google_drive_auth import GoogleDriveAuth
+from opendatasoft_automation.models.google_drive_auth import GoogleDriveAuth
 
 class TestGoogleDriveAuth(unittest.TestCase):
     """GoogleDriveAuth unit test stubs"""

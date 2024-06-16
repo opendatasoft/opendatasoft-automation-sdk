@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_security_api import DatasetSecurityApi
+from opendatasoft_automation.api.dataset_security_api import DatasetSecurityApi
 
 
 class TestDatasetSecurityApi(unittest.TestCase):

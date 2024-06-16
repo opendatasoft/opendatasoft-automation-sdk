@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.ftp_harvester import FTPHarvester
+from opendatasoft_automation.models.ftp_harvester import FTPHarvester
 
 class TestFTPHarvester(unittest.TestCase):
     """FTPHarvester unit test stubs"""

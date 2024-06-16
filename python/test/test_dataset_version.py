@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_version import DatasetVersion
+from opendatasoft_automation.models.dataset_version import DatasetVersion
 
 class TestDatasetVersion(unittest.TestCase):
     """DatasetVersion unit test stubs"""
@@ -38,7 +38,7 @@ class TestDatasetVersion(unittest.TestCase):
             return DatasetVersion(
                 uid = 'ch_qf2hyt',
                 sections = ["data"],
-                created_by = openapi_client.models.related_user.Related user(
+                created_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 can_restore = True,
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')

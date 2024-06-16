@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.studio_page_contents_inner import StudioPageContentsInner
+from opendatasoft_automation.models.studio_page_contents_inner import StudioPageContentsInner
 
 class TestStudioPageContentsInner(unittest.TestCase):
     """StudioPageContentsInner unit test stubs"""
@@ -41,7 +41,7 @@ class TestStudioPageContentsInner(unittest.TestCase):
                 description = 'A page saying hello',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated_by = openapi_client.models.related_user.Related user(
+                updated_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', )
             )
         else:

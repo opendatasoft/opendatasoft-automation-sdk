@@ -1,4 +1,4 @@
-# openapi_client.UsersApi
+# opendatasoft_automation.UsersApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -26,13 +26,13 @@ Removes the requested user from the domain. If the user is the only domain admin
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -54,9 +54,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
     username = 'louise.data' # str | 
 
     try:
@@ -111,14 +111,14 @@ Retrieve user
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user import User
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -140,9 +140,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
     username = 'louise.data' # str | 
     expand = 'groups' # str | The list of fields to expand. (optional)
 
@@ -201,15 +201,15 @@ List users
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.get_users200_response import GetUsers200Response
-from openapi_client.models.permission import Permission
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.get_users200_response import GetUsers200Response
+from opendatasoft_automation.models.permission import Permission
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -231,13 +231,13 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
     search = 'alice' # str | full-text search among username, first name, last name and email (optional)
     sort = ['sort_example'] # List[str] | sort results according to username, first name or last_name (optional)
-    permissions = [openapi_client.Permission()] # List[Permission] | filter according to permissions granted directly to the users (optional)
-    all_permissions = [openapi_client.Permission()] # List[Permission] | filter according to permissions, whether granted directly or via a group (optional)
+    permissions = [opendatasoft_automation.Permission()] # List[Permission] | filter according to permissions granted directly to the users (optional)
+    all_permissions = [opendatasoft_automation.Permission()] # List[Permission] | filter according to permissions, whether granted directly or via a group (optional)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
 
@@ -299,15 +299,15 @@ This bulk endpoint creates an account for each of the given users and sends them
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.invite_users200_response_value import InviteUsers200ResponseValue
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.invite_users200_response_value import InviteUsers200ResponseValue
+from opendatasoft_automation.models.user import User
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -329,10 +329,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
-    user = [openapi_client.User()] # List[User] |  (optional)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
+    user = [opendatasoft_automation.User()] # List[User] |  (optional)
 
     try:
         # Invite users
@@ -387,15 +387,15 @@ This bulk endpoint creates an account for each of the given users using the give
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.invite_users200_response_value import InviteUsers200ResponseValue
-from openapi_client.models.provision_users_request import ProvisionUsersRequest
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.invite_users200_response_value import InviteUsers200ResponseValue
+from opendatasoft_automation.models.provision_users_request import ProvisionUsersRequest
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -417,10 +417,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
-    provision_users_request = openapi_client.ProvisionUsersRequest() # ProvisionUsersRequest |  (optional)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
+    provision_users_request = opendatasoft_automation.ProvisionUsersRequest() # ProvisionUsersRequest |  (optional)
 
     try:
         # Provision users
@@ -475,14 +475,14 @@ Updates a user properties
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user import User
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -504,11 +504,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
     username = 'louise.data' # str | 
-    user = openapi_client.User() # User |  (optional)
+    user = opendatasoft_automation.User() # User |  (optional)
 
     try:
         # Update user
@@ -563,14 +563,14 @@ Export users
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.user import User
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.user import User
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -592,9 +592,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsersApi(api_client)
+    api_instance = opendatasoft_automation.UsersApi(api_client)
     subdomains = 'subdomains_example' # str | Subdomains to include in the CSV (requires the permission to export subdomains) (optional)
     delimiter = ',' # str | Field separator (optional) (default to ',')
 

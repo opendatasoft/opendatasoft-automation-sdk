@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.paginated_results import PaginatedResults
+from opendatasoft_automation.models.paginated_results import PaginatedResults
 
 class TestPaginatedResults(unittest.TestCase):
     """PaginatedResults unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginatedResults(unittest.TestCase):
         model = PaginatedResults()
         if include_optional:
             return PaginatedResults(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = ''
             )

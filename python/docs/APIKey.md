@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.api_key import APIKey
+from opendatasoft_automation.models.api_key import APIKey
 
 # TODO update the JSON string below
 json = "{}"

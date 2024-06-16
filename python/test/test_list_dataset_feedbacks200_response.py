@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_dataset_feedbacks200_response import ListDatasetFeedbacks200Response
+from opendatasoft_automation.models.list_dataset_feedbacks200_response import ListDatasetFeedbacks200Response
 
 class TestListDatasetFeedbacks200Response(unittest.TestCase):
     """ListDatasetFeedbacks200Response unit test stubs"""
@@ -36,7 +36,7 @@ class TestListDatasetFeedbacks200Response(unittest.TestCase):
         model = ListDatasetFeedbacks200Response()
         if include_optional:
             return ListDatasetFeedbacks200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [

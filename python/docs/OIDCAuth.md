@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.oidc_auth import OIDCAuth
+from opendatasoft_automation.models.oidc_auth import OIDCAuth
 
 # TODO update the JSON string below
 json = "{}"

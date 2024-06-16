@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.amazon_s3_datasource import AmazonS3Datasource
+from opendatasoft_automation.models.amazon_s3_datasource import AmazonS3Datasource
 
 class TestAmazonS3Datasource(unittest.TestCase):
     """AmazonS3Datasource unit test stubs"""
@@ -38,7 +38,7 @@ class TestAmazonS3Datasource(unittest.TestCase):
             return AmazonS3Datasource(
                 url = 'https://your-bucket.s3.amazonaws.com/file.csv',
                 headers = [
-                    openapi_client.models.http_datasource_1_headers.HTTPDatasource_1_headers(
+                    opendatasoft_automation.models.http_datasource_1_headers.HTTPDatasource_1_headers(
                         name = '', 
                         value = '', )
                     ],

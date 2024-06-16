@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.harvester_schedules_api import HarvesterSchedulesApi
+from opendatasoft_automation.api.harvester_schedules_api import HarvesterSchedulesApi
 
 
 class TestHarvesterSchedulesApi(unittest.TestCase):

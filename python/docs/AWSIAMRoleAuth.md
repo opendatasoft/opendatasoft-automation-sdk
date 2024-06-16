@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.awsiam_role_auth import AWSIAMRoleAuth
+from opendatasoft_automation.models.awsiam_role_auth import AWSIAMRoleAuth
 
 # TODO update the JSON string below
 json = "{}"

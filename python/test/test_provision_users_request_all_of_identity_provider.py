@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.provision_users_request_all_of_identity_provider import ProvisionUsersRequestAllOfIdentityProvider
+from opendatasoft_automation.models.provision_users_request_all_of_identity_provider import ProvisionUsersRequestAllOfIdentityProvider
 
 class TestProvisionUsersRequestAllOfIdentityProvider(unittest.TestCase):
     """ProvisionUsersRequestAllOfIdentityProvider unit test stubs"""

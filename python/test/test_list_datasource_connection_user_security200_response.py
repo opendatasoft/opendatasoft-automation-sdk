@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_datasource_connection_user_security200_response import ListDatasourceConnectionUserSecurity200Response
+from opendatasoft_automation.models.list_datasource_connection_user_security200_response import ListDatasourceConnectionUserSecurity200Response
 
 class TestListDatasourceConnectionUserSecurity200Response(unittest.TestCase):
     """ListDatasourceConnectionUserSecurity200Response unit test stubs"""
@@ -36,12 +36,12 @@ class TestListDatasourceConnectionUserSecurity200Response(unittest.TestCase):
         model = ListDatasourceConnectionUserSecurity200Response()
         if include_optional:
             return ListDatasourceConnectionUserSecurity200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.user_ruleset_schema.User ruleset schema(
-                        user = openapi_client.models.related_user.Related user(
+                    opendatasoft_automation.models.user_ruleset_schema.User ruleset schema(
+                        user = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
                         permissions = [
                             'manage_connection'

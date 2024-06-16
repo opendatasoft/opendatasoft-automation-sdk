@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.code_editor_page import CodeEditorPage
+from opendatasoft_automation.models.code_editor_page import CodeEditorPage
 
 # TODO update the JSON string below
 json = "{}"

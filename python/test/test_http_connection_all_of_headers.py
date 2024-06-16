@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders
+from opendatasoft_automation.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders
 
 class TestHTTPConnectionAllOfHeaders(unittest.TestCase):
     """HTTPConnectionAllOfHeaders unit test stubs"""

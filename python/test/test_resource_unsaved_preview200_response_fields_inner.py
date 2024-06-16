@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.resource_unsaved_preview200_response_fields_inner import ResourceUnsavedPreview200ResponseFieldsInner
+from opendatasoft_automation.models.resource_unsaved_preview200_response_fields_inner import ResourceUnsavedPreview200ResponseFieldsInner
 
 class TestResourceUnsavedPreview200ResponseFieldsInner(unittest.TestCase):
     """ResourceUnsavedPreview200ResponseFieldsInner unit test stubs"""
@@ -41,7 +41,7 @@ class TestResourceUnsavedPreview200ResponseFieldsInner(unittest.TestCase):
                 label = '',
                 type = '',
                 annotations = [
-                    openapi_client.models.resource_unsaved_preview_200_response_fields_inner_annotations_inner.resource_unsaved_preview_200_response_fields_inner_annotations_inner(
+                    opendatasoft_automation.models.resource_unsaved_preview_200_response_fields_inner_annotations_inner.resource_unsaved_preview_200_response_fields_inner_annotations_inner(
                         name = '', 
                         args = [
                             ''

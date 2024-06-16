@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.get_apikeys200_response import GetApikeys200Response
+from opendatasoft_automation.models.get_apikeys200_response import GetApikeys200Response
 
 class TestGetApikeys200Response(unittest.TestCase):
     """GetApikeys200Response unit test stubs"""
@@ -36,19 +36,19 @@ class TestGetApikeys200Response(unittest.TestCase):
         model = GetApikeys200Response()
         if include_optional:
             return GetApikeys200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.api_key_schema.API key schema(
+                    opendatasoft_automation.models.api_key_schema.API key schema(
                         uid = 'ak_qf2hyt', 
                         label = 'My API Key', 
                         key = '63d534ca0c1806024215cfd99dba4ea188f55d4f1b53ac0b6eceb455', 
                         permissions = ["explore_restricted_dataset"], 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        user = openapi_client.models.related_user.Related user(
+                        user = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
-                        revocation_status = openapi_client.models.api_key_revocation_status.APIKey_revocation_status(
+                        revocation_status = opendatasoft_automation.models.api_key_revocation_status.APIKey_revocation_status(
                             revoked_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             revocation_reason = 'Explanation why the API Key has been revoked', ), 
                         is_revoked = True, )

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.create_dataset400_response import CreateDataset400Response
+from opendatasoft_automation.models.create_dataset400_response import CreateDataset400Response
 
 # TODO update the JSON string below
 json = "{}"

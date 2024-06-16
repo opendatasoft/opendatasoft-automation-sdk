@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.base_metadata_template import BaseMetadataTemplate
+from opendatasoft_automation.models.base_metadata_template import BaseMetadataTemplate
 
 # TODO update the JSON string below
 json = "{}"

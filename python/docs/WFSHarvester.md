@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.wfs_harvester import WFSHarvester
+from opendatasoft_automation.models.wfs_harvester import WFSHarvester
 
 # TODO update the JSON string below
 json = "{}"

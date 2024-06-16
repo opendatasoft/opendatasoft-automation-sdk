@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.o_auth2_auth import OAuth2Auth
+from opendatasoft_automation.models.o_auth2_auth import OAuth2Auth
 
 class TestOAuth2Auth(unittest.TestCase):
     """OAuth2Auth unit test stubs"""

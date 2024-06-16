@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_studio_pages200_response import ListStudioPages200Response
+from opendatasoft_automation.models.list_studio_pages200_response import ListStudioPages200Response
 
 class TestListStudioPages200Response(unittest.TestCase):
     """ListStudioPages200Response unit test stubs"""
@@ -36,28 +36,28 @@ class TestListStudioPages200Response(unittest.TestCase):
         model = ListStudioPages200Response()
         if include_optional:
             return ListStudioPages200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.studio_page_schema.Studio page schema(
+                    opendatasoft_automation.models.studio_page_schema.Studio page schema(
                         uid = 'sp_qf2hyt', 
                         slug = 'my-page', 
                         public = True, 
                         contents = [
-                            openapi_client.models.studio_page_contents_inner.StudioPage_contents_inner(
+                            opendatasoft_automation.models.studio_page_contents_inner.StudioPage_contents_inner(
                                 version_name = 'draft', 
                                 title = 'My Page', 
                                 description = 'A page saying hello', 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                updated_by = openapi_client.models.related_user.Related user(
+                                updated_by = opendatasoft_automation.models.related_user.Related user(
                                     username = 'louise.data', ), )
                             ], 
                         first_published_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        created_by = openapi_client.models.related_user.Related user(
+                        created_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), )
                     ]
             )

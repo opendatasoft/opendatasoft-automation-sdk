@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.update_dataset404_response import UpdateDataset404Response
+from opendatasoft_automation.models.update_dataset404_response import UpdateDataset404Response
 
 class TestUpdateDataset404Response(unittest.TestCase):
     """UpdateDataset404Response unit test stubs"""

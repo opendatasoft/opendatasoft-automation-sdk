@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.abort_harvester400_response import AbortHarvester400Response
+from opendatasoft_automation.models.abort_harvester400_response import AbortHarvester400Response
 
 # TODO update the JSON string below
 json = "{}"

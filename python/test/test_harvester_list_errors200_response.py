@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.harvester_list_errors200_response import HarvesterListErrors200Response
+from opendatasoft_automation.models.harvester_list_errors200_response import HarvesterListErrors200Response
 
 class TestHarvesterListErrors200Response(unittest.TestCase):
     """HarvesterListErrors200Response unit test stubs"""

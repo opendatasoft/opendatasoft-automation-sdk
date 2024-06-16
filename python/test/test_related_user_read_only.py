@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.related_user_read_only import RelatedUserReadOnly
+from opendatasoft_automation.models.related_user_read_only import RelatedUserReadOnly
 
 class TestRelatedUserReadOnly(unittest.TestCase):
     """RelatedUserReadOnly unit test stubs"""

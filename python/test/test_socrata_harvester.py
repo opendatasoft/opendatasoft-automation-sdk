@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.socrata_harvester import SocrataHarvester
+from opendatasoft_automation.models.socrata_harvester import SocrataHarvester
 
 class TestSocrataHarvester(unittest.TestCase):
     """SocrataHarvester unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.explore_limits_api_calls import ExploreLimitsApiCalls
+from opendatasoft_automation.models.explore_limits_api_calls import ExploreLimitsApiCalls
 
 class TestExploreLimitsApiCalls(unittest.TestCase):
     """ExploreLimitsApiCalls unit test stubs"""

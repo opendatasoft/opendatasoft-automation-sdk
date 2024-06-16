@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.related_user import RelatedUser
+from opendatasoft_automation.models.related_user import RelatedUser
 
 # TODO update the JSON string below
 json = "{}"

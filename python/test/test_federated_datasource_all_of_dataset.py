@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.federated_datasource_all_of_dataset import FederatedDatasourceAllOfDataset
+from opendatasoft_automation.models.federated_datasource_all_of_dataset import FederatedDatasourceAllOfDataset
 
 class TestFederatedDatasourceAllOfDataset(unittest.TestCase):
     """FederatedDatasourceAllOfDataset unit test stubs"""
@@ -37,7 +37,7 @@ class TestFederatedDatasourceAllOfDataset(unittest.TestCase):
         if include_optional:
             return FederatedDatasourceAllOfDataset(
                 dataset_id = '',
-                metas = openapi_client.models.metas.metas(),
+                metas = opendatasoft_automation.models.metas.metas(),
                 fields = [
                     None
                     ]

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.annotate_dataset_field_configuration import AnnotateDatasetFieldConfiguration
+from opendatasoft_automation.models.annotate_dataset_field_configuration import AnnotateDatasetFieldConfiguration
 
 # TODO update the JSON string below
 json = "{}"

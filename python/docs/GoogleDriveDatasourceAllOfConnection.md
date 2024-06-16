@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.google_drive_datasource_all_of_connection import GoogleDriveDatasourceAllOfConnection
+from opendatasoft_automation.models.google_drive_datasource_all_of_connection import GoogleDriveDatasourceAllOfConnection
 
 # TODO update the JSON string below
 json = "{}"

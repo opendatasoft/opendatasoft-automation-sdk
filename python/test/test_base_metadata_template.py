@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.base_metadata_template import BaseMetadataTemplate
+from opendatasoft_automation.models.base_metadata_template import BaseMetadataTemplate
 
 class TestBaseMetadataTemplate(unittest.TestCase):
     """BaseMetadataTemplate unit test stubs"""
@@ -42,7 +42,7 @@ class TestBaseMetadataTemplate(unittest.TestCase):
                 is_always_active = False,
                 is_system = False,
                 var_schema = [
-                    openapi_client.models.metadata_template_field.MetadataTemplateField(
+                    opendatasoft_automation.models.metadata_template_field.MetadataTemplateField(
                         name = 'my-custom-field', 
                         type = 'text', 
                         label = 'My custom field', 
@@ -63,10 +63,10 @@ class TestBaseMetadataTemplate(unittest.TestCase):
                         requirement_level = 'optional', )
                     ],
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                created_by = openapi_client.models.related_user.Related user(
+                created_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', ),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated_by = openapi_client.models.related_user.Related user(
+                updated_by = opendatasoft_automation.models.related_user.Related user(
                     username = 'louise.data', )
             )
         else:
@@ -75,7 +75,7 @@ class TestBaseMetadataTemplate(unittest.TestCase):
                 title = 'My custom template',
                 is_active = True,
                 var_schema = [
-                    openapi_client.models.metadata_template_field.MetadataTemplateField(
+                    opendatasoft_automation.models.metadata_template_field.MetadataTemplateField(
                         name = 'my-custom-field', 
                         type = 'text', 
                         label = 'My custom field', 

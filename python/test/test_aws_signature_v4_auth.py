@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.aws_signature_v4_auth import AWSSignatureV4Auth
+from opendatasoft_automation.models.aws_signature_v4_auth import AWSSignatureV4Auth
 
 class TestAWSSignatureV4Auth(unittest.TestCase):
     """AWSSignatureV4Auth unit test stubs"""

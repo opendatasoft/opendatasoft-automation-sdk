@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_code_editor_pages200_response import ListCodeEditorPages200Response
+from opendatasoft_automation.models.list_code_editor_pages200_response import ListCodeEditorPages200Response
 
 class TestListCodeEditorPages200Response(unittest.TestCase):
     """ListCodeEditorPages200Response unit test stubs"""
@@ -36,11 +36,11 @@ class TestListCodeEditorPages200Response(unittest.TestCase):
         model = ListCodeEditorPages200Response()
         if include_optional:
             return ListCodeEditorPages200Response(
-                total_count = 56,
+                total_count = '',
                 next = '',
                 previous = '',
                 results = [
-                    openapi_client.models.code_editor_page_schema.Code editor page schema(
+                    opendatasoft_automation.models.code_editor_page_schema.Code editor page schema(
                         slug = 'hello_world', 
                         title = {"en":"Hello world"}, 
                         description = 'A page saying hello', 
@@ -51,9 +51,9 @@ class TestListCodeEditorPages200Response(unittest.TestCase):
                         is_pushed_by_parent = False, 
                         is_restricted = True, 
                         is_archived = False, 
-                        created_by = openapi_client.models.related_user.Related user(
+                        created_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
-                        updated_by = openapi_client.models.related_user.Related user(
+                        updated_by = opendatasoft_automation.models.related_user.Related user(
                             username = 'louise.data', ), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

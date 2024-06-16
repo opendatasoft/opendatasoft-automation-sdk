@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.user_group import UserGroup
+from opendatasoft_automation.models.user_group import UserGroup
 
 # TODO update the JSON string below
 json = "{}"

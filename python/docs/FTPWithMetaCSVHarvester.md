@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ftp_with_meta_csv_harvester import FTPWithMetaCSVHarvester
+from opendatasoft_automation.models.ftp_with_meta_csv_harvester import FTPWithMetaCSVHarvester
 
 # TODO update the JSON string below
 json = "{}"

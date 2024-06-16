@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.quandl_harvester import QuandlHarvester
+from opendatasoft_automation.models.quandl_harvester import QuandlHarvester
 
 class TestQuandlHarvester(unittest.TestCase):
     """QuandlHarvester unit test stubs"""

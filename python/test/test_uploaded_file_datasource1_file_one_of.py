@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf
+from opendatasoft_automation.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf
 
 class TestUploadedFileDatasource1FileOneOf(unittest.TestCase):
     """UploadedFileDatasource1FileOneOf unit test stubs"""

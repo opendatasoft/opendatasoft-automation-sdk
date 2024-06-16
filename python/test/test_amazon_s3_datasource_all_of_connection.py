@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.amazon_s3_datasource_all_of_connection import AmazonS3DatasourceAllOfConnection
+from opendatasoft_automation.models.amazon_s3_datasource_all_of_connection import AmazonS3DatasourceAllOfConnection
 
 class TestAmazonS3DatasourceAllOfConnection(unittest.TestCase):
     """AmazonS3DatasourceAllOfConnection unit test stubs"""

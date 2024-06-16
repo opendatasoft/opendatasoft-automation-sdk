@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.google_drive_datasource import GoogleDriveDatasource
+from opendatasoft_automation.models.google_drive_datasource import GoogleDriveDatasource
 
 # TODO update the JSON string below
 json = "{}"

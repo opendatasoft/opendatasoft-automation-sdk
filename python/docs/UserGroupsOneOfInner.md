@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.user_groups_one_of_inner import UserGroupsOneOfInner
+from opendatasoft_automation.models.user_groups_one_of_inner import UserGroupsOneOfInner
 
 # TODO update the JSON string below
 json = "{}"

@@ -49,7 +49,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dataset_metadata_visualization import DatasetMetadataVisualization
+from opendatasoft_automation.models.dataset_metadata_visualization import DatasetMetadataVisualization
 
 # TODO update the JSON string below
 json = "{}"

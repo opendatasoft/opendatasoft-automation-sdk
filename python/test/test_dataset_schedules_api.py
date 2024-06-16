@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_schedules_api import DatasetSchedulesApi
+from opendatasoft_automation.api.dataset_schedules_api import DatasetSchedulesApi
 
 
 class TestDatasetSchedulesApi(unittest.TestCase):

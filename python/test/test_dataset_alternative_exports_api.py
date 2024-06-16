@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_alternative_exports_api import DatasetAlternativeExportsApi
+from opendatasoft_automation.api.dataset_alternative_exports_api import DatasetAlternativeExportsApi
 
 
 class TestDatasetAlternativeExportsApi(unittest.TestCase):

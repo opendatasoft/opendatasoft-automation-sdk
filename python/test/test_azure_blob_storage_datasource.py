@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.azure_blob_storage_datasource import AzureBlobStorageDatasource
+from opendatasoft_automation.models.azure_blob_storage_datasource import AzureBlobStorageDatasource
 
 class TestAzureBlobStorageDatasource(unittest.TestCase):
     """AzureBlobStorageDatasource unit test stubs"""
@@ -38,7 +38,7 @@ class TestAzureBlobStorageDatasource(unittest.TestCase):
             return AzureBlobStorageDatasource(
                 url = 'https://storage-account-name.blob.core.windows.net/file.csv',
                 headers = [
-                    openapi_client.models.http_datasource_1_headers.HTTPDatasource_1_headers(
+                    opendatasoft_automation.models.http_datasource_1_headers.HTTPDatasource_1_headers(
                         name = '', 
                         value = '', )
                     ],

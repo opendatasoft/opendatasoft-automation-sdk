@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.http_auth import HTTPAuth
+from opendatasoft_automation.models.http_auth import HTTPAuth
 
 class TestHTTPAuth(unittest.TestCase):
     """HTTPAuth unit test stubs"""

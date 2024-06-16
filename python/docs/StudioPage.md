@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.studio_page import StudioPage
+from opendatasoft_automation.models.studio_page import StudioPage
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.datagouv_harvester import DatagouvHarvester
+from opendatasoft_automation.models.datagouv_harvester import DatagouvHarvester
 
 # TODO update the JSON string below
 json = "{}"

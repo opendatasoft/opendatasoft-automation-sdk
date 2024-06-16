@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.url_dataset_alternative_export import URLDatasetAlternativeExport
+from opendatasoft_automation.models.url_dataset_alternative_export import URLDatasetAlternativeExport
 
 class TestURLDatasetAlternativeExport(unittest.TestCase):
     """URLDatasetAlternativeExport unit test stubs"""

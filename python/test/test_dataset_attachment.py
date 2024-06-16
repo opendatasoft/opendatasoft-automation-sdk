@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_attachment import DatasetAttachment
+from opendatasoft_automation.models.dataset_attachment import DatasetAttachment
 
 class TestDatasetAttachment(unittest.TestCase):
     """DatasetAttachment unit test stubs"""

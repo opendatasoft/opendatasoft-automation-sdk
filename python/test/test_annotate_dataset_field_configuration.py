@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.annotate_dataset_field_configuration import AnnotateDatasetFieldConfiguration
+from opendatasoft_automation.models.annotate_dataset_field_configuration import AnnotateDatasetFieldConfiguration
 
 class TestAnnotateDatasetFieldConfiguration(unittest.TestCase):
     """AnnotateDatasetFieldConfiguration unit test stubs"""

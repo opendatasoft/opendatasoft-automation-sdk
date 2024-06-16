@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.dataset_metadata_visualization import DatasetMetadataVisualization
+from opendatasoft_automation.models.dataset_metadata_visualization import DatasetMetadataVisualization
 
 class TestDatasetMetadataVisualization(unittest.TestCase):
     """DatasetMetadataVisualization unit test stubs"""

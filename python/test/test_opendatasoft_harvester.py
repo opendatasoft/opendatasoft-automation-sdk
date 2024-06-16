@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.opendatasoft_harvester import OpendatasoftHarvester
+from opendatasoft_automation.models.opendatasoft_harvester import OpendatasoftHarvester
 
 class TestOpendatasoftHarvester(unittest.TestCase):
     """OpendatasoftHarvester unit test stubs"""

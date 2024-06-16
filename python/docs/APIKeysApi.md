@@ -1,4 +1,4 @@
-# openapi_client.APIKeysApi
+# opendatasoft_automation.APIKeysApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -25,14 +25,14 @@ Retrieve an API key
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.api_key import APIKey
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.api_key import APIKey
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -54,9 +54,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIKeysApi(api_client)
+    api_instance = opendatasoft_automation.APIKeysApi(api_client)
     apikey_uid = 'ak_qf2hyt' # str | 
     expand = 'expand_example' # str | The list of fields to expand. (optional)
 
@@ -115,14 +115,14 @@ List API keys
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.get_apikeys200_response import GetApikeys200Response
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.get_apikeys200_response import GetApikeys200Response
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -144,9 +144,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIKeysApi(api_client)
+    api_instance = opendatasoft_automation.APIKeysApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
 
@@ -204,14 +204,14 @@ Create an API key
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.api_key import APIKey
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.api_key import APIKey
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -233,10 +233,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIKeysApi(api_client)
-    api_key = openapi_client.APIKey() # APIKey |  (optional)
+    api_instance = opendatasoft_automation.APIKeysApi(api_client)
+    api_key = opendatasoft_automation.APIKey() # APIKey |  (optional)
 
     try:
         # Create an API key
@@ -292,15 +292,15 @@ Revoke an API key so that it is no longer valid. The reason for revocation can b
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.api_key import APIKey
-from openapi_client.models.post_apikeys_apikey_uid_revoke_request import PostApikeysApikeyUidRevokeRequest
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.api_key import APIKey
+from opendatasoft_automation.models.post_apikeys_apikey_uid_revoke_request import PostApikeysApikeyUidRevokeRequest
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -322,11 +322,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIKeysApi(api_client)
+    api_instance = opendatasoft_automation.APIKeysApi(api_client)
     apikey_uid = 'ak_qf2hyt' # str | 
-    post_apikeys_apikey_uid_revoke_request = openapi_client.PostApikeysApikeyUidRevokeRequest() # PostApikeysApikeyUidRevokeRequest |  (optional)
+    post_apikeys_apikey_uid_revoke_request = opendatasoft_automation.PostApikeysApikeyUidRevokeRequest() # PostApikeysApikeyUidRevokeRequest |  (optional)
 
     try:
         # Revoke an API key
@@ -383,14 +383,14 @@ Update an API key
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.api_key import APIKey
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.api_key import APIKey
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -412,11 +412,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIKeysApi(api_client)
+    api_instance = opendatasoft_automation.APIKeysApi(api_client)
     apikey_uid = 'ak_qf2hyt' # str | 
-    api_key = openapi_client.APIKey() # APIKey |  (optional)
+    api_key = opendatasoft_automation.APIKey() # APIKey |  (optional)
 
     try:
         # Update an API key
@@ -474,15 +474,15 @@ Domain administrators can search for a specific API key, revoked or active.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.search_apikey200_response import SearchApikey200Response
-from openapi_client.models.search_apikey_request import SearchApikeyRequest
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.search_apikey200_response import SearchApikey200Response
+from opendatasoft_automation.models.search_apikey_request import SearchApikeyRequest
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -504,10 +504,10 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.APIKeysApi(api_client)
-    search_apikey_request = openapi_client.SearchApikeyRequest() # SearchApikeyRequest |  (optional)
+    api_instance = opendatasoft_automation.APIKeysApi(api_client)
+    search_apikey_request = opendatasoft_automation.SearchApikeyRequest() # SearchApikeyRequest |  (optional)
 
     try:
         # Search an API key

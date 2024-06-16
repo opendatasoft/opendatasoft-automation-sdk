@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.metadata_templates_api import MetadataTemplatesApi
+from opendatasoft_automation.api.metadata_templates_api import MetadataTemplatesApi
 
 
 class TestMetadataTemplatesApi(unittest.TestCase):

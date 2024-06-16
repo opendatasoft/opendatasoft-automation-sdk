@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.api.dataset_fields_api import DatasetFieldsApi
+from opendatasoft_automation.api.dataset_fields_api import DatasetFieldsApi
 
 
 class TestDatasetFieldsApi(unittest.TestCase):

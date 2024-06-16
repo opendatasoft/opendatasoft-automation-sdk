@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.uploaded_file_dataset_alternative_export import UploadedFileDatasetAlternativeExport
+from opendatasoft_automation.models.uploaded_file_dataset_alternative_export import UploadedFileDatasetAlternativeExport
 
 class TestUploadedFileDatasetAlternativeExport(unittest.TestCase):
     """UploadedFileDatasetAlternativeExport unit test stubs"""

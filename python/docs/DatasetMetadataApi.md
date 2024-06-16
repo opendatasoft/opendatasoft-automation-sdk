@@ -1,4 +1,4 @@
-# openapi_client.DatasetMetadataApi
+# opendatasoft_automation.DatasetMetadataApi
 
 All URIs are relative to *https://documentation-resources.opendatasoft.com/api/automation/v1.0*
 
@@ -26,13 +26,13 @@ Delete the metadata with the given name within the given template.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -54,9 +54,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     template_name = 'template_name' # str | Metadata template name
     template_field_name = 'field_name' # str | Metadata template field name
@@ -115,14 +115,14 @@ Returns the set of metadata for the dataset with the given UID.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_metadata import DatasetMetadata
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_metadata import DatasetMetadata
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -144,9 +144,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
 
     try:
@@ -203,14 +203,14 @@ Returns the set of metadata within the given template for the dataset.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_metadata_template import DatasetMetadataTemplate
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_metadata_template import DatasetMetadataTemplate
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -232,9 +232,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     template_name = 'template_name' # str | Metadata template name
 
@@ -293,14 +293,14 @@ Retrieve the metadata with the given name within the given template.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_metadata_value import DatasetMetadataValue
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -322,9 +322,9 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     template_name = 'template_name' # str | Metadata template name
     template_field_name = 'field_name' # str | Metadata template field name
@@ -385,14 +385,14 @@ Update all dataset metadata at once. This operation replaces the dataset metadat
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_metadata import DatasetMetadata
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_metadata import DatasetMetadata
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -414,11 +414,11 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    dataset_metadata = openapi_client.DatasetMetadata() # DatasetMetadata |  (optional)
+    dataset_metadata = opendatasoft_automation.DatasetMetadata() # DatasetMetadata |  (optional)
 
     try:
         # Update all dataset metadata
@@ -476,14 +476,14 @@ Update dataset metadata within a given template. This operation replaces the dat
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_metadata_template import DatasetMetadataTemplate
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_metadata_template import DatasetMetadataTemplate
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -505,12 +505,12 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     template_name = 'template_name' # str | Metadata template name
-    dataset_metadata_template = openapi_client.DatasetMetadataTemplate() # DatasetMetadataTemplate |  (optional)
+    dataset_metadata_template = opendatasoft_automation.DatasetMetadataTemplate() # DatasetMetadataTemplate |  (optional)
 
     try:
         # Update a template's dataset metadata
@@ -569,14 +569,14 @@ Update the metadata with the given name within the given template.
 * Api Key Authentication (QueryAPIKey):
 
 ```python
-import openapi_client
-from openapi_client.models.dataset_metadata_value import DatasetMetadataValue
-from openapi_client.rest import ApiException
+import opendatasoft_automation
+from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue
+from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://documentation-resources.opendatasoft.com/api/automation/v1.0
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = opendatasoft_automation.Configuration(
     host = "https://documentation-resources.opendatasoft.com/api/automation/v1.0"
 )
 
@@ -598,13 +598,13 @@ configuration.api_key['QueryAPIKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['QueryAPIKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DatasetMetadataApi(api_client)
+    api_instance = opendatasoft_automation.DatasetMetadataApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
     template_name = 'template_name' # str | Metadata template name
     template_field_name = 'field_name' # str | Metadata template field name
-    dataset_metadata_value = openapi_client.DatasetMetadataValue() # DatasetMetadataValue |  (optional)
+    dataset_metadata_value = opendatasoft_automation.DatasetMetadataValue() # DatasetMetadataValue |  (optional)
 
     try:
         # Update a metadata

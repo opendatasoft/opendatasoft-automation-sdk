@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.oidc_auth import OIDCAuth
+from opendatasoft_automation.models.oidc_auth import OIDCAuth
 
 class TestOIDCAuth(unittest.TestCase):
     """OIDCAuth unit test stubs"""

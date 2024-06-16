@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.httpoidc_auth import HTTPOIDCAuth
+from opendatasoft_automation.models.httpoidc_auth import HTTPOIDCAuth
 
 # TODO update the JSON string below
 json = "{}"

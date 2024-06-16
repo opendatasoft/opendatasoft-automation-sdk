@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.metadata_template_field_suggestions_exhaustive import MetadataTemplateFieldSuggestionsExhaustive
+from opendatasoft_automation.models.metadata_template_field_suggestions_exhaustive import MetadataTemplateFieldSuggestionsExhaustive
 
 class TestMetadataTemplateFieldSuggestionsExhaustive(unittest.TestCase):
     """MetadataTemplateFieldSuggestionsExhaustive unit test stubs"""

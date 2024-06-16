@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.list_images200_response_all_of_results_inner import ListImages200ResponseAllOfResultsInner
+from opendatasoft_automation.models.list_images200_response_all_of_results_inner import ListImages200ResponseAllOfResultsInner
 
 class TestListImages200ResponseAllOfResultsInner(unittest.TestCase):
     """ListImages200ResponseAllOfResultsInner unit test stubs"""

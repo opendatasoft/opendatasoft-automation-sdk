@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.abort_harvester400_response import AbortHarvester400Response
+from opendatasoft_automation.models.abort_harvester400_response import AbortHarvester400Response
 
 class TestAbortHarvester400Response(unittest.TestCase):
     """AbortHarvester400Response unit test stubs"""

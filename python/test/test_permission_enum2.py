@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.permission_enum2 import PermissionEnum2
+from opendatasoft_automation.models.permission_enum2 import PermissionEnum2
 
 class TestPermissionEnum2(unittest.TestCase):
     """PermissionEnum2 unit test stubs"""

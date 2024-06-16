@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.user_security import UserSecurity
+from opendatasoft_automation.models.user_security import UserSecurity
 
 # TODO update the JSON string below
 json = "{}"

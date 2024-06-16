@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.arcgis_harvester import ArcgisHarvester
+from opendatasoft_automation.models.arcgis_harvester import ArcgisHarvester
 
 class TestArcgisHarvester(unittest.TestCase):
     """ArcgisHarvester unit test stubs"""

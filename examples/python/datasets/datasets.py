@@ -83,6 +83,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     conf = Configuration(host=args.baseurl)
-    conf.api_key["HeaderAPIKey"] = f"ApiKey {args.apikey}"
+    conf.api_key["HeaderAPIKey"] = args.apikey
+    conf.api_key_prefix['HeaderAPIKey'] = "ApiKey"
 
     args.func(conf, args)

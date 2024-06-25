@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.azure_blob_storage_connection import AzureBlobStorageConnection
 from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 AZUREBLOBSTORAGEDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["AzureBlobStorageConnection", "HTTPDatasource1ConnectionOneOf"]
@@ -35,7 +35,7 @@ class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
     # data type: AzureBlobStorageConnection
     oneof_schema_2_validator: Optional[AzureBlobStorageConnection] = None
     actual_instance: Optional[Union[AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf]] = None
-    one_of_schemas: List[str] = Field(default=Literal["AzureBlobStorageConnection", "HTTPDatasource1ConnectionOneOf"])
+    one_of_schemas: Set[str] = { "AzureBlobStorageConnection", "HTTPDatasource1ConnectionOneOf" }
 
     model_config = ConfigDict(
         validate_assignment=True,

@@ -22,7 +22,7 @@ print(HTTPDatasource1Connection.to_json())
 # convert the object into a dict
 http_datasource1_connection_dict = http_datasource1_connection_instance.to_dict()
 # create an instance of HTTPDatasource1Connection from a dict
-http_datasource1_connection_form_dict = http_datasource1_connection.from_dict(http_datasource1_connection_dict)
+http_datasource1_connection_from_dict = HTTPDatasource1Connection.from_dict(http_datasource1_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

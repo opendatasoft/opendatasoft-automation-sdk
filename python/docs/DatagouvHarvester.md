@@ -27,7 +27,7 @@ print(DatagouvHarvester.to_json())
 # convert the object into a dict
 datagouv_harvester_dict = datagouv_harvester_instance.to_dict()
 # create an instance of DatagouvHarvester from a dict
-datagouv_harvester_form_dict = datagouv_harvester.from_dict(datagouv_harvester_dict)
+datagouv_harvester_from_dict = DatagouvHarvester.from_dict(datagouv_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(RenameDatasetFieldConfiguration.to_json())
 # convert the object into a dict
 rename_dataset_field_configuration_dict = rename_dataset_field_configuration_instance.to_dict()
 # create an instance of RenameDatasetFieldConfiguration from a dict
-rename_dataset_field_configuration_form_dict = rename_dataset_field_configuration.from_dict(rename_dataset_field_configuration_dict)
+rename_dataset_field_configuration_from_dict = RenameDatasetFieldConfiguration.from_dict(rename_dataset_field_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

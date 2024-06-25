@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**field** | **str** | The technical identifier of the field you want to delete | 
+**var_field** | **str** | The technical identifier of the field you want to delete | 
 
 ## Example
 
@@ -22,7 +22,7 @@ print(DeleteDatasetFieldConfiguration.to_json())
 # convert the object into a dict
 delete_dataset_field_configuration_dict = delete_dataset_field_configuration_instance.to_dict()
 # create an instance of DeleteDatasetFieldConfiguration from a dict
-delete_dataset_field_configuration_form_dict = delete_dataset_field_configuration.from_dict(delete_dataset_field_configuration_dict)
+delete_dataset_field_configuration_from_dict = DeleteDatasetFieldConfiguration.from_dict(delete_dataset_field_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

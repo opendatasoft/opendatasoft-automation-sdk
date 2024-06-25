@@ -31,7 +31,7 @@ print(CKANHarvester.to_json())
 # convert the object into a dict
 ckan_harvester_dict = ckan_harvester_instance.to_dict()
 # create an instance of CKANHarvester from a dict
-ckan_harvester_form_dict = ckan_harvester.from_dict(ckan_harvester_dict)
+ckan_harvester_from_dict = CKANHarvester.from_dict(ckan_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

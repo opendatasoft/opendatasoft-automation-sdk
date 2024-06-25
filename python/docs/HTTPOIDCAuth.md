@@ -28,7 +28,7 @@ print(HTTPOIDCAuth.to_json())
 # convert the object into a dict
 httpoidc_auth_dict = httpoidc_auth_instance.to_dict()
 # create an instance of HTTPOIDCAuth from a dict
-httpoidc_auth_form_dict = httpoidc_auth.from_dict(httpoidc_auth_dict)
+httpoidc_auth_from_dict = HTTPOIDCAuth.from_dict(httpoidc_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **dataset_count** | **float** | Number of datasets using this connection | [optional] [readonly] 
 **user_count** | **float** | Number of users with explicit access to this connection | [optional] [readonly] 
 **group_count** | **float** | Number of user groups with explicit access to this connection | [optional] [readonly] 
-**created_at** | **date** |  | [optional] [readonly] 
-**updated_at** | **date** |  | [optional] [readonly] 
+**created_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime** |  | [optional] [readonly] 
 
 ## Example
 
@@ -31,7 +31,7 @@ print(Connection.to_json())
 # convert the object into a dict
 connection_dict = connection_instance.to_dict()
 # create an instance of Connection from a dict
-connection_form_dict = connection.from_dict(connection_dict)
+connection_from_dict = Connection.from_dict(connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

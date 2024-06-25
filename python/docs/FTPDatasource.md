@@ -23,7 +23,7 @@ print(FTPDatasource.to_json())
 # convert the object into a dict
 ftp_datasource_dict = ftp_datasource_instance.to_dict()
 # create an instance of FTPDatasource from a dict
-ftp_datasource_form_dict = ftp_datasource.from_dict(ftp_datasource_dict)
+ftp_datasource_from_dict = FTPDatasource.from_dict(ftp_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

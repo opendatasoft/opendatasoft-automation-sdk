@@ -23,7 +23,7 @@ print(DatasetGroupSecurityGroup.to_json())
 # convert the object into a dict
 dataset_group_security_group_dict = dataset_group_security_group_instance.to_dict()
 # create an instance of DatasetGroupSecurityGroup from a dict
-dataset_group_security_group_form_dict = dataset_group_security_group.from_dict(dataset_group_security_group_dict)
+dataset_group_security_group_from_dict = DatasetGroupSecurityGroup.from_dict(dataset_group_security_group_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -77,7 +77,7 @@ print(DatasetMetadataTemplate.to_json())
 # convert the object into a dict
 dataset_metadata_template_dict = dataset_metadata_template_instance.to_dict()
 # create an instance of DatasetMetadataTemplate from a dict
-dataset_metadata_template_form_dict = dataset_metadata_template.from_dict(dataset_metadata_template_dict)
+dataset_metadata_template_from_dict = DatasetMetadataTemplate.from_dict(dataset_metadata_template_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

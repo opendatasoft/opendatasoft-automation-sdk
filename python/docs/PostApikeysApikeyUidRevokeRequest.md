@@ -22,7 +22,7 @@ print(PostApikeysApikeyUidRevokeRequest.to_json())
 # convert the object into a dict
 post_apikeys_apikey_uid_revoke_request_dict = post_apikeys_apikey_uid_revoke_request_instance.to_dict()
 # create an instance of PostApikeysApikeyUidRevokeRequest from a dict
-post_apikeys_apikey_uid_revoke_request_form_dict = post_apikeys_apikey_uid_revoke_request.from_dict(post_apikeys_apikey_uid_revoke_request_dict)
+post_apikeys_apikey_uid_revoke_request_from_dict = PostApikeysApikeyUidRevokeRequest.from_dict(post_apikeys_apikey_uid_revoke_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

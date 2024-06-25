@@ -35,7 +35,7 @@ print(CodeEditorPage.to_json())
 # convert the object into a dict
 code_editor_page_dict = code_editor_page_instance.to_dict()
 # create an instance of CodeEditorPage from a dict
-code_editor_page_form_dict = code_editor_page.from_dict(code_editor_page_dict)
+code_editor_page_from_dict = CodeEditorPage.from_dict(code_editor_page_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

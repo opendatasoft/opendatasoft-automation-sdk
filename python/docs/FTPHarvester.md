@@ -28,7 +28,7 @@ print(FTPHarvester.to_json())
 # convert the object into a dict
 ftp_harvester_dict = ftp_harvester_instance.to_dict()
 # create an instance of FTPHarvester from a dict
-ftp_harvester_form_dict = ftp_harvester.from_dict(ftp_harvester_dict)
+ftp_harvester_from_dict = FTPHarvester.from_dict(ftp_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

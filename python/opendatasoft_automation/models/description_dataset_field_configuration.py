@@ -29,7 +29,7 @@ class DescriptionDatasetFieldConfiguration(DatasetFieldConfiguration):
     """
     DescriptionDatasetFieldConfiguration
     """ # noqa: E501
-    field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to describe")
+    var_field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to describe", alias="field")
     description: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The user friendly description")
     __properties: ClassVar[List[str]] = ["uid", "type", "label", "field", "description"]
 

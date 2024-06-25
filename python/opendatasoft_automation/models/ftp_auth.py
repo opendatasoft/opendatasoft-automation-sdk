@@ -99,7 +99,7 @@ class FTPAuth(BaseModel):
         """Create an instance of FTPAuth from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'basic_auth':
+        if object_type ==  'FTPBasicAuth':
             return import_module("opendatasoft_automation.models.ftp_basic_auth").FTPBasicAuth.from_dict(obj)
 
         raise ValueError("FTPAuth failed to lookup discriminator value from " +

@@ -22,7 +22,7 @@ print(GoogleDriveAuth.to_json())
 # convert the object into a dict
 google_drive_auth_dict = google_drive_auth_instance.to_dict()
 # create an instance of GoogleDriveAuth from a dict
-google_drive_auth_form_dict = google_drive_auth.from_dict(google_drive_auth_dict)
+google_drive_auth_from_dict = GoogleDriveAuth.from_dict(google_drive_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

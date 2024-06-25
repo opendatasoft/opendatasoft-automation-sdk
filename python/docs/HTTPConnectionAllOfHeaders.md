@@ -23,7 +23,7 @@ print(HTTPConnectionAllOfHeaders.to_json())
 # convert the object into a dict
 http_connection_all_of_headers_dict = http_connection_all_of_headers_instance.to_dict()
 # create an instance of HTTPConnectionAllOfHeaders from a dict
-http_connection_all_of_headers_form_dict = http_connection_all_of_headers.from_dict(http_connection_all_of_headers_dict)
+http_connection_all_of_headers_from_dict = HTTPConnectionAllOfHeaders.from_dict(http_connection_all_of_headers_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

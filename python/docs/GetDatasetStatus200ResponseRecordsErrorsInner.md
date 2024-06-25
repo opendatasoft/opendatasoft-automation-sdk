@@ -25,7 +25,7 @@ print(GetDatasetStatus200ResponseRecordsErrorsInner.to_json())
 # convert the object into a dict
 get_dataset_status200_response_records_errors_inner_dict = get_dataset_status200_response_records_errors_inner_instance.to_dict()
 # create an instance of GetDatasetStatus200ResponseRecordsErrorsInner from a dict
-get_dataset_status200_response_records_errors_inner_form_dict = get_dataset_status200_response_records_errors_inner.from_dict(get_dataset_status200_response_records_errors_inner_dict)
+get_dataset_status200_response_records_errors_inner_from_dict = GetDatasetStatus200ResponseRecordsErrorsInner.from_dict(get_dataset_status200_response_records_errors_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

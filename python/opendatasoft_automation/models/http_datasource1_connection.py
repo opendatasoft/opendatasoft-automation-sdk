@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.http_connection import HTTPConnection
 from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 HTTPDATASOURCE1CONNECTION_ONE_OF_SCHEMAS = ["HTTPConnection", "HTTPDatasource1ConnectionOneOf"]
@@ -35,7 +35,7 @@ class HTTPDatasource1Connection(BaseModel):
     # data type: HTTPConnection
     oneof_schema_2_validator: Optional[HTTPConnection] = None
     actual_instance: Optional[Union[HTTPConnection, HTTPDatasource1ConnectionOneOf]] = None
-    one_of_schemas: List[str] = Field(default=Literal["HTTPConnection", "HTTPDatasource1ConnectionOneOf"])
+    one_of_schemas: Set[str] = { "HTTPConnection", "HTTPDatasource1ConnectionOneOf" }
 
     model_config = ConfigDict(
         validate_assignment=True,

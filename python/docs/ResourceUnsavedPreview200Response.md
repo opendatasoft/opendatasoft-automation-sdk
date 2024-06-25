@@ -23,7 +23,7 @@ print(ResourceUnsavedPreview200Response.to_json())
 # convert the object into a dict
 resource_unsaved_preview200_response_dict = resource_unsaved_preview200_response_instance.to_dict()
 # create an instance of ResourceUnsavedPreview200Response from a dict
-resource_unsaved_preview200_response_form_dict = resource_unsaved_preview200_response.from_dict(resource_unsaved_preview200_response_dict)
+resource_unsaved_preview200_response_from_dict = ResourceUnsavedPreview200Response.from_dict(resource_unsaved_preview200_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

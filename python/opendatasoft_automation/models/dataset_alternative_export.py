@@ -122,9 +122,9 @@ class DatasetAlternativeExport(BaseModel):
         """Create an instance of DatasetAlternativeExport from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'uploaded_file':
+        if object_type ==  'UploadedFileDatasetAlternativeExport':
             return import_module("opendatasoft_automation.models.uploaded_file_dataset_alternative_export").UploadedFileDatasetAlternativeExport.from_dict(obj)
-        if object_type ==  'url':
+        if object_type ==  'URLDatasetAlternativeExport':
             return import_module("opendatasoft_automation.models.url_dataset_alternative_export").URLDatasetAlternativeExport.from_dict(obj)
 
         raise ValueError("DatasetAlternativeExport failed to lookup discriminator value from " +

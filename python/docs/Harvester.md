@@ -40,7 +40,7 @@ print(Harvester.to_json())
 # convert the object into a dict
 harvester_dict = harvester_instance.to_dict()
 # create an instance of Harvester from a dict
-harvester_form_dict = harvester.from_dict(harvester_dict)
+harvester_from_dict = Harvester.from_dict(harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

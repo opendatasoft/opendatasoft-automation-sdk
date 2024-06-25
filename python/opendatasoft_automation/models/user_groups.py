@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.user_group import UserGroup
 from opendatasoft_automation.models.user_groups_one_of_inner import UserGroupsOneOfInner
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 USERGROUPS_ONE_OF_SCHEMAS = ["List[UserGroup]", "List[UserGroupsOneOfInner]"]
@@ -35,7 +35,7 @@ class UserGroups(BaseModel):
     # data type: List[UserGroup]
     oneof_schema_2_validator: Optional[List[UserGroup]] = None
     actual_instance: Optional[Union[List[UserGroup], List[UserGroupsOneOfInner]]] = None
-    one_of_schemas: List[str] = Field(default=Literal["List[UserGroup]", "List[UserGroupsOneOfInner]"])
+    one_of_schemas: Set[str] = { "List[UserGroup]", "List[UserGroupsOneOfInner]" }
 
     model_config = ConfigDict(
         validate_assignment=True,

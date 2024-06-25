@@ -30,7 +30,7 @@ print(CSWHarvester.to_json())
 # convert the object into a dict
 csw_harvester_dict = csw_harvester_instance.to_dict()
 # create an instance of CSWHarvester from a dict
-csw_harvester_form_dict = csw_harvester.from_dict(csw_harvester_dict)
+csw_harvester_from_dict = CSWHarvester.from_dict(csw_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

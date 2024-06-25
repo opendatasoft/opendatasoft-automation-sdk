@@ -22,7 +22,7 @@ print(UploadedFileDatasource.to_json())
 # convert the object into a dict
 uploaded_file_datasource_dict = uploaded_file_datasource_instance.to_dict()
 # create an instance of UploadedFileDatasource from a dict
-uploaded_file_datasource_form_dict = uploaded_file_datasource.from_dict(uploaded_file_datasource_dict)
+uploaded_file_datasource_from_dict = UploadedFileDatasource.from_dict(uploaded_file_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

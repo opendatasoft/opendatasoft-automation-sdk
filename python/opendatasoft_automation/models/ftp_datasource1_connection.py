@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.ftp_connection import FTPConnection
 from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 FTPDATASOURCE1CONNECTION_ONE_OF_SCHEMAS = ["FTPConnection", "HTTPDatasource1ConnectionOneOf"]
@@ -35,7 +35,7 @@ class FTPDatasource1Connection(BaseModel):
     # data type: FTPConnection
     oneof_schema_2_validator: Optional[FTPConnection] = None
     actual_instance: Optional[Union[FTPConnection, HTTPDatasource1ConnectionOneOf]] = None
-    one_of_schemas: List[str] = Field(default=Literal["FTPConnection", "HTTPDatasource1ConnectionOneOf"])
+    one_of_schemas: Set[str] = { "FTPConnection", "HTTPDatasource1ConnectionOneOf" }
 
     model_config = ConfigDict(
         validate_assignment=True,

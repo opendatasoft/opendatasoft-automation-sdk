@@ -32,7 +32,7 @@ print(BaseMetadataTemplate.to_json())
 # convert the object into a dict
 base_metadata_template_dict = base_metadata_template_instance.to_dict()
 # create an instance of BaseMetadataTemplate from a dict
-base_metadata_template_form_dict = base_metadata_template.from_dict(base_metadata_template_dict)
+base_metadata_template_from_dict = BaseMetadataTemplate.from_dict(base_metadata_template_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

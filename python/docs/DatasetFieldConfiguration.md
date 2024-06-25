@@ -25,7 +25,7 @@ print(DatasetFieldConfiguration.to_json())
 # convert the object into a dict
 dataset_field_configuration_dict = dataset_field_configuration_instance.to_dict()
 # create an instance of DatasetFieldConfiguration from a dict
-dataset_field_configuration_form_dict = dataset_field_configuration.from_dict(dataset_field_configuration_dict)
+dataset_field_configuration_from_dict = DatasetFieldConfiguration.from_dict(dataset_field_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

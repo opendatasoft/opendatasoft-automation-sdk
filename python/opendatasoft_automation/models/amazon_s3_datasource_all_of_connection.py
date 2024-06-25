@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.amazon_s3_connection import AmazonS3Connection
 from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 AMAZONS3DATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["AmazonS3Connection", "HTTPDatasource1ConnectionOneOf"]
@@ -35,7 +35,7 @@ class AmazonS3DatasourceAllOfConnection(BaseModel):
     # data type: AmazonS3Connection
     oneof_schema_2_validator: Optional[AmazonS3Connection] = None
     actual_instance: Optional[Union[AmazonS3Connection, HTTPDatasource1ConnectionOneOf]] = None
-    one_of_schemas: List[str] = Field(default=Literal["AmazonS3Connection", "HTTPDatasource1ConnectionOneOf"])
+    one_of_schemas: Set[str] = { "AmazonS3Connection", "HTTPDatasource1ConnectionOneOf" }
 
     model_config = ConfigDict(
         validate_assignment=True,

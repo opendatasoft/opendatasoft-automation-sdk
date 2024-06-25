@@ -22,7 +22,7 @@ print(GuessUnsavedResourceExtractorsRequest.to_json())
 # convert the object into a dict
 guess_unsaved_resource_extractors_request_dict = guess_unsaved_resource_extractors_request_instance.to_dict()
 # create an instance of GuessUnsavedResourceExtractorsRequest from a dict
-guess_unsaved_resource_extractors_request_form_dict = guess_unsaved_resource_extractors_request.from_dict(guess_unsaved_resource_extractors_request_dict)
+guess_unsaved_resource_extractors_request_from_dict = GuessUnsavedResourceExtractorsRequest.from_dict(guess_unsaved_resource_extractors_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

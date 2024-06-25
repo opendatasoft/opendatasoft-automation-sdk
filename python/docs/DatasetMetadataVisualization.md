@@ -61,7 +61,7 @@ print(DatasetMetadataVisualization.to_json())
 # convert the object into a dict
 dataset_metadata_visualization_dict = dataset_metadata_visualization_instance.to_dict()
 # create an instance of DatasetMetadataVisualization from a dict
-dataset_metadata_visualization_form_dict = dataset_metadata_visualization.from_dict(dataset_metadata_visualization_dict)
+dataset_metadata_visualization_from_dict = DatasetMetadataVisualization.from_dict(dataset_metadata_visualization_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

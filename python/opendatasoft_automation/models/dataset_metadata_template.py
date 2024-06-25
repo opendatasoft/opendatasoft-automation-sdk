@@ -23,7 +23,7 @@ from opendatasoft_automation.models.dataset_metadata_internal import DatasetMeta
 from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue
 from opendatasoft_automation.models.dataset_metadata_visualization import DatasetMetadataVisualization
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 DATASETMETADATATEMPLATE_ONE_OF_SCHEMAS = ["DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]"]
@@ -41,7 +41,7 @@ class DatasetMetadataTemplate(BaseModel):
     # data type: Dict[str, DatasetMetadataValue]
     oneof_schema_4_validator: Optional[Dict[str, DatasetMetadataValue]] = Field(default=None, description="Additional values for custom metadata templates you have configured on your portal.")
     actual_instance: Optional[Union[DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]]] = None
-    one_of_schemas: List[str] = Field(default=Literal["DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]"])
+    one_of_schemas: Set[str] = { "DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]" }
 
     model_config = ConfigDict(
         validate_assignment=True,

@@ -108,17 +108,17 @@ class DatasetFieldConfiguration(BaseModel):
         """Create an instance of DatasetFieldConfiguration from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'annotate':
+        if object_type ==  'AnnotateDatasetFieldConfiguration':
             return import_module("opendatasoft_automation.models.annotate_dataset_field_configuration").AnnotateDatasetFieldConfiguration.from_dict(obj)
-        if object_type ==  'delete':
+        if object_type ==  'DeleteDatasetFieldConfiguration':
             return import_module("opendatasoft_automation.models.delete_dataset_field_configuration").DeleteDatasetFieldConfiguration.from_dict(obj)
-        if object_type ==  'description':
+        if object_type ==  'DescriptionDatasetFieldConfiguration':
             return import_module("opendatasoft_automation.models.description_dataset_field_configuration").DescriptionDatasetFieldConfiguration.from_dict(obj)
-        if object_type ==  'order':
+        if object_type ==  'OrderDatasetFieldConfiguration':
             return import_module("opendatasoft_automation.models.order_dataset_field_configuration").OrderDatasetFieldConfiguration.from_dict(obj)
-        if object_type ==  'rename':
+        if object_type ==  'RenameDatasetFieldConfiguration':
             return import_module("opendatasoft_automation.models.rename_dataset_field_configuration").RenameDatasetFieldConfiguration.from_dict(obj)
-        if object_type ==  'type':
+        if object_type ==  'TypeDatasetFieldConfiguration':
             return import_module("opendatasoft_automation.models.type_dataset_field_configuration").TypeDatasetFieldConfiguration.from_dict(obj)
 
         raise ValueError("DatasetFieldConfiguration failed to lookup discriminator value from " +

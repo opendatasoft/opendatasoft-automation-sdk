@@ -29,7 +29,7 @@ class DeleteDatasetFieldConfiguration(DatasetFieldConfiguration):
     """
     DeleteDatasetFieldConfiguration
     """ # noqa: E501
-    field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to delete")
+    var_field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to delete", alias="field")
     __properties: ClassVar[List[str]] = ["uid", "type", "label", "field"]
 
     model_config = ConfigDict(

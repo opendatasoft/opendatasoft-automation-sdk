@@ -24,7 +24,7 @@ print(OpendatasoftHarvester.to_json())
 # convert the object into a dict
 opendatasoft_harvester_dict = opendatasoft_harvester_instance.to_dict()
 # create an instance of OpendatasoftHarvester from a dict
-opendatasoft_harvester_form_dict = opendatasoft_harvester.from_dict(opendatasoft_harvester_dict)
+opendatasoft_harvester_from_dict = OpendatasoftHarvester.from_dict(opendatasoft_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

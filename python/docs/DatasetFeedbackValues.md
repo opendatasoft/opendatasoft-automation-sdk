@@ -24,7 +24,7 @@ print(DatasetFeedbackValues.to_json())
 # convert the object into a dict
 dataset_feedback_values_dict = dataset_feedback_values_instance.to_dict()
 # create an instance of DatasetFeedbackValues from a dict
-dataset_feedback_values_form_dict = dataset_feedback_values.from_dict(dataset_feedback_values_dict)
+dataset_feedback_values_from_dict = DatasetFeedbackValues.from_dict(dataset_feedback_values_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

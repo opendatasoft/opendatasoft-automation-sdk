@@ -23,7 +23,7 @@ print(FTPBasicAuth.to_json())
 # convert the object into a dict
 ftp_basic_auth_dict = ftp_basic_auth_instance.to_dict()
 # create an instance of FTPBasicAuth from a dict
-ftp_basic_auth_form_dict = ftp_basic_auth.from_dict(ftp_basic_auth_dict)
+ftp_basic_auth_from_dict = FTPBasicAuth.from_dict(ftp_basic_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

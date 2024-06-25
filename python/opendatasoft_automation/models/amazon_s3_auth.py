@@ -100,9 +100,9 @@ class AmazonS3Auth(BaseModel):
         """Create an instance of AmazonS3Auth from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'aws_signature_v4':
+        if object_type ==  'AmazonS3AWSSignatureV4Auth':
             return import_module("opendatasoft_automation.models.amazon_s3_aws_signature_v4_auth").AmazonS3AWSSignatureV4Auth.from_dict(obj)
-        if object_type ==  'iam_role':
+        if object_type ==  'AmazonS3AWSIAMRoleAuth':
             return import_module("opendatasoft_automation.models.amazon_s3_awsiam_role_auth").AmazonS3AWSIAMRoleAuth.from_dict(obj)
 
         raise ValueError("AmazonS3Auth failed to lookup discriminator value from " +

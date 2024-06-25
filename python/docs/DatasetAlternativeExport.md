@@ -29,7 +29,7 @@ print(DatasetAlternativeExport.to_json())
 # convert the object into a dict
 dataset_alternative_export_dict = dataset_alternative_export_instance.to_dict()
 # create an instance of DatasetAlternativeExport from a dict
-dataset_alternative_export_form_dict = dataset_alternative_export.from_dict(dataset_alternative_export_dict)
+dataset_alternative_export_from_dict = DatasetAlternativeExport.from_dict(dataset_alternative_export_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

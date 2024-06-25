@@ -24,7 +24,7 @@ print(AzureBlobStorageDatasource.to_json())
 # convert the object into a dict
 azure_blob_storage_datasource_dict = azure_blob_storage_datasource_instance.to_dict()
 # create an instance of AzureBlobStorageDatasource from a dict
-azure_blob_storage_datasource_form_dict = azure_blob_storage_datasource.from_dict(azure_blob_storage_datasource_dict)
+azure_blob_storage_datasource_from_dict = AzureBlobStorageDatasource.from_dict(azure_blob_storage_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

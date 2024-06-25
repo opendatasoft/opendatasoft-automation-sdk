@@ -24,7 +24,7 @@ print(HTTPConnection.to_json())
 # convert the object into a dict
 http_connection_dict = http_connection_instance.to_dict()
 # create an instance of HTTPConnection from a dict
-http_connection_form_dict = http_connection.from_dict(http_connection_dict)
+http_connection_from_dict = HTTPConnection.from_dict(http_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

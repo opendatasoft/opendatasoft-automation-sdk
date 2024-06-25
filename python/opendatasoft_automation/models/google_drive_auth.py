@@ -99,7 +99,7 @@ class GoogleDriveAuth(BaseModel):
         """Create an instance of GoogleDriveAuth from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'oidc':
+        if object_type ==  'GoogleDriveOIDCAuth':
             return import_module("opendatasoft_automation.models.google_drive_oidc_auth").GoogleDriveOIDCAuth.from_dict(obj)
 
         raise ValueError("GoogleDriveAuth failed to lookup discriminator value from " +

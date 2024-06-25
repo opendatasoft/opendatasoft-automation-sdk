@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
 from opendatasoft_automation.models.sharepoint_connection import SharepointConnection
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 SHAREPOINTDATASOURCE1CONNECTION_ONE_OF_SCHEMAS = ["HTTPDatasource1ConnectionOneOf", "SharepointConnection"]
@@ -35,7 +35,7 @@ class SharepointDatasource1Connection(BaseModel):
     # data type: SharepointConnection
     oneof_schema_2_validator: Optional[SharepointConnection] = None
     actual_instance: Optional[Union[HTTPDatasource1ConnectionOneOf, SharepointConnection]] = None
-    one_of_schemas: List[str] = Field(default=Literal["HTTPDatasource1ConnectionOneOf", "SharepointConnection"])
+    one_of_schemas: Set[str] = { "HTTPDatasource1ConnectionOneOf", "SharepointConnection" }
 
     model_config = ConfigDict(
         validate_assignment=True,

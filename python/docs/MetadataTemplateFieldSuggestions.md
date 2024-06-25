@@ -32,7 +32,7 @@ print(MetadataTemplateFieldSuggestions.to_json())
 # convert the object into a dict
 metadata_template_field_suggestions_dict = metadata_template_field_suggestions_instance.to_dict()
 # create an instance of MetadataTemplateFieldSuggestions from a dict
-metadata_template_field_suggestions_form_dict = metadata_template_field_suggestions.from_dict(metadata_template_field_suggestions_dict)
+metadata_template_field_suggestions_from_dict = MetadataTemplateFieldSuggestions.from_dict(metadata_template_field_suggestions_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ print(AbortHarvester400Response.to_json())
 # convert the object into a dict
 abort_harvester400_response_dict = abort_harvester400_response_instance.to_dict()
 # create an instance of AbortHarvester400Response from a dict
-abort_harvester400_response_form_dict = abort_harvester400_response.from_dict(abort_harvester400_response_dict)
+abort_harvester400_response_from_dict = AbortHarvester400Response.from_dict(abort_harvester400_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

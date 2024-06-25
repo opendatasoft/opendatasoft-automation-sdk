@@ -22,7 +22,7 @@ print(OrderDatasetFieldConfiguration.to_json())
 # convert the object into a dict
 order_dataset_field_configuration_dict = order_dataset_field_configuration_instance.to_dict()
 # create an instance of OrderDatasetFieldConfiguration from a dict
-order_dataset_field_configuration_form_dict = order_dataset_field_configuration.from_dict(order_dataset_field_configuration_dict)
+order_dataset_field_configuration_from_dict = OrderDatasetFieldConfiguration.from_dict(order_dataset_field_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

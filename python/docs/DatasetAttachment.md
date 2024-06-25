@@ -25,7 +25,7 @@ print(DatasetAttachment.to_json())
 # convert the object into a dict
 dataset_attachment_dict = dataset_attachment_instance.to_dict()
 # create an instance of DatasetAttachment from a dict
-dataset_attachment_form_dict = dataset_attachment.from_dict(dataset_attachment_dict)
+dataset_attachment_from_dict = DatasetAttachment.from_dict(dataset_attachment_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

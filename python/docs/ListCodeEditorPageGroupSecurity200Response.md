@@ -25,7 +25,7 @@ print(ListCodeEditorPageGroupSecurity200Response.to_json())
 # convert the object into a dict
 list_code_editor_page_group_security200_response_dict = list_code_editor_page_group_security200_response_instance.to_dict()
 # create an instance of ListCodeEditorPageGroupSecurity200Response from a dict
-list_code_editor_page_group_security200_response_form_dict = list_code_editor_page_group_security200_response.from_dict(list_code_editor_page_group_security200_response_dict)
+list_code_editor_page_group_security200_response_from_dict = ListCodeEditorPageGroupSecurity200Response.from_dict(list_code_editor_page_group_security200_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

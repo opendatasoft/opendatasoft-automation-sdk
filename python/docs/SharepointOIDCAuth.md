@@ -25,7 +25,7 @@ print(SharepointOIDCAuth.to_json())
 # convert the object into a dict
 sharepoint_oidc_auth_dict = sharepoint_oidc_auth_instance.to_dict()
 # create an instance of SharepointOIDCAuth from a dict
-sharepoint_oidc_auth_form_dict = sharepoint_oidc_auth.from_dict(sharepoint_oidc_auth_dict)
+sharepoint_oidc_auth_from_dict = SharepointOIDCAuth.from_dict(sharepoint_oidc_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

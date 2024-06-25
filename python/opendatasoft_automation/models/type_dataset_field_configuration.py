@@ -29,7 +29,7 @@ class TypeDatasetFieldConfiguration(DatasetFieldConfiguration):
     """
     TypeDatasetFieldConfiguration
     """ # noqa: E501
-    field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to type")
+    var_field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to type", alias="field")
     type_param: StrictStr = Field(description="The type to apply")
     __properties: ClassVar[List[str]] = ["uid", "type", "label", "field", "type_param"]
 

@@ -23,7 +23,7 @@ print(ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner.to_json())
 # convert the object into a dict
 resource_unsaved_preview200_response_fields_inner_annotations_inner_dict = resource_unsaved_preview200_response_fields_inner_annotations_inner_instance.to_dict()
 # create an instance of ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner from a dict
-resource_unsaved_preview200_response_fields_inner_annotations_inner_form_dict = resource_unsaved_preview200_response_fields_inner_annotations_inner.from_dict(resource_unsaved_preview200_response_fields_inner_annotations_inner_dict)
+resource_unsaved_preview200_response_fields_inner_annotations_inner_from_dict = ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner.from_dict(resource_unsaved_preview200_response_fields_inner_annotations_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

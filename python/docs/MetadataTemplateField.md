@@ -34,7 +34,7 @@ print(MetadataTemplateField.to_json())
 # convert the object into a dict
 metadata_template_field_dict = metadata_template_field_instance.to_dict()
 # create an instance of MetadataTemplateField from a dict
-metadata_template_field_form_dict = metadata_template_field.from_dict(metadata_template_field_dict)
+metadata_template_field_from_dict = MetadataTemplateField.from_dict(metadata_template_field_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

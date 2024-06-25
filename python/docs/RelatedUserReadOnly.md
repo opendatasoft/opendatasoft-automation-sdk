@@ -23,7 +23,7 @@ print(RelatedUserReadOnly.to_json())
 # convert the object into a dict
 related_user_read_only_dict = related_user_read_only_instance.to_dict()
 # create an instance of RelatedUserReadOnly from a dict
-related_user_read_only_form_dict = related_user_read_only.from_dict(related_user_read_only_dict)
+related_user_read_only_from_dict = RelatedUserReadOnly.from_dict(related_user_read_only_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

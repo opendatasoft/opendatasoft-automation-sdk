@@ -22,7 +22,7 @@ print(ExploreLimits.to_json())
 # convert the object into a dict
 explore_limits_dict = explore_limits_instance.to_dict()
 # create an instance of ExploreLimits from a dict
-explore_limits_form_dict = explore_limits.from_dict(explore_limits_dict)
+explore_limits_from_dict = ExploreLimits.from_dict(explore_limits_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

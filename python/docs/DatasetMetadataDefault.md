@@ -35,7 +35,7 @@ print(DatasetMetadataDefault.to_json())
 # convert the object into a dict
 dataset_metadata_default_dict = dataset_metadata_default_instance.to_dict()
 # create an instance of DatasetMetadataDefault from a dict
-dataset_metadata_default_form_dict = dataset_metadata_default.from_dict(dataset_metadata_default_dict)
+dataset_metadata_default_from_dict = DatasetMetadataDefault.from_dict(dataset_metadata_default_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

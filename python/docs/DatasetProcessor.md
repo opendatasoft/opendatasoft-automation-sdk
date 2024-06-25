@@ -25,7 +25,7 @@ print(DatasetProcessor.to_json())
 # convert the object into a dict
 dataset_processor_dict = dataset_processor_instance.to_dict()
 # create an instance of DatasetProcessor from a dict
-dataset_processor_form_dict = dataset_processor.from_dict(dataset_processor_dict)
+dataset_processor_from_dict = DatasetProcessor.from_dict(dataset_processor_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(Extractor.to_json())
 # convert the object into a dict
 extractor_dict = extractor_instance.to_dict()
 # create an instance of Extractor from a dict
-extractor_form_dict = extractor.from_dict(extractor_dict)
+extractor_from_dict = Extractor.from_dict(extractor_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

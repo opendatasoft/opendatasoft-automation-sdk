@@ -25,7 +25,7 @@ print(DatajsonHarvester.to_json())
 # convert the object into a dict
 datajson_harvester_dict = datajson_harvester_instance.to_dict()
 # create an instance of DatajsonHarvester from a dict
-datajson_harvester_form_dict = datajson_harvester.from_dict(datajson_harvester_dict)
+datajson_harvester_from_dict = DatajsonHarvester.from_dict(datajson_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -32,7 +32,7 @@ print(ExtractorParametersInner.to_json())
 # convert the object into a dict
 extractor_parameters_inner_dict = extractor_parameters_inner_instance.to_dict()
 # create an instance of ExtractorParametersInner from a dict
-extractor_parameters_inner_form_dict = extractor_parameters_inner.from_dict(extractor_parameters_inner_dict)
+extractor_parameters_inner_from_dict = ExtractorParametersInner.from_dict(extractor_parameters_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -99,7 +99,7 @@ class AzureBlobStorageAuth(BaseModel):
         """Create an instance of AzureBlobStorageAuth from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'shared_key':
+        if object_type ==  'AzureBlobStorageSharedKeyAuth':
             return import_module("opendatasoft_automation.models.azure_blob_storage_shared_key_auth").AzureBlobStorageSharedKeyAuth.from_dict(obj)
 
         raise ValueError("AzureBlobStorageAuth failed to lookup discriminator value from " +

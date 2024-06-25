@@ -23,7 +23,7 @@ print(DatasetSchedule.to_json())
 # convert the object into a dict
 dataset_schedule_dict = dataset_schedule_instance.to_dict()
 # create an instance of DatasetSchedule from a dict
-dataset_schedule_form_dict = dataset_schedule.from_dict(dataset_schedule_dict)
+dataset_schedule_from_dict = DatasetSchedule.from_dict(dataset_schedule_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

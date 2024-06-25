@@ -177,35 +177,35 @@ class Harvester(BaseModel):
         """Create an instance of Harvester from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'arcgis':
+        if object_type ==  'ArcgisHarvester':
             return import_module("opendatasoft_automation.models.arcgis_harvester").ArcgisHarvester.from_dict(obj)
-        if object_type ==  'arcgis_opendata':
+        if object_type ==  'ArcgisOpendataHarvester':
             return import_module("opendatasoft_automation.models.arcgis_opendata_harvester").ArcgisOpendataHarvester.from_dict(obj)
-        if object_type ==  'ckan':
+        if object_type ==  'CKANHarvester':
             return import_module("opendatasoft_automation.models.ckan_harvester").CKANHarvester.from_dict(obj)
-        if object_type ==  'csw':
+        if object_type ==  'CSWHarvester':
             return import_module("opendatasoft_automation.models.csw_harvester").CSWHarvester.from_dict(obj)
-        if object_type ==  'datagouv':
+        if object_type ==  'DatagouvHarvester':
             return import_module("opendatasoft_automation.models.datagouv_harvester").DatagouvHarvester.from_dict(obj)
-        if object_type ==  'datajson':
+        if object_type ==  'DatajsonHarvester':
             return import_module("opendatasoft_automation.models.datajson_harvester").DatajsonHarvester.from_dict(obj)
-        if object_type ==  'ftp':
+        if object_type ==  'FTPHarvester':
             return import_module("opendatasoft_automation.models.ftp_harvester").FTPHarvester.from_dict(obj)
-        if object_type ==  'ftp_csv':
+        if object_type ==  'FTPCSVHarvester':
             return import_module("opendatasoft_automation.models.ftpcsv_harvester").FTPCSVHarvester.from_dict(obj)
-        if object_type ==  'ftp_with_meta_csv':
+        if object_type ==  'FTPWithMetaCSVHarvester':
             return import_module("opendatasoft_automation.models.ftp_with_meta_csv_harvester").FTPWithMetaCSVHarvester.from_dict(obj)
-        if object_type ==  'junar':
+        if object_type ==  'JunarHarvester':
             return import_module("opendatasoft_automation.models.junar_harvester").JunarHarvester.from_dict(obj)
-        if object_type ==  'ods':
+        if object_type ==  'OpendatasoftHarvester':
             return import_module("opendatasoft_automation.models.opendatasoft_harvester").OpendatasoftHarvester.from_dict(obj)
-        if object_type ==  'omi_node':
+        if object_type ==  'OMINodeHarvester':
             return import_module("opendatasoft_automation.models.omi_node_harvester").OMINodeHarvester.from_dict(obj)
-        if object_type ==  'quandl':
+        if object_type ==  'QuandlHarvester':
             return import_module("opendatasoft_automation.models.quandl_harvester").QuandlHarvester.from_dict(obj)
-        if object_type ==  'socrata':
+        if object_type ==  'SocrataHarvester':
             return import_module("opendatasoft_automation.models.socrata_harvester").SocrataHarvester.from_dict(obj)
-        if object_type ==  'wfs':
+        if object_type ==  'WFSHarvester':
             return import_module("opendatasoft_automation.models.wfs_harvester").WFSHarvester.from_dict(obj)
 
         raise ValueError("Harvester failed to lookup discriminator value from " +

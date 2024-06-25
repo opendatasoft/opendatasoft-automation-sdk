@@ -22,7 +22,7 @@ print(UserGroups.to_json())
 # convert the object into a dict
 user_groups_dict = user_groups_instance.to_dict()
 # create an instance of UserGroups from a dict
-user_groups_form_dict = user_groups.from_dict(user_groups_dict)
+user_groups_from_dict = UserGroups.from_dict(user_groups_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

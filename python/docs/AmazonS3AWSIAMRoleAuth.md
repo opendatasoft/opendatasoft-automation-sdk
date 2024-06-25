@@ -26,7 +26,7 @@ print(AmazonS3AWSIAMRoleAuth.to_json())
 # convert the object into a dict
 amazon_s3_awsiam_role_auth_dict = amazon_s3_awsiam_role_auth_instance.to_dict()
 # create an instance of AmazonS3AWSIAMRoleAuth from a dict
-amazon_s3_awsiam_role_auth_form_dict = amazon_s3_awsiam_role_auth.from_dict(amazon_s3_awsiam_role_auth_dict)
+amazon_s3_awsiam_role_auth_from_dict = AmazonS3AWSIAMRoleAuth.from_dict(amazon_s3_awsiam_role_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -26,7 +26,7 @@ print(DatasetVersion.to_json())
 # convert the object into a dict
 dataset_version_dict = dataset_version_instance.to_dict()
 # create an instance of DatasetVersion from a dict
-dataset_version_form_dict = dataset_version.from_dict(dataset_version_dict)
+dataset_version_from_dict = DatasetVersion.from_dict(dataset_version_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

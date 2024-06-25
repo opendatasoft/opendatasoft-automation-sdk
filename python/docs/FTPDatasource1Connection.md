@@ -22,7 +22,7 @@ print(FTPDatasource1Connection.to_json())
 # convert the object into a dict
 ftp_datasource1_connection_dict = ftp_datasource1_connection_instance.to_dict()
 # create an instance of FTPDatasource1Connection from a dict
-ftp_datasource1_connection_form_dict = ftp_datasource1_connection.from_dict(ftp_datasource1_connection_dict)
+ftp_datasource1_connection_from_dict = FTPDatasource1Connection.from_dict(ftp_datasource1_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

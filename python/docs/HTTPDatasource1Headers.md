@@ -23,7 +23,7 @@ print(HTTPDatasource1Headers.to_json())
 # convert the object into a dict
 http_datasource1_headers_dict = http_datasource1_headers_instance.to_dict()
 # create an instance of HTTPDatasource1Headers from a dict
-http_datasource1_headers_form_dict = http_datasource1_headers.from_dict(http_datasource1_headers_dict)
+http_datasource1_headers_from_dict = HTTPDatasource1Headers.from_dict(http_datasource1_headers_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

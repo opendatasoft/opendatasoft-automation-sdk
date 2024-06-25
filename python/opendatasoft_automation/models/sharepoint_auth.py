@@ -99,7 +99,7 @@ class SharepointAuth(BaseModel):
         """Create an instance of SharepointAuth from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'oidc':
+        if object_type ==  'SharepointOIDCAuth':
             return import_module("opendatasoft_automation.models.sharepoint_oidc_auth").SharepointOIDCAuth.from_dict(obj)
 
         raise ValueError("SharepointAuth failed to lookup discriminator value from " +

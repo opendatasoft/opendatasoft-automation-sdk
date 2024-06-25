@@ -26,7 +26,7 @@ print(OMINodeHarvester.to_json())
 # convert the object into a dict
 omi_node_harvester_dict = omi_node_harvester_instance.to_dict()
 # create an instance of OMINodeHarvester from a dict
-omi_node_harvester_form_dict = omi_node_harvester.from_dict(omi_node_harvester_dict)
+omi_node_harvester_from_dict = OMINodeHarvester.from_dict(omi_node_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

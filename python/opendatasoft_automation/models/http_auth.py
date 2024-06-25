@@ -101,11 +101,11 @@ class HTTPAuth(BaseModel):
         """Create an instance of HTTPAuth from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'basic_auth':
+        if object_type ==  'HTTPBasicAuth':
             return import_module("opendatasoft_automation.models.http_basic_auth").HTTPBasicAuth.from_dict(obj)
-        if object_type ==  'oauth2':
+        if object_type ==  'HTTPOAuth2Auth':
             return import_module("opendatasoft_automation.models.httpo_auth2_auth").HTTPOAuth2Auth.from_dict(obj)
-        if object_type ==  'oidc':
+        if object_type ==  'HTTPOIDCAuth':
             return import_module("opendatasoft_automation.models.httpoidc_auth").HTTPOIDCAuth.from_dict(obj)
 
         raise ValueError("HTTPAuth failed to lookup discriminator value from " +

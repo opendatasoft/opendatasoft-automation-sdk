@@ -22,7 +22,7 @@ print(URLDatasetAlternativeExport.to_json())
 # convert the object into a dict
 url_dataset_alternative_export_dict = url_dataset_alternative_export_instance.to_dict()
 # create an instance of URLDatasetAlternativeExport from a dict
-url_dataset_alternative_export_form_dict = url_dataset_alternative_export.from_dict(url_dataset_alternative_export_dict)
+url_dataset_alternative_export_from_dict = URLDatasetAlternativeExport.from_dict(url_dataset_alternative_export_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

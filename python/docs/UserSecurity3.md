@@ -23,7 +23,7 @@ print(UserSecurity3.to_json())
 # convert the object into a dict
 user_security3_dict = user_security3_instance.to_dict()
 # create an instance of UserSecurity3 from a dict
-user_security3_form_dict = user_security3.from_dict(user_security3_dict)
+user_security3_from_dict = UserSecurity3.from_dict(user_security3_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

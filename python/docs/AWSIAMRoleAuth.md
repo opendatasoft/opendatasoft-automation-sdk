@@ -26,7 +26,7 @@ print(AWSIAMRoleAuth.to_json())
 # convert the object into a dict
 awsiam_role_auth_dict = awsiam_role_auth_instance.to_dict()
 # create an instance of AWSIAMRoleAuth from a dict
-awsiam_role_auth_form_dict = awsiam_role_auth.from_dict(awsiam_role_auth_dict)
+awsiam_role_auth_from_dict = AWSIAMRoleAuth.from_dict(awsiam_role_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

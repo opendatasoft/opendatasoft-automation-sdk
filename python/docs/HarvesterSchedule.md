@@ -24,7 +24,7 @@ print(HarvesterSchedule.to_json())
 # convert the object into a dict
 harvester_schedule_dict = harvester_schedule_instance.to_dict()
 # create an instance of HarvesterSchedule from a dict
-harvester_schedule_form_dict = harvester_schedule.from_dict(harvester_schedule_dict)
+harvester_schedule_from_dict = HarvesterSchedule.from_dict(harvester_schedule_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

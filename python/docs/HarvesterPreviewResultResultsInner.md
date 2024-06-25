@@ -24,7 +24,7 @@ print(HarvesterPreviewResultResultsInner.to_json())
 # convert the object into a dict
 harvester_preview_result_results_inner_dict = harvester_preview_result_results_inner_instance.to_dict()
 # create an instance of HarvesterPreviewResultResultsInner from a dict
-harvester_preview_result_results_inner_form_dict = harvester_preview_result_results_inner.from_dict(harvester_preview_result_results_inner_dict)
+harvester_preview_result_results_inner_from_dict = HarvesterPreviewResultResultsInner.from_dict(harvester_preview_result_results_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

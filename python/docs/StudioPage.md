@@ -29,7 +29,7 @@ print(StudioPage.to_json())
 # convert the object into a dict
 studio_page_dict = studio_page_instance.to_dict()
 # create an instance of StudioPage from a dict
-studio_page_form_dict = studio_page.from_dict(studio_page_dict)
+studio_page_from_dict = StudioPage.from_dict(studio_page_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

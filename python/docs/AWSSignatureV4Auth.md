@@ -24,7 +24,7 @@ print(AWSSignatureV4Auth.to_json())
 # convert the object into a dict
 aws_signature_v4_auth_dict = aws_signature_v4_auth_instance.to_dict()
 # create an instance of AWSSignatureV4Auth from a dict
-aws_signature_v4_auth_form_dict = aws_signature_v4_auth.from_dict(aws_signature_v4_auth_dict)
+aws_signature_v4_auth_from_dict = AWSSignatureV4Auth.from_dict(aws_signature_v4_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -29,7 +29,7 @@ print(FTPCSVHarvester.to_json())
 # convert the object into a dict
 ftpcsv_harvester_dict = ftpcsv_harvester_instance.to_dict()
 # create an instance of FTPCSVHarvester from a dict
-ftpcsv_harvester_form_dict = ftpcsv_harvester.from_dict(ftpcsv_harvester_dict)
+ftpcsv_harvester_from_dict = FTPCSVHarvester.from_dict(ftpcsv_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

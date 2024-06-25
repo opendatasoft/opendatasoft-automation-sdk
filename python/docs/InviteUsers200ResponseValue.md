@@ -23,7 +23,7 @@ print(InviteUsers200ResponseValue.to_json())
 # convert the object into a dict
 invite_users200_response_value_dict = invite_users200_response_value_instance.to_dict()
 # create an instance of InviteUsers200ResponseValue from a dict
-invite_users200_response_value_form_dict = invite_users200_response_value.from_dict(invite_users200_response_value_dict)
+invite_users200_response_value_from_dict = InviteUsers200ResponseValue.from_dict(invite_users200_response_value_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,7 +19,7 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 ANNOTATEDATASETFIELDCONFIGURATION1ARGS_ONE_OF_SCHEMAS = ["int", "str"]
@@ -33,7 +33,7 @@ class AnnotateDatasetFieldConfiguration1Args(BaseModel):
     # data type: int
     oneof_schema_2_validator: Optional[StrictInt] = None
     actual_instance: Optional[Union[int, str]] = None
-    one_of_schemas: List[str] = Field(default=Literal["int", "str"])
+    one_of_schemas: Set[str] = { "int", "str" }
 
     model_config = ConfigDict(
         validate_assignment=True,

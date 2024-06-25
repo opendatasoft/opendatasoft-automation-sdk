@@ -21,7 +21,7 @@ print(AnnotateDatasetFieldConfiguration1Args.to_json())
 # convert the object into a dict
 annotate_dataset_field_configuration1_args_dict = annotate_dataset_field_configuration1_args_instance.to_dict()
 # create an instance of AnnotateDatasetFieldConfiguration1Args from a dict
-annotate_dataset_field_configuration1_args_form_dict = annotate_dataset_field_configuration1_args.from_dict(annotate_dataset_field_configuration1_args_dict)
+annotate_dataset_field_configuration1_args_from_dict = AnnotateDatasetFieldConfiguration1Args.from_dict(annotate_dataset_field_configuration1_args_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

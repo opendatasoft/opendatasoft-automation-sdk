@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import date
+from datetime import datetime
 from importlib import import_module
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
@@ -47,8 +47,8 @@ class Connection(BaseModel):
     dataset_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Number of datasets using this connection")
     user_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Number of users with explicit access to this connection")
     group_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Number of user groups with explicit access to this connection")
-    created_at: Optional[date] = None
-    updated_at: Optional[date] = None
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ["uid", "type", "is_reusable", "can_reuse", "can_manage", "dataset_count", "user_count", "group_count", "created_at", "updated_at"]
 
     model_config = ConfigDict(
@@ -130,17 +130,17 @@ class Connection(BaseModel):
         """Create an instance of Connection from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'amazon_s3':
+        if object_type ==  'AmazonS3Connection':
             return import_module("opendatasoft_automation.models.amazon_s3_connection").AmazonS3Connection.from_dict(obj)
-        if object_type ==  'azure_blob_storage':
+        if object_type ==  'AzureBlobStorageConnection':
             return import_module("opendatasoft_automation.models.azure_blob_storage_connection").AzureBlobStorageConnection.from_dict(obj)
-        if object_type ==  'ftp':
+        if object_type ==  'FTPConnection':
             return import_module("opendatasoft_automation.models.ftp_connection").FTPConnection.from_dict(obj)
-        if object_type ==  'google_drive':
+        if object_type ==  'GoogleDriveConnection':
             return import_module("opendatasoft_automation.models.google_drive_connection").GoogleDriveConnection.from_dict(obj)
-        if object_type ==  'http':
+        if object_type ==  'HTTPConnection':
             return import_module("opendatasoft_automation.models.http_connection").HTTPConnection.from_dict(obj)
-        if object_type ==  'sharepoint':
+        if object_type ==  'SharepointConnection':
             return import_module("opendatasoft_automation.models.sharepoint_connection").SharepointConnection.from_dict(obj)
 
         raise ValueError("Connection failed to lookup discriminator value from " +

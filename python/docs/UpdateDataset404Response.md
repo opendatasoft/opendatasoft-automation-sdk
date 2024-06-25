@@ -23,7 +23,7 @@ print(UpdateDataset404Response.to_json())
 # convert the object into a dict
 update_dataset404_response_dict = update_dataset404_response_instance.to_dict()
 # create an instance of UpdateDataset404Response from a dict
-update_dataset404_response_form_dict = update_dataset404_response.from_dict(update_dataset404_response_dict)
+update_dataset404_response_from_dict = UpdateDataset404Response.from_dict(update_dataset404_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

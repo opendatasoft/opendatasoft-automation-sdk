@@ -24,7 +24,7 @@ print(DatasetMetadataValue.to_json())
 # convert the object into a dict
 dataset_metadata_value_dict = dataset_metadata_value_instance.to_dict()
 # create an instance of DatasetMetadataValue from a dict
-dataset_metadata_value_form_dict = dataset_metadata_value.from_dict(dataset_metadata_value_dict)
+dataset_metadata_value_from_dict = DatasetMetadataValue.from_dict(dataset_metadata_value_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

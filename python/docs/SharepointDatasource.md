@@ -24,7 +24,7 @@ print(SharepointDatasource.to_json())
 # convert the object into a dict
 sharepoint_datasource_dict = sharepoint_datasource_instance.to_dict()
 # create an instance of SharepointDatasource from a dict
-sharepoint_datasource_form_dict = sharepoint_datasource.from_dict(sharepoint_datasource_dict)
+sharepoint_datasource_from_dict = SharepointDatasource.from_dict(sharepoint_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

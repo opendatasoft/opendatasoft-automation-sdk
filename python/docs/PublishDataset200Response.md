@@ -22,7 +22,7 @@ print(PublishDataset200Response.to_json())
 # convert the object into a dict
 publish_dataset200_response_dict = publish_dataset200_response_instance.to_dict()
 # create an instance of PublishDataset200Response from a dict
-publish_dataset200_response_form_dict = publish_dataset200_response.from_dict(publish_dataset200_response_dict)
+publish_dataset200_response_from_dict = PublishDataset200Response.from_dict(publish_dataset200_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

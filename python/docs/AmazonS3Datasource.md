@@ -24,7 +24,7 @@ print(AmazonS3Datasource.to_json())
 # convert the object into a dict
 amazon_s3_datasource_dict = amazon_s3_datasource_instance.to_dict()
 # create an instance of AmazonS3Datasource from a dict
-amazon_s3_datasource_form_dict = amazon_s3_datasource.from_dict(amazon_s3_datasource_dict)
+amazon_s3_datasource_from_dict = AmazonS3Datasource.from_dict(amazon_s3_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

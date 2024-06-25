@@ -21,7 +21,7 @@ from typing import Any, List, Optional
 from opendatasoft_automation.models.federated_dataset import FederatedDataset
 from opendatasoft_automation.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 FEDERATEDDATASOURCEALLOFDATASET_ONE_OF_SCHEMAS = ["FederatedDataset", "FederatedDatasourceAllOfDatasetOneOf"]
@@ -35,7 +35,7 @@ class FederatedDatasourceAllOfDataset(BaseModel):
     # data type: FederatedDataset
     oneof_schema_2_validator: Optional[FederatedDataset] = None
     actual_instance: Optional[Union[FederatedDataset, FederatedDatasourceAllOfDatasetOneOf]] = None
-    one_of_schemas: List[str] = Field(default=Literal["FederatedDataset", "FederatedDatasourceAllOfDatasetOneOf"])
+    one_of_schemas: Set[str] = { "FederatedDataset", "FederatedDatasourceAllOfDatasetOneOf" }
 
     model_config = ConfigDict(
         validate_assignment=True,

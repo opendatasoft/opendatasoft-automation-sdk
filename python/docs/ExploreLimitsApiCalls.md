@@ -23,7 +23,7 @@ print(ExploreLimitsApiCalls.to_json())
 # convert the object into a dict
 explore_limits_api_calls_dict = explore_limits_api_calls_instance.to_dict()
 # create an instance of ExploreLimitsApiCalls from a dict
-explore_limits_api_calls_form_dict = explore_limits_api_calls.from_dict(explore_limits_api_calls_dict)
+explore_limits_api_calls_from_dict = ExploreLimitsApiCalls.from_dict(explore_limits_api_calls_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

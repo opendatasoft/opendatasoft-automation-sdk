@@ -23,7 +23,7 @@ print(MetadataTemplateFieldSuggestionsExhaustive.to_json())
 # convert the object into a dict
 metadata_template_field_suggestions_exhaustive_dict = metadata_template_field_suggestions_exhaustive_instance.to_dict()
 # create an instance of MetadataTemplateFieldSuggestionsExhaustive from a dict
-metadata_template_field_suggestions_exhaustive_form_dict = metadata_template_field_suggestions_exhaustive.from_dict(metadata_template_field_suggestions_exhaustive_dict)
+metadata_template_field_suggestions_exhaustive_from_dict = MetadataTemplateFieldSuggestionsExhaustive.from_dict(metadata_template_field_suggestions_exhaustive_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

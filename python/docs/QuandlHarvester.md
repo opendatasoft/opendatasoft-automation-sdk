@@ -26,7 +26,7 @@ print(QuandlHarvester.to_json())
 # convert the object into a dict
 quandl_harvester_dict = quandl_harvester_instance.to_dict()
 # create an instance of QuandlHarvester from a dict
-quandl_harvester_form_dict = quandl_harvester.from_dict(quandl_harvester_dict)
+quandl_harvester_from_dict = QuandlHarvester.from_dict(quandl_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

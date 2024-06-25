@@ -24,7 +24,7 @@ print(ArcgisHarvester.to_json())
 # convert the object into a dict
 arcgis_harvester_dict = arcgis_harvester_instance.to_dict()
 # create an instance of ArcgisHarvester from a dict
-arcgis_harvester_form_dict = arcgis_harvester.from_dict(arcgis_harvester_dict)
+arcgis_harvester_from_dict = ArcgisHarvester.from_dict(arcgis_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

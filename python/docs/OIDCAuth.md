@@ -28,7 +28,7 @@ print(OIDCAuth.to_json())
 # convert the object into a dict
 oidc_auth_dict = oidc_auth_instance.to_dict()
 # create an instance of OIDCAuth from a dict
-oidc_auth_form_dict = oidc_auth.from_dict(oidc_auth_dict)
+oidc_auth_from_dict = OIDCAuth.from_dict(oidc_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11231,13 +11231,13 @@
           "created_at": {
             "type": "string",
             "minLength": 1,
-            "format": "date",
+            "format": "date-time",
             "readOnly": true
           },
           "updated_at": {
             "type": "string",
             "minLength": 1,
-            "format": "date",
+            "format": "date-time",
             "readOnly": true
           }
         },

@@ -27,7 +27,7 @@ print(JunarHarvester.to_json())
 # convert the object into a dict
 junar_harvester_dict = junar_harvester_instance.to_dict()
 # create an instance of JunarHarvester from a dict
-junar_harvester_form_dict = junar_harvester.from_dict(junar_harvester_dict)
+junar_harvester_from_dict = JunarHarvester.from_dict(junar_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

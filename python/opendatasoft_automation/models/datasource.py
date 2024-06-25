@@ -106,21 +106,21 @@ class Datasource(BaseModel):
         """Create an instance of Datasource from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
-        if object_type ==  'amazon_s3':
+        if object_type ==  'AmazonS3Datasource':
             return import_module("opendatasoft_automation.models.amazon_s3_datasource").AmazonS3Datasource.from_dict(obj)
-        if object_type ==  'azure_blob_storage':
+        if object_type ==  'AzureBlobStorageDatasource':
             return import_module("opendatasoft_automation.models.azure_blob_storage_datasource").AzureBlobStorageDatasource.from_dict(obj)
-        if object_type ==  'federated':
+        if object_type ==  'FederatedDatasource':
             return import_module("opendatasoft_automation.models.federated_datasource").FederatedDatasource.from_dict(obj)
-        if object_type ==  'ftp':
+        if object_type ==  'FTPDatasource':
             return import_module("opendatasoft_automation.models.ftp_datasource").FTPDatasource.from_dict(obj)
-        if object_type ==  'google_drive':
+        if object_type ==  'GoogleDriveDatasource':
             return import_module("opendatasoft_automation.models.google_drive_datasource").GoogleDriveDatasource.from_dict(obj)
-        if object_type ==  'http':
+        if object_type ==  'HTTPDatasource':
             return import_module("opendatasoft_automation.models.http_datasource").HTTPDatasource.from_dict(obj)
-        if object_type ==  'sharepoint':
+        if object_type ==  'SharepointDatasource':
             return import_module("opendatasoft_automation.models.sharepoint_datasource").SharepointDatasource.from_dict(obj)
-        if object_type ==  'uploaded_file':
+        if object_type ==  'UploadedFileDatasource':
             return import_module("opendatasoft_automation.models.uploaded_file_datasource").UploadedFileDatasource.from_dict(obj)
 
         raise ValueError("Datasource failed to lookup discriminator value from " +

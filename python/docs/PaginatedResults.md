@@ -24,7 +24,7 @@ print(PaginatedResults.to_json())
 # convert the object into a dict
 paginated_results_dict = paginated_results_instance.to_dict()
 # create an instance of PaginatedResults from a dict
-paginated_results_form_dict = paginated_results.from_dict(paginated_results_dict)
+paginated_results_from_dict = PaginatedResults.from_dict(paginated_results_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

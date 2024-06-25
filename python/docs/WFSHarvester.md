@@ -23,7 +23,7 @@ print(WFSHarvester.to_json())
 # convert the object into a dict
 wfs_harvester_dict = wfs_harvester_instance.to_dict()
 # create an instance of WFSHarvester from a dict
-wfs_harvester_form_dict = wfs_harvester.from_dict(wfs_harvester_dict)
+wfs_harvester_from_dict = WFSHarvester.from_dict(wfs_harvester_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

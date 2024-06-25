@@ -22,7 +22,7 @@ print(GoogleDriveConnection.to_json())
 # convert the object into a dict
 google_drive_connection_dict = google_drive_connection_instance.to_dict()
 # create an instance of GoogleDriveConnection from a dict
-google_drive_connection_form_dict = google_drive_connection.from_dict(google_drive_connection_dict)
+google_drive_connection_from_dict = GoogleDriveConnection.from_dict(google_drive_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

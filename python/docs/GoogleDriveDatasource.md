@@ -23,7 +23,7 @@ print(GoogleDriveDatasource.to_json())
 # convert the object into a dict
 google_drive_datasource_dict = google_drive_datasource_instance.to_dict()
 # create an instance of GoogleDriveDatasource from a dict
-google_drive_datasource_form_dict = google_drive_datasource.from_dict(google_drive_datasource_dict)
+google_drive_datasource_from_dict = GoogleDriveDatasource.from_dict(google_drive_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

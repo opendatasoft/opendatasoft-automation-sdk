@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**field** | **str** | The technical identifier of the field you want to type | 
+**var_field** | **str** | The technical identifier of the field you want to type | 
 **type_param** | **str** | The type to apply | 
 
 ## Example
@@ -23,7 +23,7 @@ print(TypeDatasetFieldConfiguration.to_json())
 # convert the object into a dict
 type_dataset_field_configuration_dict = type_dataset_field_configuration_instance.to_dict()
 # create an instance of TypeDatasetFieldConfiguration from a dict
-type_dataset_field_configuration_form_dict = type_dataset_field_configuration.from_dict(type_dataset_field_configuration_dict)
+type_dataset_field_configuration_from_dict = TypeDatasetFieldConfiguration.from_dict(type_dataset_field_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

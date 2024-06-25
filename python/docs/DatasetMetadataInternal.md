@@ -25,7 +25,7 @@ print(DatasetMetadataInternal.to_json())
 # convert the object into a dict
 dataset_metadata_internal_dict = dataset_metadata_internal_instance.to_dict()
 # create an instance of DatasetMetadataInternal from a dict
-dataset_metadata_internal_form_dict = dataset_metadata_internal.from_dict(dataset_metadata_internal_dict)
+dataset_metadata_internal_from_dict = DatasetMetadataInternal.from_dict(dataset_metadata_internal_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

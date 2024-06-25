@@ -24,7 +24,7 @@ print(HTTPDatasource.to_json())
 # convert the object into a dict
 http_datasource_dict = http_datasource_instance.to_dict()
 # create an instance of HTTPDatasource from a dict
-http_datasource_form_dict = http_datasource.from_dict(http_datasource_dict)
+http_datasource_from_dict = HTTPDatasource.from_dict(http_datasource_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

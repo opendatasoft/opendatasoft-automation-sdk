@@ -22,7 +22,7 @@ print(SharepointConnection.to_json())
 # convert the object into a dict
 sharepoint_connection_dict = sharepoint_connection_instance.to_dict()
 # create an instance of SharepointConnection from a dict
-sharepoint_connection_form_dict = sharepoint_connection.from_dict(sharepoint_connection_dict)
+sharepoint_connection_from_dict = SharepointConnection.from_dict(sharepoint_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

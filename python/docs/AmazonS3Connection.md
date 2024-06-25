@@ -23,7 +23,7 @@ print(AmazonS3Connection.to_json())
 # convert the object into a dict
 amazon_s3_connection_dict = amazon_s3_connection_instance.to_dict()
 # create an instance of AmazonS3Connection from a dict
-amazon_s3_connection_form_dict = amazon_s3_connection.from_dict(amazon_s3_connection_dict)
+amazon_s3_connection_from_dict = AmazonS3Connection.from_dict(amazon_s3_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

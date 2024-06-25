@@ -24,7 +24,7 @@ print(DatasetSecurityApiCallsQuota.to_json())
 # convert the object into a dict
 dataset_security_api_calls_quota_dict = dataset_security_api_calls_quota_instance.to_dict()
 # create an instance of DatasetSecurityApiCallsQuota from a dict
-dataset_security_api_calls_quota_form_dict = dataset_security_api_calls_quota.from_dict(dataset_security_api_calls_quota_dict)
+dataset_security_api_calls_quota_from_dict = DatasetSecurityApiCallsQuota.from_dict(dataset_security_api_calls_quota_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

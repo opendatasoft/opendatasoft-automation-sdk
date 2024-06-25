@@ -22,7 +22,7 @@ print(AmazonS3Auth.to_json())
 # convert the object into a dict
 amazon_s3_auth_dict = amazon_s3_auth_instance.to_dict()
 # create an instance of AmazonS3Auth from a dict
-amazon_s3_auth_form_dict = amazon_s3_auth.from_dict(amazon_s3_auth_dict)
+amazon_s3_auth_from_dict = AmazonS3Auth.from_dict(amazon_s3_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

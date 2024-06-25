@@ -23,7 +23,7 @@ print(GroupSecurityGroup.to_json())
 # convert the object into a dict
 group_security_group_dict = group_security_group_instance.to_dict()
 # create an instance of GroupSecurityGroup from a dict
-group_security_group_form_dict = group_security_group.from_dict(group_security_group_dict)
+group_security_group_from_dict = GroupSecurityGroup.from_dict(group_security_group_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

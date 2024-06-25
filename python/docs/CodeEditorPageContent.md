@@ -24,7 +24,7 @@ print(CodeEditorPageContent.to_json())
 # convert the object into a dict
 code_editor_page_content_dict = code_editor_page_content_instance.to_dict()
 # create an instance of CodeEditorPageContent from a dict
-code_editor_page_content_form_dict = code_editor_page_content.from_dict(code_editor_page_content_dict)
+code_editor_page_content_from_dict = CodeEditorPageContent.from_dict(code_editor_page_content_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(DatasetUserSecurity.to_json())
 # convert the object into a dict
 dataset_user_security_dict = dataset_user_security_instance.to_dict()
 # create an instance of DatasetUserSecurity from a dict
-dataset_user_security_form_dict = dataset_user_security.from_dict(dataset_user_security_dict)
+dataset_user_security_from_dict = DatasetUserSecurity.from_dict(dataset_user_security_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

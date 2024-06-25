@@ -22,7 +22,7 @@ print(ProvisionUsersRequestAllOfIdentityProvider.to_json())
 # convert the object into a dict
 provision_users_request_all_of_identity_provider_dict = provision_users_request_all_of_identity_provider_instance.to_dict()
 # create an instance of ProvisionUsersRequestAllOfIdentityProvider from a dict
-provision_users_request_all_of_identity_provider_form_dict = provision_users_request_all_of_identity_provider.from_dict(provision_users_request_all_of_identity_provider_dict)
+provision_users_request_all_of_identity_provider_from_dict = ProvisionUsersRequestAllOfIdentityProvider.from_dict(provision_users_request_all_of_identity_provider_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

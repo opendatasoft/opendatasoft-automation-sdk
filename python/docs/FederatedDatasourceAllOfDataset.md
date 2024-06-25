@@ -24,7 +24,7 @@ print(FederatedDatasourceAllOfDataset.to_json())
 # convert the object into a dict
 federated_datasource_all_of_dataset_dict = federated_datasource_all_of_dataset_instance.to_dict()
 # create an instance of FederatedDatasourceAllOfDataset from a dict
-federated_datasource_all_of_dataset_form_dict = federated_datasource_all_of_dataset.from_dict(federated_datasource_all_of_dataset_dict)
+federated_datasource_all_of_dataset_from_dict = FederatedDatasourceAllOfDataset.from_dict(federated_datasource_all_of_dataset_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

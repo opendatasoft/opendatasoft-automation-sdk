@@ -58,6 +58,24 @@ def _set_metadata__default_title(conf, args):
             dataset_metadata_value=DatasetMetadataValue(value=args.value)
         )
 
+def _list_custom_metadata(conf, args):
+
+    with ApiClient(conf) as client:
+        metadata = DatasetMetadataApi(client).list_all_dataset_metadata(
+            dataset_uid=args.dataset_uid
+        )
+
+        print(metadata.to_dict())
+
+        metadata.additional_properties["admin"]["test-admin-field"] = DatasetMetadataValue(value=["Value2"])
+        
+        metadata = DatasetMetadataApi(client).update_all_dataset_metadata(
+            dataset_uid=args.dataset_uid,
+            dataset_metadata=metadata
+        )
+
+        print(metadata.to_dict())
+
 
 if __name__ == "__main__":
 
@@ -79,6 +97,10 @@ if __name__ == "__main__":
     parser_update_metadata.set_defaults(func=_set_metadata__default_title)
     parser_update_metadata.add_argument("--dataset-uid", action="store", required=False, help="Dataset UID")
     parser_update_metadata.add_argument("--value", action="store", required=False, help="Value")
+
+    parser_update_metadata = subparsers.add_parser("metadata-custom", help="List custom metadata")
+    parser_update_metadata.set_defaults(func=_list_custom_metadata)
+    parser_update_metadata.add_argument("--dataset-uid", action="store", required=False, help="Dataset UID")
 
     args = parser.parse_args()
 

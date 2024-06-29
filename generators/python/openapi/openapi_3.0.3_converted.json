@@ -9757,7 +9757,7 @@
             "override_remote_value": true
           }
         },
-        "x-additionalPropertiesName": "custom_template_name"
+        "x-additionalPropertiesName": "fields"
       },
       "DatasetMetadata": {
         "title": "Dataset metadata schema",
@@ -9777,6 +9777,10 @@
             "$ref": "#/components/schemas/DatasetMetadataCustom"
           }
         },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DatasetMetadataCustom"
+        },
+        "x-additionalPropertiesName": "custom_templates",
         "required": [],
         "x-tags": [
           "Dataset metadata"

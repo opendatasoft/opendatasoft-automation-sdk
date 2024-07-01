@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **title** | **str** | friendly title | 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **params** | **object** | parameters passed to the extractor | [optional] 
-**datasource** | [**Datasource**](Datasource.md) |  | 
+**datasource** | [**Datasource**](Datasource.md) |  | [optional] 
 
 ## Example
 

@@ -35,7 +35,7 @@ class Resource(BaseModel):
     title: Annotated[str, Field(min_length=1, strict=True)] = Field(description="friendly title")
     updated_at: Optional[datetime] = None
     params: Optional[Dict[str, Any]] = Field(default=None, description="parameters passed to the extractor")
-    datasource: Datasource
+    datasource: Optional[Datasource] = None
     __properties: ClassVar[List[str]] = ["uid", "type", "title", "updated_at", "params", "datasource"]
 
     model_config = ConfigDict(

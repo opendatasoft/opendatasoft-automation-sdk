@@ -12361,8 +12361,7 @@
         },
         "required": [
           "type",
-          "title",
-          "datasource"
+          "title"
         ],
         "example": {
           "uid": "re_qf2hyt",

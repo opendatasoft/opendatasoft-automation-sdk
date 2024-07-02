@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uid** | **str** | Unique identifier for the resource | [optional] [readonly] 
 **type** | **str** | extractor type that should handle this resource | 
+**url** | **str** | resource url | [optional] 
 **title** | **str** | friendly title | 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **params** | **object** | parameters passed to the extractor | [optional] 

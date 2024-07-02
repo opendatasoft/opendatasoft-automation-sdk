@@ -29,7 +29,7 @@ class OrderDatasetFieldConfiguration(DatasetFieldConfiguration):
     OrderDatasetFieldConfiguration
     """ # noqa: E501
     args: List[StrictStr] = Field(description="The ordered list of fields technical identifier")
-    __properties: ClassVar[List[str]] = ["uid", "type", "label", "args"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "from_name", "to_name", "field_label", "label", "args"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +84,9 @@ class OrderDatasetFieldConfiguration(DatasetFieldConfiguration):
         _obj = cls.model_validate({
             "uid": obj.get("uid"),
             "type": obj.get("type"),
+            "from_name": obj.get("from_name"),
+            "to_name": obj.get("to_name"),
+            "field_label": obj.get("field_label"),
             "label": obj.get("label"),
             "args": obj.get("args")
         })

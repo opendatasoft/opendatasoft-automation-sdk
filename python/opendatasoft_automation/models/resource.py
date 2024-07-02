@@ -32,11 +32,12 @@ class Resource(BaseModel):
     """ # noqa: E501
     uid: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Unique identifier for the resource")
     type: Annotated[str, Field(min_length=1, strict=True)] = Field(description="extractor type that should handle this resource")
+    url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="resource url")
     title: Annotated[str, Field(min_length=1, strict=True)] = Field(description="friendly title")
     updated_at: Optional[datetime] = None
     params: Optional[Dict[str, Any]] = Field(default=None, description="parameters passed to the extractor")
     datasource: Optional[Datasource] = None
-    __properties: ClassVar[List[str]] = ["uid", "type", "title", "updated_at", "params", "datasource"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "url", "title", "updated_at", "params", "datasource"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +99,7 @@ class Resource(BaseModel):
         _obj = cls.model_validate({
             "uid": obj.get("uid"),
             "type": obj.get("type"),
+            "url": obj.get("url"),
             "title": obj.get("title"),
             "updated_at": obj.get("updated_at"),
             "params": obj.get("params"),

@@ -539,6 +539,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/dataset_identifier"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
           }
         ],
         "summary": "List dataset field configurations",
@@ -588,7 +594,7 @@
           }
         ],
         "summary": "Append a new field configuration",
-        "operationId": "create-dataset-field-configurations",
+        "operationId": "create-dataset-field-configuration",
         "description": "Create a new field configuration for the dataset. The processor will be appended to the end of the fields configuration stack.",
         "requestBody": {
           "content": {
@@ -1410,6 +1416,12 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/dataset_identifier"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
           }
         ],
         "summary": "List dataset processors",
@@ -10693,6 +10705,20 @@
             "type": "string",
             "minLength": 1
           },
+          "from_name": {
+            "type": "string",
+            "description": "From name",
+          },
+          "to_name": {
+            "type": "string",
+            "description": "To name",
+            "example": "Field configuration friendly label"
+          },
+          "field_label": {
+            "type": "string",
+            "description": "Field label",
+            "example": "Field configuration friendly label"
+          },
           "label": {
             "type": "string",
             "description": "Friendly label of the field configuration",
@@ -12339,6 +12365,11 @@
             "type": "string",
             "minLength": 1,
             "description": "extractor type that should handle this resource"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "description": "resource url"
           },
           "title": {
             "type": "string",

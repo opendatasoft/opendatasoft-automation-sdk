@@ -31,7 +31,7 @@ class TypeDatasetFieldConfiguration(DatasetFieldConfiguration):
     """ # noqa: E501
     var_field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to type", alias="field")
     type_param: StrictStr = Field(description="The type to apply")
-    __properties: ClassVar[List[str]] = ["uid", "type", "label", "field", "type_param"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "from_name", "to_name", "field_label", "label", "field", "type_param"]
 
     @field_validator('type_param')
     def type_param_validate_enum(cls, value):
@@ -93,6 +93,9 @@ class TypeDatasetFieldConfiguration(DatasetFieldConfiguration):
         _obj = cls.model_validate({
             "uid": obj.get("uid"),
             "type": obj.get("type"),
+            "from_name": obj.get("from_name"),
+            "to_name": obj.get("to_name"),
+            "field_label": obj.get("field_label"),
             "label": obj.get("label"),
             "field": obj.get("field"),
             "type_param": obj.get("type_param")

@@ -17,8 +17,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
-from typing import Optional
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
+from typing import Optional, Union
 from typing_extensions import Annotated
 from opendatasoft_automation.models.dataset_field_configuration import DatasetFieldConfiguration
 from opendatasoft_automation.models.list_dataset_field_configurations200_response import ListDatasetFieldConfigurations200Response
@@ -42,7 +42,7 @@ class DatasetFieldsApi:
 
 
     @validate_call
-    def create_dataset_field_configurations(
+    def create_dataset_field_configuration(
         self,
         dataset_uid: StrictStr,
         dataset_field_configuration: Annotated[Optional[DatasetFieldConfiguration], Field(description="Create a field configuration in a dataset")] = None,
@@ -89,7 +89,7 @@ class DatasetFieldsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_dataset_field_configurations_serialize(
+        _param = self._create_dataset_field_configuration_serialize(
             dataset_uid=dataset_uid,
             dataset_field_configuration=dataset_field_configuration,
             _request_auth=_request_auth,
@@ -114,7 +114,7 @@ class DatasetFieldsApi:
 
 
     @validate_call
-    def create_dataset_field_configurations_with_http_info(
+    def create_dataset_field_configuration_with_http_info(
         self,
         dataset_uid: StrictStr,
         dataset_field_configuration: Annotated[Optional[DatasetFieldConfiguration], Field(description="Create a field configuration in a dataset")] = None,
@@ -161,7 +161,7 @@ class DatasetFieldsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_dataset_field_configurations_serialize(
+        _param = self._create_dataset_field_configuration_serialize(
             dataset_uid=dataset_uid,
             dataset_field_configuration=dataset_field_configuration,
             _request_auth=_request_auth,
@@ -186,7 +186,7 @@ class DatasetFieldsApi:
 
 
     @validate_call
-    def create_dataset_field_configurations_without_preload_content(
+    def create_dataset_field_configuration_without_preload_content(
         self,
         dataset_uid: StrictStr,
         dataset_field_configuration: Annotated[Optional[DatasetFieldConfiguration], Field(description="Create a field configuration in a dataset")] = None,
@@ -233,7 +233,7 @@ class DatasetFieldsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_dataset_field_configurations_serialize(
+        _param = self._create_dataset_field_configuration_serialize(
             dataset_uid=dataset_uid,
             dataset_field_configuration=dataset_field_configuration,
             _request_auth=_request_auth,
@@ -253,7 +253,7 @@ class DatasetFieldsApi:
         return response_data.response
 
 
-    def _create_dataset_field_configurations_serialize(
+    def _create_dataset_field_configuration_serialize(
         self,
         dataset_uid,
         dataset_field_configuration,
@@ -612,6 +612,8 @@ class DatasetFieldsApi:
     def list_dataset_field_configurations(
         self,
         dataset_uid: StrictStr,
+        limit: Annotated[Optional[Union[Annotated[float, Field(le=1000, strict=True, ge=0)], Annotated[int, Field(le=1000, strict=True, ge=0)]]], Field(description="The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).")] = None,
+        offset: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="The number of results to skip before beginning the listing in case of a paginated response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -631,6 +633,10 @@ class DatasetFieldsApi:
 
         :param dataset_uid: (required)
         :type dataset_uid: str
+        :param limit: The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).
+        :type limit: float
+        :param offset: The number of results to skip before beginning the listing in case of a paginated response
+        :type offset: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -655,6 +661,8 @@ class DatasetFieldsApi:
 
         _param = self._list_dataset_field_configurations_serialize(
             dataset_uid=dataset_uid,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -680,6 +688,8 @@ class DatasetFieldsApi:
     def list_dataset_field_configurations_with_http_info(
         self,
         dataset_uid: StrictStr,
+        limit: Annotated[Optional[Union[Annotated[float, Field(le=1000, strict=True, ge=0)], Annotated[int, Field(le=1000, strict=True, ge=0)]]], Field(description="The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).")] = None,
+        offset: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="The number of results to skip before beginning the listing in case of a paginated response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -699,6 +709,10 @@ class DatasetFieldsApi:
 
         :param dataset_uid: (required)
         :type dataset_uid: str
+        :param limit: The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).
+        :type limit: float
+        :param offset: The number of results to skip before beginning the listing in case of a paginated response
+        :type offset: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -723,6 +737,8 @@ class DatasetFieldsApi:
 
         _param = self._list_dataset_field_configurations_serialize(
             dataset_uid=dataset_uid,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -748,6 +764,8 @@ class DatasetFieldsApi:
     def list_dataset_field_configurations_without_preload_content(
         self,
         dataset_uid: StrictStr,
+        limit: Annotated[Optional[Union[Annotated[float, Field(le=1000, strict=True, ge=0)], Annotated[int, Field(le=1000, strict=True, ge=0)]]], Field(description="The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).")] = None,
+        offset: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="The number of results to skip before beginning the listing in case of a paginated response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -767,6 +785,10 @@ class DatasetFieldsApi:
 
         :param dataset_uid: (required)
         :type dataset_uid: str
+        :param limit: The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).
+        :type limit: float
+        :param offset: The number of results to skip before beginning the listing in case of a paginated response
+        :type offset: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -791,6 +813,8 @@ class DatasetFieldsApi:
 
         _param = self._list_dataset_field_configurations_serialize(
             dataset_uid=dataset_uid,
+            limit=limit,
+            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -811,6 +835,8 @@ class DatasetFieldsApi:
     def _list_dataset_field_configurations_serialize(
         self,
         dataset_uid,
+        limit,
+        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -833,6 +859,14 @@ class DatasetFieldsApi:
         if dataset_uid is not None:
             _path_params['dataset_uid'] = dataset_uid
         # process the query parameters
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

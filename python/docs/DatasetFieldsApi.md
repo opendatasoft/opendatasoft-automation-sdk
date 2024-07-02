@@ -4,15 +4,15 @@ All URIs are relative to *https://documentation-resources.opendatasoft.com/api/a
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_dataset_field_configurations**](DatasetFieldsApi.md#create_dataset_field_configurations) | **POST** /datasets/{dataset_uid}/fields/ | Append a new field configuration
+[**create_dataset_field_configuration**](DatasetFieldsApi.md#create_dataset_field_configuration) | **POST** /datasets/{dataset_uid}/fields/ | Append a new field configuration
 [**destroy_dataset_field_configurations**](DatasetFieldsApi.md#destroy_dataset_field_configurations) | **DELETE** /datasets/{dataset_uid}/fields/{field_uid}/ | Destroy a field configuration
 [**list_dataset_field_configurations**](DatasetFieldsApi.md#list_dataset_field_configurations) | **GET** /datasets/{dataset_uid}/fields/ | List dataset field configurations
 [**retrieve_dataset_field_configuration**](DatasetFieldsApi.md#retrieve_dataset_field_configuration) | **GET** /datasets/{dataset_uid}/fields/{field_uid}/ | Retrieve dataset field configuration
 [**update_dataset_field**](DatasetFieldsApi.md#update_dataset_field) | **PUT** /datasets/{dataset_uid}/fields/{field_uid}/ | Update dataset field configuration
 
 
-# **create_dataset_field_configurations**
-> DatasetFieldConfiguration create_dataset_field_configurations(dataset_uid, dataset_field_configuration=dataset_field_configuration)
+# **create_dataset_field_configuration**
+> DatasetFieldConfiguration create_dataset_field_configuration(dataset_uid, dataset_field_configuration=dataset_field_configuration)
 
 Append a new field configuration
 
@@ -61,11 +61,11 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
 
     try:
         # Append a new field configuration
-        api_response = api_instance.create_dataset_field_configurations(dataset_uid, dataset_field_configuration=dataset_field_configuration)
-        print("The response of DatasetFieldsApi->create_dataset_field_configurations:\n")
+        api_response = api_instance.create_dataset_field_configuration(dataset_uid, dataset_field_configuration=dataset_field_configuration)
+        print("The response of DatasetFieldsApi->create_dataset_field_configuration:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DatasetFieldsApi->create_dataset_field_configurations: %s\n" % e)
+        print("Exception when calling DatasetFieldsApi->create_dataset_field_configuration: %s\n" % e)
 ```
 
 
@@ -189,7 +189,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_dataset_field_configurations**
-> ListDatasetFieldConfigurations200Response list_dataset_field_configurations(dataset_uid)
+> ListDatasetFieldConfigurations200Response list_dataset_field_configurations(dataset_uid, limit=limit, offset=offset)
 
 List dataset field configurations
 
@@ -234,10 +234,12 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = opendatasoft_automation.DatasetFieldsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
+    limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
+    offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
 
     try:
         # List dataset field configurations
-        api_response = api_instance.list_dataset_field_configurations(dataset_uid)
+        api_response = api_instance.list_dataset_field_configurations(dataset_uid, limit=limit, offset=offset)
         print("The response of DatasetFieldsApi->list_dataset_field_configurations:\n")
         pprint(api_response)
     except Exception as e:
@@ -252,6 +254,8 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dataset_uid** | **str**|  | 
+ **limit** | **float**| The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \&quot;limit\&quot; set to 0 to get only the metadata (\&quot;results\&quot; property will contain an empty array). | [optional] [default to 20]
+ **offset** | **float**| The number of results to skip before beginning the listing in case of a paginated response | [optional] 
 
 ### Return type
 

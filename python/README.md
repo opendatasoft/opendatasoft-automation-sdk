@@ -142,7 +142,7 @@ Class | Method | HTTP request | Description
 *DatasetFeedbacksApi* | [**archive_dataset_feedback**](docs/DatasetFeedbacksApi.md#archive_dataset_feedback) | **POST** /datasets/{dataset_uid}/feedbacks/{feedback_uid}/archive/ | Archive a dataset feedback
 *DatasetFeedbacksApi* | [**list_dataset_feedbacks**](docs/DatasetFeedbacksApi.md#list_dataset_feedbacks) | **GET** /datasets/{dataset_uid}/feedbacks/ | List all dataset feedbacks
 *DatasetFeedbacksApi* | [**retrieve_dataset_feedback**](docs/DatasetFeedbacksApi.md#retrieve_dataset_feedback) | **GET** /datasets/{dataset_uid}/feedbacks/{feedback_uid}/ | Retrieve a dataset feedback
-*DatasetFieldsApi* | [**create_dataset_field_configurations**](docs/DatasetFieldsApi.md#create_dataset_field_configurations) | **POST** /datasets/{dataset_uid}/fields/ | Append a new field configuration
+*DatasetFieldsApi* | [**create_dataset_field_configuration**](docs/DatasetFieldsApi.md#create_dataset_field_configuration) | **POST** /datasets/{dataset_uid}/fields/ | Append a new field configuration
 *DatasetFieldsApi* | [**destroy_dataset_field_configurations**](docs/DatasetFieldsApi.md#destroy_dataset_field_configurations) | **DELETE** /datasets/{dataset_uid}/fields/{field_uid}/ | Destroy a field configuration
 *DatasetFieldsApi* | [**list_dataset_field_configurations**](docs/DatasetFieldsApi.md#list_dataset_field_configurations) | **GET** /datasets/{dataset_uid}/fields/ | List dataset field configurations
 *DatasetFieldsApi* | [**retrieve_dataset_field_configuration**](docs/DatasetFieldsApi.md#retrieve_dataset_field_configuration) | **GET** /datasets/{dataset_uid}/fields/{field_uid}/ | Retrieve dataset field configuration

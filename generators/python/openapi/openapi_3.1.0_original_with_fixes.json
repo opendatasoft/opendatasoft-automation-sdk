@@ -10925,7 +10925,7 @@
               "Dataset fields"
             ],
             "properties": {
-              "args": {
+              "order": {
                 "type": "array",
                 "items": {
                   "type": "string"

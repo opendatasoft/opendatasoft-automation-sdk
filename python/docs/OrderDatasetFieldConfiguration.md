@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**args** | **List[str]** | The ordered list of fields technical identifier | 
+**order** | **List[str]** | The ordered list of fields technical identifier | [optional] 
 
 ## Example
 

@@ -372,7 +372,12 @@ void (empty response body)
 
 Retrieve dataset status
 
-Retrieves the current dataset status.  The dataset status describes the current state of a dataset, stating if it's published or not and the running operation.  It is a finite state machine, with the following properties: - a single state at a time - the list of possible states, fully known - the list of all transitions, fully known, each with the actions and conditions that can trigger them
+Retrieves the current dataset status.
+
+The dataset status describes the current state of a dataset, stating if it's published or not and the running operation.  It is a finite state machine, with the following properties:
+- a single state at a time
+- the list of possible states, fully known
+- the list of all transitions, fully known, each with the actions and conditions that can trigger them
 
 ### Example
 

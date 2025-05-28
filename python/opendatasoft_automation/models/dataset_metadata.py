@@ -91,9 +91,9 @@ class DatasetMetadata(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in custom_template_name (dict)
         _field_dict = {}
         if self.custom_template_name:
-            for _key in self.custom_template_name:
-                if self.custom_template_name[_key]:
-                    _field_dict[_key] = self.custom_template_name[_key].to_dict()
+            for _key_custom_template_name in self.custom_template_name:
+                if self.custom_template_name[_key_custom_template_name]:
+                    _field_dict[_key_custom_template_name] = self.custom_template_name[_key_custom_template_name].to_dict()
             _dict['custom_template_name'] = _field_dict
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

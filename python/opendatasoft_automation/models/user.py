@@ -128,9 +128,9 @@ class User(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in identity_providers (list)
         _items = []
         if self.identity_providers:
-            for _item in self.identity_providers:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_identity_providers in self.identity_providers:
+                if _item_identity_providers:
+                    _items.append(_item_identity_providers.to_dict())
             _dict['identity_providers'] = _items
         # set to None if expires_at (nullable) is None
         # and model_fields_set contains the field

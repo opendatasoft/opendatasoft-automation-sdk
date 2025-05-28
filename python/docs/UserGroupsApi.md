@@ -495,7 +495,7 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
     search = 'search_example' # str | full-text search among `uid`, `title` and `description` properties (optional)
-    sort = 'updated_at' # str | sort results with respect to the specified properties. (optional) (default to 'updated_at')
+    sort = updated_at # str | sort results with respect to the specified properties. (optional) (default to updated_at)
     permissions = [opendatasoft_automation.Permission()] # List[Permission] | filter groups according to the specified list of permissions (optional)
 
     try:
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
  **limit** | **float**| The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \&quot;limit\&quot; set to 0 to get only the metadata (\&quot;results\&quot; property will contain an empty array). | [optional] [default to 20]
  **offset** | **float**| The number of results to skip before beginning the listing in case of a paginated response | [optional] 
  **search** | **str**| full-text search among &#x60;uid&#x60;, &#x60;title&#x60; and &#x60;description&#x60; properties | [optional] 
- **sort** | **str**| sort results with respect to the specified properties. | [optional] [default to &#39;updated_at&#39;]
+ **sort** | **str**| sort results with respect to the specified properties. | [optional] [default to updated_at]
  **permissions** | [**List[Permission]**](Permission.md)| filter groups according to the specified list of permissions | [optional] 
 
 ### Return type

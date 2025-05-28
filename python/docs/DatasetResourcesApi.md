@@ -1290,7 +1290,9 @@ Name | Type | Description  | Notes
 
 Preview resource records
 
-In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
+In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.
+
+The preview is composed of the fields definitions and the content of the first records up to 20.
 
 ### Example
 
@@ -1470,7 +1472,9 @@ Name | Type | Description  | Notes
 
 Preview unsaved resource records
 
-In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
+In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.
+
+The preview is composed of the fields definitions and the content of the first records up to 20.
 
 ### Example
 

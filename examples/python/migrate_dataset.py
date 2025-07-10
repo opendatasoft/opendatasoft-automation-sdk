@@ -27,9 +27,11 @@ processing pipeline, and metadata.
 python migrate_dataset.py \
     --source-domain "my-source-domain.opendatasoft.com" \
     --source-apikey "YOUR_SOURCE_API_KEY" \
+    --source-cookie "YOUR_SOURCE_COOKIE" \
     --source-dataset-id "source_dataset_identifier" \
     --destination-domain "my-destination-domain.opendatasoft.com" \
     --destination-apikey "YOUR_DESTINATION_API_KEY" \
+    --destination-cookie "YOUR_DESTINATION_COOKIE" \
     --publish
 ```
 
@@ -38,15 +40,19 @@ python migrate_dataset.py \
 python migrate_dataset.py \
     --source-domain "my-source-domain.opendatasoft.com" \
     --source-apikey "YOUR_SOURCE_API_KEY" \
+    --source-cookie "YOUR_SOURCE_COOKIE" \
     --source-dataset-uid "source_dataset_uid" \
     --destination-domain "my-destination-domain.opendatasoft.com" \
     --destination-apikey "YOUR_DESTINATION_API_KEY" \
+    --destination-cookie "YOUR_DESTINATION_COOKIE" \
     --destination-dataset-uid "existing_destination_dataset_uid"
 ```
 """
 import argparse
 import sys
 from pprint import pprint
+import requests
+import json
 
 import opendatasoft_automation
 from opendatasoft_automation.rest import ApiException
@@ -110,17 +116,17 @@ def find_matching_connection(source_connection_details, destination_client):
 
             if source_connection_details.type == dest_conn_details.type:
                 if source_connection_details.type in ['ftp', 'http']:
-                    if (hasattr(source_connection_details, 'url') and hasattr(dest_conn_details, 'url') and
-                        source_connection_details.url == dest_conn_details.url and
-                        hasattr(source_connection_details, 'auth') and hasattr(dest_conn_details, 'auth') and
-                        source_connection_details.auth and dest_conn_details.auth and
+                    if (hasattr(source_connection_details, 'url') and hasattr(dest_conn_details, 'url') and\
+                        source_connection_details.url == dest_conn_details.url and\
+                        hasattr(source_connection_details, 'auth') and hasattr(dest_conn_details, 'auth') and\
+                        source_connection_details.auth and dest_conn_details.auth and\
                         source_connection_details.auth.to_dict().get('username') == dest_conn_details.auth.to_dict().get('username')):
                         print(f"  - Found matching connection {dest_conn_details.uid}: {dest_conn_details.url} / {source_connection_details.auth.to_dict().get('username')}")
                         return dest_conn_details
                 elif source_connection_details.type == 'google_drive':
-                    if (hasattr(source_connection_details, 'auth') and hasattr(dest_conn_details, 'auth') and
-                        source_connection_details.auth and dest_conn_details.auth and
-                        hasattr(source_connection_details.auth, 'claims') and hasattr(dest_conn_details.auth, 'claims') and
+                    if (hasattr(source_connection_details, 'auth') and hasattr(dest_conn_details, 'auth') and\
+                        source_connection_details.auth and dest_conn_details.auth and\
+                        hasattr(source_connection_details.auth, 'claims') and hasattr(dest_conn_details.auth, 'claims') and\
                         source_connection_details.auth.claims.get('email') == dest_conn_details.auth.claims.get('email')):
                         print(f"  - Found matching Google Drive connection for email: {source_connection_details.auth.claims.get('email')}")
                         return dest_conn_details
@@ -161,11 +167,58 @@ def fetch_source_data(source_client, source_dataset_uid):
         pprint(e.body)
         return None, None, None, None
 
+def get_domain_themes(domain, cookie):
+    """Fetches the themes from the given domain using the provided cookie."""
+    if not cookie:
+        return None
+    print(f"Fetching themes from domain '{domain}'...")
+    headers = {'Cookie': cookie}
+    url = f"https://{domain}/api/management/1.0/domain/"
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        domain_info = response.json()
+        # print(domain_info)
+        return domain_info.get('properties', {}).get('metadata.themes', [])
+    except requests.exceptions.RequestException as e:
+        print(f"ERROR: Failed to fetch themes from '{domain}'. Status: {e.response.status_code}, Reason: {e.response.reason}")
+        try:
+            pprint(e.response.json())
+        except json.JSONDecodeError:
+            pprint(e.response.text)
+        return None
+
+def get_theme_by_name(themes, theme_name):
+    """Finds a theme by its name in the list of themes."""
+    if not themes:
+        return None
+    for theme in themes:
+        for lang, label in theme.get('labels', {}).items():
+            if label.strip().lower() == theme_name.strip().lower():
+                return theme
+    return None
+
+def get_theme_by_id(themes, theme_id):
+    """Finds a theme by its id in the list of themes."""
+    if not themes:
+        return None
+    for theme in themes:
+        if theme.get('id') == theme_id:
+            return theme
+    return None
 
 def migrate_dataset(args):
     """Main function to orchestrate the dataset migration."""
     source_client = get_api_client(args.source_domain, args.source_apikey)
     destination_client = get_api_client(args.destination_domain, args.destination_apikey)
+
+    # Get source and destination themes
+    source_themes = get_domain_themes(args.source_domain, args.source_cookie)
+    print("Source themes:")
+    pprint(source_themes)
+    destination_themes = get_domain_themes(args.destination_domain, args.destination_cookie)
+    print("Destination themes:")
+    pprint(destination_themes)
 
     # Step 1: Determine source and destination UIDs
     source_dataset_uid = args.source_dataset_uid or get_dataset_uid_from_id(args.source_dataset_id, source_client, args.source_domain)
@@ -289,6 +342,16 @@ def migrate_dataset(args):
 
         if source_metadata.default:
             default_metadata_dict = source_metadata.default.to_dict()
+            # Handle themes
+            if 'theme' in default_metadata_dict and default_metadata_dict['theme'] and default_metadata_dict['theme']['value']:
+                source_themes_val = default_metadata_dict['theme']['value']
+                destination_themes_list = []
+                for source_theme_name in source_themes_val:
+                    theme = get_theme_by_name(destination_themes, source_theme_name)
+                    if theme:
+                        destination_themes_list.append(theme['id'])
+                default_metadata_dict['theme']['value'] = destination_themes_list
+
             destination_metadata_payload.default = opendatasoft_automation.DatasetMetadataDefault.from_dict(default_metadata_dict)
             destination_metadata_payload.default.modified_updates_on_metadata_change = opendatasoft_automation.DatasetMetadataValue(value=False)
             destination_metadata_payload.default.modified_updates_on_data_change = opendatasoft_automation.DatasetMetadataValue(value=False)
@@ -297,7 +360,31 @@ def migrate_dataset(args):
             destination_metadata_payload.visualization = source_metadata.visualization
 
         if source_metadata.internal:
-            destination_metadata_payload.internal = source_metadata.internal
+            internal_metadata_dict = source_metadata.internal.to_dict()
+            if 'theme_id' in internal_metadata_dict and internal_metadata_dict['theme_id'] and internal_metadata_dict['theme_id']['value']:
+                source_theme_ids = internal_metadata_dict['theme_id']['value']
+                if isinstance(source_theme_ids, list):
+                    source_theme_id = source_theme_ids[0] # Take the first theme if it's a list
+                else:
+                    source_theme_id = source_theme_ids
+
+                source_theme = get_theme_by_id(source_themes, source_theme_id)
+                if source_theme:
+                    source_theme_name = source_theme.get('labels', {}).get('en')  # Assuming English label
+                    if source_theme_name:
+                        destination_theme = get_theme_by_name(destination_themes, source_theme_name)
+                        if destination_theme:
+                            internal_metadata_dict['theme_id']['value'] = [destination_theme['id']]
+                        else:
+                            print(f"  - WARNING: Theme '{source_theme_name}' not found on destination. Unsetting theme.")
+                            del internal_metadata_dict['theme_id']
+                    else:
+                        print(f"  - WARNING: Could not find English label for source theme ID '{source_theme_id}'. Unsetting theme.")
+                        del internal_metadata_dict['theme_id']
+                else:
+                    print(f"  - WARNING: Source theme with ID '{source_theme_id}' not found. Unsetting theme.")
+                    del internal_metadata_dict['theme_id']
+            destination_metadata_payload.internal = opendatasoft_automation.DatasetMetadataInternal.from_dict(internal_metadata_dict)
 
         if hasattr(source_metadata, 'custom_template_name') and source_metadata.custom_template_name:
             destination_metadata_payload.custom_template_name = source_metadata.custom_template_name
@@ -345,12 +432,14 @@ if __name__ == "__main__":
     # Source arguments
     parser.add_argument("--source-domain", required=True, help="Domain of the source ODS portal.")
     parser.add_argument("--source-apikey", required=True, help="API key for the source ODS portal.")
+    parser.add_argument("--source-cookie", required=False, help="Cookie for the source ODS portal.")
     parser.add_argument("--source-dataset-uid", required=False, help="The UID of the dataset to migrate.")
     parser.add_argument("--source-dataset-id", required=False, help="The ID of the dataset to migrate.")
 
     # Destination arguments
     parser.add_argument("--destination-domain", required=True, help="Domain of the destination ODS portal.")
     parser.add_argument("--destination-apikey", required=True, help="API key for the destination ODS portal.")
+    parser.add_argument("--destination-cookie", required=False, help="Cookie for the destination ODS portal.")
     parser.add_argument("--destination-dataset-uid", required=False, default=None,
                         help="Optional: UID of an existing dataset on the destination to update.")
     parser.add_argument("--destination-dataset-id", required=False, default=None,

@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import ConfigDict, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from opendatasoft_automation.models.google_drive_auth import GoogleDriveAuth
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,9 @@ class GoogleDriveOIDCAuth(GoogleDriveAuth):
     """
     GoogleDriveOIDCAuth
     """ # noqa: E501
-    nonce: StrictStr
+    nonce: Optional[StrictStr] = None
     grant_type: StrictStr
-    code: StrictStr
+    code: Optional[StrictStr] = None
     claims: Dict[str, Any]
     application_id: StrictStr
     __properties: ClassVar[List[str]] = ["type", "nonce", "grant_type", "code", "claims", "application_id"]
@@ -85,6 +85,16 @@ class GoogleDriveOIDCAuth(GoogleDriveAuth):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if nonce (nullable) is None
+        # and model_fields_set contains the field
+        if self.nonce is None and "nonce" in self.model_fields_set:
+            _dict['nonce'] = None
+
+        # set to None if code (nullable) is None
+        # and model_fields_set contains the field
+        if self.code is None and "code" in self.model_fields_set:
+            _dict['code'] = None
+
         return _dict
 
     @classmethod

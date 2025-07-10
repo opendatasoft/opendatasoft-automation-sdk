@@ -455,5 +455,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_ods_form_datasource.py
 tox.ini

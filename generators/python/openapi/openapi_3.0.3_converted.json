@@ -10714,7 +10714,8 @@
         "properties": {
           "nonce": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "grant_type": {
             "type": "string",
@@ -10724,7 +10725,8 @@
           },
           "code": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "claims": {
             "type": "object",
@@ -10732,9 +10734,7 @@
           }
         },
         "required": [
-          "nonce",
           "grant_type",
-          "code",
           "claims"
         ]
       },

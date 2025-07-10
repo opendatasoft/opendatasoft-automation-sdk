@@ -178,7 +178,6 @@ def get_domain_themes(domain, cookie):
         response = requests.get(url, headers=headers)
         response.raise_for_status()
         domain_info = response.json()
-        # print(domain_info)
         return domain_info.get('properties', {}).get('metadata.themes', [])
     except requests.exceptions.RequestException as e:
         print(f"ERROR: Failed to fetch themes from '{domain}'. Status: {e.response.status_code}, Reason: {e.response.reason}")
@@ -214,11 +213,7 @@ def migrate_dataset(args):
 
     # Get source and destination themes
     source_themes = get_domain_themes(args.source_domain, args.source_cookie)
-    print("Source themes:")
-    pprint(source_themes)
     destination_themes = get_domain_themes(args.destination_domain, args.destination_cookie)
-    print("Destination themes:")
-    pprint(destination_themes)
 
     # Step 1: Determine source and destination UIDs
     source_dataset_uid = args.source_dataset_uid or get_dataset_uid_from_id(args.source_dataset_id, source_client, args.source_domain)
@@ -363,27 +358,22 @@ def migrate_dataset(args):
             internal_metadata_dict = source_metadata.internal.to_dict()
             if 'theme_id' in internal_metadata_dict and internal_metadata_dict['theme_id'] and internal_metadata_dict['theme_id']['value']:
                 source_theme_ids = internal_metadata_dict['theme_id']['value']
-                if isinstance(source_theme_ids, list):
-                    source_theme_id = source_theme_ids[0] # Take the first theme if it's a list
-                else:
-                    source_theme_id = source_theme_ids
-
-                source_theme = get_theme_by_id(source_themes, source_theme_id)
-                if source_theme:
-                    source_theme_name = source_theme.get('labels', {}).get('en')  # Assuming English label
-                    if source_theme_name:
-                        destination_theme = get_theme_by_name(destination_themes, source_theme_name)
-                        if destination_theme:
-                            internal_metadata_dict['theme_id']['value'] = [destination_theme['id']]
+                destination_theme_ids = []
+                for source_theme_id in source_theme_ids:
+                    source_theme = get_theme_by_id(source_themes, source_theme_id)
+                    if source_theme:
+                        source_theme_name = next(iter(source_theme.get('labels', {}).values()), None)
+                        if source_theme_name:
+                            destination_theme = get_theme_by_name(destination_themes, source_theme_name)
+                            if destination_theme:
+                                destination_theme_ids.append(destination_theme['id'])
+                            else:
+                                print(f"  - WARNING: Theme '{source_theme_name}' not found on destination. Skipping theme.")
                         else:
-                            print(f"  - WARNING: Theme '{source_theme_name}' not found on destination. Unsetting theme.")
-                            del internal_metadata_dict['theme_id']
+                            print(f"  - WARNING: Could not find English label for source theme ID '{source_theme_id}'. Skipping theme.")
                     else:
-                        print(f"  - WARNING: Could not find English label for source theme ID '{source_theme_id}'. Unsetting theme.")
-                        del internal_metadata_dict['theme_id']
-                else:
-                    print(f"  - WARNING: Source theme with ID '{source_theme_id}' not found. Unsetting theme.")
-                    del internal_metadata_dict['theme_id']
+                        print(f"  - WARNING: Source theme with ID '{source_theme_id}' not found. Skipping theme.")
+                internal_metadata_dict['theme_id']['value'] = destination_theme_ids
             destination_metadata_payload.internal = opendatasoft_automation.DatasetMetadataInternal.from_dict(internal_metadata_dict)
 
         if hasattr(source_metadata, 'custom_template_name') and source_metadata.custom_template_name:

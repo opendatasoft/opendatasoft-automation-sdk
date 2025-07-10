@@ -19,23 +19,23 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from opendatasoft_automation.models.connection_uid import ConnectionUID
-from opendatasoft_automation.models.google_drive_connection import GoogleDriveConnection
+from opendatasoft_automation.models.snowflake_odbc_connection import SnowflakeODBCConnection
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GOOGLEDRIVEDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["ConnectionUID", "GoogleDriveConnection"]
+SNOWFLAKEODBCDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["ConnectionUID", "SnowflakeODBCConnection"]
 
-class GoogleDriveDatasourceAllOfConnection(BaseModel):
+class SnowflakeODBCDatasourceAllOfConnection(BaseModel):
     """
-    GoogleDriveDatasourceAllOfConnection
+    SnowflakeODBCDatasourceAllOfConnection
     """
+    # data type: SnowflakeODBCConnection
+    oneof_schema_1_validator: Optional[SnowflakeODBCConnection] = None
     # data type: ConnectionUID
-    oneof_schema_1_validator: Optional[ConnectionUID] = None
-    # data type: GoogleDriveConnection
-    oneof_schema_2_validator: Optional[GoogleDriveConnection] = None
-    actual_instance: Optional[Union[ConnectionUID, GoogleDriveConnection]] = None
-    one_of_schemas: Set[str] = { "ConnectionUID", "GoogleDriveConnection" }
+    oneof_schema_2_validator: Optional[ConnectionUID] = None
+    actual_instance: Optional[Union[ConnectionUID, SnowflakeODBCConnection]] = None
+    one_of_schemas: Set[str] = { "ConnectionUID", "SnowflakeODBCConnection" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -55,25 +55,25 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_oneof(cls, v):
-        instance = GoogleDriveDatasourceAllOfConnection.model_construct()
+        instance = SnowflakeODBCDatasourceAllOfConnection.model_construct()
         error_messages = []
         match = 0
+        # validate data type: SnowflakeODBCConnection
+        if not isinstance(v, SnowflakeODBCConnection):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SnowflakeODBCConnection`")
+        else:
+            match += 1
         # validate data type: ConnectionUID
         if not isinstance(v, ConnectionUID):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ConnectionUID`")
         else:
             match += 1
-        # validate data type: GoogleDriveConnection
-        if not isinstance(v, GoogleDriveConnection):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GoogleDriveConnection`")
-        else:
-            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SnowflakeODBCDatasourceAllOfConnection with oneOf schemas: ConnectionUID, SnowflakeODBCConnection. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SnowflakeODBCDatasourceAllOfConnection with oneOf schemas: ConnectionUID, SnowflakeODBCConnection. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -88,25 +88,25 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
         error_messages = []
         match = 0
 
+        # deserialize data into SnowflakeODBCConnection
+        try:
+            instance.actual_instance = SnowflakeODBCConnection.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into ConnectionUID
         try:
             instance.actual_instance = ConnectionUID.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GoogleDriveConnection
-        try:
-            instance.actual_instance = GoogleDriveConnection.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SnowflakeODBCDatasourceAllOfConnection with oneOf schemas: ConnectionUID, SnowflakeODBCConnection. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SnowflakeODBCDatasourceAllOfConnection with oneOf schemas: ConnectionUID, SnowflakeODBCConnection. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -120,7 +120,7 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ConnectionUID, GoogleDriveConnection]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ConnectionUID, SnowflakeODBCConnection]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

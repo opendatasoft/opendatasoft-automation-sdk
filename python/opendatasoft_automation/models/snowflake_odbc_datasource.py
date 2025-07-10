@@ -18,30 +18,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from opendatasoft_automation.models.datasource import Datasource
+from opendatasoft_automation.models.snowflake_odbc_datasource_all_of_connection import SnowflakeODBCDatasourceAllOfConnection
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OIDCAuth(BaseModel):
+class SnowflakeODBCDatasource(Datasource):
     """
-    OIDCAuth
+    SnowflakeODBCDatasource
     """ # noqa: E501
-    client_id: StrictStr
-    client_secret: Optional[StrictStr] = None
-    scope: StrictStr
-    token_endpoint: StrictStr
-    grant_type: StrictStr
-    code: Optional[StrictStr] = None
-    claims: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["client_id", "client_secret", "scope", "token_endpoint", "grant_type", "code", "claims"]
-
-    @field_validator('grant_type')
-    def grant_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['authorization_code']):
-            raise ValueError("must be one of enum values ('authorization_code')")
-        return value
+    connection: Optional[SnowflakeODBCDatasourceAllOfConnection] = None
+    query: Optional[StrictStr] = None
+    preview_query: Optional[StrictStr] = None
+    incremental_query: Optional[StrictStr] = None
+    incremental_field: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["type", "connection", "query", "preview_query", "incremental_query", "incremental_field"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -61,7 +54,7 @@ class OIDCAuth(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OIDCAuth from a JSON string"""
+        """Create an instance of SnowflakeODBCDatasource from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -82,21 +75,14 @@ class OIDCAuth(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if client_secret (nullable) is None
-        # and model_fields_set contains the field
-        if self.client_secret is None and "client_secret" in self.model_fields_set:
-            _dict['client_secret'] = None
-
-        # set to None if code (nullable) is None
-        # and model_fields_set contains the field
-        if self.code is None and "code" in self.model_fields_set:
-            _dict['code'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of connection
+        if self.connection:
+            _dict['connection'] = self.connection.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OIDCAuth from a dict"""
+        """Create an instance of SnowflakeODBCDatasource from a dict"""
         if obj is None:
             return None
 
@@ -104,13 +90,12 @@ class OIDCAuth(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "client_id": obj.get("client_id"),
-            "client_secret": obj.get("client_secret"),
-            "scope": obj.get("scope"),
-            "token_endpoint": obj.get("token_endpoint"),
-            "grant_type": obj.get("grant_type"),
-            "code": obj.get("code"),
-            "claims": obj.get("claims")
+            "type": obj.get("type"),
+            "connection": SnowflakeODBCDatasourceAllOfConnection.from_dict(obj["connection"]) if obj.get("connection") is not None else None,
+            "query": obj.get("query"),
+            "preview_query": obj.get("preview_query"),
+            "incremental_query": obj.get("incremental_query"),
+            "incremental_field": obj.get("incremental_field")
         })
         return _obj
 

@@ -29,6 +29,7 @@ class HTTPDatasource1ConnectionOneOf(BaseModel):
     """ # noqa: E501
     uid: StrictStr
     __properties: ClassVar[List[str]] = ["uid"]
+    __properties: ClassVar[List[str]] = ["uid", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,

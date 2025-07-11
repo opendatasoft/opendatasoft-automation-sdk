@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from opendatasoft_automation.models.dataset_metadata_asset_content_configuration import DatasetMetadataAssetContentConfiguration
 from opendatasoft_automation.models.dataset_metadata_default import DatasetMetadataDefault
 from opendatasoft_automation.models.dataset_metadata_internal import DatasetMetadataInternal
 from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue
@@ -31,12 +32,12 @@ class DatasetMetadata(BaseModel):
     """
     The data describing the dataset itself.
     """ # noqa: E501
-    default: Optional[DatasetMetadataDefault] = None
+    default: DatasetMetadataDefault
     visualization: Optional[DatasetMetadataVisualization] = None
     internal: Optional[DatasetMetadataInternal] = None
+    asset_content_configuration: Optional[DatasetMetadataAssetContentConfiguration] = None
     custom_template_name: Optional[Dict[str, DatasetMetadataValue]] = Field(default=None, description="Additional values for custom metadata templates you have configured on your portal.")
-    additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["default", "visualization", "internal", "custom_template_name"]
+    __properties: ClassVar[List[str]] = ["default", "visualization", "internal", "asset_content_configuration", "custom_template_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -68,10 +69,8 @@ class DatasetMetadata(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -88,6 +87,9 @@ class DatasetMetadata(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of internal
         if self.internal:
             _dict['internal'] = self.internal.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of asset_content_configuration
+        if self.asset_content_configuration:
+            _dict['asset_content_configuration'] = self.asset_content_configuration.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each value in custom_template_name (dict)
         _field_dict = {}
         if self.custom_template_name:
@@ -95,11 +97,6 @@ class DatasetMetadata(BaseModel):
                 if self.custom_template_name[_key_custom_template_name]:
                     _field_dict[_key_custom_template_name] = self.custom_template_name[_key_custom_template_name].to_dict()
             _dict['custom_template_name'] = _field_dict
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -115,6 +112,7 @@ class DatasetMetadata(BaseModel):
             "default": DatasetMetadataDefault.from_dict(obj["default"]) if obj.get("default") is not None else None,
             "visualization": DatasetMetadataVisualization.from_dict(obj["visualization"]) if obj.get("visualization") is not None else None,
             "internal": DatasetMetadataInternal.from_dict(obj["internal"]) if obj.get("internal") is not None else None,
+            "asset_content_configuration": DatasetMetadataAssetContentConfiguration.from_dict(obj["asset_content_configuration"]) if obj.get("asset_content_configuration") is not None else None,
             "custom_template_name": dict(
                 (_k, DatasetMetadataValue.from_dict(_v))
                 for _k, _v in obj["custom_template_name"].items()
@@ -122,11 +120,6 @@ class DatasetMetadata(BaseModel):
             if obj.get("custom_template_name") is not None
             else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

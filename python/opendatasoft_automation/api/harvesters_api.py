@@ -23,8 +23,8 @@ from typing_extensions import Annotated
 from opendatasoft_automation.models.harvester import Harvester
 from opendatasoft_automation.models.harvester_list_errors200_response import HarvesterListErrors200Response
 from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.models.list_harvesters200_response import ListHarvesters200Response
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
 
 from opendatasoft_automation.api_client import ApiClient, RequestSerialized
 from opendatasoft_automation.api_response import ApiResponse
@@ -99,8 +99,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -168,8 +168,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -237,8 +237,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -367,7 +367,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Harvester",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -435,7 +435,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Harvester",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -503,7 +503,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Harvester",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -649,7 +649,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -721,7 +721,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -793,7 +793,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -927,8 +927,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterListErrors200Response",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -996,8 +996,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterListErrors200Response",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1065,8 +1065,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterListErrors200Response",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1195,7 +1195,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterPreviewResult",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1263,7 +1263,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterPreviewResult",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1331,7 +1331,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterPreviewResult",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1464,7 +1464,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterPreviewResult",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1536,7 +1536,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterPreviewResult",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1608,7 +1608,7 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "HarvesterPreviewResult",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1995,7 +1995,7 @@ class HarvestersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Publish a harvester's datasets
 
         Publish all datasets attached to the harvester.
@@ -2033,8 +2033,8 @@ class HarvestersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2063,7 +2063,7 @@ class HarvestersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Publish a harvester's datasets
 
         Publish all datasets attached to the harvester.
@@ -2101,8 +2101,8 @@ class HarvestersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2169,8 +2169,8 @@ class HarvestersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2564,8 +2564,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2633,8 +2633,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2702,8 +2702,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "AbortHarvester400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject7",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2793,7 +2793,7 @@ class HarvestersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Unpublish a harvester's datasets
 
         Unpublish all datasets attached to the harvester.
@@ -2831,8 +2831,8 @@ class HarvestersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2861,7 +2861,7 @@ class HarvestersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Unpublish a harvester's datasets
 
         Unpublish all datasets attached to the harvester.
@@ -2899,8 +2899,8 @@ class HarvestersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2967,8 +2967,8 @@ class HarvestersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3101,8 +3101,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3174,8 +3174,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3247,8 +3247,8 @@ class HarvestersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Harvester",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

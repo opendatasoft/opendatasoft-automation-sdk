@@ -30,7 +30,7 @@ class DeleteDatasetFieldConfiguration(DatasetFieldConfiguration):
     DeleteDatasetFieldConfiguration
     """ # noqa: E501
     var_field: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The technical identifier of the field you want to delete", alias="field")
-    __properties: ClassVar[List[str]] = ["uid", "type", "from_name", "to_name", "field_label", "label", "field"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "label", "field"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,9 +85,6 @@ class DeleteDatasetFieldConfiguration(DatasetFieldConfiguration):
         _obj = cls.model_validate({
             "uid": obj.get("uid"),
             "type": obj.get("type"),
-            "from_name": obj.get("from_name"),
-            "to_name": obj.get("to_name"),
-            "field_label": obj.get("field_label"),
             "label": obj.get("label"),
             "field": obj.get("field")
         })

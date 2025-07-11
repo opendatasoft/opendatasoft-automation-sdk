@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | **str** |  | 
-**client_secret** | **str** |  | [optional] 
+**client_secret** | **str** |  | 
 **scope** | **str** |  | 
 **token_endpoint** | **str** |  | 
 **grant_type** | **str** |  | 

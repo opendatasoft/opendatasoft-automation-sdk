@@ -28,15 +28,15 @@ class DatasetMetadataDefault(BaseModel):
     """
     The standard set of metadata common to all Opendatasoft datasets.
     """ # noqa: E501
-    title: Optional[DatasetMetadataValue] = None
+    title: DatasetMetadataValue
     description: Optional[DatasetMetadataValue] = None
     keyword: Optional[DatasetMetadataValue] = None
-    modified: Optional[DatasetMetadataValue] = None
+    modified: DatasetMetadataValue
     modified_updates_on_metadata_change: Optional[DatasetMetadataValue] = None
     modified_updates_on_data_change: Optional[DatasetMetadataValue] = None
     geographic_reference: Optional[DatasetMetadataValue] = None
     geographic_reference_auto: Optional[DatasetMetadataValue] = None
-    language: Optional[DatasetMetadataValue] = None
+    language: DatasetMetadataValue
     timezone: Optional[DatasetMetadataValue] = None
     publisher: Optional[DatasetMetadataValue] = None
     references: Optional[DatasetMetadataValue] = None

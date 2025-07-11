@@ -17,9 +17,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr
-from typing import List, Optional, Union
-from typing_extensions import Annotated
+from pydantic import StrictStr
+from typing import List, Optional
 from opendatasoft_automation.models.dataset_processor import DatasetProcessor
 from opendatasoft_automation.models.list_dataset_processors200_response import ListDatasetProcessors200Response
 
@@ -100,7 +99,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -172,7 +171,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -244,7 +243,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -393,7 +392,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -465,7 +464,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -537,7 +536,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -618,8 +617,6 @@ class DatasetProcessorsApi:
     def list_dataset_processors(
         self,
         dataset_uid: StrictStr,
-        limit: Annotated[Optional[Union[Annotated[float, Field(le=1000, strict=True, ge=0)], Annotated[int, Field(le=1000, strict=True, ge=0)]]], Field(description="The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).")] = None,
-        offset: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="The number of results to skip before beginning the listing in case of a paginated response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -639,10 +636,6 @@ class DatasetProcessorsApi:
 
         :param dataset_uid: (required)
         :type dataset_uid: str
-        :param limit: The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).
-        :type limit: float
-        :param offset: The number of results to skip before beginning the listing in case of a paginated response
-        :type offset: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -667,8 +660,6 @@ class DatasetProcessorsApi:
 
         _param = self._list_dataset_processors_serialize(
             dataset_uid=dataset_uid,
-            limit=limit,
-            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -677,7 +668,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetProcessors200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -694,8 +685,6 @@ class DatasetProcessorsApi:
     def list_dataset_processors_with_http_info(
         self,
         dataset_uid: StrictStr,
-        limit: Annotated[Optional[Union[Annotated[float, Field(le=1000, strict=True, ge=0)], Annotated[int, Field(le=1000, strict=True, ge=0)]]], Field(description="The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).")] = None,
-        offset: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="The number of results to skip before beginning the listing in case of a paginated response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -715,10 +704,6 @@ class DatasetProcessorsApi:
 
         :param dataset_uid: (required)
         :type dataset_uid: str
-        :param limit: The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).
-        :type limit: float
-        :param offset: The number of results to skip before beginning the listing in case of a paginated response
-        :type offset: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -743,8 +728,6 @@ class DatasetProcessorsApi:
 
         _param = self._list_dataset_processors_serialize(
             dataset_uid=dataset_uid,
-            limit=limit,
-            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -753,7 +736,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetProcessors200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -770,8 +753,6 @@ class DatasetProcessorsApi:
     def list_dataset_processors_without_preload_content(
         self,
         dataset_uid: StrictStr,
-        limit: Annotated[Optional[Union[Annotated[float, Field(le=1000, strict=True, ge=0)], Annotated[int, Field(le=1000, strict=True, ge=0)]]], Field(description="The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).")] = None,
-        offset: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="The number of results to skip before beginning the listing in case of a paginated response")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -791,10 +772,6 @@ class DatasetProcessorsApi:
 
         :param dataset_uid: (required)
         :type dataset_uid: str
-        :param limit: The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array).
-        :type limit: float
-        :param offset: The number of results to skip before beginning the listing in case of a paginated response
-        :type offset: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -819,8 +796,6 @@ class DatasetProcessorsApi:
 
         _param = self._list_dataset_processors_serialize(
             dataset_uid=dataset_uid,
-            limit=limit,
-            offset=offset,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -829,7 +804,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetProcessors200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -841,8 +816,6 @@ class DatasetProcessorsApi:
     def _list_dataset_processors_serialize(
         self,
         dataset_uid,
-        limit,
-        offset,
         _request_auth,
         _content_type,
         _headers,
@@ -867,14 +840,6 @@ class DatasetProcessorsApi:
         if dataset_uid is not None:
             _path_params['dataset_uid'] = dataset_uid
         # process the query parameters
-        if limit is not None:
-            
-            _query_params.append(('limit', limit))
-            
-        if offset is not None:
-            
-            _query_params.append(('offset', offset))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1219,7 +1184,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1291,7 +1256,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1363,7 +1328,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1503,7 +1468,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1579,7 +1544,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1655,7 +1620,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

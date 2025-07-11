@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from opendatasoft_automation.models.dataset_field_configuration import DatasetFieldConfiguration
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +28,8 @@ class OrderDatasetFieldConfiguration(DatasetFieldConfiguration):
     """
     OrderDatasetFieldConfiguration
     """ # noqa: E501
-    order: Optional[List[StrictStr]] = Field(default=None, description="The ordered list of fields technical identifier")
-    __properties: ClassVar[List[str]] = ["uid", "type", "from_name", "to_name", "field_label", "label", "order"]
+    args: List[StrictStr] = Field(description="The ordered list of fields technical identifier")
+    __properties: ClassVar[List[str]] = ["uid", "type", "label", "args"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,11 +84,8 @@ class OrderDatasetFieldConfiguration(DatasetFieldConfiguration):
         _obj = cls.model_validate({
             "uid": obj.get("uid"),
             "type": obj.get("type"),
-            "from_name": obj.get("from_name"),
-            "to_name": obj.get("to_name"),
-            "field_label": obj.get("field_label"),
             "label": obj.get("label"),
-            "order": obj.get("order")
+            "args": obj.get("args")
         })
         return _obj
 

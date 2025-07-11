@@ -40,11 +40,8 @@ class DatasetFieldConfiguration(BaseModel):
     """ # noqa: E501
     uid: Optional[StrictStr] = Field(default=None, description="Unique identifier for the field configuration")
     type: Annotated[str, Field(min_length=1, strict=True)]
-    from_name: Optional[StrictStr] = Field(default=None, description="From name")
-    to_name: Optional[StrictStr] = Field(default=None, description="To name")
-    field_label: Optional[StrictStr] = Field(default=None, description="Field label")
     label: StrictStr = Field(description="Friendly label of the field configuration")
-    __properties: ClassVar[List[str]] = ["uid", "type", "from_name", "to_name", "field_label", "label"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "label"]
 
     model_config = ConfigDict(
         populate_by_name=True,

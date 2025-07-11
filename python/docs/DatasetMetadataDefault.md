@@ -6,15 +6,15 @@ The standard set of metadata common to all Opendatasoft datasets.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
 **description** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **keyword** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**modified** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**modified** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
 **modified_updates_on_metadata_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **modified_updates_on_data_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference_auto** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
 **timezone** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **publisher** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **references** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 

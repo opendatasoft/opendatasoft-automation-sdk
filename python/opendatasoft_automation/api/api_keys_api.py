@@ -103,7 +103,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -175,7 +175,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -247,7 +247,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -662,7 +662,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "APIKey",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -730,7 +730,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "APIKey",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -798,7 +798,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "APIKey",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -944,7 +944,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1016,7 +1016,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1088,7 +1088,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1237,8 +1237,8 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1310,8 +1310,8 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1383,8 +1383,8 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "APIKey",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1529,7 +1529,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchApikey200Response",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1597,7 +1597,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchApikey200Response",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1665,7 +1665,7 @@ class APIKeysApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SearchApikey200Response",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -27,9 +27,9 @@ class ODSOIDCAuth(BaseModel):
     """
     ODSOIDCAuth
     """ # noqa: E501
-    nonce: Optional[StrictStr] = None
+    nonce: Optional[StrictStr]
     grant_type: StrictStr
-    code: Optional[StrictStr] = None
+    code: Optional[StrictStr]
     claims: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["nonce", "grant_type", "code", "claims"]
 

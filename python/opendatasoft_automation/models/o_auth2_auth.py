@@ -28,7 +28,7 @@ class OAuth2Auth(BaseModel):
     OAuth2Auth
     """ # noqa: E501
     client_id: StrictStr
-    client_secret: Optional[StrictStr] = None
+    client_secret: Optional[StrictStr]
     scope: StrictStr
     token_endpoint: StrictStr
     grant_type: StrictStr

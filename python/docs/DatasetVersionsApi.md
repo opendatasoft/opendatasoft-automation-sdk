@@ -16,6 +16,9 @@ List all versions
 
 List the dataset versions.
 
+**Note:** only the last 20 versions of a dataset are stored in the platform database.
+For this reason, the API response will contain at most 20 results.
+
 ### Example
 
 * Api Key Authentication (HeaderAPIKey):

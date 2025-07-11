@@ -8,7 +8,6 @@ docs/APIKeyRevocationStatus.md
 docs/APIKeysApi.md
 docs/AWSIAMRoleAuth.md
 docs/AWSSignatureV4Auth.md
-docs/AbortHarvester400Response.md
 docs/AmazonS3AWSIAMRoleAuth.md
 docs/AmazonS3AWSSignatureV4Auth.md
 docs/AmazonS3Auth.md
@@ -36,7 +35,6 @@ docs/CodeEditorPagesSecurityApi.md
 docs/Connection.md
 docs/ConnectionUID.md
 docs/CreatableOrEditableMetadataTemplate.md
-docs/CreateDataset400Response.md
 docs/DatagouvHarvester.md
 docs/DatajsonHarvester.md
 docs/Dataset.md
@@ -54,6 +52,7 @@ docs/DatasetGroupSecurity.md
 docs/DatasetGroupSecurityGroup.md
 docs/DatasetMetadata.md
 docs/DatasetMetadataApi.md
+docs/DatasetMetadataAssetContentConfiguration.md
 docs/DatasetMetadataDefault.md
 docs/DatasetMetadataInternal.md
 docs/DatasetMetadataTemplate.md
@@ -78,6 +77,7 @@ docs/DeleteDatasetFieldConfiguration.md
 docs/DescriptionDatasetFieldConfiguration.md
 docs/ExploreLimits.md
 docs/ExploreLimitsApiCalls.md
+docs/ExtractionInfos.md
 docs/Extractor.md
 docs/ExtractorParametersInner.md
 docs/FTPAuth.md
@@ -94,8 +94,6 @@ docs/FederatedDatasourceAllOfDataset.md
 docs/FederatedDatasourceAllOfDatasetOneOf.md
 docs/FederatedDatasourceAllOfDomain.md
 docs/GetApikeys200Response.md
-docs/GetDatasetStatus200Response.md
-docs/GetDatasetStatus200ResponseRecordsErrorsInner.md
 docs/GetMetadataFieldsList200Response.md
 docs/GetUsers200Response.md
 docs/GoogleDriveAuth.md
@@ -126,6 +124,17 @@ docs/HarvesterPreviewResultResultsInner.md
 docs/HarvesterSchedule.md
 docs/HarvesterSchedulesApi.md
 docs/HarvestersApi.md
+docs/InlineObject.md
+docs/InlineObject1.md
+docs/InlineObject2.md
+docs/InlineObject3.md
+docs/InlineObject4.md
+docs/InlineObject5.md
+docs/InlineObject5RecordsErrorsInner.md
+docs/InlineObject6.md
+docs/InlineObject6FieldsInner.md
+docs/InlineObject6FieldsInnerAnnotationsInner.md
+docs/InlineObject7.md
 docs/InviteUsers200ResponseValue.md
 docs/JunarHarvester.md
 docs/ListCodeEditorPageGroupSecurity200Response.md
@@ -143,7 +152,6 @@ docs/ListDatasetSchedules200Response.md
 docs/ListDatasetUserSecurity200Response.md
 docs/ListDatasetVersions200Response.md
 docs/ListDatasets200Response.md
-docs/ListDatasetsDefaultResponse.md
 docs/ListDatasourceConnectionGroupSecurity200Response.md
 docs/ListDatasourceConnectionUserSecurity200Response.md
 docs/ListHarvesterSchedules200Response.md
@@ -167,6 +175,7 @@ docs/OMINodeHarvester.md
 docs/OdsFormDatasource.md
 docs/OpendatasoftHarvester.md
 docs/OrderDatasetFieldConfiguration.md
+docs/OriginInfos.md
 docs/PaginatedResults.md
 docs/Permission.md
 docs/PermissionEnum.md
@@ -175,17 +184,12 @@ docs/PermissionEnum3.md
 docs/PostApikeysApikeyUidRevokeRequest.md
 docs/ProvisionUsersRequest.md
 docs/ProvisionUsersRequestAllOfIdentityProvider.md
-docs/PublishDataset200Response.md
-docs/PublishDataset400Response.md
 docs/QuandlHarvester.md
 docs/RelatedUser.md
 docs/RelatedUserReadOnly.md
 docs/RenameDatasetFieldConfiguration.md
 docs/Resource.md
 docs/ResourceGuessExtractorParams200Response.md
-docs/ResourceUnsavedPreview200Response.md
-docs/ResourceUnsavedPreview200ResponseFieldsInner.md
-docs/ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner.md
 docs/ResourceUnsavedPreviewRequest.md
 docs/SearchApikey200Response.md
 docs/SearchApikeyRequest.md
@@ -204,7 +208,6 @@ docs/StudioPagesApi.md
 docs/StudioPagesSecurityApi.md
 docs/TypeDatasetFieldConfiguration.md
 docs/URLDatasetAlternativeExport.md
-docs/UpdateDataset404Response.md
 docs/UpdateDatasetAlternativeExportRequest.md
 docs/UploadedFileDatasetAlternativeExport.md
 docs/UploadedFileDatasource.md
@@ -253,7 +256,6 @@ opendatasoft_automation/api_response.py
 opendatasoft_automation/configuration.py
 opendatasoft_automation/exceptions.py
 opendatasoft_automation/models/__init__.py
-opendatasoft_automation/models/abort_harvester400_response.py
 opendatasoft_automation/models/amazon_s3_auth.py
 opendatasoft_automation/models/amazon_s3_aws_signature_v4_auth.py
 opendatasoft_automation/models/amazon_s3_awsiam_role_auth.py
@@ -281,7 +283,6 @@ opendatasoft_automation/models/code_editor_page_content.py
 opendatasoft_automation/models/connection.py
 opendatasoft_automation/models/connection_uid.py
 opendatasoft_automation/models/creatable_or_editable_metadata_template.py
-opendatasoft_automation/models/create_dataset400_response.py
 opendatasoft_automation/models/csw_harvester.py
 opendatasoft_automation/models/datagouv_harvester.py
 opendatasoft_automation/models/datajson_harvester.py
@@ -295,6 +296,7 @@ opendatasoft_automation/models/dataset_file.py
 opendatasoft_automation/models/dataset_group_security.py
 opendatasoft_automation/models/dataset_group_security_group.py
 opendatasoft_automation/models/dataset_metadata.py
+opendatasoft_automation/models/dataset_metadata_asset_content_configuration.py
 opendatasoft_automation/models/dataset_metadata_default.py
 opendatasoft_automation/models/dataset_metadata_internal.py
 opendatasoft_automation/models/dataset_metadata_template.py
@@ -311,6 +313,7 @@ opendatasoft_automation/models/delete_dataset_field_configuration.py
 opendatasoft_automation/models/description_dataset_field_configuration.py
 opendatasoft_automation/models/explore_limits.py
 opendatasoft_automation/models/explore_limits_api_calls.py
+opendatasoft_automation/models/extraction_infos.py
 opendatasoft_automation/models/extractor.py
 opendatasoft_automation/models/extractor_parameters_inner.py
 opendatasoft_automation/models/federated_dataset.py
@@ -327,8 +330,6 @@ opendatasoft_automation/models/ftp_harvester.py
 opendatasoft_automation/models/ftp_with_meta_csv_harvester.py
 opendatasoft_automation/models/ftpcsv_harvester.py
 opendatasoft_automation/models/get_apikeys200_response.py
-opendatasoft_automation/models/get_dataset_status200_response.py
-opendatasoft_automation/models/get_dataset_status200_response_records_errors_inner.py
 opendatasoft_automation/models/get_metadata_fields_list200_response.py
 opendatasoft_automation/models/get_users200_response.py
 opendatasoft_automation/models/google_drive_auth.py
@@ -357,6 +358,17 @@ opendatasoft_automation/models/http_datasource1_connection.py
 opendatasoft_automation/models/http_datasource1_headers.py
 opendatasoft_automation/models/httpo_auth2_auth.py
 opendatasoft_automation/models/httpoidc_auth.py
+opendatasoft_automation/models/inline_object.py
+opendatasoft_automation/models/inline_object1.py
+opendatasoft_automation/models/inline_object2.py
+opendatasoft_automation/models/inline_object3.py
+opendatasoft_automation/models/inline_object4.py
+opendatasoft_automation/models/inline_object5.py
+opendatasoft_automation/models/inline_object5_records_errors_inner.py
+opendatasoft_automation/models/inline_object6.py
+opendatasoft_automation/models/inline_object6_fields_inner.py
+opendatasoft_automation/models/inline_object6_fields_inner_annotations_inner.py
+opendatasoft_automation/models/inline_object7.py
 opendatasoft_automation/models/invite_users200_response_value.py
 opendatasoft_automation/models/junar_harvester.py
 opendatasoft_automation/models/list_code_editor_page_group_security200_response.py
@@ -374,7 +386,6 @@ opendatasoft_automation/models/list_dataset_schedules200_response.py
 opendatasoft_automation/models/list_dataset_user_security200_response.py
 opendatasoft_automation/models/list_dataset_versions200_response.py
 opendatasoft_automation/models/list_datasets200_response.py
-opendatasoft_automation/models/list_datasets_default_response.py
 opendatasoft_automation/models/list_datasource_connection_group_security200_response.py
 opendatasoft_automation/models/list_datasource_connection_user_security200_response.py
 opendatasoft_automation/models/list_harvester_schedules200_response.py
@@ -397,6 +408,7 @@ opendatasoft_automation/models/oidc_auth.py
 opendatasoft_automation/models/omi_node_harvester.py
 opendatasoft_automation/models/opendatasoft_harvester.py
 opendatasoft_automation/models/order_dataset_field_configuration.py
+opendatasoft_automation/models/origin_infos.py
 opendatasoft_automation/models/paginated_results.py
 opendatasoft_automation/models/permission.py
 opendatasoft_automation/models/permission_enum.py
@@ -405,17 +417,12 @@ opendatasoft_automation/models/permission_enum3.py
 opendatasoft_automation/models/post_apikeys_apikey_uid_revoke_request.py
 opendatasoft_automation/models/provision_users_request.py
 opendatasoft_automation/models/provision_users_request_all_of_identity_provider.py
-opendatasoft_automation/models/publish_dataset200_response.py
-opendatasoft_automation/models/publish_dataset400_response.py
 opendatasoft_automation/models/quandl_harvester.py
 opendatasoft_automation/models/related_user.py
 opendatasoft_automation/models/related_user_read_only.py
 opendatasoft_automation/models/rename_dataset_field_configuration.py
 opendatasoft_automation/models/resource.py
 opendatasoft_automation/models/resource_guess_extractor_params200_response.py
-opendatasoft_automation/models/resource_unsaved_preview200_response.py
-opendatasoft_automation/models/resource_unsaved_preview200_response_fields_inner.py
-opendatasoft_automation/models/resource_unsaved_preview200_response_fields_inner_annotations_inner.py
 opendatasoft_automation/models/resource_unsaved_preview_request.py
 opendatasoft_automation/models/search_apikey200_response.py
 opendatasoft_automation/models/search_apikey_request.py
@@ -431,7 +438,6 @@ opendatasoft_automation/models/socrata_harvester.py
 opendatasoft_automation/models/studio_page.py
 opendatasoft_automation/models/studio_page_contents_inner.py
 opendatasoft_automation/models/type_dataset_field_configuration.py
-opendatasoft_automation/models/update_dataset404_response.py
 opendatasoft_automation/models/update_dataset_alternative_export_request.py
 opendatasoft_automation/models/uploaded_file_dataset_alternative_export.py
 opendatasoft_automation/models/uploaded_file_datasource.py

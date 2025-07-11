@@ -6,15 +6,15 @@ Values for one of any available template on the portal
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
 **description** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **keyword** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**modified** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**modified** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
 **modified_updates_on_metadata_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **modified_updates_on_data_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference_auto** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
 **timezone** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **publisher** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **references** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
@@ -61,6 +61,9 @@ Name | Type | Description | Notes
 **custom_view_icon** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **custom_view_title** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **custom_view_slug** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**facets** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**fields_displayed_in_specific_languages** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
+**records_search_boosts** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 
 ## Example
 

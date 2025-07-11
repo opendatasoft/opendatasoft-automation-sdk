@@ -102,8 +102,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -175,8 +175,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -248,8 +248,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -398,8 +398,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -471,8 +471,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -544,8 +544,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -694,7 +694,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -766,7 +766,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -838,7 +838,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -974,7 +974,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1046,7 +1046,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1118,7 +1118,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1258,7 +1258,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListCodeEditorPageGroupSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1334,7 +1334,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListCodeEditorPageGroupSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1410,7 +1410,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListCodeEditorPageGroupSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1557,7 +1557,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListCodeEditorPageUserSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1633,7 +1633,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListCodeEditorPageUserSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1709,7 +1709,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListCodeEditorPageUserSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1852,7 +1852,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1924,7 +1924,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1996,7 +1996,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2132,7 +2132,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2204,7 +2204,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2276,7 +2276,7 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2416,8 +2416,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2493,8 +2493,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2570,8 +2570,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GroupSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2727,8 +2727,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2804,8 +2804,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2881,8 +2881,8 @@ class CodeEditorPagesSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserSecurity2",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

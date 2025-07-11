@@ -190,7 +190,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_dataset_processors**
-> ListDatasetProcessors200Response list_dataset_processors(dataset_uid, limit=limit, offset=offset)
+> ListDatasetProcessors200Response list_dataset_processors(dataset_uid)
 
 List dataset processors
 
@@ -235,12 +235,10 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = opendatasoft_automation.DatasetProcessorsApi(api_client)
     dataset_uid = 'da_qf2hyt' # str | 
-    limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
-    offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
 
     try:
         # List dataset processors
-        api_response = api_instance.list_dataset_processors(dataset_uid, limit=limit, offset=offset)
+        api_response = api_instance.list_dataset_processors(dataset_uid)
         print("The response of DatasetProcessorsApi->list_dataset_processors:\n")
         pprint(api_response)
     except Exception as e:
@@ -255,8 +253,6 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dataset_uid** | **str**|  | 
- **limit** | **float**| The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \&quot;limit\&quot; set to 0 to get only the metadata (\&quot;results\&quot; property will contain an empty array). | [optional] [default to 20]
- **offset** | **float**| The number of results to skip before beginning the listing in case of a paginated response | [optional] 
 
 ### Return type
 

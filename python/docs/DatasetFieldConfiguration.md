@@ -8,9 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uid** | **str** | Unique identifier for the field configuration | [optional] [readonly] 
 **type** | **str** |  | 
-**from_name** | **str** | From name | [optional] 
-**to_name** | **str** | To name | [optional] 
-**field_label** | **str** | Field label | [optional] 
 **label** | **str** | Friendly label of the field configuration | 
 
 ## Example

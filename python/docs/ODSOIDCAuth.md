@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nonce** | **str** |  | [optional] 
+**nonce** | **str** |  | 
 **grant_type** | **str** |  | 
-**code** | **str** |  | [optional] 
+**code** | **str** |  | 
 **claims** | **object** |  | [readonly] 
 
 ## Example

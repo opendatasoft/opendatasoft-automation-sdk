@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publish_studio_page**
-> PublishDataset200Response publish_studio_page(studio_page_uid)
+> InlineObject3 publish_studio_page(studio_page_uid)
 
 Publish page
 
@@ -290,7 +290,7 @@ Publish a studio page
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unpublish_studio_page**
-> PublishDataset200Response unpublish_studio_page(studio_page_uid)
+> InlineObject3 unpublish_studio_page(studio_page_uid)
 
 Unpublish page
 
@@ -466,7 +466,7 @@ Unpublish a studio page
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 

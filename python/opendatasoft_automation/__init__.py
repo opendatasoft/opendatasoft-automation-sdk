@@ -17,235 +17,472 @@
 
 __version__ = "10.0.1"
 
+# Define package exports
+__all__ = [
+    "APIKeysApi",
+    "AssetsApi",
+    "CodeEditorPagesApi",
+    "CodeEditorPagesSecurityApi",
+    "DatasetAlternativeExportsApi",
+    "DatasetAttachmentsApi",
+    "DatasetFeedbacksApi",
+    "DatasetFieldsApi",
+    "DatasetMetadataApi",
+    "DatasetProcessorsApi",
+    "DatasetResourcesApi",
+    "DatasetSchedulesApi",
+    "DatasetSecurityApi",
+    "DatasetVersionsApi",
+    "DatasetsApi",
+    "DatasourceConnectionSecurityApi",
+    "DatasourcesConnectionsApi",
+    "HarvesterSchedulesApi",
+    "HarvestersApi",
+    "MetadataTemplatesApi",
+    "StudioPagesApi",
+    "StudioPagesSecurityApi",
+    "UserGroupsApi",
+    "UsersApi",
+    "ApiResponse",
+    "ApiClient",
+    "Configuration",
+    "OpenApiException",
+    "ApiTypeError",
+    "ApiValueError",
+    "ApiKeyError",
+    "ApiAttributeError",
+    "ApiException",
+    "APIKey",
+    "APIKeyRevocationStatus",
+    "AWSIAMRoleAuth",
+    "AWSSignatureV4Auth",
+    "AmazonS3AWSIAMRoleAuth",
+    "AmazonS3AWSSignatureV4Auth",
+    "AmazonS3Auth",
+    "AmazonS3Connection",
+    "AmazonS3Datasource",
+    "AmazonS3DatasourceAllOfConnection",
+    "AnnotateDatasetFieldConfiguration",
+    "AnnotateDatasetFieldConfiguration1Args",
+    "ArcgisHarvester",
+    "ArcgisOpendataHarvester",
+    "AzureBlobStorageAuth",
+    "AzureBlobStorageConnection",
+    "AzureBlobStorageDatasource",
+    "AzureBlobStorageDatasourceAllOfConnection",
+    "AzureBlobStorageSharedKeyAuth",
+    "BaseMetadataTemplate",
+    "BasicAuth",
+    "CKANHarvester",
+    "CSWHarvester",
+    "CodeEditorPage",
+    "CodeEditorPageContent",
+    "Connection",
+    "ConnectionUID",
+    "CreatableOrEditableMetadataTemplate",
+    "DatagouvHarvester",
+    "DatajsonHarvester",
+    "Dataset",
+    "DatasetAlternativeExport",
+    "DatasetAttachment",
+    "DatasetFeedback",
+    "DatasetFeedbackValues",
+    "DatasetFieldConfiguration",
+    "DatasetFile",
+    "DatasetGroupSecurity",
+    "DatasetGroupSecurityGroup",
+    "DatasetMetadata",
+    "DatasetMetadataAssetContentConfiguration",
+    "DatasetMetadataDefault",
+    "DatasetMetadataInternal",
+    "DatasetMetadataTemplate",
+    "DatasetMetadataValue",
+    "DatasetMetadataVisualization",
+    "DatasetProcessor",
+    "DatasetSchedule",
+    "DatasetSecurity",
+    "DatasetSecurityApiCallsQuota",
+    "DatasetUserSecurity",
+    "DatasetVersion",
+    "Datasource",
+    "DeleteDatasetFieldConfiguration",
+    "DescriptionDatasetFieldConfiguration",
+    "ExploreLimits",
+    "ExploreLimitsApiCalls",
+    "ExtractionInfos",
+    "Extractor",
+    "ExtractorParametersInner",
+    "FTPAuth",
+    "FTPBasicAuth",
+    "FTPCSVHarvester",
+    "FTPConnection",
+    "FTPDatasource",
+    "FTPDatasource1Connection",
+    "FTPHarvester",
+    "FTPWithMetaCSVHarvester",
+    "FederatedDataset",
+    "FederatedDatasource",
+    "FederatedDatasourceAllOfDataset",
+    "FederatedDatasourceAllOfDatasetOneOf",
+    "FederatedDatasourceAllOfDomain",
+    "GetApikeys200Response",
+    "GetMetadataFieldsList200Response",
+    "GetUsers200Response",
+    "GoogleDriveAuth",
+    "GoogleDriveConnection",
+    "GoogleDriveDatasource",
+    "GoogleDriveDatasourceAllOfConnection",
+    "GoogleDriveOIDCAuth",
+    "GroupSecurity",
+    "GroupSecurity2",
+    "GroupSecurity3",
+    "GroupSecurityGroup",
+    "GuessUnsavedResourceExtractorParams200Response",
+    "GuessUnsavedResourceExtractorParamsRequest",
+    "GuessUnsavedResourceExtractorsRequest",
+    "HTTPAuth",
+    "HTTPBasicAuth",
+    "HTTPConnection",
+    "HTTPConnectionAllOfHeaders",
+    "HTTPDatasource",
+    "HTTPDatasource1Connection",
+    "HTTPDatasource1Headers",
+    "HTTPOAuth2Auth",
+    "HTTPOIDCAuth",
+    "Harvester",
+    "HarvesterListErrors200Response",
+    "HarvesterPreviewResult",
+    "HarvesterPreviewResultResultsInner",
+    "HarvesterSchedule",
+    "InlineObject",
+    "InlineObject1",
+    "InlineObject2",
+    "InlineObject3",
+    "InlineObject4",
+    "InlineObject5",
+    "InlineObject5RecordsErrorsInner",
+    "InlineObject6",
+    "InlineObject6FieldsInner",
+    "InlineObject6FieldsInnerAnnotationsInner",
+    "InlineObject7",
+    "InviteUsers200ResponseValue",
+    "JunarHarvester",
+    "ListCodeEditorPageGroupSecurity200Response",
+    "ListCodeEditorPageUserSecurity200Response",
+    "ListCodeEditorPages200Response",
+    "ListConnections200Response",
+    "ListDatasetAlternativeExports200Response",
+    "ListDatasetAttachments200Response",
+    "ListDatasetFeedbacks200Response",
+    "ListDatasetFieldConfigurations200Response",
+    "ListDatasetGroupSecurity200Response",
+    "ListDatasetProcessors200Response",
+    "ListDatasetResources200Response",
+    "ListDatasetSchedules200Response",
+    "ListDatasetUserSecurity200Response",
+    "ListDatasetVersions200Response",
+    "ListDatasets200Response",
+    "ListDatasourceConnectionGroupSecurity200Response",
+    "ListDatasourceConnectionUserSecurity200Response",
+    "ListHarvesterSchedules200Response",
+    "ListHarvesters200Response",
+    "ListImages200Response",
+    "ListImages200ResponseAllOfResultsInner",
+    "ListMetadataTemplates200Response",
+    "ListStudioPageGroupSecurity200Response",
+    "ListStudioPageUserSecurity200Response",
+    "ListStudioPages200Response",
+    "ListUserGroups200Response",
+    "MetadataTemplate",
+    "MetadataTemplateField",
+    "MetadataTemplateFieldSuggestions",
+    "MetadataTemplateFieldSuggestionsExhaustive",
+    "OAuth2Auth",
+    "ODSOIDCAuth",
+    "OIDCAuth",
+    "OMINodeHarvester",
+    "OdsFormDatasource",
+    "OpendatasoftHarvester",
+    "OrderDatasetFieldConfiguration",
+    "OriginInfos",
+    "PaginatedResults",
+    "Permission",
+    "PermissionEnum",
+    "PermissionEnum2",
+    "PermissionEnum3",
+    "PostApikeysApikeyUidRevokeRequest",
+    "ProvisionUsersRequest",
+    "ProvisionUsersRequestAllOfIdentityProvider",
+    "QuandlHarvester",
+    "RelatedUser",
+    "RelatedUserReadOnly",
+    "RenameDatasetFieldConfiguration",
+    "Resource",
+    "ResourceGuessExtractorParams200Response",
+    "ResourceUnsavedPreviewRequest",
+    "SearchApikey200Response",
+    "SearchApikeyRequest",
+    "SharepointAuth",
+    "SharepointConnection",
+    "SharepointDatasource",
+    "SharepointDatasource1Connection",
+    "SharepointOIDCAuth",
+    "SnowflakeODBCConnection",
+    "SnowflakeODBCDatasource",
+    "SnowflakeODBCDatasourceAllOfConnection",
+    "SocrataHarvester",
+    "StudioPage",
+    "StudioPageContentsInner",
+    "TypeDatasetFieldConfiguration",
+    "URLDatasetAlternativeExport",
+    "UpdateDatasetAlternativeExportRequest",
+    "UploadedFileDatasetAlternativeExport",
+    "UploadedFileDatasource",
+    "UploadedFileDatasource1File",
+    "UploadedFileDatasource1FileOneOf",
+    "User",
+    "UserGroup",
+    "UserGroups",
+    "UserGroupsOneOfInner",
+    "UserIdentityProvidersInner",
+    "UserSecurity",
+    "UserSecurity2",
+    "UserSecurity3",
+    "WFSHarvester",
+]
+
 # import apis into sdk package
-from opendatasoft_automation.api.api_keys_api import APIKeysApi
-from opendatasoft_automation.api.assets_api import AssetsApi
-from opendatasoft_automation.api.code_editor_pages_api import CodeEditorPagesApi
-from opendatasoft_automation.api.code_editor_pages_security_api import CodeEditorPagesSecurityApi
-from opendatasoft_automation.api.dataset_alternative_exports_api import DatasetAlternativeExportsApi
-from opendatasoft_automation.api.dataset_attachments_api import DatasetAttachmentsApi
-from opendatasoft_automation.api.dataset_feedbacks_api import DatasetFeedbacksApi
-from opendatasoft_automation.api.dataset_fields_api import DatasetFieldsApi
-from opendatasoft_automation.api.dataset_metadata_api import DatasetMetadataApi
-from opendatasoft_automation.api.dataset_processors_api import DatasetProcessorsApi
-from opendatasoft_automation.api.dataset_resources_api import DatasetResourcesApi
-from opendatasoft_automation.api.dataset_schedules_api import DatasetSchedulesApi
-from opendatasoft_automation.api.dataset_security_api import DatasetSecurityApi
-from opendatasoft_automation.api.dataset_versions_api import DatasetVersionsApi
-from opendatasoft_automation.api.datasets_api import DatasetsApi
-from opendatasoft_automation.api.datasource_connection_security_api import DatasourceConnectionSecurityApi
-from opendatasoft_automation.api.datasources_connections_api import DatasourcesConnectionsApi
-from opendatasoft_automation.api.harvester_schedules_api import HarvesterSchedulesApi
-from opendatasoft_automation.api.harvesters_api import HarvestersApi
-from opendatasoft_automation.api.metadata_templates_api import MetadataTemplatesApi
-from opendatasoft_automation.api.studio_pages_api import StudioPagesApi
-from opendatasoft_automation.api.studio_pages_security_api import StudioPagesSecurityApi
-from opendatasoft_automation.api.user_groups_api import UserGroupsApi
-from opendatasoft_automation.api.users_api import UsersApi
+from opendatasoft_automation.api.api_keys_api import APIKeysApi as APIKeysApi
+from opendatasoft_automation.api.assets_api import AssetsApi as AssetsApi
+from opendatasoft_automation.api.code_editor_pages_api import CodeEditorPagesApi as CodeEditorPagesApi
+from opendatasoft_automation.api.code_editor_pages_security_api import CodeEditorPagesSecurityApi as CodeEditorPagesSecurityApi
+from opendatasoft_automation.api.dataset_alternative_exports_api import DatasetAlternativeExportsApi as DatasetAlternativeExportsApi
+from opendatasoft_automation.api.dataset_attachments_api import DatasetAttachmentsApi as DatasetAttachmentsApi
+from opendatasoft_automation.api.dataset_feedbacks_api import DatasetFeedbacksApi as DatasetFeedbacksApi
+from opendatasoft_automation.api.dataset_fields_api import DatasetFieldsApi as DatasetFieldsApi
+from opendatasoft_automation.api.dataset_metadata_api import DatasetMetadataApi as DatasetMetadataApi
+from opendatasoft_automation.api.dataset_processors_api import DatasetProcessorsApi as DatasetProcessorsApi
+from opendatasoft_automation.api.dataset_resources_api import DatasetResourcesApi as DatasetResourcesApi
+from opendatasoft_automation.api.dataset_schedules_api import DatasetSchedulesApi as DatasetSchedulesApi
+from opendatasoft_automation.api.dataset_security_api import DatasetSecurityApi as DatasetSecurityApi
+from opendatasoft_automation.api.dataset_versions_api import DatasetVersionsApi as DatasetVersionsApi
+from opendatasoft_automation.api.datasets_api import DatasetsApi as DatasetsApi
+from opendatasoft_automation.api.datasource_connection_security_api import DatasourceConnectionSecurityApi as DatasourceConnectionSecurityApi
+from opendatasoft_automation.api.datasources_connections_api import DatasourcesConnectionsApi as DatasourcesConnectionsApi
+from opendatasoft_automation.api.harvester_schedules_api import HarvesterSchedulesApi as HarvesterSchedulesApi
+from opendatasoft_automation.api.harvesters_api import HarvestersApi as HarvestersApi
+from opendatasoft_automation.api.metadata_templates_api import MetadataTemplatesApi as MetadataTemplatesApi
+from opendatasoft_automation.api.studio_pages_api import StudioPagesApi as StudioPagesApi
+from opendatasoft_automation.api.studio_pages_security_api import StudioPagesSecurityApi as StudioPagesSecurityApi
+from opendatasoft_automation.api.user_groups_api import UserGroupsApi as UserGroupsApi
+from opendatasoft_automation.api.users_api import UsersApi as UsersApi
 
 # import ApiClient
-from opendatasoft_automation.api_response import ApiResponse
-from opendatasoft_automation.api_client import ApiClient
-from opendatasoft_automation.configuration import Configuration
-from opendatasoft_automation.exceptions import OpenApiException
-from opendatasoft_automation.exceptions import ApiTypeError
-from opendatasoft_automation.exceptions import ApiValueError
-from opendatasoft_automation.exceptions import ApiKeyError
-from opendatasoft_automation.exceptions import ApiAttributeError
-from opendatasoft_automation.exceptions import ApiException
+from opendatasoft_automation.api_response import ApiResponse as ApiResponse
+from opendatasoft_automation.api_client import ApiClient as ApiClient
+from opendatasoft_automation.configuration import Configuration as Configuration
+from opendatasoft_automation.exceptions import OpenApiException as OpenApiException
+from opendatasoft_automation.exceptions import ApiTypeError as ApiTypeError
+from opendatasoft_automation.exceptions import ApiValueError as ApiValueError
+from opendatasoft_automation.exceptions import ApiKeyError as ApiKeyError
+from opendatasoft_automation.exceptions import ApiAttributeError as ApiAttributeError
+from opendatasoft_automation.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from opendatasoft_automation.models.api_key import APIKey
-from opendatasoft_automation.models.api_key_revocation_status import APIKeyRevocationStatus
-from opendatasoft_automation.models.awsiam_role_auth import AWSIAMRoleAuth
-from opendatasoft_automation.models.aws_signature_v4_auth import AWSSignatureV4Auth
-from opendatasoft_automation.models.abort_harvester400_response import AbortHarvester400Response
-from opendatasoft_automation.models.amazon_s3_awsiam_role_auth import AmazonS3AWSIAMRoleAuth
-from opendatasoft_automation.models.amazon_s3_aws_signature_v4_auth import AmazonS3AWSSignatureV4Auth
-from opendatasoft_automation.models.amazon_s3_auth import AmazonS3Auth
-from opendatasoft_automation.models.amazon_s3_connection import AmazonS3Connection
-from opendatasoft_automation.models.amazon_s3_datasource import AmazonS3Datasource
-from opendatasoft_automation.models.amazon_s3_datasource_all_of_connection import AmazonS3DatasourceAllOfConnection
-from opendatasoft_automation.models.annotate_dataset_field_configuration import AnnotateDatasetFieldConfiguration
-from opendatasoft_automation.models.annotate_dataset_field_configuration1_args import AnnotateDatasetFieldConfiguration1Args
-from opendatasoft_automation.models.arcgis_harvester import ArcgisHarvester
-from opendatasoft_automation.models.arcgis_opendata_harvester import ArcgisOpendataHarvester
-from opendatasoft_automation.models.azure_blob_storage_auth import AzureBlobStorageAuth
-from opendatasoft_automation.models.azure_blob_storage_connection import AzureBlobStorageConnection
-from opendatasoft_automation.models.azure_blob_storage_datasource import AzureBlobStorageDatasource
-from opendatasoft_automation.models.azure_blob_storage_datasource_all_of_connection import AzureBlobStorageDatasourceAllOfConnection
-from opendatasoft_automation.models.azure_blob_storage_shared_key_auth import AzureBlobStorageSharedKeyAuth
-from opendatasoft_automation.models.base_metadata_template import BaseMetadataTemplate
-from opendatasoft_automation.models.basic_auth import BasicAuth
-from opendatasoft_automation.models.ckan_harvester import CKANHarvester
-from opendatasoft_automation.models.csw_harvester import CSWHarvester
-from opendatasoft_automation.models.code_editor_page import CodeEditorPage
-from opendatasoft_automation.models.code_editor_page_content import CodeEditorPageContent
-from opendatasoft_automation.models.connection import Connection
-from opendatasoft_automation.models.connection_uid import ConnectionUID
-from opendatasoft_automation.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate
-from opendatasoft_automation.models.create_dataset400_response import CreateDataset400Response
-from opendatasoft_automation.models.datagouv_harvester import DatagouvHarvester
-from opendatasoft_automation.models.datajson_harvester import DatajsonHarvester
-from opendatasoft_automation.models.dataset import Dataset
-from opendatasoft_automation.models.dataset_alternative_export import DatasetAlternativeExport
-from opendatasoft_automation.models.dataset_attachment import DatasetAttachment
-from opendatasoft_automation.models.dataset_feedback import DatasetFeedback
-from opendatasoft_automation.models.dataset_feedback_values import DatasetFeedbackValues
-from opendatasoft_automation.models.dataset_field_configuration import DatasetFieldConfiguration
-from opendatasoft_automation.models.dataset_file import DatasetFile
-from opendatasoft_automation.models.dataset_group_security import DatasetGroupSecurity
-from opendatasoft_automation.models.dataset_group_security_group import DatasetGroupSecurityGroup
-from opendatasoft_automation.models.dataset_metadata import DatasetMetadata
-from opendatasoft_automation.models.dataset_metadata_default import DatasetMetadataDefault
-from opendatasoft_automation.models.dataset_metadata_internal import DatasetMetadataInternal
-from opendatasoft_automation.models.dataset_metadata_template import DatasetMetadataTemplate
-from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue
-from opendatasoft_automation.models.dataset_metadata_visualization import DatasetMetadataVisualization
-from opendatasoft_automation.models.dataset_processor import DatasetProcessor
-from opendatasoft_automation.models.dataset_schedule import DatasetSchedule
-from opendatasoft_automation.models.dataset_security import DatasetSecurity
-from opendatasoft_automation.models.dataset_security_api_calls_quota import DatasetSecurityApiCallsQuota
-from opendatasoft_automation.models.dataset_user_security import DatasetUserSecurity
-from opendatasoft_automation.models.dataset_version import DatasetVersion
-from opendatasoft_automation.models.datasource import Datasource
-from opendatasoft_automation.models.delete_dataset_field_configuration import DeleteDatasetFieldConfiguration
-from opendatasoft_automation.models.description_dataset_field_configuration import DescriptionDatasetFieldConfiguration
-from opendatasoft_automation.models.explore_limits import ExploreLimits
-from opendatasoft_automation.models.explore_limits_api_calls import ExploreLimitsApiCalls
-from opendatasoft_automation.models.extractor import Extractor
-from opendatasoft_automation.models.extractor_parameters_inner import ExtractorParametersInner
-from opendatasoft_automation.models.ftp_auth import FTPAuth
-from opendatasoft_automation.models.ftp_basic_auth import FTPBasicAuth
-from opendatasoft_automation.models.ftpcsv_harvester import FTPCSVHarvester
-from opendatasoft_automation.models.ftp_connection import FTPConnection
-from opendatasoft_automation.models.ftp_datasource import FTPDatasource
-from opendatasoft_automation.models.ftp_datasource1_connection import FTPDatasource1Connection
-from opendatasoft_automation.models.ftp_harvester import FTPHarvester
-from opendatasoft_automation.models.ftp_with_meta_csv_harvester import FTPWithMetaCSVHarvester
-from opendatasoft_automation.models.federated_dataset import FederatedDataset
-from opendatasoft_automation.models.federated_datasource import FederatedDatasource
-from opendatasoft_automation.models.federated_datasource_all_of_dataset import FederatedDatasourceAllOfDataset
-from opendatasoft_automation.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf
-from opendatasoft_automation.models.federated_datasource_all_of_domain import FederatedDatasourceAllOfDomain
-from opendatasoft_automation.models.get_apikeys200_response import GetApikeys200Response
-from opendatasoft_automation.models.get_dataset_status200_response import GetDatasetStatus200Response
-from opendatasoft_automation.models.get_dataset_status200_response_records_errors_inner import GetDatasetStatus200ResponseRecordsErrorsInner
-from opendatasoft_automation.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response
-from opendatasoft_automation.models.get_users200_response import GetUsers200Response
-from opendatasoft_automation.models.google_drive_auth import GoogleDriveAuth
-from opendatasoft_automation.models.google_drive_connection import GoogleDriveConnection
-from opendatasoft_automation.models.google_drive_datasource import GoogleDriveDatasource
-from opendatasoft_automation.models.google_drive_datasource_all_of_connection import GoogleDriveDatasourceAllOfConnection
-from opendatasoft_automation.models.google_drive_oidc_auth import GoogleDriveOIDCAuth
-from opendatasoft_automation.models.group_security import GroupSecurity
-from opendatasoft_automation.models.group_security2 import GroupSecurity2
-from opendatasoft_automation.models.group_security3 import GroupSecurity3
-from opendatasoft_automation.models.group_security_group import GroupSecurityGroup
-from opendatasoft_automation.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
-from opendatasoft_automation.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
-from opendatasoft_automation.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
-from opendatasoft_automation.models.http_auth import HTTPAuth
-from opendatasoft_automation.models.http_basic_auth import HTTPBasicAuth
-from opendatasoft_automation.models.http_connection import HTTPConnection
-from opendatasoft_automation.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders
-from opendatasoft_automation.models.http_datasource import HTTPDatasource
-from opendatasoft_automation.models.http_datasource1_connection import HTTPDatasource1Connection
-from opendatasoft_automation.models.http_datasource1_headers import HTTPDatasource1Headers
-from opendatasoft_automation.models.httpo_auth2_auth import HTTPOAuth2Auth
-from opendatasoft_automation.models.httpoidc_auth import HTTPOIDCAuth
-from opendatasoft_automation.models.harvester import Harvester
-from opendatasoft_automation.models.harvester_list_errors200_response import HarvesterListErrors200Response
-from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult
-from opendatasoft_automation.models.harvester_preview_result_results_inner import HarvesterPreviewResultResultsInner
-from opendatasoft_automation.models.harvester_schedule import HarvesterSchedule
-from opendatasoft_automation.models.invite_users200_response_value import InviteUsers200ResponseValue
-from opendatasoft_automation.models.junar_harvester import JunarHarvester
-from opendatasoft_automation.models.list_code_editor_page_group_security200_response import ListCodeEditorPageGroupSecurity200Response
-from opendatasoft_automation.models.list_code_editor_page_user_security200_response import ListCodeEditorPageUserSecurity200Response
-from opendatasoft_automation.models.list_code_editor_pages200_response import ListCodeEditorPages200Response
-from opendatasoft_automation.models.list_connections200_response import ListConnections200Response
-from opendatasoft_automation.models.list_dataset_alternative_exports200_response import ListDatasetAlternativeExports200Response
-from opendatasoft_automation.models.list_dataset_attachments200_response import ListDatasetAttachments200Response
-from opendatasoft_automation.models.list_dataset_feedbacks200_response import ListDatasetFeedbacks200Response
-from opendatasoft_automation.models.list_dataset_field_configurations200_response import ListDatasetFieldConfigurations200Response
-from opendatasoft_automation.models.list_dataset_group_security200_response import ListDatasetGroupSecurity200Response
-from opendatasoft_automation.models.list_dataset_processors200_response import ListDatasetProcessors200Response
-from opendatasoft_automation.models.list_dataset_resources200_response import ListDatasetResources200Response
-from opendatasoft_automation.models.list_dataset_schedules200_response import ListDatasetSchedules200Response
-from opendatasoft_automation.models.list_dataset_user_security200_response import ListDatasetUserSecurity200Response
-from opendatasoft_automation.models.list_dataset_versions200_response import ListDatasetVersions200Response
-from opendatasoft_automation.models.list_datasets200_response import ListDatasets200Response
-from opendatasoft_automation.models.list_datasets_default_response import ListDatasetsDefaultResponse
-from opendatasoft_automation.models.list_datasource_connection_group_security200_response import ListDatasourceConnectionGroupSecurity200Response
-from opendatasoft_automation.models.list_datasource_connection_user_security200_response import ListDatasourceConnectionUserSecurity200Response
-from opendatasoft_automation.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response
-from opendatasoft_automation.models.list_harvesters200_response import ListHarvesters200Response
-from opendatasoft_automation.models.list_images200_response import ListImages200Response
-from opendatasoft_automation.models.list_images200_response_all_of_results_inner import ListImages200ResponseAllOfResultsInner
-from opendatasoft_automation.models.list_metadata_templates200_response import ListMetadataTemplates200Response
-from opendatasoft_automation.models.list_studio_page_group_security200_response import ListStudioPageGroupSecurity200Response
-from opendatasoft_automation.models.list_studio_page_user_security200_response import ListStudioPageUserSecurity200Response
-from opendatasoft_automation.models.list_studio_pages200_response import ListStudioPages200Response
-from opendatasoft_automation.models.list_user_groups200_response import ListUserGroups200Response
-from opendatasoft_automation.models.metadata_template import MetadataTemplate
-from opendatasoft_automation.models.metadata_template_field import MetadataTemplateField
-from opendatasoft_automation.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions
-from opendatasoft_automation.models.metadata_template_field_suggestions_exhaustive import MetadataTemplateFieldSuggestionsExhaustive
-from opendatasoft_automation.models.o_auth2_auth import OAuth2Auth
-from opendatasoft_automation.models.odsoidc_auth import ODSOIDCAuth
-from opendatasoft_automation.models.oidc_auth import OIDCAuth
-from opendatasoft_automation.models.omi_node_harvester import OMINodeHarvester
-from opendatasoft_automation.models.ods_form_datasource import OdsFormDatasource
-from opendatasoft_automation.models.opendatasoft_harvester import OpendatasoftHarvester
-from opendatasoft_automation.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration
-from opendatasoft_automation.models.paginated_results import PaginatedResults
-from opendatasoft_automation.models.permission import Permission
-from opendatasoft_automation.models.permission_enum import PermissionEnum
-from opendatasoft_automation.models.permission_enum2 import PermissionEnum2
-from opendatasoft_automation.models.permission_enum3 import PermissionEnum3
-from opendatasoft_automation.models.post_apikeys_apikey_uid_revoke_request import PostApikeysApikeyUidRevokeRequest
-from opendatasoft_automation.models.provision_users_request import ProvisionUsersRequest
-from opendatasoft_automation.models.provision_users_request_all_of_identity_provider import ProvisionUsersRequestAllOfIdentityProvider
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
-from opendatasoft_automation.models.publish_dataset400_response import PublishDataset400Response
-from opendatasoft_automation.models.quandl_harvester import QuandlHarvester
-from opendatasoft_automation.models.related_user import RelatedUser
-from opendatasoft_automation.models.related_user_read_only import RelatedUserReadOnly
-from opendatasoft_automation.models.rename_dataset_field_configuration import RenameDatasetFieldConfiguration
-from opendatasoft_automation.models.resource import Resource
-from opendatasoft_automation.models.resource_guess_extractor_params200_response import ResourceGuessExtractorParams200Response
-from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
-from opendatasoft_automation.models.resource_unsaved_preview200_response_fields_inner import ResourceUnsavedPreview200ResponseFieldsInner
-from opendatasoft_automation.models.resource_unsaved_preview200_response_fields_inner_annotations_inner import ResourceUnsavedPreview200ResponseFieldsInnerAnnotationsInner
-from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
-from opendatasoft_automation.models.search_apikey200_response import SearchApikey200Response
-from opendatasoft_automation.models.search_apikey_request import SearchApikeyRequest
-from opendatasoft_automation.models.sharepoint_auth import SharepointAuth
-from opendatasoft_automation.models.sharepoint_connection import SharepointConnection
-from opendatasoft_automation.models.sharepoint_datasource import SharepointDatasource
-from opendatasoft_automation.models.sharepoint_datasource1_connection import SharepointDatasource1Connection
-from opendatasoft_automation.models.sharepoint_oidc_auth import SharepointOIDCAuth
-from opendatasoft_automation.models.snowflake_odbc_connection import SnowflakeODBCConnection
-from opendatasoft_automation.models.snowflake_odbc_datasource import SnowflakeODBCDatasource
-from opendatasoft_automation.models.snowflake_odbc_datasource_all_of_connection import SnowflakeODBCDatasourceAllOfConnection
-from opendatasoft_automation.models.socrata_harvester import SocrataHarvester
-from opendatasoft_automation.models.studio_page import StudioPage
-from opendatasoft_automation.models.studio_page_contents_inner import StudioPageContentsInner
-from opendatasoft_automation.models.type_dataset_field_configuration import TypeDatasetFieldConfiguration
-from opendatasoft_automation.models.url_dataset_alternative_export import URLDatasetAlternativeExport
-from opendatasoft_automation.models.update_dataset404_response import UpdateDataset404Response
-from opendatasoft_automation.models.update_dataset_alternative_export_request import UpdateDatasetAlternativeExportRequest
-from opendatasoft_automation.models.uploaded_file_dataset_alternative_export import UploadedFileDatasetAlternativeExport
-from opendatasoft_automation.models.uploaded_file_datasource import UploadedFileDatasource
-from opendatasoft_automation.models.uploaded_file_datasource1_file import UploadedFileDatasource1File
-from opendatasoft_automation.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf
-from opendatasoft_automation.models.user import User
-from opendatasoft_automation.models.user_group import UserGroup
-from opendatasoft_automation.models.user_groups import UserGroups
-from opendatasoft_automation.models.user_groups_one_of_inner import UserGroupsOneOfInner
-from opendatasoft_automation.models.user_identity_providers_inner import UserIdentityProvidersInner
-from opendatasoft_automation.models.user_security import UserSecurity
-from opendatasoft_automation.models.user_security2 import UserSecurity2
-from opendatasoft_automation.models.user_security3 import UserSecurity3
-from opendatasoft_automation.models.wfs_harvester import WFSHarvester
+from opendatasoft_automation.models.api_key import APIKey as APIKey
+from opendatasoft_automation.models.api_key_revocation_status import APIKeyRevocationStatus as APIKeyRevocationStatus
+from opendatasoft_automation.models.awsiam_role_auth import AWSIAMRoleAuth as AWSIAMRoleAuth
+from opendatasoft_automation.models.aws_signature_v4_auth import AWSSignatureV4Auth as AWSSignatureV4Auth
+from opendatasoft_automation.models.amazon_s3_awsiam_role_auth import AmazonS3AWSIAMRoleAuth as AmazonS3AWSIAMRoleAuth
+from opendatasoft_automation.models.amazon_s3_aws_signature_v4_auth import AmazonS3AWSSignatureV4Auth as AmazonS3AWSSignatureV4Auth
+from opendatasoft_automation.models.amazon_s3_auth import AmazonS3Auth as AmazonS3Auth
+from opendatasoft_automation.models.amazon_s3_connection import AmazonS3Connection as AmazonS3Connection
+from opendatasoft_automation.models.amazon_s3_datasource import AmazonS3Datasource as AmazonS3Datasource
+from opendatasoft_automation.models.amazon_s3_datasource_all_of_connection import AmazonS3DatasourceAllOfConnection as AmazonS3DatasourceAllOfConnection
+from opendatasoft_automation.models.annotate_dataset_field_configuration import AnnotateDatasetFieldConfiguration as AnnotateDatasetFieldConfiguration
+from opendatasoft_automation.models.annotate_dataset_field_configuration1_args import AnnotateDatasetFieldConfiguration1Args as AnnotateDatasetFieldConfiguration1Args
+from opendatasoft_automation.models.arcgis_harvester import ArcgisHarvester as ArcgisHarvester
+from opendatasoft_automation.models.arcgis_opendata_harvester import ArcgisOpendataHarvester as ArcgisOpendataHarvester
+from opendatasoft_automation.models.azure_blob_storage_auth import AzureBlobStorageAuth as AzureBlobStorageAuth
+from opendatasoft_automation.models.azure_blob_storage_connection import AzureBlobStorageConnection as AzureBlobStorageConnection
+from opendatasoft_automation.models.azure_blob_storage_datasource import AzureBlobStorageDatasource as AzureBlobStorageDatasource
+from opendatasoft_automation.models.azure_blob_storage_datasource_all_of_connection import AzureBlobStorageDatasourceAllOfConnection as AzureBlobStorageDatasourceAllOfConnection
+from opendatasoft_automation.models.azure_blob_storage_shared_key_auth import AzureBlobStorageSharedKeyAuth as AzureBlobStorageSharedKeyAuth
+from opendatasoft_automation.models.base_metadata_template import BaseMetadataTemplate as BaseMetadataTemplate
+from opendatasoft_automation.models.basic_auth import BasicAuth as BasicAuth
+from opendatasoft_automation.models.ckan_harvester import CKANHarvester as CKANHarvester
+from opendatasoft_automation.models.csw_harvester import CSWHarvester as CSWHarvester
+from opendatasoft_automation.models.code_editor_page import CodeEditorPage as CodeEditorPage
+from opendatasoft_automation.models.code_editor_page_content import CodeEditorPageContent as CodeEditorPageContent
+from opendatasoft_automation.models.connection import Connection as Connection
+from opendatasoft_automation.models.connection_uid import ConnectionUID as ConnectionUID
+from opendatasoft_automation.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate as CreatableOrEditableMetadataTemplate
+from opendatasoft_automation.models.datagouv_harvester import DatagouvHarvester as DatagouvHarvester
+from opendatasoft_automation.models.datajson_harvester import DatajsonHarvester as DatajsonHarvester
+from opendatasoft_automation.models.dataset import Dataset as Dataset
+from opendatasoft_automation.models.dataset_alternative_export import DatasetAlternativeExport as DatasetAlternativeExport
+from opendatasoft_automation.models.dataset_attachment import DatasetAttachment as DatasetAttachment
+from opendatasoft_automation.models.dataset_feedback import DatasetFeedback as DatasetFeedback
+from opendatasoft_automation.models.dataset_feedback_values import DatasetFeedbackValues as DatasetFeedbackValues
+from opendatasoft_automation.models.dataset_field_configuration import DatasetFieldConfiguration as DatasetFieldConfiguration
+from opendatasoft_automation.models.dataset_file import DatasetFile as DatasetFile
+from opendatasoft_automation.models.dataset_group_security import DatasetGroupSecurity as DatasetGroupSecurity
+from opendatasoft_automation.models.dataset_group_security_group import DatasetGroupSecurityGroup as DatasetGroupSecurityGroup
+from opendatasoft_automation.models.dataset_metadata import DatasetMetadata as DatasetMetadata
+from opendatasoft_automation.models.dataset_metadata_asset_content_configuration import DatasetMetadataAssetContentConfiguration as DatasetMetadataAssetContentConfiguration
+from opendatasoft_automation.models.dataset_metadata_default import DatasetMetadataDefault as DatasetMetadataDefault
+from opendatasoft_automation.models.dataset_metadata_internal import DatasetMetadataInternal as DatasetMetadataInternal
+from opendatasoft_automation.models.dataset_metadata_template import DatasetMetadataTemplate as DatasetMetadataTemplate
+from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue as DatasetMetadataValue
+from opendatasoft_automation.models.dataset_metadata_visualization import DatasetMetadataVisualization as DatasetMetadataVisualization
+from opendatasoft_automation.models.dataset_processor import DatasetProcessor as DatasetProcessor
+from opendatasoft_automation.models.dataset_schedule import DatasetSchedule as DatasetSchedule
+from opendatasoft_automation.models.dataset_security import DatasetSecurity as DatasetSecurity
+from opendatasoft_automation.models.dataset_security_api_calls_quota import DatasetSecurityApiCallsQuota as DatasetSecurityApiCallsQuota
+from opendatasoft_automation.models.dataset_user_security import DatasetUserSecurity as DatasetUserSecurity
+from opendatasoft_automation.models.dataset_version import DatasetVersion as DatasetVersion
+from opendatasoft_automation.models.datasource import Datasource as Datasource
+from opendatasoft_automation.models.delete_dataset_field_configuration import DeleteDatasetFieldConfiguration as DeleteDatasetFieldConfiguration
+from opendatasoft_automation.models.description_dataset_field_configuration import DescriptionDatasetFieldConfiguration as DescriptionDatasetFieldConfiguration
+from opendatasoft_automation.models.explore_limits import ExploreLimits as ExploreLimits
+from opendatasoft_automation.models.explore_limits_api_calls import ExploreLimitsApiCalls as ExploreLimitsApiCalls
+from opendatasoft_automation.models.extraction_infos import ExtractionInfos as ExtractionInfos
+from opendatasoft_automation.models.extractor import Extractor as Extractor
+from opendatasoft_automation.models.extractor_parameters_inner import ExtractorParametersInner as ExtractorParametersInner
+from opendatasoft_automation.models.ftp_auth import FTPAuth as FTPAuth
+from opendatasoft_automation.models.ftp_basic_auth import FTPBasicAuth as FTPBasicAuth
+from opendatasoft_automation.models.ftpcsv_harvester import FTPCSVHarvester as FTPCSVHarvester
+from opendatasoft_automation.models.ftp_connection import FTPConnection as FTPConnection
+from opendatasoft_automation.models.ftp_datasource import FTPDatasource as FTPDatasource
+from opendatasoft_automation.models.ftp_datasource1_connection import FTPDatasource1Connection as FTPDatasource1Connection
+from opendatasoft_automation.models.ftp_harvester import FTPHarvester as FTPHarvester
+from opendatasoft_automation.models.ftp_with_meta_csv_harvester import FTPWithMetaCSVHarvester as FTPWithMetaCSVHarvester
+from opendatasoft_automation.models.federated_dataset import FederatedDataset as FederatedDataset
+from opendatasoft_automation.models.federated_datasource import FederatedDatasource as FederatedDatasource
+from opendatasoft_automation.models.federated_datasource_all_of_dataset import FederatedDatasourceAllOfDataset as FederatedDatasourceAllOfDataset
+from opendatasoft_automation.models.federated_datasource_all_of_dataset_one_of import FederatedDatasourceAllOfDatasetOneOf as FederatedDatasourceAllOfDatasetOneOf
+from opendatasoft_automation.models.federated_datasource_all_of_domain import FederatedDatasourceAllOfDomain as FederatedDatasourceAllOfDomain
+from opendatasoft_automation.models.get_apikeys200_response import GetApikeys200Response as GetApikeys200Response
+from opendatasoft_automation.models.get_metadata_fields_list200_response import GetMetadataFieldsList200Response as GetMetadataFieldsList200Response
+from opendatasoft_automation.models.get_users200_response import GetUsers200Response as GetUsers200Response
+from opendatasoft_automation.models.google_drive_auth import GoogleDriveAuth as GoogleDriveAuth
+from opendatasoft_automation.models.google_drive_connection import GoogleDriveConnection as GoogleDriveConnection
+from opendatasoft_automation.models.google_drive_datasource import GoogleDriveDatasource as GoogleDriveDatasource
+from opendatasoft_automation.models.google_drive_datasource_all_of_connection import GoogleDriveDatasourceAllOfConnection as GoogleDriveDatasourceAllOfConnection
+from opendatasoft_automation.models.google_drive_oidc_auth import GoogleDriveOIDCAuth as GoogleDriveOIDCAuth
+from opendatasoft_automation.models.group_security import GroupSecurity as GroupSecurity
+from opendatasoft_automation.models.group_security2 import GroupSecurity2 as GroupSecurity2
+from opendatasoft_automation.models.group_security3 import GroupSecurity3 as GroupSecurity3
+from opendatasoft_automation.models.group_security_group import GroupSecurityGroup as GroupSecurityGroup
+from opendatasoft_automation.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response as GuessUnsavedResourceExtractorParams200Response
+from opendatasoft_automation.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest as GuessUnsavedResourceExtractorParamsRequest
+from opendatasoft_automation.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest as GuessUnsavedResourceExtractorsRequest
+from opendatasoft_automation.models.http_auth import HTTPAuth as HTTPAuth
+from opendatasoft_automation.models.http_basic_auth import HTTPBasicAuth as HTTPBasicAuth
+from opendatasoft_automation.models.http_connection import HTTPConnection as HTTPConnection
+from opendatasoft_automation.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders as HTTPConnectionAllOfHeaders
+from opendatasoft_automation.models.http_datasource import HTTPDatasource as HTTPDatasource
+from opendatasoft_automation.models.http_datasource1_connection import HTTPDatasource1Connection as HTTPDatasource1Connection
+from opendatasoft_automation.models.http_datasource1_headers import HTTPDatasource1Headers as HTTPDatasource1Headers
+from opendatasoft_automation.models.httpo_auth2_auth import HTTPOAuth2Auth as HTTPOAuth2Auth
+from opendatasoft_automation.models.httpoidc_auth import HTTPOIDCAuth as HTTPOIDCAuth
+from opendatasoft_automation.models.harvester import Harvester as Harvester
+from opendatasoft_automation.models.harvester_list_errors200_response import HarvesterListErrors200Response as HarvesterListErrors200Response
+from opendatasoft_automation.models.harvester_preview_result import HarvesterPreviewResult as HarvesterPreviewResult
+from opendatasoft_automation.models.harvester_preview_result_results_inner import HarvesterPreviewResultResultsInner as HarvesterPreviewResultResultsInner
+from opendatasoft_automation.models.harvester_schedule import HarvesterSchedule as HarvesterSchedule
+from opendatasoft_automation.models.inline_object import InlineObject as InlineObject
+from opendatasoft_automation.models.inline_object1 import InlineObject1 as InlineObject1
+from opendatasoft_automation.models.inline_object2 import InlineObject2 as InlineObject2
+from opendatasoft_automation.models.inline_object3 import InlineObject3 as InlineObject3
+from opendatasoft_automation.models.inline_object4 import InlineObject4 as InlineObject4
+from opendatasoft_automation.models.inline_object5 import InlineObject5 as InlineObject5
+from opendatasoft_automation.models.inline_object5_records_errors_inner import InlineObject5RecordsErrorsInner as InlineObject5RecordsErrorsInner
+from opendatasoft_automation.models.inline_object6 import InlineObject6 as InlineObject6
+from opendatasoft_automation.models.inline_object6_fields_inner import InlineObject6FieldsInner as InlineObject6FieldsInner
+from opendatasoft_automation.models.inline_object6_fields_inner_annotations_inner import InlineObject6FieldsInnerAnnotationsInner as InlineObject6FieldsInnerAnnotationsInner
+from opendatasoft_automation.models.inline_object7 import InlineObject7 as InlineObject7
+from opendatasoft_automation.models.invite_users200_response_value import InviteUsers200ResponseValue as InviteUsers200ResponseValue
+from opendatasoft_automation.models.junar_harvester import JunarHarvester as JunarHarvester
+from opendatasoft_automation.models.list_code_editor_page_group_security200_response import ListCodeEditorPageGroupSecurity200Response as ListCodeEditorPageGroupSecurity200Response
+from opendatasoft_automation.models.list_code_editor_page_user_security200_response import ListCodeEditorPageUserSecurity200Response as ListCodeEditorPageUserSecurity200Response
+from opendatasoft_automation.models.list_code_editor_pages200_response import ListCodeEditorPages200Response as ListCodeEditorPages200Response
+from opendatasoft_automation.models.list_connections200_response import ListConnections200Response as ListConnections200Response
+from opendatasoft_automation.models.list_dataset_alternative_exports200_response import ListDatasetAlternativeExports200Response as ListDatasetAlternativeExports200Response
+from opendatasoft_automation.models.list_dataset_attachments200_response import ListDatasetAttachments200Response as ListDatasetAttachments200Response
+from opendatasoft_automation.models.list_dataset_feedbacks200_response import ListDatasetFeedbacks200Response as ListDatasetFeedbacks200Response
+from opendatasoft_automation.models.list_dataset_field_configurations200_response import ListDatasetFieldConfigurations200Response as ListDatasetFieldConfigurations200Response
+from opendatasoft_automation.models.list_dataset_group_security200_response import ListDatasetGroupSecurity200Response as ListDatasetGroupSecurity200Response
+from opendatasoft_automation.models.list_dataset_processors200_response import ListDatasetProcessors200Response as ListDatasetProcessors200Response
+from opendatasoft_automation.models.list_dataset_resources200_response import ListDatasetResources200Response as ListDatasetResources200Response
+from opendatasoft_automation.models.list_dataset_schedules200_response import ListDatasetSchedules200Response as ListDatasetSchedules200Response
+from opendatasoft_automation.models.list_dataset_user_security200_response import ListDatasetUserSecurity200Response as ListDatasetUserSecurity200Response
+from opendatasoft_automation.models.list_dataset_versions200_response import ListDatasetVersions200Response as ListDatasetVersions200Response
+from opendatasoft_automation.models.list_datasets200_response import ListDatasets200Response as ListDatasets200Response
+from opendatasoft_automation.models.list_datasource_connection_group_security200_response import ListDatasourceConnectionGroupSecurity200Response as ListDatasourceConnectionGroupSecurity200Response
+from opendatasoft_automation.models.list_datasource_connection_user_security200_response import ListDatasourceConnectionUserSecurity200Response as ListDatasourceConnectionUserSecurity200Response
+from opendatasoft_automation.models.list_harvester_schedules200_response import ListHarvesterSchedules200Response as ListHarvesterSchedules200Response
+from opendatasoft_automation.models.list_harvesters200_response import ListHarvesters200Response as ListHarvesters200Response
+from opendatasoft_automation.models.list_images200_response import ListImages200Response as ListImages200Response
+from opendatasoft_automation.models.list_images200_response_all_of_results_inner import ListImages200ResponseAllOfResultsInner as ListImages200ResponseAllOfResultsInner
+from opendatasoft_automation.models.list_metadata_templates200_response import ListMetadataTemplates200Response as ListMetadataTemplates200Response
+from opendatasoft_automation.models.list_studio_page_group_security200_response import ListStudioPageGroupSecurity200Response as ListStudioPageGroupSecurity200Response
+from opendatasoft_automation.models.list_studio_page_user_security200_response import ListStudioPageUserSecurity200Response as ListStudioPageUserSecurity200Response
+from opendatasoft_automation.models.list_studio_pages200_response import ListStudioPages200Response as ListStudioPages200Response
+from opendatasoft_automation.models.list_user_groups200_response import ListUserGroups200Response as ListUserGroups200Response
+from opendatasoft_automation.models.metadata_template import MetadataTemplate as MetadataTemplate
+from opendatasoft_automation.models.metadata_template_field import MetadataTemplateField as MetadataTemplateField
+from opendatasoft_automation.models.metadata_template_field_suggestions import MetadataTemplateFieldSuggestions as MetadataTemplateFieldSuggestions
+from opendatasoft_automation.models.metadata_template_field_suggestions_exhaustive import MetadataTemplateFieldSuggestionsExhaustive as MetadataTemplateFieldSuggestionsExhaustive
+from opendatasoft_automation.models.o_auth2_auth import OAuth2Auth as OAuth2Auth
+from opendatasoft_automation.models.odsoidc_auth import ODSOIDCAuth as ODSOIDCAuth
+from opendatasoft_automation.models.oidc_auth import OIDCAuth as OIDCAuth
+from opendatasoft_automation.models.omi_node_harvester import OMINodeHarvester as OMINodeHarvester
+from opendatasoft_automation.models.ods_form_datasource import OdsFormDatasource as OdsFormDatasource
+from opendatasoft_automation.models.opendatasoft_harvester import OpendatasoftHarvester as OpendatasoftHarvester
+from opendatasoft_automation.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration as OrderDatasetFieldConfiguration
+from opendatasoft_automation.models.origin_infos import OriginInfos as OriginInfos
+from opendatasoft_automation.models.paginated_results import PaginatedResults as PaginatedResults
+from opendatasoft_automation.models.permission import Permission as Permission
+from opendatasoft_automation.models.permission_enum import PermissionEnum as PermissionEnum
+from opendatasoft_automation.models.permission_enum2 import PermissionEnum2 as PermissionEnum2
+from opendatasoft_automation.models.permission_enum3 import PermissionEnum3 as PermissionEnum3
+from opendatasoft_automation.models.post_apikeys_apikey_uid_revoke_request import PostApikeysApikeyUidRevokeRequest as PostApikeysApikeyUidRevokeRequest
+from opendatasoft_automation.models.provision_users_request import ProvisionUsersRequest as ProvisionUsersRequest
+from opendatasoft_automation.models.provision_users_request_all_of_identity_provider import ProvisionUsersRequestAllOfIdentityProvider as ProvisionUsersRequestAllOfIdentityProvider
+from opendatasoft_automation.models.quandl_harvester import QuandlHarvester as QuandlHarvester
+from opendatasoft_automation.models.related_user import RelatedUser as RelatedUser
+from opendatasoft_automation.models.related_user_read_only import RelatedUserReadOnly as RelatedUserReadOnly
+from opendatasoft_automation.models.rename_dataset_field_configuration import RenameDatasetFieldConfiguration as RenameDatasetFieldConfiguration
+from opendatasoft_automation.models.resource import Resource as Resource
+from opendatasoft_automation.models.resource_guess_extractor_params200_response import ResourceGuessExtractorParams200Response as ResourceGuessExtractorParams200Response
+from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest as ResourceUnsavedPreviewRequest
+from opendatasoft_automation.models.search_apikey200_response import SearchApikey200Response as SearchApikey200Response
+from opendatasoft_automation.models.search_apikey_request import SearchApikeyRequest as SearchApikeyRequest
+from opendatasoft_automation.models.sharepoint_auth import SharepointAuth as SharepointAuth
+from opendatasoft_automation.models.sharepoint_connection import SharepointConnection as SharepointConnection
+from opendatasoft_automation.models.sharepoint_datasource import SharepointDatasource as SharepointDatasource
+from opendatasoft_automation.models.sharepoint_datasource1_connection import SharepointDatasource1Connection as SharepointDatasource1Connection
+from opendatasoft_automation.models.sharepoint_oidc_auth import SharepointOIDCAuth as SharepointOIDCAuth
+from opendatasoft_automation.models.snowflake_odbc_connection import SnowflakeODBCConnection as SnowflakeODBCConnection
+from opendatasoft_automation.models.snowflake_odbc_datasource import SnowflakeODBCDatasource as SnowflakeODBCDatasource
+from opendatasoft_automation.models.snowflake_odbc_datasource_all_of_connection import SnowflakeODBCDatasourceAllOfConnection as SnowflakeODBCDatasourceAllOfConnection
+from opendatasoft_automation.models.socrata_harvester import SocrataHarvester as SocrataHarvester
+from opendatasoft_automation.models.studio_page import StudioPage as StudioPage
+from opendatasoft_automation.models.studio_page_contents_inner import StudioPageContentsInner as StudioPageContentsInner
+from opendatasoft_automation.models.type_dataset_field_configuration import TypeDatasetFieldConfiguration as TypeDatasetFieldConfiguration
+from opendatasoft_automation.models.url_dataset_alternative_export import URLDatasetAlternativeExport as URLDatasetAlternativeExport
+from opendatasoft_automation.models.update_dataset_alternative_export_request import UpdateDatasetAlternativeExportRequest as UpdateDatasetAlternativeExportRequest
+from opendatasoft_automation.models.uploaded_file_dataset_alternative_export import UploadedFileDatasetAlternativeExport as UploadedFileDatasetAlternativeExport
+from opendatasoft_automation.models.uploaded_file_datasource import UploadedFileDatasource as UploadedFileDatasource
+from opendatasoft_automation.models.uploaded_file_datasource1_file import UploadedFileDatasource1File as UploadedFileDatasource1File
+from opendatasoft_automation.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf as UploadedFileDatasource1FileOneOf
+from opendatasoft_automation.models.user import User as User
+from opendatasoft_automation.models.user_group import UserGroup as UserGroup
+from opendatasoft_automation.models.user_groups import UserGroups as UserGroups
+from opendatasoft_automation.models.user_groups_one_of_inner import UserGroupsOneOfInner as UserGroupsOneOfInner
+from opendatasoft_automation.models.user_identity_providers_inner import UserIdentityProvidersInner as UserIdentityProvidersInner
+from opendatasoft_automation.models.user_security import UserSecurity as UserSecurity
+from opendatasoft_automation.models.user_security2 import UserSecurity2 as UserSecurity2
+from opendatasoft_automation.models.user_security3 import UserSecurity3 as UserSecurity3
+from opendatasoft_automation.models.wfs_harvester import WFSHarvester as WFSHarvester

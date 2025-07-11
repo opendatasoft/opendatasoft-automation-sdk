@@ -50,6 +50,7 @@ python migrate_dataset.py \
 """
 import argparse
 import sys
+from email.policy import default
 from pprint import pprint
 import requests
 import json
@@ -237,9 +238,11 @@ def migrate_dataset(args):
         print(f"\nCreating new dataset on destination domain '{args.destination_domain}'...")
         new_dataset_metadata = opendatasoft_automation.DatasetMetadata(
             default=opendatasoft_automation.DatasetMetadataDefault(
-                title=opendatasoft_automation.DatasetMetadataValue(value=f"[MIGRATED] {source_dataset.metadata.default.title.value}"),
+                title=opendatasoft_automation.DatasetMetadataValue(value=f"{source_dataset.metadata.default.title.value}"),
                 description=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.description.value if source_dataset.metadata.default.description else ""),
                 timezone=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.timezone.value if source_dataset.metadata.default.timezone else "UTC"),
+                modified=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.modified.value if source_dataset.metadata.default.modified else None),
+                language=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.language.value if source_dataset.metadata.default.language else None),
             )
         )
 
@@ -333,8 +336,6 @@ def migrate_dataset(args):
     print("\nMigrating metadata...")
     destination_metadata_api = opendatasoft_automation.DatasetMetadataApi(destination_client)
     if source_metadata:
-        destination_metadata_payload = opendatasoft_automation.DatasetMetadata()
-
         if source_metadata.default:
             default_metadata_dict = source_metadata.default.to_dict()
             # Handle themes
@@ -347,12 +348,15 @@ def migrate_dataset(args):
                         destination_themes_list.append(theme['id'])
                 default_metadata_dict['theme']['value'] = destination_themes_list
 
-            destination_metadata_payload.default = opendatasoft_automation.DatasetMetadataDefault.from_dict(default_metadata_dict)
+            destination_metadata_payload = opendatasoft_automation.DatasetMetadata(default=opendatasoft_automation.DatasetMetadataDefault.from_dict(default_metadata_dict))
             destination_metadata_payload.default.modified_updates_on_metadata_change = opendatasoft_automation.DatasetMetadataValue(value=False)
             destination_metadata_payload.default.modified_updates_on_data_change = opendatasoft_automation.DatasetMetadataValue(value=False)
 
         if source_metadata.visualization:
             destination_metadata_payload.visualization = source_metadata.visualization
+
+        if source_metadata.asset_content_configuration:
+            destination_metadata_payload.asset_content_configuration = source_metadata.asset_content_configuration
 
         if source_metadata.internal:
             internal_metadata_dict = source_metadata.internal.to_dict()

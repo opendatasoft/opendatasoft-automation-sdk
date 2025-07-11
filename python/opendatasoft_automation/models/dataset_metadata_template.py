@@ -18,6 +18,7 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, Dict, List, Optional
+from opendatasoft_automation.models.dataset_metadata_asset_content_configuration import DatasetMetadataAssetContentConfiguration
 from opendatasoft_automation.models.dataset_metadata_default import DatasetMetadataDefault
 from opendatasoft_automation.models.dataset_metadata_internal import DatasetMetadataInternal
 from opendatasoft_automation.models.dataset_metadata_value import DatasetMetadataValue
@@ -26,7 +27,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-DATASETMETADATATEMPLATE_ONE_OF_SCHEMAS = ["DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]"]
+DATASETMETADATATEMPLATE_ONE_OF_SCHEMAS = ["DatasetMetadataAssetContentConfiguration", "DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]"]
 
 class DatasetMetadataTemplate(BaseModel):
     """
@@ -38,10 +39,12 @@ class DatasetMetadataTemplate(BaseModel):
     oneof_schema_2_validator: Optional[DatasetMetadataInternal] = None
     # data type: DatasetMetadataVisualization
     oneof_schema_3_validator: Optional[DatasetMetadataVisualization] = None
+    # data type: DatasetMetadataAssetContentConfiguration
+    oneof_schema_4_validator: Optional[DatasetMetadataAssetContentConfiguration] = None
     # data type: Dict[str, DatasetMetadataValue]
-    oneof_schema_4_validator: Optional[Dict[str, DatasetMetadataValue]] = Field(default=None, description="Additional values for custom metadata templates you have configured on your portal.")
-    actual_instance: Optional[Union[DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]]] = None
-    one_of_schemas: Set[str] = { "DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]" }
+    oneof_schema_5_validator: Optional[Dict[str, DatasetMetadataValue]] = Field(default=None, description="Additional values for custom metadata templates you have configured on your portal.")
+    actual_instance: Optional[Union[DatasetMetadataAssetContentConfiguration, DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]]] = None
+    one_of_schemas: Set[str] = { "DatasetMetadataAssetContentConfiguration", "DatasetMetadataDefault", "DatasetMetadataInternal", "DatasetMetadataVisualization", "Dict[str, DatasetMetadataValue]" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -79,18 +82,23 @@ class DatasetMetadataTemplate(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `DatasetMetadataVisualization`")
         else:
             match += 1
+        # validate data type: DatasetMetadataAssetContentConfiguration
+        if not isinstance(v, DatasetMetadataAssetContentConfiguration):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DatasetMetadataAssetContentConfiguration`")
+        else:
+            match += 1
         # validate data type: Dict[str, DatasetMetadataValue]
         try:
-            instance.oneof_schema_4_validator = v
+            instance.oneof_schema_5_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in DatasetMetadataTemplate with oneOf schemas: DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in DatasetMetadataTemplate with oneOf schemas: DatasetMetadataAssetContentConfiguration, DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in DatasetMetadataTemplate with oneOf schemas: DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in DatasetMetadataTemplate with oneOf schemas: DatasetMetadataAssetContentConfiguration, DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -123,22 +131,28 @@ class DatasetMetadataTemplate(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into DatasetMetadataAssetContentConfiguration
+        try:
+            instance.actual_instance = DatasetMetadataAssetContentConfiguration.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into Dict[str, DatasetMetadataValue]
         try:
             # validation
-            instance.oneof_schema_4_validator = json.loads(json_str)
+            instance.oneof_schema_5_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_4_validator
+            instance.actual_instance = instance.oneof_schema_5_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into DatasetMetadataTemplate with oneOf schemas: DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into DatasetMetadataTemplate with oneOf schemas: DatasetMetadataAssetContentConfiguration, DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into DatasetMetadataTemplate with oneOf schemas: DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into DatasetMetadataTemplate with oneOf schemas: DatasetMetadataAssetContentConfiguration, DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -152,7 +166,7 @@ class DatasetMetadataTemplate(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], DatasetMetadataAssetContentConfiguration, DatasetMetadataDefault, DatasetMetadataInternal, DatasetMetadataVisualization, Dict[str, DatasetMetadataValue]]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

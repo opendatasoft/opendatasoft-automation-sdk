@@ -20,8 +20,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing import Optional, Union
 from typing_extensions import Annotated
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.models.list_studio_pages200_response import ListStudioPages200Response
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
 from opendatasoft_automation.models.studio_page import StudioPage
 
 from opendatasoft_automation.api_client import ApiClient, RequestSerialized
@@ -97,7 +97,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "StudioPage",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -165,7 +165,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "StudioPage",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -233,7 +233,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "StudioPage",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -375,7 +375,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -443,7 +443,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -511,7 +511,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -644,7 +644,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListStudioPages200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -716,7 +716,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListStudioPages200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -788,7 +788,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListStudioPages200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -885,7 +885,7 @@ class StudioPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Publish page
 
         Publish a studio page
@@ -923,8 +923,8 @@ class StudioPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -953,7 +953,7 @@ class StudioPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Publish page
 
         Publish a studio page
@@ -991,8 +991,8 @@ class StudioPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1059,8 +1059,8 @@ class StudioPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1189,7 +1189,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "StudioPage",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1257,7 +1257,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "StudioPage",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1325,7 +1325,7 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "StudioPage",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1415,7 +1415,7 @@ class StudioPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Unpublish page
 
         Unpublish a studio page
@@ -1453,8 +1453,8 @@ class StudioPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1483,7 +1483,7 @@ class StudioPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Unpublish page
 
         Unpublish a studio page
@@ -1521,8 +1521,8 @@ class StudioPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1589,8 +1589,8 @@ class StudioPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1723,8 +1723,8 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "StudioPage",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1796,8 +1796,8 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "StudioPage",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1869,8 +1869,8 @@ class StudioPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "StudioPage",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

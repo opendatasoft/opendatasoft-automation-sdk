@@ -32,7 +32,7 @@ class RenameDatasetFieldConfiguration(DatasetFieldConfiguration):
     from_name: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The original technical identifier")
     to_name: Annotated[str, Field(min_length=1, strict=True)] = Field(description="The new technical identifier")
     field_label: Annotated[str, Field(min_length=1, strict=True)] = Field(description="A user friendly label for the field")
-    __properties: ClassVar[List[str]] = ["uid", "type", "from_name", "to_name", "field_label", "label"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "label", "from_name", "to_name", "field_label"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,10 +87,10 @@ class RenameDatasetFieldConfiguration(DatasetFieldConfiguration):
         _obj = cls.model_validate({
             "uid": obj.get("uid"),
             "type": obj.get("type"),
+            "label": obj.get("label"),
             "from_name": obj.get("from_name"),
             "to_name": obj.get("to_name"),
-            "field_label": obj.get("field_label"),
-            "label": obj.get("label")
+            "field_label": obj.get("field_label")
         })
         return _obj
 

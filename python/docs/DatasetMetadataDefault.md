@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **modified_updates_on_data_change** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **geographic_reference_auto** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
-**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | 
+**language** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **timezone** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **publisher** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 
 **references** | [**DatasetMetadataValue**](DatasetMetadataValue.md) |  | [optional] 

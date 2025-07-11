@@ -36,7 +36,7 @@ class DatasetMetadataDefault(BaseModel):
     modified_updates_on_data_change: Optional[DatasetMetadataValue] = None
     geographic_reference: Optional[DatasetMetadataValue] = None
     geographic_reference_auto: Optional[DatasetMetadataValue] = None
-    language: DatasetMetadataValue
+    language: Optional[DatasetMetadataValue] = None
     timezone: Optional[DatasetMetadataValue] = None
     publisher: Optional[DatasetMetadataValue] = None
     references: Optional[DatasetMetadataValue] = None

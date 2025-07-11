@@ -207,6 +207,24 @@ def get_theme_by_id(themes, theme_id):
             return theme
     return None
 
+def check_user_exists(username, client, domain):
+    """Checks if a user exists on the given domain."""
+    print(f"  - Checking for user '{username}' on domain '{domain}'...")
+    users_api = opendatasoft_automation.UsersApi(client)
+    try:
+        users_api.get_user(username)
+        print(f"    - User '{username}' found.")
+        return True
+    except ApiException as e:
+        if e.status == 404:
+            print(f"    - User '{username}' not found.")
+            return False
+        else:
+            print(f"  - ERROR: An unexpected error occurred while checking for user '{username}'. Status: {e.status}, Reason: {e.reason}")
+            pprint(e.body)
+            return False
+
+
 def migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid):
     """Migrates a resource that is an uploaded file by downloading, re-uploading, and relinking."""
     print(f"  - Migrating uploaded file resource: {resource.title}")
@@ -374,6 +392,35 @@ def migrate_dataset(args):
     destination_processors_api = opendatasoft_automation.DatasetProcessorsApi(destination_client)
     for processor in source_processors:
         print(f"- Migrating processor: {processor.type}")
+
+        if processor.type == 'join_dataset' or processor.type == 'bound_join_dataset':
+            print("  - Validating join_dataset processor dependencies...")
+            additional_props = processor.additional_properties
+            join_username = additional_props.get('permissions_user', {}).get('username')
+            join_dataset_id = additional_props.get('dataset', {}).get('dataset_id')
+
+            if not join_username or not join_dataset_id:
+                print(f"  - FATAL: Processor has invalid or missing properties for user or dataset join.")
+                sys.exit(1)
+
+            # Validate user and dataset existence on destination
+            user_exists = check_user_exists(join_username, destination_client, args.destination_domain)
+            dataset_exists = get_dataset_uid_from_id(join_dataset_id, destination_client, args.destination_domain)
+
+            if not user_exists:
+                print(f"{bcolors.FAIL}FATAL: User '{join_username}' required by a join processor does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
+                print("Please create this user on the destination and rerun the script.")
+                sys.exit(1)
+
+            if not dataset_exists:
+                print(f"{bcolors.FAIL}FATAL: Dataset '{join_dataset_id}' required by a join processor does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
+                print("Please ensure this dataset exists on the destination and rerun the script.")
+                sys.exit(1)
+
+            # All dependencies exist, update domain and proceed
+            print("  - All dependencies found. Updating domain for the join.")
+            additional_props['domain']['domain_id'] = args.destination_domain.replace('.opendatasoft.com','')
+
         new_processor = opendatasoft_automation.DatasetProcessor(
             type=processor.type,
             label=processor.label,

@@ -461,5 +461,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_uploaded_file_uid.py
 tox.ini

@@ -43,6 +43,11 @@ class Permission(str, Enum):
     EDIT_THEME = 'edit_theme'
     EDIT_FORM = 'edit_form'
     SUBMIT_PRIVATE_FORM = 'submit_private_form'
+    CREATE_EXTERNAL_ASSET = 'create_external_asset'
+    EDIT_EXTERNAL_ASSET = 'edit_external_asset'
+    EXPLORE_RESTRICTED_EXTERNAL_ASSET = 'explore_restricted_external_asset'
+    MANAGE_GLOSSARY = 'manage_glossary'
+    MANAGE_SHOWCASE_REQUESTS = 'manage_showcase_requests'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -207,6 +207,55 @@ def get_theme_by_id(themes, theme_id):
             return theme
     return None
 
+def migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid):
+    """Migrates a resource that is an uploaded file by downloading, re-uploading, and relinking."""
+    print(f"  - Migrating uploaded file resource: {resource.title}")
+    source_resources_api = opendatasoft_automation.DatasetResourcesApi(source_client)
+    destination_resources_api = opendatasoft_automation.DatasetResourcesApi(destination_client)
+
+    try:
+        # Step 1: Get the original file UID and download the content
+        source_file_uid = resource.datasource.file.actual_instance.uid
+        print(f"    - Downloading resource file {source_file_uid} from source...")
+        file_content = source_resources_api.download_dataset_resource_file(dataset_uid=source_dataset_uid, file_uid=source_file_uid)
+
+        # Step 2: Upload the file to the destination. The SDK now returns the file details.
+        print(f"    - Uploading file to destination...")
+        # The file_uid in the path is required, but the server will generate a new UID for the created file.
+        # We pass the content as a tuple to ensure the filename is sent in the multipart request.
+        uploaded_file_details = destination_resources_api.upload_resource_file(
+            dataset_uid=destination_dataset_uid,
+            file=(resource.title, file_content)
+        )
+        destination_file_uid = uploaded_file_details.uid
+        print(f"    - Successfully uploaded file. New file UID: {destination_file_uid}")
+
+        # Step 3: Create the resource on the destination, linking to the new file UID
+        file = opendatasoft_automation.UploadedFileUID(uid=destination_file_uid)
+        uploaded_file_uid = opendatasoft_automation.UploadedFileDatasource1File(actual_instance=file)
+        new_datasource = opendatasoft_automation.UploadedFileDatasource(
+            type="uploaded_file",
+            file=uploaded_file_uid
+        )
+
+        new_resource = opendatasoft_automation.Resource(
+            type=resource.type,
+            title=resource.title,
+            params=resource.params,
+            datasource=new_datasource
+        )
+
+        destination_resources_api.create_dataset_resource(dataset_uid=destination_dataset_uid, resource=new_resource)
+        print(f"- Successfully migrated resource '{resource.title}'.")
+
+    except ApiException as e:
+        print(f"  - WARNING: Could not migrate uploaded file resource '{resource.title}'. Status: {e.status}, Reason: {e.reason}, Resource {new_resource}")
+        pprint(e.body)
+    except (AttributeError, TypeError) as e:
+        print(f"  - FATAL: An error occurred with the SDK methods. It might be that a method or attribute does not exist as expected, or the return value is incorrect.")
+        print(f"    - Error: {e}")
+
+
 def migrate_dataset(args):
     """Main function to orchestrate the dataset migration."""
     source_client = get_api_client(args.source_domain, args.source_apikey)
@@ -274,6 +323,10 @@ def migrate_dataset(args):
         print(f"- Migrating resource: {resource.title} ({resource.type})")
         new_datasource = None
         if resource.datasource:
+            if resource.datasource.type == 'uploaded_file':
+                migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid)
+                continue
+
             source_connections_api = opendatasoft_automation.DatasourcesConnectionsApi(source_client)
             source_connection_details = source_connections_api.retrieve_connection(resource.datasource.connection.to_dict().get('uid'))
             matching_connection = find_matching_connection(source_connection_details, destination_client)

@@ -5832,7 +5832,7 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DatasetFile",
+            '201': "DatasetFile",
             '400': "InlineObject1",
             '404': "InlineObject2",
         }
@@ -5905,7 +5905,7 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DatasetFile",
+            '201': "DatasetFile",
             '400': "InlineObject1",
             '404': "InlineObject2",
         }
@@ -5978,7 +5978,7 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DatasetFile",
+            '201': "DatasetFile",
             '400': "InlineObject1",
             '404': "InlineObject2",
         }

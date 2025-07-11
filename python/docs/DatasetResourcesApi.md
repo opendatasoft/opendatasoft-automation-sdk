@@ -1920,7 +1920,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**201** | OK |  -  |
 **400** | Validation error |  -  |
 **404** | Not found |  -  |
 **0** | An error occurred |  -  |

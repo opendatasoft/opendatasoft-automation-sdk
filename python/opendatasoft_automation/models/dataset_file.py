@@ -29,7 +29,7 @@ class DatasetFile(BaseModel):
     DatasetFile
     """ # noqa: E501
     uid: Optional[StrictStr] = Field(default=None, description="Unique identifier for the file")
-    filename: Optional[StrictStr] = None
+    filename: StrictStr
     mimetype: Optional[StrictStr] = None
     created_at: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ["uid", "filename", "mimetype", "created_at"]

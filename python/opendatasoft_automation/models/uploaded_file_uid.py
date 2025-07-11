@@ -18,21 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DatasetAttachment(BaseModel):
+class UploadedFileUID(BaseModel):
     """
-    DatasetAttachment
+    UploadedFileUID
     """ # noqa: E501
-    uid: Optional[StrictStr] = Field(default=None, description="Unique identifier for the file")
-    filename: StrictStr
-    mimetype: Optional[StrictStr] = None
-    created_at: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["uid", "filename", "mimetype", "created_at"]
+    uid: StrictStr = Field(description="The UID of an existing uploaded file to reuse.")
+    __properties: ClassVar[List[str]] = ["uid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +48,7 @@ class DatasetAttachment(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DatasetAttachment from a JSON string"""
+        """Create an instance of UploadedFileUID from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -64,16 +60,8 @@ class DatasetAttachment(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
-            "uid",
-            "filename",
-            "mimetype",
-            "created_at",
         ])
 
         _dict = self.model_dump(
@@ -81,16 +69,11 @@ class DatasetAttachment(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if mimetype (nullable) is None
-        # and model_fields_set contains the field
-        if self.mimetype is None and "mimetype" in self.model_fields_set:
-            _dict['mimetype'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DatasetAttachment from a dict"""
+        """Create an instance of UploadedFileUID from a dict"""
         if obj is None:
             return None
 
@@ -98,10 +81,7 @@ class DatasetAttachment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "uid": obj.get("uid"),
-            "filename": obj.get("filename"),
-            "mimetype": obj.get("mimetype"),
-            "created_at": obj.get("created_at")
+            "uid": obj.get("uid")
         })
         return _obj
 

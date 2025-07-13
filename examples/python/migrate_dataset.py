@@ -398,6 +398,7 @@ def migrate_dataset(args):
             additional_props = processor.additional_properties
             join_username = additional_props.get('permissions_user', {}).get('username')
             join_dataset_id = additional_props.get('dataset', {}).get('dataset_id')
+            join_domain_id = args.destination_domain.replace('.opendatasoft.com','')
 
             if not join_username or not join_dataset_id:
                 print(f"  - FATAL: Processor has invalid or missing properties for user or dataset join.")
@@ -419,7 +420,13 @@ def migrate_dataset(args):
 
             # All dependencies exist, update domain and proceed
             print("  - All dependencies found. Updating domain for the join.")
-            additional_props['domain']['domain_id'] = args.destination_domain.replace('.opendatasoft.com','')
+            additional_props["impersonate_permissions"] = True
+            additional_props["dataset"] = {
+                "dataset_id": join_dataset_id
+            }
+            additional_props["domain"] = {
+                "domain_id": join_domain_id
+            }
 
         new_processor = opendatasoft_automation.DatasetProcessor(
             type=processor.type,

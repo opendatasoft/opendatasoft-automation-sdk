@@ -404,14 +404,8 @@ def migrate_dataset(args):
                 print(f"  - FATAL: Processor has invalid or missing properties for user or dataset join.")
                 sys.exit(1)
 
-            # Validate user and dataset existence on destination
-            user_exists = check_user_exists(join_username, destination_client, args.destination_domain)
+            # Validate dataset existence on destination
             dataset_exists = get_dataset_uid_from_id(join_dataset_id, destination_client, args.destination_domain)
-
-            if not user_exists:
-                print(f"{bcolors.FAIL}FATAL: User '{join_username}' required by a join processor does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
-                print("Please create this user on the destination and rerun the script.")
-                sys.exit(1)
 
             if not dataset_exists:
                 print(f"{bcolors.FAIL}FATAL: Dataset '{join_dataset_id}' required by a join processor does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")

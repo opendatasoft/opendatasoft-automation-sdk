@@ -32,7 +32,7 @@ class StudioPageContentsInner(BaseModel):
     """ # noqa: E501
     version_name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     title: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
-    description: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    description: Optional[str] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
     updated_by: Optional[RelatedUserReadOnly] = None

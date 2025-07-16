@@ -10786,9 +10786,7 @@
           }
         },
         "required": [
-          "nonce",
           "grant_type",
-          "code",
           "claims"
         ]
       },

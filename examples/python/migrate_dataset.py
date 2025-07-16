@@ -1,4 +1,4 @@
-"""
+"""""""""
 Dataset Migration Script for Opendatasoft
 
 This script migrates a dataset from a source Opendatasoft domain to a destination domain.
@@ -224,7 +224,6 @@ def check_user_exists(username, client, domain):
             pprint(e.body)
             return False
 
-
 def migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid):
     """Migrates a resource that is an uploaded file by downloading, re-uploading, and relinking."""
     print(f"  - Migrating uploaded file resource: {resource.title}")
@@ -404,13 +403,9 @@ def migrate_dataset(args):
                 print(f"  - FATAL: Processor has invalid or missing properties for user or dataset join.")
                 sys.exit(1)
 
-            # Validate dataset existence on destination
-            dataset_exists = get_dataset_uid_from_id(join_dataset_id, destination_client, args.destination_domain)
-
-            if not dataset_exists:
-                print(f"{bcolors.FAIL}FATAL: Dataset '{join_dataset_id}' required by a join processor does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
-                print("Please ensure this dataset exists on the destination and rerun the script.")
-                sys.exit(1)
+            # The validation of the existence of the dataset on the destination has been removed to avoid a crash
+            # when listing datasets with unexpected metadata format.
+            # The API will return an error during the processor creation if the dataset does not exist.
 
             # All dependencies exist, update domain and proceed
             print("  - All dependencies found. Updating domain for the join.")
@@ -481,8 +476,14 @@ def migrate_dataset(args):
                 internal_metadata_dict['theme_id']['value'] = destination_theme_ids
             destination_metadata_payload.internal = opendatasoft_automation.DatasetMetadataInternal.from_dict(internal_metadata_dict)
 
-        if hasattr(source_metadata, 'custom_template_name') and source_metadata.custom_template_name:
-            destination_metadata_payload.custom_template_name = source_metadata.custom_template_name
+        if hasattr(source_metadata, 'custom') and source_metadata.custom:
+            print(f"- Migrating custom metadata...")
+            if check_metadata_template_exists('custom', destination_client, args.destination_domain):
+                destination_metadata_payload.custom = source_metadata.custom
+            else:
+                print(f"{bcolors.FAIL}FATAL: The metadata template 'custom' does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
+                print("Please create the template on the destination and rerun the script.")
+                sys.exit(1)
 
         try:
             destination_metadata_api.update_all_dataset_metadata(destination_dataset_uid, dataset_metadata=destination_metadata_payload)

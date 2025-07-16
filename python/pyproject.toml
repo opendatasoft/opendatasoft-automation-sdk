@@ -5,7 +5,7 @@ description = "Opendatasoft's Automation API Documentation"
 authors = [
   {name = "OpenAPI Generator Community",email = "support@opendatasoft.com"},
 ]
-license = "Copyright Opendatasoft"
+license = { file= "LICENSE" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Opendatasoft's Automation API Documentation"]
 requires-python = ">=3.9"

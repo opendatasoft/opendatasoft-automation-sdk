@@ -28,9 +28,9 @@ class SharepointOIDCAuth(SharepointAuth):
     """
     SharepointOIDCAuth
     """ # noqa: E501
-    nonce: Optional[StrictStr]
+    nonce: Optional[StrictStr] = None
     grant_type: StrictStr
-    code: Optional[StrictStr]
+    code: Optional[StrictStr] = None
     claims: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["type", "nonce", "grant_type", "code", "claims"]
 

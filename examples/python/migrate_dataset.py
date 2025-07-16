@@ -69,6 +69,17 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def format_api_error(e, base_message):
+    """Formats a detailed error message from an ApiException."""
+    detail = ""
+    try:
+        body = json.loads(e.body)
+        if 'detail' in body:
+            detail = f" Details: {json.dumps(body['detail'])}"
+    except (json.JSONDecodeError, TypeError):
+        pass  # Keep detail empty if parsing fails
+    return f"{base_message}. Status: {e.status}, Reason: {e.reason}.{detail}"
+
 def get_api_client(domain, apikey):
     """Initializes and returns an API client for the given domain and API key."""
     configuration = opendatasoft_automation.Configuration(
@@ -298,6 +309,7 @@ def migrate_attachment_resource(resource, source_client, destination_client, sou
 
 def migrate_dataset(args):
     """Main function to orchestrate the dataset migration."""
+    migration_warnings = []
     source_client = get_api_client(args.source_domain, args.source_apikey)
     destination_client = get_api_client(args.destination_domain, args.destination_apikey)
 
@@ -448,8 +460,10 @@ def migrate_dataset(args):
         try:
             destination_processors_api.create_dataset_processor(destination_dataset_uid, dataset_processor=new_processor)
         except ApiException as e:
-            print(f"  - WARNING: Could not migrate processor '{processor.type}'. Status: {e.status}, Reason: {e.reason}")
-            pprint(e.body)
+            base_message = f"Could not migrate processor '{processor.type}'"
+            warning_message = format_api_error(e, base_message)
+            print(f"  - WARNING: {warning_message}")
+            migration_warnings.append(warning_message)
 
     # Step 6: Migrate Metadata
     print("\nMigrating metadata...")
@@ -470,7 +484,9 @@ def migrate_dataset(args):
                         if destination_theme:
                             destination_theme_ids.append(destination_theme['id'])
                         else:
-                            print(f"    - WARNING: Theme '{source_theme_name}' not found on destination. Skipping theme.")
+                            warning_message = f"Theme '{source_theme_name}' not found on destination. It will be skipped."
+                            print(f"    - WARNING: {warning_message}")
+                            migration_warnings.append(warning_message)
                 else:
                     print(f"    - WARNING: Source theme with ID '{source_theme_id}' not found. Skipping theme.")
             source_metadata.internal.theme_id.value = destination_theme_ids
@@ -507,8 +523,10 @@ def migrate_dataset(args):
                                 dataset_metadata_value=metadata_value_payload
                             )
                     except ApiException as e:
-                        print(f"    - WARNING: Could not migrate field '{field_name}' from template '{template_name}'. Status: {e.status}, Reason: {e.reason}")
-                        pprint(e.body)
+                        base_message = f"Could not migrate field '{field_name}' from template '{template_name}'"
+                        warning_message = format_api_error(e, base_message)
+                        print(f"    - WARNING: {warning_message}")
+                        migration_warnings.append(warning_message)
                 print(f"    - Finished migrating '{template_name}' template fields.")
             else:
                 print(f"    - No '{template_name}' metadata template found on source dataset or failed to fetch it.")
@@ -535,8 +553,10 @@ def migrate_dataset(args):
                     if e.status == 409:
                         print("  - A schedule already exists on the destination dataset. Skipping creation.")
                     else:
-                        print(f"  - WARNING: Could not create schedule on destination. Status: {e.status}, Reason: {e.reason}")
-                        pprint(e.body)
+                        base_message = "Could not create schedule on destination"
+                        warning_message = format_api_error(e, base_message)
+                        print(f"  - WARNING: {warning_message}")
+                        migration_warnings.append(warning_message)
         else:
             print("  - No schedules found on source dataset. Skipping.")
     except ApiException as e:
@@ -554,7 +574,14 @@ def migrate_dataset(args):
             pprint(e.body)
 
     print("\nMigration process complete!")
-    print(f"Check your new dataset at: https://{args.destination_domain}/explore/dataset/{destination_dataset_uid}/")
+    if migration_warnings:
+        print("\n--- Migration Summary: Warnings ---")
+        print("The migration finished, but the following issues were encountered and require manual attention:")
+        for warning in migration_warnings:
+            print(f"- {warning}")
+        print("-------------------------------------")
+
+    print(f"\nCheck your new dataset at: https://{args.destination_domain}/explore/dataset/{destination_dataset_uid}/")
 
 
 if __name__ == "__main__":

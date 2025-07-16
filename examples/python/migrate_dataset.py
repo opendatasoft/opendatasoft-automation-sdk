@@ -516,7 +516,34 @@ def migrate_dataset(args):
     else:
         print("- No metadata to migrate.")
 
-    # Step 7: Publish the dataset if requested
+    # Step 7: Migrate Schedules
+    print("\nMigrating dataset schedules...")
+    source_schedules_api = opendatasoft_automation.DatasetSchedulesApi(source_client)
+    destination_schedules_api = opendatasoft_automation.DatasetSchedulesApi(destination_client)
+    try:
+        # List schedules from the source dataset
+        source_schedules = source_schedules_api.list_dataset_schedules(dataset_uid=source_dataset_uid)
+        if source_schedules.results:
+            print(f"  - Found {len(source_schedules.results)} schedule(s) on source dataset. Migrating...")
+            for source_schedule in source_schedules.results:
+                try:
+                    # Create each schedule on the destination
+                    destination_schedules_api.create_dataset_schedule(destination_dataset_uid, dataset_schedule=source_schedule)
+                    print(f"  - Successfully migrated schedule: '{source_schedule.cron_schedule}'.")
+                except ApiException as e:
+                    # If a schedule already exists, it might return a 409 Conflict error, which we can ignore.
+                    if e.status == 409:
+                        print("  - A schedule already exists on the destination dataset. Skipping creation.")
+                    else:
+                        print(f"  - WARNING: Could not create schedule on destination. Status: {e.status}, Reason: {e.reason}")
+                        pprint(e.body)
+        else:
+            print("  - No schedules found on source dataset. Skipping.")
+    except ApiException as e:
+        print(f"  - WARNING: An error occurred while fetching source schedules. Status: {e.status}, Reason: {e.reason}")
+        pprint(e.body)
+
+    # Step 8: Publish the dataset if requested
     if args.publish:
         print(f"\nPublishing dataset '{destination_dataset_uid}'...")
         try:

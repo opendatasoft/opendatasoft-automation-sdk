@@ -224,6 +224,29 @@ def check_user_exists(username, client, domain):
             pprint(e.body)
             return False
 
+def get_custom_template_manually(domain, dataset_uid, template_name, apikey):
+    """Fetches a specific metadata template for a dataset manually to avoid SDK deserialization issues."""
+    print(f"  - Fetching template '{template_name}' manually from domain '{domain}'...")
+    headers = {'Accept': 'application/json'}
+    params = {'apikey': apikey}
+    url = f"https://{domain}/api/automation/v1.0/datasets/{dataset_uid}/metadata/{template_name}/"
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 404:
+            return None
+        print(f"  - ERROR: Failed to fetch template '{template_name}' manually. Status: {e.response.status_code}, Reason: {e.response.reason}")
+        try:
+            pprint(e.response.json())
+        except json.JSONDecodeError:
+            pprint(e.response.text)
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"  - ERROR: A network error occurred while fetching template '{template_name}' manually: {e}")
+        return None
+
 def migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid):
     """Migrates a resource that is an uploaded file by downloading, re-uploading, and relinking."""
     print(f"  - Migrating uploaded file resource: {resource.title}")
@@ -431,80 +454,69 @@ def migrate_dataset(args):
     # Step 6: Migrate Metadata
     print("\nMigrating metadata...")
     destination_metadata_api = opendatasoft_automation.DatasetMetadataApi(destination_client)
+    source_metadata_api = opendatasoft_automation.DatasetMetadataApi(source_client)
+
     if source_metadata:
-        if source_metadata.default:
-            default_metadata_dict = source_metadata.default.to_dict()
-            # Handle themes
-            if 'theme' in default_metadata_dict and default_metadata_dict['theme'] and default_metadata_dict['theme']['value']:
-                source_themes_val = default_metadata_dict['theme']['value']
-                destination_themes_list = []
-                for source_theme_name in source_themes_val:
-                    theme = get_theme_by_name(destination_themes, source_theme_name)
-                    if theme:
-                        destination_themes_list.append(theme['id'])
-                default_metadata_dict['theme']['value'] = destination_themes_list
-
-            destination_metadata_payload = opendatasoft_automation.DatasetMetadata(default=opendatasoft_automation.DatasetMetadataDefault.from_dict(default_metadata_dict))
-            destination_metadata_payload.default.modified_updates_on_metadata_change = opendatasoft_automation.DatasetMetadataValue(value=False)
-            destination_metadata_payload.default.modified_updates_on_data_change = opendatasoft_automation.DatasetMetadataValue(value=False)
-
-        if source_metadata.visualization:
-            destination_metadata_payload.visualization = source_metadata.visualization
-
-        if source_metadata.asset_content_configuration:
-            destination_metadata_payload.asset_content_configuration = source_metadata.asset_content_configuration
-
-        if source_metadata.internal:
-            internal_metadata_dict = source_metadata.internal.to_dict()
-            if 'theme_id' in internal_metadata_dict and internal_metadata_dict['theme_id'] and internal_metadata_dict['theme_id']['value']:
-                source_theme_ids = internal_metadata_dict['theme_id']['value']
-                destination_theme_ids = []
-                for source_theme_id in source_theme_ids:
-                    source_theme = get_theme_by_id(source_themes, source_theme_id)
-                    if source_theme:
-                        source_theme_name = next(iter(source_theme.get('labels', {}).values()), None)
-                        if source_theme_name:
-                            destination_theme = get_theme_by_name(destination_themes, source_theme_name)
-                            if destination_theme:
-                                destination_theme_ids.append(destination_theme['id'])
-                            else:
-                                print(f"  - WARNING: Theme '{source_theme_name}' not found on destination. Skipping theme.")
+        # Handle theme ID translation before migrating
+        if source_metadata.internal and source_metadata.internal.theme_id and source_metadata.internal.theme_id.value:
+            print("  - Translating theme IDs...")
+            source_theme_ids = source_metadata.internal.theme_id.value
+            destination_theme_ids = []
+            for source_theme_id in source_theme_ids:
+                source_theme = get_theme_by_id(source_themes, source_theme_id)
+                if source_theme:
+                    # Find the theme name from the source theme object
+                    source_theme_name = next(iter(source_theme.get('labels', {}).values()), None)
+                    if source_theme_name:
+                        # Find the corresponding theme on the destination by name
+                        destination_theme = get_theme_by_name(destination_themes, source_theme_name)
+                        if destination_theme:
+                            destination_theme_ids.append(destination_theme['id'])
+                            print(f"    - Translated theme '{source_theme_name}' (ID: {source_theme_id} -> {destination_theme['id']})")
                         else:
-                            print(f"  - WARNING: Could not find English label for source theme ID '{source_theme_id}'. Skipping theme.")
+                            print(f"    - WARNING: Theme '{source_theme_name}' not found on destination. Skipping theme.")
                     else:
-                        print(f"  - WARNING: Source theme with ID '{source_theme_id}' not found. Skipping theme.")
-                internal_metadata_dict['theme_id']['value'] = destination_theme_ids
-            destination_metadata_payload.internal = opendatasoft_automation.DatasetMetadataInternal.from_dict(internal_metadata_dict)
+                        print(f"    - WARNING: Could not find a name for source theme ID '{source_theme_id}'. Skipping theme.")
+                else:
+                    print(f"    - WARNING: Source theme with ID '{source_theme_id}' not found. Skipping theme.")
+            source_metadata.internal.theme_id.value = destination_theme_ids
 
-        if hasattr(source_metadata, 'custom') and source_metadata.custom:
-            print(f"- Migrating custom metadata...")
-            if check_metadata_template_exists('custom', destination_client, args.destination_domain):
-                destination_metadata_payload.custom = source_metadata.custom
-            else:
-                print(f"{bcolors.FAIL}FATAL: The metadata template 'custom' does not exist on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
-                print("Please create the template on the destination and rerun the script.")
-                sys.exit(1)
-
+        # First, migrate the standard metadata templates
         try:
-            destination_metadata_api.update_all_dataset_metadata(destination_dataset_uid, dataset_metadata=destination_metadata_payload)
-            print("- Successfully migrated all metadata.")
+            destination_metadata_api.update_all_dataset_metadata(destination_dataset_uid, dataset_metadata=source_metadata)
+            print("- Successfully migrated standard metadata templates (default, visualization, etc.).")
         except ApiException as e:
-            print(f"  - WARNING: Could not migrate metadata. Status: {e.status}, Reason: {e.reason}")
+            print(f"  - WARNING: Could not migrate standard metadata. Status: {e.status}, Reason: {e.reason}")
             pprint(e.body)
 
-        try:
-            destination_metadata_api.update_template_field_dataset_metadata(destination_dataset_uid,
-                                                                            "default",
-                                                                            "modified_updates_on_metadata_change",
-                                                                            opendatasoft_automation.DatasetMetadataValue(value=True))
-            destination_metadata_api.update_template_field_dataset_metadata(destination_dataset_uid,
-                                                                            "default",
-                                                                            "modified_updates_on_data_change",
-                                                                            opendatasoft_automation.DatasetMetadataValue(value=True))
-            print("- Successfully updated metadata modified_updates_on_(meta)data_change.")
-        except ApiException as e:
-            print(f"  - WARNING: Could not migrate metadata. Status: {e.status}, Reason: {e.reason}")
-            pprint(e.body)
+        # Second, migrate the 'custom' template specifically, using a manual API call to bypass SDK issues
+        print("  - Checking for 'custom' metadata template...")
+        source_custom_metadata = get_custom_template_manually(args.source_domain, source_dataset_uid, 'custom', args.source_apikey)
+        if source_custom_metadata:
+            print("    - Found 'custom' template. Migrating fields one by one...")
+            for field_name, field_data in source_custom_metadata.items():
+                try:
+                    field_value = field_data.get('value')
+                    if field_value is not None:
+                        print(f"      - Migrating field: '{field_name}'")
+                        metadata_value_payload = opendatasoft_automation.DatasetMetadataValue(value=field_value)
+                        destination_metadata_api.update_template_field_dataset_metadata(
+                            dataset_uid=destination_dataset_uid,
+                            template_name='custom',
+                            template_field_name=field_name,
+                            dataset_metadata_value=metadata_value_payload
+                        )
+                    else:
+                        print(f"      - WARNING: No 'value' key found for field '{field_name}' in custom template. Skipping.")
+                except ApiException as e:
+                    print(f"    - WARNING: Could not migrate custom metadata field '{field_name}'. Status: {e.status}, Reason: {e.reason}")
+                    pprint(e.body)
+                except Exception as e:
+                    print(f"    - WARNING: An unexpected error occurred while processing field '{field_name}': {e}")
+            print("    - Finished migrating 'custom' template fields.")
+        else:
+            print("    - No 'custom' metadata template found on source dataset or failed to fetch it.")
+
     else:
         print("- No metadata to migrate.")
 

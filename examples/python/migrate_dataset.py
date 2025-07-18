@@ -27,11 +27,9 @@ processing pipeline, and metadata.
 python migrate_dataset.py \
     --source-domain "my-source-domain.opendatasoft.com" \
     --source-apikey "YOUR_SOURCE_API_KEY" \
-    --source-cookie "YOUR_SOURCE_COOKIE" \
     --source-dataset-id "source_dataset_identifier" \
     --destination-domain "my-destination-domain.opendatasoft.com" \
     --destination-apikey "YOUR_DESTINATION_API_KEY" \
-    --destination-cookie "YOUR_DESTINATION_COOKIE" \
     --publish
 ```
 
@@ -40,11 +38,9 @@ python migrate_dataset.py \
 python migrate_dataset.py \
     --source-domain "my-source-domain.opendatasoft.com" \
     --source-apikey "YOUR_SOURCE_API_KEY" \
-    --source-cookie "YOUR_SOURCE_COOKIE" \
     --source-dataset-uid "source_dataset_uid" \
     --destination-domain "my-destination-domain.opendatasoft.com" \
     --destination-apikey "YOUR_DESTINATION_API_KEY" \
-    --destination-cookie "YOUR_DESTINATION_COOKIE" \
     --destination-dataset-uid "existing_destination_dataset_uid"
 ```
 """

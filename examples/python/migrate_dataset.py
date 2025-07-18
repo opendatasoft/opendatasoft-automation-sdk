@@ -86,30 +86,25 @@ def get_api_client(domain, apikey):
 
 
 def get_dataset_uid_from_id(dataset_id, client, domain):
-    """Fetches the dataset UID for a given dataset ID by paginating through datasets."""
+    """Fetches the dataset UID for a given dataset ID using a direct API filter."""
     if not dataset_id:
         return None
     print(f"Searching for dataset with ID '{dataset_id}' on domain '{domain}'...")
     datasets_api = opendatasoft_automation.DatasetsApi(client)
-    limit = 100
-    offset = 0
-    while True:
-        try:
-            response = datasets_api.list_datasets(limit=limit, offset=offset)
-            if not response.results:
-                print(f"Dataset with ID '{dataset_id}' not found on '{domain}'.")
-                return None
-
-            for dataset in response.results:
-                if dataset.dataset_id == dataset_id:
-                    print(f"Found dataset UID: {dataset.uid}")
-                    return dataset.uid
-
-            offset += limit
-        except ApiException as e:
-            print(f"ERROR: Failed to list datasets on '{domain}'. Status: {e.status}, Reason: {e.reason}")
-            pprint(e.body)
+    try:
+        # Use the dataset_id parameter for a direct lookup
+        response = datasets_api.list_datasets(dataset_id=dataset_id)
+        if response.results and len(response.results) > 0:
+            dataset = response.results[0]
+            print(f"Found dataset UID: {dataset.uid}")
+            return dataset.uid
+        else:
+            print(f"Dataset with ID '{dataset_id}' not found on '{domain}'.")
             return None
+    except ApiException as e:
+        print(f"ERROR: Failed to list datasets on '{domain}'. Status: {e.status}, Reason: {e.reason}")
+        pprint(e.body)
+        return None
 
 
 def find_matching_connection(source_connection_details, destination_client):

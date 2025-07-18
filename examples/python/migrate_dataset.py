@@ -179,13 +179,13 @@ def fetch_source_data(source_client, source_dataset_uid):
         pprint(e.body)
         return None, None, None, None
 
-def get_domain_themes(domain, cookie):
-    """Fetches the themes from the given domain using the provided cookie."""
-    if not cookie:
+def get_domain_themes(domain, apikey):
+    """Fetches the themes from the given domain using the provided API key."""
+    if not apikey:
         return None
     print(f"Fetching themes from domain '{domain}'...")
-    headers = {'Cookie': cookie}
-    url = f"https://{domain}/api/management/1.0/domain/"
+    headers = {'Authorization': f'Apikey {apikey}'}
+    url = f"https://{domain}/api/management/v2/domain/"
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
@@ -314,8 +314,8 @@ def migrate_dataset(args):
     destination_client = get_api_client(args.destination_domain, args.destination_apikey)
 
     # Get source and destination themes
-    source_themes = get_domain_themes(args.source_domain, args.source_cookie)
-    destination_themes = get_domain_themes(args.destination_domain, args.destination_cookie)
+    source_themes = get_domain_themes(args.source_domain, args.source_apikey)
+    destination_themes = get_domain_themes(args.destination_domain, args.destination_apikey)
 
     # Step 1: Determine source and destination UIDs
     source_dataset_uid = args.source_dataset_uid or get_dataset_uid_from_id(args.source_dataset_id, source_client, args.source_domain)
@@ -590,14 +590,12 @@ if __name__ == "__main__":
     # Source arguments
     parser.add_argument("--source-domain", required=True, help="Domain of the source ODS portal.")
     parser.add_argument("--source-apikey", required=True, help="API key for the source ODS portal.")
-    parser.add_argument("--source-cookie", required=False, help="Cookie for the source ODS portal.")
     parser.add_argument("--source-dataset-uid", required=False, help="The UID of the dataset to migrate.")
     parser.add_argument("--source-dataset-id", required=False, help="The ID of the dataset to migrate.")
 
     # Destination arguments
     parser.add_argument("--destination-domain", required=True, help="Domain of the destination ODS portal.")
     parser.add_argument("--destination-apikey", required=True, help="API key for the destination ODS portal.")
-    parser.add_argument("--destination-cookie", required=False, help="Cookie for the destination ODS portal.")
     parser.add_argument("--destination-dataset-uid", required=False, default=None,
                         help="Optional: UID of an existing dataset on the destination to update.")
     parser.add_argument("--destination-dataset-id", required=False, default=None,

@@ -92,7 +92,7 @@ class AssetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "ListImages200ResponseAllOfResultsInner",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -156,7 +156,7 @@ class AssetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "ListImages200ResponseAllOfResultsInner",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -220,7 +220,7 @@ class AssetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "ListImages200ResponseAllOfResultsInner",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,

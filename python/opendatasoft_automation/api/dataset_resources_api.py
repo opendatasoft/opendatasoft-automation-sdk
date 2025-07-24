@@ -25,10 +25,10 @@ from opendatasoft_automation.models.extractor import Extractor
 from opendatasoft_automation.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
 from opendatasoft_automation.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
 from opendatasoft_automation.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
+from opendatasoft_automation.models.inline_object6 import InlineObject6
 from opendatasoft_automation.models.list_dataset_resources200_response import ListDatasetResources200Response
 from opendatasoft_automation.models.resource import Resource
 from opendatasoft_automation.models.resource_guess_extractor_params200_response import ResourceGuessExtractorParams200Response
-from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
 from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
 
 from opendatasoft_automation.api_client import ApiClient, RequestSerialized
@@ -108,8 +108,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -181,8 +181,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -254,8 +254,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -391,8 +391,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -464,8 +464,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -537,8 +537,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -687,7 +687,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -759,7 +759,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -831,7 +831,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -967,8 +967,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1040,8 +1040,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1113,8 +1113,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1250,7 +1250,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1322,7 +1322,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1394,7 +1394,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1530,7 +1530,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1602,7 +1602,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1674,7 +1674,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1811,7 +1811,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1883,7 +1883,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1955,7 +1955,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2091,8 +2091,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GuessUnsavedResourceExtractorParams200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2164,8 +2164,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GuessUnsavedResourceExtractorParams200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2237,8 +2237,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GuessUnsavedResourceExtractorParams200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2387,8 +2387,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2460,8 +2460,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2533,8 +2533,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2691,7 +2691,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetResources200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2771,7 +2771,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetResources200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2851,7 +2851,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetResources200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3246,8 +3246,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3319,8 +3319,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3392,8 +3392,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3529,7 +3529,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ResourceGuessExtractorParams200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3601,7 +3601,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ResourceGuessExtractorParams200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3673,7 +3673,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ResourceGuessExtractorParams200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3809,7 +3809,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3881,7 +3881,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3953,7 +3953,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4047,7 +4047,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceUnsavedPreview200Response:
+    ) -> InlineObject6:
         """Preview resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4088,8 +4088,8 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4119,7 +4119,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceUnsavedPreview200Response]:
+    ) -> ApiResponse[InlineObject6]:
         """Preview resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4160,8 +4160,8 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4232,8 +4232,8 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4369,7 +4369,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4441,7 +4441,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4513,7 +4513,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4607,7 +4607,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceUnsavedPreview200Response:
+    ) -> InlineObject6:
         """Preview unsaved resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4648,9 +4648,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4680,7 +4680,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceUnsavedPreview200Response]:
+    ) -> ApiResponse[InlineObject6]:
         """Preview unsaved resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4721,9 +4721,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4794,9 +4794,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4949,7 +4949,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5025,7 +5025,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5101,7 +5101,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5242,7 +5242,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5314,7 +5314,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5386,7 +5386,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5526,8 +5526,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5603,8 +5603,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5680,8 +5680,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5833,8 +5833,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5906,8 +5906,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5979,8 +5979,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

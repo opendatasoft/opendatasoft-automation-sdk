@@ -102,8 +102,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetGroupSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -175,8 +175,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetGroupSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -248,8 +248,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetGroupSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -398,8 +398,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetUserSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -471,8 +471,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetUserSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -544,8 +544,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetUserSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -694,7 +694,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -766,7 +766,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -838,7 +838,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -974,7 +974,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1046,7 +1046,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1118,7 +1118,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1258,7 +1258,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetGroupSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1334,7 +1334,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetGroupSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1410,7 +1410,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetGroupSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1557,7 +1557,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetUserSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1633,7 +1633,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetUserSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1709,7 +1709,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetUserSecurity200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1856,7 +1856,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetGroupSecurity",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1932,7 +1932,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetGroupSecurity",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2008,7 +2008,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetGroupSecurity",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2164,7 +2164,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetUserSecurity",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2240,7 +2240,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetUserSecurity",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2316,7 +2316,7 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetUserSecurity",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2472,8 +2472,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetGroupSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2549,8 +2549,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetGroupSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2626,8 +2626,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetGroupSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2783,8 +2783,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetUserSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2860,8 +2860,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetUserSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2937,8 +2937,8 @@ class DatasetSecurityApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetUserSecurity",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -23,6 +23,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from opendatasoft_automation.models.datasource import Datasource
+from opendatasoft_automation.models.extraction_infos import ExtractionInfos
+from opendatasoft_automation.models.origin_infos import OriginInfos
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,13 +33,16 @@ class Resource(BaseModel):
     Resource
     """ # noqa: E501
     uid: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Unique identifier for the resource")
-    type: Annotated[str, Field(min_length=1, strict=True)] = Field(description="extractor type that should handle this resource")
+    type: Annotated[str, Field(min_length=1, strict=True)] = Field(description="Extractor type that should handle this resource")
     url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="resource url")
-    title: Annotated[str, Field(min_length=1, strict=True)] = Field(description="friendly title")
+    title: Annotated[str, Field(min_length=1, strict=True)] = Field(description="User defined title for identifying the resource")
+    display_name: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="A name representing the resource. It is computed from the resource `title` and `datasource` depending on the type of resource")
+    extraction_infos: Optional[ExtractionInfos] = None
+    origin: Optional[OriginInfos] = None
     updated_at: Optional[datetime] = None
-    params: Optional[Dict[str, Any]] = Field(default=None, description="parameters passed to the extractor")
+    params: Optional[Dict[str, Any]] = Field(default=None, description="Parameters passed to the extractor")
     datasource: Optional[Datasource] = None
-    __properties: ClassVar[List[str]] = ["uid", "type", "url", "title", "updated_at", "params", "datasource"]
+    __properties: ClassVar[List[str]] = ["uid", "type", "url", "title", "display_name", "extraction_infos", "origin", "updated_at", "params", "datasource"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,9 +76,11 @@ class Resource(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "uid",
+            "display_name",
             "updated_at",
         ])
 
@@ -82,9 +89,20 @@ class Resource(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of extraction_infos
+        if self.extraction_infos:
+            _dict['extraction_infos'] = self.extraction_infos.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of origin
+        if self.origin:
+            _dict['origin'] = self.origin.to_dict()
         # override the default output from pydantic by calling `to_dict()` of datasource
         if self.datasource:
             _dict['datasource'] = self.datasource.to_dict()
+        # set to None if extraction_infos (nullable) is None
+        # and model_fields_set contains the field
+        if self.extraction_infos is None and "extraction_infos" in self.model_fields_set:
+            _dict['extraction_infos'] = None
+
         return _dict
 
     @classmethod
@@ -101,6 +119,9 @@ class Resource(BaseModel):
             "type": obj.get("type"),
             "url": obj.get("url"),
             "title": obj.get("title"),
+            "display_name": obj.get("display_name"),
+            "extraction_infos": ExtractionInfos.from_dict(obj["extraction_infos"]) if obj.get("extraction_infos") is not None else None,
+            "origin": OriginInfos.from_dict(obj["origin"]) if obj.get("origin") is not None else None,
             "updated_at": obj.get("updated_at"),
             "params": obj.get("params"),
             "datasource": Datasource.from_dict(obj["datasource"]) if obj.get("datasource") is not None else None

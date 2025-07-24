@@ -634,27 +634,6 @@
                   },
                   "summary": "Mark a field as the unique ID"
                 },
-                "Mark a field as a facet": {
-                  "value": {
-                    "type": "annotate",
-                    "label": "Making field_id as a facet",
-                    "field": "field_id",
-                    "annotation": "facet"
-                  },
-                  "summary": "Mark a field as a facet"
-                },
-                "Sort a facet": {
-                  "value": {
-                    "type": "annotate",
-                    "label": "Sorting the facetted field field_id by descending count",
-                    "field": "field_id",
-                    "annotation": "facetsort",
-                    "args": [
-                      "-count"
-                    ]
-                  },
-                  "summary": "Sort a facet"
-                },
                 "Set datetime field precision": {
                   "value": {
                     "type": "annotate",
@@ -777,29 +756,6 @@
                       "field": "field_id"
                     },
                     "summary": "Mark a field as the unique ID"
-                  },
-                  "Mark a field as a facet": {
-                    "value": {
-                      "uid": "pr_qf2hyt",
-                      "type": "annotate",
-                      "label": "Making field_id as a facet",
-                      "field": "field_id",
-                      "annotation": "facet"
-                    },
-                    "summary": "Mark a field as a facet"
-                  },
-                  "Sort a facet": {
-                    "value": {
-                      "uid": "pr_qf2hyt",
-                      "type": "annotate",
-                      "label": "Sorting the facetted field field_id by descending count",
-                      "field": "field_id",
-                      "annotation": "facetsort",
-                      "args": [
-                        "-count"
-                      ]
-                    },
-                    "summary": "Sort a facet"
                   },
                   "Set datetime field precision": {
                     "value": {
@@ -953,29 +909,6 @@
                     },
                     "summary": "Mark a field as the unique ID"
                   },
-                  "Mark a field as a facet": {
-                    "value": {
-                      "uid": "pr_qf2hyt",
-                      "type": "annotate",
-                      "label": "Making field_id as a facet",
-                      "field": "field_id",
-                      "annotation": "facet"
-                    },
-                    "summary": "Mark a field as a facet"
-                  },
-                  "Sort a facet": {
-                    "value": {
-                      "uid": "pr_qf2hyt",
-                      "type": "annotate",
-                      "label": "Sorting the facetted field field_id by descending count",
-                      "field": "field_id",
-                      "annotation": "facetsort",
-                      "args": [
-                        "-count"
-                      ]
-                    },
-                    "summary": "Sort a facet"
-                  },
                   "Set datetime field precision": {
                     "value": {
                       "uid": "pr_qf2hyt",
@@ -1127,29 +1060,6 @@
                     },
                     "summary": "Mark a field as the unique ID"
                   },
-                  "Mark a field as a facet": {
-                    "value": {
-                      "uid": "pr_qf2hyt",
-                      "type": "annotate",
-                      "label": "Making field_id as a facet",
-                      "field": "field_id",
-                      "annotation": "facet"
-                    },
-                    "summary": "Mark a field as a facet"
-                  },
-                  "Sort a facet": {
-                    "value": {
-                      "uid": "pr_qf2hyt",
-                      "type": "annotate",
-                      "label": "Sorting the facetted field field_id by descending count",
-                      "field": "field_id",
-                      "annotation": "facetsort",
-                      "args": [
-                        "-count"
-                      ]
-                    },
-                    "summary": "Sort a facet"
-                  },
                   "Set datetime field precision": {
                     "value": {
                       "uid": "pr_qf2hyt",
@@ -1279,27 +1189,6 @@
                     "field": "field_id"
                   },
                   "summary": "Mark a field as the unique ID"
-                },
-                "Mark a field as a facet": {
-                  "value": {
-                    "type": "annotate",
-                    "label": "Making field_id as a facet",
-                    "field": "field_id",
-                    "annotation": "facet"
-                  },
-                  "summary": "Mark a field as a facet"
-                },
-                "Sort a facet": {
-                  "value": {
-                    "type": "annotate",
-                    "label": "Sorting the facetted field field_id by descending count",
-                    "field": "field_id",
-                    "annotation": "facetsort",
-                    "args": [
-                      "-count"
-                    ]
-                  },
-                  "summary": "Sort a facet"
                 },
                 "Set datetime field precision": {
                   "value": {
@@ -1728,7 +1617,16 @@
                     "value": {
                       "uid": "re_qf2hyt",
                       "type": "csvfile",
-                      "title": "fromages.csv",
+                      "title": "Fromages",
+                      "display_name": "https://my-server.com/fromages.csv",
+                      "extraction_infos": {
+                        "label": "CSV File",
+                        "type": "csvfile"
+                      },
+                      "origin": {
+                        "label": "HTTP",
+                        "type": "http"
+                      },
                       "params": {
                         "doublequote": true,
                         "encoding": "utf-8",
@@ -1757,6 +1655,15 @@
                       "uid": "re_qf2hyt",
                       "type": "csvfile",
                       "title": "fromages.csv",
+                      "display_name": "fromages.csv",
+                      "extraction_infos": {
+                        "label": "CSV File",
+                        "type": "csvfile"
+                      },
+                      "origin": {
+                        "label": "Uploaded file",
+                        "type": "uploaded_file"
+                      },
                       "params": {
                         "doublequote": true,
                         "encoding": "utf-8",
@@ -1779,6 +1686,12 @@
                       "type": "federated",
                       "title": "re_qf2hyt",
                       "params": {},
+                      "display_name": "Federated dataset",
+                      "extraction_infos": null,
+                      "origin": {
+                        "label": "Federated dataset",
+                        "type": "federated"
+                      },
                       "datasource": {
                         "type": "federated",
                         "dataset": {
@@ -2187,7 +2100,16 @@
                     "value": {
                       "uid": "re_qf2hyt",
                       "type": "csvfile",
-                      "title": "fromages.csv",
+                      "title": "Fromages",
+                      "display_name": "https://my-server.com/fromages.csv",
+                      "extraction_infos": {
+                        "label": "CSV File",
+                        "type": "csvfile"
+                      },
+                      "origin": {
+                        "label": "HTTP",
+                        "type": "http"
+                      },
                       "params": {
                         "doublequote": true,
                         "encoding": "utf-8",
@@ -2216,6 +2138,15 @@
                       "uid": "re_qf2hyt",
                       "type": "csvfile",
                       "title": "fromages.csv",
+                      "display_name": "fromages.csv",
+                      "extraction_infos": {
+                        "label": "CSV File",
+                        "type": "csvfile"
+                      },
+                      "origin": {
+                        "label": "Uploaded file",
+                        "type": "uploaded_file"
+                      },
                       "params": {
                         "doublequote": true,
                         "encoding": "utf-8",
@@ -2238,6 +2169,12 @@
                       "type": "federated",
                       "title": "re_qf2hyt",
                       "params": {},
+                      "display_name": "Federated dataset",
+                      "extraction_infos": null,
+                      "origin": {
+                        "label": "Federated dataset",
+                        "type": "federated"
+                      },
                       "datasource": {
                         "type": "federated",
                         "dataset": {
@@ -2294,7 +2231,16 @@
                     "value": {
                       "uid": "re_qf2hyt",
                       "type": "csvfile",
-                      "title": "fromages.csv",
+                      "title": "Fromages",
+                      "display_name": "https://my-server.com/fromages.csv",
+                      "extraction_infos": {
+                        "label": "CSV File",
+                        "type": "csvfile"
+                      },
+                      "origin": {
+                        "label": "HTTP",
+                        "type": "http"
+                      },
                       "params": {
                         "doublequote": true,
                         "encoding": "utf-8",
@@ -2323,6 +2269,15 @@
                       "uid": "re_qf2hyt",
                       "type": "csvfile",
                       "title": "fromages.csv",
+                      "display_name": "fromages.csv",
+                      "extraction_infos": {
+                        "label": "CSV File",
+                        "type": "csvfile"
+                      },
+                      "origin": {
+                        "label": "Uploaded file",
+                        "type": "uploaded_file"
+                      },
                       "params": {
                         "doublequote": true,
                         "encoding": "utf-8",
@@ -2345,6 +2300,12 @@
                       "type": "federated",
                       "title": "re_qf2hyt",
                       "params": {},
+                      "display_name": "Federated dataset",
+                      "extraction_infos": null,
+                      "origin": {
+                        "label": "Federated dataset",
+                        "type": "federated"
+                      },
                       "datasource": {
                         "type": "federated",
                         "dataset": {
@@ -3978,7 +3939,7 @@
           }
         },
         "operationId": "list-dataset-versions",
-        "description": "List the dataset versions.",
+        "description": "List the dataset versions.\n\n**Note:** only the last 20 versions of a dataset are stored in the platform database.\nFor this reason, the API response will contain at most 20 results.",
         "tags": [
           "Dataset versions"
         ]
@@ -9310,9 +9271,6 @@
                       "args": [
                         "year"
                       ]
-                    },
-                    {
-                      "name": "facet"
                     }
                   ]
                 },
@@ -10397,6 +10355,212 @@
           }
         }
       },
+      "DatasetMetadataAssetContentConfiguration": {
+        "title": "Asset Content Configuration",
+        "description": "This template defines metadata for configuring how asset content are displayed in the portal.",
+        "type": "object",
+        "properties": {
+          "facets": {
+            "$ref": "#/components/schemas/DatasetMetadataValue",
+            "properties": {
+              "value": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "field_name": {
+                      "type": "string",
+                      "description": "The name of the field."
+                    },
+                    "facetsort": {
+                      "type": "string",
+                      "enum": [
+                        "count",
+                        "num",
+                        "alphanum",
+                        "-count",
+                        "-num",
+                        "-alphanum"
+                      ],
+                      "description": "Sorting criteria for the facet."
+                    },
+                    "disjunctive": {
+                      "type": "boolean",
+                      "description": "Whether the facet uses disjunctive filtering. When enabled, selecting multiple values within the facet applies OR logic, returning results that match any of the selected values."
+                    },
+                    "timerange_filter": {
+                      "type": "boolean",
+                      "description": "Whether the facet should use a time range filter on the date or datetime field."
+                    }
+                  },
+                  "required": [
+                    "field_name"
+                  ]
+                }
+              },
+              "remote_value": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "field_name": {
+                      "type": "string",
+                      "description": "The name of the field."
+                    },
+                    "facetsort": {
+                      "type": "string",
+                      "enum": [
+                        "count",
+                        "num",
+                        "alphanum",
+                        "-count",
+                        "-num",
+                        "-alphanum"
+                      ],
+                      "description": "Sorting criteria for the facet."
+                    },
+                    "disjunctive": {
+                      "type": "boolean",
+                      "description": "Whether the facet is disjunctive."
+                    },
+                    "timerange_filter": {
+                      "type": "boolean",
+                      "description": "Whether the facet should use a time range filter on the date or datetime field."
+                    }
+                  },
+                  "required": [
+                    "field_name"
+                  ]
+                }
+              }
+            },
+            "description": "The set of facets for the asset."
+          },
+          "fields_displayed_in_specific_languages": {
+            "$ref": "#/components/schemas/DatasetMetadataValue",
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "nl"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "description": "A dictionary where keys are field names and values are non-empty lists of valid languages."
+              },
+              "remote_value": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "nl"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "description": "A dictionary where each key is a field name, and each value is a list of languages in which the field should be displayed."
+              }
+            },
+            "description": "The fields that should only be displayed in specific languages."
+          },
+          "records_search_boosts": {
+            "$ref": "#/components/schemas/DatasetMetadataValue",
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "description": "A dictionary where keys are field names and values are positive integers representing the importance of the field in the full-text search. A value of 0 means the field is ignored by the search."
+              },
+              "remote_value": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "description": "A dictionary where each key is a field name, and each value is a positive integer indicating the importance of the field in the full-text search. A value of 0 means the field is ignored by the search."
+              }
+            },
+            "description": "The importance of each fields in full-text search."
+          }
+        },
+        "example": {
+          "facets": {
+            "value": [
+              {
+                "field_name": "title",
+                "facetsort": "-count",
+                "disjunctive": true
+              },
+              {
+                "field_name": "release_date",
+                "facetsort": "alphanum",
+                "timerange_filter": true
+              }
+            ],
+            "remote_value": [
+              {
+                "field_name": "title",
+                "facetsort": "-count",
+                "disjunctive": true
+              },
+              {
+                "field_name": "release_date",
+                "facetsort": "alphanum",
+                "timerange_filter": true
+              }
+            ],
+            "override_remote_value": false
+          },
+          "fields_displayed_in_specific_languages": {
+            "value": {
+              "title": [
+                "en",
+                "fr"
+              ],
+              "tags": [
+                "en"
+              ]
+            },
+            "remote_value": {
+              "title": [
+                "en",
+                "fr"
+              ],
+              "tags": [
+                "en"
+              ]
+            },
+            "override_remote_value": false
+          },
+          "records_search_boosts": {
+            "value": {
+              "title": 10,
+              "tags": 0,
+              "description": 2
+            },
+            "remote_value": {
+              "title": 10,
+              "tags": 0,
+              "description": 2
+            },
+            "override_remote_value": false
+          }
+        }
+      },
       "DatasetMetadataCustom": {
         "title": "Custom template",
         "description": "Additional values for custom metadata templates you have configured on your portal.",
@@ -10429,6 +10593,9 @@
           },
           "internal": {
             "$ref": "#/components/schemas/DatasetMetadataInternal"
+          },
+          "asset_content_configuration": {
+            "$ref": "#/components/schemas/DatasetMetadataAssetContentConfiguration"
           },
           "custom_template_name": {
             "$ref": "#/components/schemas/DatasetMetadataCustom"
@@ -10688,9 +10855,12 @@
         "example": {
           "uid": "pr_qf2hyt",
           "type": "annotate",
-          "label": "Making field_id as a facet",
+          "label": "Mark the field_id as multivalued, with a comma as the values separator",
           "field": "field_id",
-          "annotation": "facet"
+          "annotation": "multivalued",
+          "args": [
+            ","
+          ]
         }
       },
       "RenameDatasetFieldConfiguration": {
@@ -10797,18 +10967,14 @@
                 "type": "string",
                 "enum": [
                   "id",
-                  "facet",
-                  "facetsort",
-                  "disjunctive",
                   "timeserie_precision",
-                  "timerangeFilter",
                   "unit",
                   "decimals",
                   "sortable",
                   "multivalued",
                   "hierarchical"
                 ],
-                "description": "Annotations are a mean to configure special behavior for the fields. \nSome annotations are only available for certain field types. Setting the facet annotation on a field unlocks other annotations for the field.\n| Annotation name     | Field type                                   | Description                                                                                                                                                                                     |\n|---------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| id                  | all field types                              | Whether this field should constitute one of the keys of the records unique IDs. If no field has this annotation, all fields contribute to the creation of the records unique ID.                |\n| facet               | `date`, `datetime`, `int`, `decimal`, `text` | Whether the field can serve as a filter                                                                                                                                                         |\n| facetsort           | all field types, facet only                  | How to sort the facets. Possible arguments are `count` and `-count` for all field types, `alphanum` and `-alphanum` for `date`, `datetime` and `text`, `num` and `-num` for `decimal` and `int` |\n| disjunctive         | `decimal`, `int` and `text`, facet only      | Whether multiple values can be selected for the facet                                                                                                                                           |\n| timeserie_precision | `date` and `datetime`                        | display precision of the field. Possible arguments are `year`, `month` and `day` for `date`, `hour` and `minute` for `datetime`                                                                 |\n| timerangeFilter     | `date` and `datetime`, facet only            | Whether to activate the timerange filter                                                                                                                                                        |\n| unit                | `int` and `decimal`                          | The unit of the field                                                                                                                                                                           |\n| decimals            | `decimal`                                    | The argument is the number of digits to appear after the decimal point                                                                                                                          |\n| sortable            | `text`                                       | whether the field should be sortable in table view                                                                                                                                              |\n| multivalued         | `text`                                       | whether the field contains multiple values separated by a character. The separator must be given as the argument                                                                                |\n| hierarchical        | `text`, facet only                           | whether the field is hierarchical. The separator must be given as the argument                                                                                                                  |",
+                "description": "Annotations are a mean to configure special behavior for the fields. \nSome annotations are only available for certain field types.\n| Annotation name     | Field type                                   | Description                                                                                                                                                                                     |\n|---------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| id                  | all field types                              | Whether this field should constitute one of the keys of the records unique IDs. If no field has this annotation, all fields contribute to the creation of the records unique ID.                |\n| timeserie_precision | `date` and `datetime`                        | display precision of the field. Possible arguments are `year`, `month` and `day` for `date`, `hour` and `minute` for `datetime`                                                                 |\n| unit                | `int` and `decimal`                          | The unit of the field                                                                                                                                                                           |\n| decimals            | `decimal`                                    | The argument is the number of digits to appear after the decimal point                                                                                                                          |\n| sortable            | `text`                                       | whether the field should be sortable in table view                                                                                                                                              |\n| multivalued         | `text`                                       | whether the field contains multiple values separated by a character. The separator must be given as the argument                                                                                |\n| hierarchical        | `text`                                       | whether the field is hierarchical. The separator must be given as the argument                                                                                                                  |",
                 "example": "unit"
               },
               "args": {
@@ -11053,6 +11219,46 @@
           "label",
           "parameters"
         ]
+      },
+      "ExtractionInfos": {
+        "title": "Extraction information",
+        "type": "object",
+        "description": "Information about the kind of extraction configured for this resource",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "human readable label for the extraction type",
+            "example": "CSV File",
+            "readOnly": true
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "extractor type that should handle this resource",
+            "example": "csvfile",
+            "readOnly": true
+          }
+        }
+      },
+      "OriginInfos": {
+        "title": "Origin information",
+        "type": "object",
+        "description": "Information about the origin of the resource (e.g. HTTP, FTP etc.)",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Human readable label for the resource origin",
+            "example": "CSV File",
+            "readOnly": true
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Type of the resource origin. The most relevant information is returned between the datasource type and the extraction type. For example a resource using an HTTP Feed, has a \"feed\" origin, not HTTP.",
+            "example": "csvfile",
+            "readOnly": true
+          }
+        }
       },
       "Datasource": {
         "type": "object",
@@ -12316,12 +12522,34 @@
           "type": {
             "type": "string",
             "minLength": 1,
-            "description": "extractor type that should handle this resource"
+            "description": "Extractor type that should handle this resource"
           },
           "title": {
             "type": "string",
             "minLength": 1,
-            "description": "friendly title"
+            "description": "User defined title for identifying the resource"
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A name representing the resource. It is computed from the resource `title` and `datasource` depending on the type of resource",
+            "readOnly": true
+          },
+          "extraction_infos": {
+            "description": "Information about the kind of extraction configured for this resource, or null when it isn't relevant.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ExtractionInfos"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "origin": {
+            "$ref": "#/components/schemas/OriginInfos",
+            "readOnly": true
           },
           "updated_at": {
             "type": "string",
@@ -12331,7 +12559,7 @@
           },
           "params": {
             "type": "object",
-            "description": "parameters passed to the extractor"
+            "description": "Parameters passed to the extractor"
           },
           "datasource": {
             "$ref": "#/components/schemas/Datasource"
@@ -12345,7 +12573,16 @@
         "example": {
           "uid": "re_qf2hyt",
           "type": "csvfile",
-          "title": "fromages.csv",
+          "title": "Fromages",
+          "display_name": "https://my-server.com/fromages.csv",
+          "extraction_infos": {
+            "label": "CSV File",
+            "type": "csvfile"
+          },
+          "origin": {
+            "label": "HTTP",
+            "type": "http"
+          },
           "params": {
             "doublequote": true,
             "encoding": "utf-8",
@@ -12634,6 +12871,9 @@
           },
           {
             "$ref": "#/components/schemas/DatasetMetadataVisualization"
+          },
+          {
+            "$ref": "#/components/schemas/DatasetMetadataAssetContentConfiguration"
           },
           {
             "$ref": "#/components/schemas/DatasetMetadataCustom"
@@ -13021,9 +13261,11 @@
           "edit_reuse",
           "manage_subdomains",
           "explore_monitoring",
-          "edit_theme"
+          "edit_theme",
+          "edit_form",
+          "submit_private_form"
         ],
-        "description": "A user or user group permission:\n * `edit_domain` - Ability to edit the properties of the domain, including user and group management\n * `create_page` - Ability to create new pages\n * `edit_page` - Ability to edit all pages\n * `manage_page` - Ability to change the security of any page editable by this user\n * `explore_restricted_page` - Ability to browse any page, even the restricted ones\n * `create_dataset` - Ability to create new datasets\n * `edit_dataset` - Ability to edit all datasets\n * `publish_dataset` - Ability to publish datasets editable by this user\n * `manage_dataset` - Ability to change the security of datasets editable by this user\n * `explore_restricted_dataset` - Ability to browse any dataset, even the restricted ones\n * `edit_reuse` - Ability to edit and manage existing reuses\n * `manage_subdomains` - Ability to create and manage subdomains\n * `explore_monitoring` - Ability to browse any monitoring dataset and access the analytics section of the back-office\n * `edit_theme` - Ability to manage the domain's theme (edit and make live)"
+        "description": "A user or user group permission:\n * `edit_domain` - Ability to edit the properties of the domain, including user and group management\n * `create_page` - Ability to create new pages\n * `edit_page` - Ability to edit all pages\n * `manage_page` - Ability to change the security of any page editable by this user\n * `explore_restricted_page` - Ability to browse any page, even the restricted ones\n * `create_dataset` - Ability to create new datasets\n * `edit_dataset` - Ability to edit all datasets\n * `publish_dataset` - Ability to publish datasets editable by this user\n * `manage_dataset` - Ability to change the security of datasets editable by this user\n * `explore_restricted_dataset` - Ability to browse any dataset, even the restricted ones\n * `edit_reuse` - Ability to edit and manage existing reuses\n * `manage_subdomains` - Ability to create and manage subdomains\n * `explore_monitoring` - Ability to browse any monitoring dataset and access the analytics section of the back-office\n * `edit_theme` - Ability to manage the domain's theme (edit and make live)\n * `edit_form` - Ability to create new forms, edit and publish all forms\n * `submit_private_form` - Ability to see all the forms, even the restricted ones"
       },
       "APIKey": {
         "title": "API key schema",
@@ -14662,7 +14904,7 @@
   "tags": [
     {
       "name": "Datasets",
-      "description": "Datasets are at the core of the platform. A dataset is composed of:\n\n- the actual data available on the portal (not available via the Automation API)\n- metadata like a title, a description and keywords describing the data, so users can discover it in the portal's catalog\n- configurations for processors, visualisation and security, which define the way data will be processed by the platform and made visible to users\n\nThrough the Automation API, it is possible to:\n\n- create datasets\n- attach resources to datasets\n- configure datasets processing pipeline, visualisations and security attributes\n- publish datasets"
+      "description": "Datasets are at the core of the platform. A dataset is composed of:\n\n- the actual data available on the portal (not available via the Automation API, but instead via the [Explore API](/apis/ods-explore-v2/))\n- metadata like a title, a description and keywords describing the data, so users can discover it in the portal's catalog\n- configurations for processors, visualisation and security, which define the way data will be processed by the platform and made visible to users\n\nThrough the Automation API, it is possible to:\n\n- create datasets\n- attach resources to datasets\n- configure datasets processing pipeline, visualisations and security attributes\n- publish datasets"
     },
     {
       "name": "Dataset resources",
@@ -14686,7 +14928,7 @@
     },
     {
       "name": "Dataset fields",
-      "description": "Dataset fields can be configured using a variety of options. These options include their type, their label, \nwhether they are a filter or not, whether they should be discarded, or even how fields are ordered. \n\nThese configuration options, collectively refered to as fields configuration, are accessed using processor-like objects.\n\nType of the field configuration:\n* `rename` - Fields are identified by a technical name, and have a human-friendly label; both are editable using this configuration item.\n* `type` - Types are the most basic way of qualifying fields. Different types unlock different kinds of visualizations and agregations. Below is the list of types supported by the platform.\n* `annotate` - Annotation are a mean to configure special behavior for the fields. Some annotations are only available for certain field types. Setting the facet annotation on a field unlocks other annotations for the field\n* `description` - Description are a mean to qualify and give some extra details about the content of the field. Descriptions are available when consulting the data.\n* `order` - Fields are processed and displayed in a definite order, this annotation can be used to change that order.\n* `delete` - Some fields present in the data source are not useful or redundant. This configuration item allows to discard them."
+      "description": "Dataset fields can be configured using a variety of options. These options include their type, their label, \nwhether they are a filter or not, whether they should be discarded, or even how fields are ordered. \n\nThese configuration options, collectively refered to as fields configuration, are accessed using processor-like objects.\n\nType of the field configuration:\n* `rename` - Fields are identified by a technical name, and have a human-friendly label; both are editable using this configuration item.\n* `type` - Types are the most basic way of qualifying fields. Different types unlock different kinds of visualizations and agregations. Below is the list of types supported by the platform.\n* `annotate` - Annotation are a mean to configure special behavior for the fields. Some annotations are only available for certain field types.\n* `description` - Description are a mean to qualify and give some extra details about the content of the field. Descriptions are available when consulting the data.\n* `order` - Fields are processed and displayed in a definite order, this annotation can be used to change that order.\n* `delete` - Some fields present in the data source are not useful or redundant. This configuration item allows to discard them."
     },
     {
       "name": "Datasources connections",

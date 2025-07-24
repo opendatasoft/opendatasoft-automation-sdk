@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publish_harvester**
-> PublishDataset200Response publish_harvester(harvester_uid)
+> InlineObject3 publish_harvester(harvester_uid)
 
 Publish a harvester's datasets
 
@@ -653,7 +653,7 @@ Publish all datasets attached to the harvester.
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unpublish_harvester**
-> PublishDataset200Response unpublish_harvester(harvester_uid)
+> InlineObject3 unpublish_harvester(harvester_uid)
 
 Unpublish a harvester's datasets
 
@@ -918,7 +918,7 @@ Unpublish all datasets attached to the harvester.
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -971,7 +971,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 

@@ -21,7 +21,7 @@ from typing_extensions import Self
 
 class Permission(str, Enum):
     """
-    A user or user group permission:  * `edit_domain` - Ability to edit the properties of the domain, including user and group management  * `create_page` - Ability to create new pages  * `edit_page` - Ability to edit all pages  * `manage_page` - Ability to change the security of any page editable by this user  * `explore_restricted_page` - Ability to browse any page, even the restricted ones  * `create_dataset` - Ability to create new datasets  * `edit_dataset` - Ability to edit all datasets  * `publish_dataset` - Ability to publish datasets editable by this user  * `manage_dataset` - Ability to change the security of datasets editable by this user  * `explore_restricted_dataset` - Ability to browse any dataset, even the restricted ones  * `edit_reuse` - Ability to edit and manage existing reuses  * `manage_subdomains` - Ability to create and manage subdomains  * `explore_monitoring` - Ability to browse any monitoring dataset and access the analytics section of the back-office  * `edit_theme` - Ability to manage the domain's theme (edit and make live)
+    A user or user group permission:  * `edit_domain` - Ability to edit the properties of the domain, including user and group management  * `create_page` - Ability to create new pages  * `edit_page` - Ability to edit all pages  * `manage_page` - Ability to change the security of any page editable by this user  * `explore_restricted_page` - Ability to browse any page, even the restricted ones  * `create_dataset` - Ability to create new datasets  * `edit_dataset` - Ability to edit all datasets  * `publish_dataset` - Ability to publish datasets editable by this user  * `manage_dataset` - Ability to change the security of datasets editable by this user  * `explore_restricted_dataset` - Ability to browse any dataset, even the restricted ones  * `edit_reuse` - Ability to edit and manage existing reuses  * `manage_subdomains` - Ability to create and manage subdomains  * `explore_monitoring` - Ability to browse any monitoring dataset and access the analytics section of the back-office  * `edit_theme` - Ability to manage the domain's theme (edit and make live)  * `edit_form` - Ability to create new forms, edit and publish all forms  * `submit_private_form` - Ability to see all the forms, even the restricted ones
     """
 
     """
@@ -41,6 +41,13 @@ class Permission(str, Enum):
     MANAGE_SUBDOMAINS = 'manage_subdomains'
     EXPLORE_MONITORING = 'explore_monitoring'
     EDIT_THEME = 'edit_theme'
+    EDIT_FORM = 'edit_form'
+    SUBMIT_PRIVATE_FORM = 'submit_private_form'
+    CREATE_EXTERNAL_ASSET = 'create_external_asset'
+    EDIT_EXTERNAL_ASSET = 'edit_external_asset'
+    EXPLORE_RESTRICTED_EXTERNAL_ASSET = 'explore_restricted_external_asset'
+    MANAGE_GLOSSARY = 'manage_glossary'
+    MANAGE_SHOWCASE_REQUESTS = 'manage_showcase_requests'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -100,7 +100,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -172,7 +172,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -244,7 +244,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -393,7 +393,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -465,7 +465,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -537,7 +537,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -677,7 +677,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetProcessors200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -753,7 +753,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetProcessors200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -829,7 +829,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetProcessors200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1219,7 +1219,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1291,7 +1291,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1363,7 +1363,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1503,7 +1503,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1579,7 +1579,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1655,7 +1655,7 @@ class DatasetProcessorsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetProcessor",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

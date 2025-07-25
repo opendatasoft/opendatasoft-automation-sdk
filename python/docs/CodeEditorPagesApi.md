@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **archive_code_editor_page**
-> PublishDataset200Response archive_code_editor_page(page_slug)
+> InlineObject3 archive_code_editor_page(page_slug)
 
 Archive page
 
@@ -28,7 +28,7 @@ Archive a code editor page
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unarchive_code_editor_page**
-> PublishDataset200Response unarchive_code_editor_page(page_slug)
+> InlineObject3 unarchive_code_editor_page(page_slug)
 
 Unarchive page
 
@@ -554,7 +554,7 @@ Unarchive a code editor page
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 

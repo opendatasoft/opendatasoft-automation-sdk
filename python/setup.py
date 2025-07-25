@@ -23,7 +23,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # http://pypi.python.org/pypi/setuptools
 NAME = "Opendatasoft Automation API Client"
 VERSION = "10.0.1"
-PYTHON_REQUIRES = ">= 3.8"
+PYTHON_REQUIRES = ">= 3.9"
 REQUIRES = [
     "urllib3 >= 2.1.0, < 3.0.0",
     "python-dateutil >= 2.8.2",
@@ -42,7 +42,7 @@ setup(
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
-    license="Copyright Opendatasoft",
+    license="MIT",
     long_description_content_type='text/markdown',
     long_description="""\
     Opendatasoft REST API to manage your portal and its catalog

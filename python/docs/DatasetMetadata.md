@@ -6,9 +6,10 @@ The data describing the dataset itself.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**default** | [**DatasetMetadataDefault**](DatasetMetadataDefault.md) |  | [optional] 
+**default** | [**DatasetMetadataDefault**](DatasetMetadataDefault.md) |  | 
 **visualization** | [**DatasetMetadataVisualization**](DatasetMetadataVisualization.md) |  | [optional] 
 **internal** | [**DatasetMetadataInternal**](DatasetMetadataInternal.md) |  | [optional] 
+**asset_content_configuration** | [**DatasetMetadataAssetContentConfiguration**](DatasetMetadataAssetContentConfiguration.md) |  | [optional] 
 **custom_template_name** | [**Dict[str, DatasetMetadataValue]**](DatasetMetadataValue.md) | Additional values for custom metadata templates you have configured on your portal. | [optional] 
 
 ## Example

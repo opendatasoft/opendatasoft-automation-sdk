@@ -28,7 +28,7 @@ class OAuth2Auth(BaseModel):
     OAuth2Auth
     """ # noqa: E501
     client_id: StrictStr
-    client_secret: StrictStr
+    client_secret: Optional[StrictStr] = None
     scope: StrictStr
     token_endpoint: StrictStr
     grant_type: StrictStr
@@ -83,6 +83,21 @@ class OAuth2Auth(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if client_secret (nullable) is None
+        # and model_fields_set contains the field
+        if self.client_secret is None and "client_secret" in self.model_fields_set:
+            _dict['client_secret'] = None
+
+        # set to None if password (nullable) is None
+        # and model_fields_set contains the field
+        if self.password is None and "password" in self.model_fields_set:
+            _dict['password'] = None
+
+        # set to None if code (nullable) is None
+        # and model_fields_set contains the field
+        if self.code is None and "code" in self.model_fields_set:
+            _dict['code'] = None
+
         return _dict
 
     @classmethod

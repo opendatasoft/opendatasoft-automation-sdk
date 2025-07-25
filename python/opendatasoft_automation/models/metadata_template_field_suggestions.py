@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from opendatasoft_automation.models.metadata_template_field_suggestions_exhaustive import MetadataTemplateFieldSuggestionsExhaustive
 from typing import Optional, Set
@@ -28,7 +28,7 @@ class MetadataTemplateFieldSuggestions(BaseModel):
     """
     Suggested values provided when calling the suggest_url with the appropriate parameters.
     """ # noqa: E501
-    hits: Optional[List[StrictStr]] = Field(default=None, description="Empty list")
+    hits: Optional[List[StrictStr]] = None
     nb_hits: Optional[Union[StrictFloat, StrictInt]] = None
     page: Optional[Union[StrictFloat, StrictInt]] = None
     hits_per_page: Optional[Union[StrictFloat, StrictInt]] = None

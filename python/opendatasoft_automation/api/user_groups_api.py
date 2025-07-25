@@ -104,8 +104,8 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "User",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -176,8 +176,8 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "User",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -248,8 +248,8 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "User",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -397,7 +397,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Dict[str, InviteUsers200ResponseValue]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -468,7 +468,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Dict[str, InviteUsers200ResponseValue]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -539,7 +539,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Dict[str, InviteUsers200ResponseValue]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -684,7 +684,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "UserGroup",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -751,7 +751,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "UserGroup",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -818,7 +818,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "UserGroup",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -959,7 +959,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1026,7 +1026,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1093,7 +1093,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1225,7 +1225,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1296,7 +1296,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1367,7 +1367,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1828,7 +1828,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GetUsers200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1895,7 +1895,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GetUsers200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1962,7 +1962,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GetUsers200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2090,7 +2090,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserGroup",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2157,7 +2157,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserGroup",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2224,7 +2224,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserGroup",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2356,7 +2356,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserGroup",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2427,7 +2427,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserGroup",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2498,7 +2498,7 @@ class UserGroupsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserGroup",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

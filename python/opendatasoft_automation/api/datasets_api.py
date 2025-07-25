@@ -21,9 +21,9 @@ from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing import Optional, Union
 from typing_extensions import Annotated
 from opendatasoft_automation.models.dataset import Dataset
-from opendatasoft_automation.models.get_dataset_status200_response import GetDatasetStatus200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
+from opendatasoft_automation.models.inline_object5 import InlineObject5
 from opendatasoft_automation.models.list_datasets200_response import ListDatasets200Response
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
 
 from opendatasoft_automation.api_client import ApiClient, RequestSerialized
 from opendatasoft_automation.api_response import ApiResponse
@@ -59,7 +59,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Abort dataset publishing
 
         Stop the current processing job and keep the processed records available in the explore API.
@@ -97,9 +97,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -128,7 +128,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Abort dataset publishing
 
         Stop the current processing job and keep the processed records available in the explore API.
@@ -166,9 +166,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -235,9 +235,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -366,7 +366,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Dataset",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -434,7 +434,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Dataset",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -502,7 +502,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Dataset",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -631,7 +631,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Dataset",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -699,7 +699,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Dataset",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -767,7 +767,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Dataset",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -909,7 +909,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -977,7 +977,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1045,7 +1045,7 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1135,7 +1135,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GetDatasetStatus200Response:
+    ) -> InlineObject5:
         """Retrieve dataset status
 
         Retrieves the current dataset status.  The dataset status describes the current state of a dataset, stating if it's published or not and the running operation.  It is a finite state machine, with the following properties: - a single state at a time - the list of possible states, fully known - the list of all transitions, fully known, each with the actions and conditions that can trigger them
@@ -1173,8 +1173,8 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GetDatasetStatus200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject5",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1203,7 +1203,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GetDatasetStatus200Response]:
+    ) -> ApiResponse[InlineObject5]:
         """Retrieve dataset status
 
         Retrieves the current dataset status.  The dataset status describes the current state of a dataset, stating if it's published or not and the running operation.  It is a finite state machine, with the following properties: - a single state at a time - the list of possible states, fully known - the list of all transitions, fully known, each with the actions and conditions that can trigger them
@@ -1241,8 +1241,8 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GetDatasetStatus200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject5",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1309,8 +1309,8 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GetDatasetStatus200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject5",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1698,7 +1698,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Publish dataset
 
         Make the dataset modifications available through the explore API. It may entail the processing of all the records.
@@ -1736,9 +1736,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1767,7 +1767,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Publish dataset
 
         Make the dataset modifications available through the explore API. It may entail the processing of all the records.
@@ -1805,9 +1805,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1874,9 +1874,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1966,7 +1966,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Publish dataset metadata
 
         Publish dataset metadata
@@ -2004,9 +2004,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2035,7 +2035,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Publish dataset metadata
 
         Publish dataset metadata
@@ -2073,9 +2073,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2142,9 +2142,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2499,7 +2499,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Unpublish dataset
 
         Remove the dataset from the explore API. Unpublishing a dataset does not delete the dataset.
@@ -2537,9 +2537,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2568,7 +2568,7 @@ class DatasetsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Unpublish dataset
 
         Remove the dataset from the explore API. Unpublishing a dataset does not delete the dataset.
@@ -2606,9 +2606,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2675,9 +2675,9 @@ class DatasetsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2810,8 +2810,8 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Dataset",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2883,8 +2883,8 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Dataset",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2956,8 +2956,8 @@ class DatasetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Dataset",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -6,7 +6,7 @@ Suggested values provided when calling the suggest_url with the appropriate para
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hits** | **List[str]** | Empty list | [optional] [readonly] 
+**hits** | **List[str]** |  | [optional] [readonly] 
 **nb_hits** | **float** |  | [optional] [readonly] 
 **page** | **float** |  | [optional] [readonly] 
 **hits_per_page** | **float** |  | [optional] [readonly] 

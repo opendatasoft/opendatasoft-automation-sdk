@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **abort_dataset**
-> PublishDataset200Response abort_dataset(dataset_uid)
+> InlineObject3 abort_dataset(dataset_uid)
 
 Abort dataset publishing
 
@@ -31,7 +31,7 @@ Stop the current processing job and keep the processed records available in the 
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -368,7 +368,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dataset_status**
-> GetDatasetStatus200Response get_dataset_status(dataset_uid)
+> InlineObject5 get_dataset_status(dataset_uid)
 
 Retrieve dataset status
 
@@ -386,7 +386,7 @@ The dataset status describes the current state of a dataset, stating if it's pub
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.get_dataset_status200_response import GetDatasetStatus200Response
+from opendatasoft_automation.models.inline_object5 import InlineObject5
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDatasetStatus200Response**](GetDatasetStatus200Response.md)
+[**InlineObject5**](InlineObject5.md)
 
 ### Authorization
 
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publish_dataset**
-> PublishDataset200Response publish_dataset(dataset_uid)
+> InlineObject3 publish_dataset(dataset_uid)
 
 Publish dataset
 
@@ -565,7 +565,7 @@ Make the dataset modifications available through the explore API. It may entail 
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publish_dataset_metadata**
-> PublishDataset200Response publish_dataset_metadata(dataset_uid)
+> InlineObject3 publish_dataset_metadata(dataset_uid)
 
 Publish dataset metadata
 
@@ -654,7 +654,7 @@ Publish dataset metadata
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unpublish_dataset**
-> PublishDataset200Response unpublish_dataset(dataset_uid)
+> InlineObject3 unpublish_dataset(dataset_uid)
 
 Unpublish dataset
 
@@ -831,7 +831,7 @@ Remove the dataset from the explore API. Unpublishing a dataset does not delete 
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublishDataset200Response**](PublishDataset200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 

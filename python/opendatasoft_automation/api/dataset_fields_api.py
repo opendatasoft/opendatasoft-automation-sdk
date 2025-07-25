@@ -100,7 +100,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -172,7 +172,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -244,7 +244,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -393,7 +393,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -465,7 +465,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -537,7 +537,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -677,7 +677,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetFieldConfigurations200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -753,7 +753,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetFieldConfigurations200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -829,7 +829,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetFieldConfigurations200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -972,7 +972,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1044,7 +1044,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1116,7 +1116,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1256,7 +1256,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1332,7 +1332,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1408,7 +1408,7 @@ class DatasetFieldsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFieldConfiguration",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,

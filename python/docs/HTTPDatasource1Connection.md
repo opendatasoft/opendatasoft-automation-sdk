@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uid** | **str** |  | 
+**uid** | **str** | The UID of an existing connection to reuse. | 
 
 ## Example
 

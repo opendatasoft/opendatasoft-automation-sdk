@@ -212,7 +212,7 @@ docs/UpdateDatasetAlternativeExportRequest.md
 docs/UploadedFileDatasetAlternativeExport.md
 docs/UploadedFileDatasource.md
 docs/UploadedFileDatasource1File.md
-docs/UploadedFileDatasource1FileOneOf.md
+docs/UploadedFileUID.md
 docs/User.md
 docs/UserGroup.md
 docs/UserGroups.md
@@ -442,7 +442,7 @@ opendatasoft_automation/models/update_dataset_alternative_export_request.py
 opendatasoft_automation/models/uploaded_file_dataset_alternative_export.py
 opendatasoft_automation/models/uploaded_file_datasource.py
 opendatasoft_automation/models/uploaded_file_datasource1_file.py
-opendatasoft_automation/models/uploaded_file_datasource1_file_one_of.py
+opendatasoft_automation/models/uploaded_file_uid.py
 opendatasoft_automation/models/url_dataset_alternative_export.py
 opendatasoft_automation/models/user.py
 opendatasoft_automation/models/user_group.py
@@ -461,4 +461,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_uploaded_file_uid.py
 tox.ini

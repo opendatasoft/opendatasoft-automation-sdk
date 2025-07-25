@@ -239,7 +239,7 @@ __all__ = [
     "UploadedFileDatasetAlternativeExport",
     "UploadedFileDatasource",
     "UploadedFileDatasource1File",
-    "UploadedFileDatasource1FileOneOf",
+    "UploadedFileUID",
     "User",
     "UserGroup",
     "UserGroups",
@@ -476,7 +476,7 @@ from opendatasoft_automation.models.update_dataset_alternative_export_request im
 from opendatasoft_automation.models.uploaded_file_dataset_alternative_export import UploadedFileDatasetAlternativeExport as UploadedFileDatasetAlternativeExport
 from opendatasoft_automation.models.uploaded_file_datasource import UploadedFileDatasource as UploadedFileDatasource
 from opendatasoft_automation.models.uploaded_file_datasource1_file import UploadedFileDatasource1File as UploadedFileDatasource1File
-from opendatasoft_automation.models.uploaded_file_datasource1_file_one_of import UploadedFileDatasource1FileOneOf as UploadedFileDatasource1FileOneOf
+from opendatasoft_automation.models.uploaded_file_uid import UploadedFileUID as UploadedFileUID
 from opendatasoft_automation.models.user import User as User
 from opendatasoft_automation.models.user_group import UserGroup as UserGroup
 from opendatasoft_automation.models.user_groups import UserGroups as UserGroups

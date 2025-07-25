@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uid** | **str** | Unique identifier for the file | [readonly] 
-**filename** | **str** |  | [optional] [readonly] 
+**filename** | **str** |  | [readonly] 
 **mimetype** | **str** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 

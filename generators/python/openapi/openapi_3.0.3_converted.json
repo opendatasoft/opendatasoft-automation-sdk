@@ -2832,7 +2832,7 @@
         "summary": "Upload resource file",
         "operationId": "upload-resource-file",
         "responses": {
-          "200": {
+          "201": {
             "description": "OK",
             "content": {
               "application/json": {
@@ -10871,6 +10871,18 @@
           "claims": {}
         }
       },
+      "UploadedFileUID": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "The UID of an existing uploaded file to reuse."
+          }
+        },
+        "required": [
+          "uid"
+        ]
+      },
       "ConnectionUID": {
         "type": "object",
         "properties": {
@@ -11630,6 +11642,9 @@
       },
       "DatasetFile": {
         "type": "object",
+        "required": [
+          "filename"
+        ],
         "properties": {
           "uid": {
             "type": "string",
@@ -11670,15 +11685,7 @@
               "file": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/UploadedFileUID"
                   },
                   {
                     "$ref": "#/components/schemas/DatasetFile"

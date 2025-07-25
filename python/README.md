@@ -474,7 +474,7 @@ Class | Method | HTTP request | Description
  - [UploadedFileDatasetAlternativeExport](docs/UploadedFileDatasetAlternativeExport.md)
  - [UploadedFileDatasource](docs/UploadedFileDatasource.md)
  - [UploadedFileDatasource1File](docs/UploadedFileDatasource1File.md)
- - [UploadedFileDatasource1FileOneOf](docs/UploadedFileDatasource1FileOneOf.md)
+ - [UploadedFileUID](docs/UploadedFileUID.md)
  - [User](docs/User.md)
  - [UserGroup](docs/UserGroup.md)
  - [UserGroups](docs/UserGroups.md)

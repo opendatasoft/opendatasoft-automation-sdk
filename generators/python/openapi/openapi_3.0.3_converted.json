@@ -12548,7 +12548,12 @@
           "explore_monitoring",
           "edit_theme",
           "edit_form",
-          "submit_private_form"
+          "submit_private_form",
+          "create_external_asset",
+          "edit_external_asset",
+          "explore_restricted_external_asset",
+          "manage_glossary",
+          "manage_showcase_requests"
         ],
         "description": "A user or user group permission:\n * `edit_domain` - Ability to edit the properties of the domain, including user and group management\n * `create_page` - Ability to create new pages\n * `edit_page` - Ability to edit all pages\n * `manage_page` - Ability to change the security of any page editable by this user\n * `explore_restricted_page` - Ability to browse any page, even the restricted ones\n * `create_dataset` - Ability to create new datasets\n * `edit_dataset` - Ability to edit all datasets\n * `publish_dataset` - Ability to publish datasets editable by this user\n * `manage_dataset` - Ability to change the security of datasets editable by this user\n * `explore_restricted_dataset` - Ability to browse any dataset, even the restricted ones\n * `edit_reuse` - Ability to edit and manage existing reuses\n * `manage_subdomains` - Ability to create and manage subdomains\n * `explore_monitoring` - Ability to browse any monitoring dataset and access the analytics section of the back-office\n * `edit_theme` - Ability to manage the domain's theme (edit and make live)\n * `edit_form` - Ability to create new forms, edit and publish all forms\n * `submit_private_form` - Ability to see all the forms, even the restricted ones"
       },

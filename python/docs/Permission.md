@@ -36,6 +36,16 @@ A user or user group permission:  * `edit_domain` - Ability to edit the properti
 
 * `SUBMIT_PRIVATE_FORM` (value: `'submit_private_form'`)
 
+* `CREATE_EXTERNAL_ASSET` (value: `'create_external_asset'`)
+
+* `EDIT_EXTERNAL_ASSET` (value: `'edit_external_asset'`)
+
+* `EXPLORE_RESTRICTED_EXTERNAL_ASSET` (value: `'explore_restricted_external_asset'`)
+
+* `MANAGE_GLOSSARY` (value: `'manage_glossary'`)
+
+* `MANAGE_SHOWCASE_REQUESTS` (value: `'manage_showcase_requests'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

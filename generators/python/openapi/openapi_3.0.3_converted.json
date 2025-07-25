@@ -10517,7 +10517,9 @@
             "federated": "#/components/schemas/FederatedDatasource",
             "uploaded_file": "#/components/schemas/UploadedFileDatasource",
             "amazon_s3": "#/components/schemas/AmazonS3Datasource",
-            "azure_blob_storage": "#/components/schemas/AzureBlobStorageDatasource"
+            "azure_blob_storage": "#/components/schemas/AzureBlobStorageDatasource",
+            "ods_form": "#/components/schemas/OdsFormDatasource",
+            "snowflake_odbc": "#/components/schemas/SnowflakeODBCDatasource"
           }
         },
         "properties": {
@@ -10793,7 +10795,8 @@
         "properties": {
           "nonce": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "grant_type": {
             "type": "string",
@@ -10803,17 +10806,17 @@
           },
           "code": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "claims": {
             "type": "object",
-            "readOnly": true
+            "readOnly": true,
+            "nullable": true
           }
         },
         "required": [
-          "nonce",
           "grant_type",
-          "code",
           "claims"
         ]
       },
@@ -10868,6 +10871,18 @@
           "claims": {}
         }
       },
+      "ConnectionUID": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "The UID of an existing connection to reuse."
+          }
+        },
+        "required": [
+          "uid"
+        ]
+      },
       "GoogleDriveOIDCAuth": {
         "title": "GoogleDriveOIDCAuth",
         "allOf": [
@@ -10888,6 +10903,89 @@
             "required": [
               "application_id"
             ]
+          }
+        ]
+      },
+      "SnowflakeODBCDatasource": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Datasource"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "connection": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/SnowflakeODBCConnection"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ConnectionUID"
+                  }
+                ]
+              },
+              "query": {
+                "type": "string"
+              },
+              "preview_query": {
+                "type": "string"
+              },
+              "incremental_query": {
+                "type": "string"
+              },
+              "incremental_field": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "SnowflakeODBCConnection": {
+        "title": "SnowflakeODBCConnection",
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "snowflake_odbc"
+            ]
+          },
+          "connection_string": {
+            "type": "string",
+            "description": "Your snowflake connection string"
+          }
+        },
+        "required": [
+          "type",
+          "connection_string"
+        ]
+      },
+      "OdsFormDatasource": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Datasource"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "form_uid": {
+                "type": "string"
+              },
+              "domain_id": {
+                "type": "string"
+              },
+              "status_to_extract": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "is_available": {
+                "type": "boolean"
+              }
+            }
           }
         ]
       },
@@ -11183,7 +11281,8 @@
           },
           "client_secret": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "scope": {
             "type": "string"
@@ -11205,16 +11304,17 @@
           },
           "password": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "code": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           }
         },
         "required": [
           "client_id",
-          "client_secret",
           "scope",
           "token_endpoint",
           "grant_type"
@@ -11240,7 +11340,8 @@
           },
           "client_secret": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "scope": {
             "type": "string"
@@ -11256,7 +11357,8 @@
           },
           "code": {
             "type": "string",
-            "writeOnly": true
+            "writeOnly": true,
+            "nullable": true
           },
           "claims": {
             "type": "object"
@@ -11264,7 +11366,6 @@
         },
         "required": [
           "client_id",
-          "client_secret",
           "scope",
           "token_endpoint",
           "grant_type"
@@ -11314,16 +11415,7 @@
               "connection": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/ConnectionUID"
                   },
                   {
                     "$ref": "#/components/schemas/HTTPConnection"
@@ -11356,16 +11448,7 @@
               "connection": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/ConnectionUID"
                   },
                   {
                     "$ref": "#/components/schemas/FTPConnection"
@@ -11401,16 +11484,7 @@
               "connection": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/ConnectionUID"
                   },
                   {
                     "$ref": "#/components/schemas/SharepointConnection"
@@ -11444,16 +11518,7 @@
               "connection": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/ConnectionUID"
                   },
                   {
                     "$ref": "#/components/schemas/GoogleDriveConnection"
@@ -11661,16 +11726,7 @@
               "connection": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/ConnectionUID"
                   },
                   {
                     "$ref": "#/components/schemas/AmazonS3Connection"
@@ -11718,16 +11774,7 @@
               "connection": {
                 "oneOf": [
                   {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "uid": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "uid"
-                    ]
+                    "$ref": "#/components/schemas/ConnectionUID"
                   },
                   {
                     "$ref": "#/components/schemas/AzureBlobStorageConnection"

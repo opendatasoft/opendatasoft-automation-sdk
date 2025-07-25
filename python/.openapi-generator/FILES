@@ -33,6 +33,7 @@ docs/CodeEditorPageContent.md
 docs/CodeEditorPagesApi.md
 docs/CodeEditorPagesSecurityApi.md
 docs/Connection.md
+docs/ConnectionUID.md
 docs/CreatableOrEditableMetadataTemplate.md
 docs/DatagouvHarvester.md
 docs/DatajsonHarvester.md
@@ -113,7 +114,6 @@ docs/HTTPConnection.md
 docs/HTTPConnectionAllOfHeaders.md
 docs/HTTPDatasource.md
 docs/HTTPDatasource1Connection.md
-docs/HTTPDatasource1ConnectionOneOf.md
 docs/HTTPDatasource1Headers.md
 docs/HTTPOAuth2Auth.md
 docs/HTTPOIDCAuth.md
@@ -172,6 +172,7 @@ docs/OAuth2Auth.md
 docs/ODSOIDCAuth.md
 docs/OIDCAuth.md
 docs/OMINodeHarvester.md
+docs/OdsFormDatasource.md
 docs/OpendatasoftHarvester.md
 docs/OrderDatasetFieldConfiguration.md
 docs/OriginInfos.md
@@ -197,6 +198,9 @@ docs/SharepointConnection.md
 docs/SharepointDatasource.md
 docs/SharepointDatasource1Connection.md
 docs/SharepointOIDCAuth.md
+docs/SnowflakeODBCConnection.md
+docs/SnowflakeODBCDatasource.md
+docs/SnowflakeODBCDatasourceAllOfConnection.md
 docs/SocrataHarvester.md
 docs/StudioPage.md
 docs/StudioPageContentsInner.md
@@ -277,6 +281,7 @@ opendatasoft_automation/models/ckan_harvester.py
 opendatasoft_automation/models/code_editor_page.py
 opendatasoft_automation/models/code_editor_page_content.py
 opendatasoft_automation/models/connection.py
+opendatasoft_automation/models/connection_uid.py
 opendatasoft_automation/models/creatable_or_editable_metadata_template.py
 opendatasoft_automation/models/csw_harvester.py
 opendatasoft_automation/models/datagouv_harvester.py
@@ -350,7 +355,6 @@ opendatasoft_automation/models/http_connection.py
 opendatasoft_automation/models/http_connection_all_of_headers.py
 opendatasoft_automation/models/http_datasource.py
 opendatasoft_automation/models/http_datasource1_connection.py
-opendatasoft_automation/models/http_datasource1_connection_one_of.py
 opendatasoft_automation/models/http_datasource1_headers.py
 opendatasoft_automation/models/httpo_auth2_auth.py
 opendatasoft_automation/models/httpoidc_auth.py
@@ -398,6 +402,7 @@ opendatasoft_automation/models/metadata_template_field.py
 opendatasoft_automation/models/metadata_template_field_suggestions.py
 opendatasoft_automation/models/metadata_template_field_suggestions_exhaustive.py
 opendatasoft_automation/models/o_auth2_auth.py
+opendatasoft_automation/models/ods_form_datasource.py
 opendatasoft_automation/models/odsoidc_auth.py
 opendatasoft_automation/models/oidc_auth.py
 opendatasoft_automation/models/omi_node_harvester.py
@@ -426,6 +431,9 @@ opendatasoft_automation/models/sharepoint_connection.py
 opendatasoft_automation/models/sharepoint_datasource.py
 opendatasoft_automation/models/sharepoint_datasource1_connection.py
 opendatasoft_automation/models/sharepoint_oidc_auth.py
+opendatasoft_automation/models/snowflake_odbc_connection.py
+opendatasoft_automation/models/snowflake_odbc_datasource.py
+opendatasoft_automation/models/snowflake_odbc_datasource_all_of_connection.py
 opendatasoft_automation/models/socrata_harvester.py
 opendatasoft_automation/models/studio_page.py
 opendatasoft_automation/models/studio_page_contents_inner.py

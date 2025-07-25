@@ -33,7 +33,9 @@ if TYPE_CHECKING:
     from opendatasoft_automation.models.ftp_datasource import FTPDatasource
     from opendatasoft_automation.models.google_drive_datasource import GoogleDriveDatasource
     from opendatasoft_automation.models.http_datasource import HTTPDatasource
+    from opendatasoft_automation.models.ods_form_datasource import OdsFormDatasource
     from opendatasoft_automation.models.sharepoint_datasource import SharepointDatasource
+    from opendatasoft_automation.models.snowflake_odbc_datasource import SnowflakeODBCDatasource
     from opendatasoft_automation.models.uploaded_file_datasource import UploadedFileDatasource
 
 class Datasource(BaseModel):
@@ -55,7 +57,7 @@ class Datasource(BaseModel):
 
     # discriminator mappings
     __discriminator_value_class_map: ClassVar[Dict[str, str]] = {
-        'amazon_s3': 'AmazonS3Datasource','azure_blob_storage': 'AzureBlobStorageDatasource','federated': 'FederatedDatasource','ftp': 'FTPDatasource','google_drive': 'GoogleDriveDatasource','http': 'HTTPDatasource','sharepoint': 'SharepointDatasource','uploaded_file': 'UploadedFileDatasource'
+        'amazon_s3': 'AmazonS3Datasource','azure_blob_storage': 'AzureBlobStorageDatasource','federated': 'FederatedDatasource','ftp': 'FTPDatasource','google_drive': 'GoogleDriveDatasource','http': 'HTTPDatasource','ods_form': 'OdsFormDatasource','sharepoint': 'SharepointDatasource','snowflake_odbc': 'SnowflakeODBCDatasource','uploaded_file': 'UploadedFileDatasource'
     }
 
     @classmethod
@@ -77,7 +79,7 @@ class Datasource(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Union[AmazonS3Datasource, AzureBlobStorageDatasource, FederatedDatasource, FTPDatasource, GoogleDriveDatasource, HTTPDatasource, SharepointDatasource, UploadedFileDatasource]]:
+    def from_json(cls, json_str: str) -> Optional[Union[AmazonS3Datasource, AzureBlobStorageDatasource, FederatedDatasource, FTPDatasource, GoogleDriveDatasource, HTTPDatasource, OdsFormDatasource, SharepointDatasource, SnowflakeODBCDatasource, UploadedFileDatasource]]:
         """Create an instance of Datasource from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -102,7 +104,7 @@ class Datasource(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[AmazonS3Datasource, AzureBlobStorageDatasource, FederatedDatasource, FTPDatasource, GoogleDriveDatasource, HTTPDatasource, SharepointDatasource, UploadedFileDatasource]]:
+    def from_dict(cls, obj: Dict[str, Any]) -> Optional[Union[AmazonS3Datasource, AzureBlobStorageDatasource, FederatedDatasource, FTPDatasource, GoogleDriveDatasource, HTTPDatasource, OdsFormDatasource, SharepointDatasource, SnowflakeODBCDatasource, UploadedFileDatasource]]:
         """Create an instance of Datasource from a dict"""
         # look up the object type based on discriminator mapping
         object_type = cls.get_discriminator_value(obj)
@@ -118,8 +120,12 @@ class Datasource(BaseModel):
             return import_module("opendatasoft_automation.models.google_drive_datasource").GoogleDriveDatasource.from_dict(obj)
         if object_type ==  'HTTPDatasource':
             return import_module("opendatasoft_automation.models.http_datasource").HTTPDatasource.from_dict(obj)
+        if object_type ==  'OdsFormDatasource':
+            return import_module("opendatasoft_automation.models.ods_form_datasource").OdsFormDatasource.from_dict(obj)
         if object_type ==  'SharepointDatasource':
             return import_module("opendatasoft_automation.models.sharepoint_datasource").SharepointDatasource.from_dict(obj)
+        if object_type ==  'SnowflakeODBCDatasource':
+            return import_module("opendatasoft_automation.models.snowflake_odbc_datasource").SnowflakeODBCDatasource.from_dict(obj)
         if object_type ==  'UploadedFileDatasource':
             return import_module("opendatasoft_automation.models.uploaded_file_datasource").UploadedFileDatasource.from_dict(obj)
 

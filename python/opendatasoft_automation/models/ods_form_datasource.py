@@ -18,30 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from opendatasoft_automation.models.datasource import Datasource
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OIDCAuth(BaseModel):
+class OdsFormDatasource(Datasource):
     """
-    OIDCAuth
+    OdsFormDatasource
     """ # noqa: E501
-    client_id: StrictStr
-    client_secret: Optional[StrictStr] = None
-    scope: StrictStr
-    token_endpoint: StrictStr
-    grant_type: StrictStr
-    code: Optional[StrictStr] = None
-    claims: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["client_id", "client_secret", "scope", "token_endpoint", "grant_type", "code", "claims"]
-
-    @field_validator('grant_type')
-    def grant_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['authorization_code']):
-            raise ValueError("must be one of enum values ('authorization_code')")
-        return value
+    form_uid: Optional[StrictStr] = None
+    domain_id: Optional[StrictStr] = None
+    status_to_extract: Optional[List[StrictStr]] = None
+    is_available: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["type", "form_uid", "domain_id", "status_to_extract", "is_available"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -61,7 +52,7 @@ class OIDCAuth(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OIDCAuth from a JSON string"""
+        """Create an instance of OdsFormDatasource from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -82,21 +73,11 @@ class OIDCAuth(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if client_secret (nullable) is None
-        # and model_fields_set contains the field
-        if self.client_secret is None and "client_secret" in self.model_fields_set:
-            _dict['client_secret'] = None
-
-        # set to None if code (nullable) is None
-        # and model_fields_set contains the field
-        if self.code is None and "code" in self.model_fields_set:
-            _dict['code'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OIDCAuth from a dict"""
+        """Create an instance of OdsFormDatasource from a dict"""
         if obj is None:
             return None
 
@@ -104,13 +85,11 @@ class OIDCAuth(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "client_id": obj.get("client_id"),
-            "client_secret": obj.get("client_secret"),
-            "scope": obj.get("scope"),
-            "token_endpoint": obj.get("token_endpoint"),
-            "grant_type": obj.get("grant_type"),
-            "code": obj.get("code"),
-            "claims": obj.get("claims")
+            "type": obj.get("type"),
+            "form_uid": obj.get("form_uid"),
+            "domain_id": obj.get("domain_id"),
+            "status_to_extract": obj.get("status_to_extract"),
+            "is_available": obj.get("is_available")
         })
         return _obj
 

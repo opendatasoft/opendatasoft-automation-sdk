@@ -78,6 +78,7 @@ __all__ = [
     "CodeEditorPage",
     "CodeEditorPageContent",
     "Connection",
+    "ConnectionUID",
     "CreatableOrEditableMetadataTemplate",
     "DatagouvHarvester",
     "DatajsonHarvester",
@@ -145,7 +146,6 @@ __all__ = [
     "HTTPConnectionAllOfHeaders",
     "HTTPDatasource",
     "HTTPDatasource1Connection",
-    "HTTPDatasource1ConnectionOneOf",
     "HTTPDatasource1Headers",
     "HTTPOAuth2Auth",
     "HTTPOIDCAuth",
@@ -201,6 +201,7 @@ __all__ = [
     "ODSOIDCAuth",
     "OIDCAuth",
     "OMINodeHarvester",
+    "OdsFormDatasource",
     "OpendatasoftHarvester",
     "OrderDatasetFieldConfiguration",
     "OriginInfos",
@@ -226,6 +227,9 @@ __all__ = [
     "SharepointDatasource",
     "SharepointDatasource1Connection",
     "SharepointOIDCAuth",
+    "SnowflakeODBCConnection",
+    "SnowflakeODBCDatasource",
+    "SnowflakeODBCDatasourceAllOfConnection",
     "SocrataHarvester",
     "StudioPage",
     "StudioPageContentsInner",
@@ -311,6 +315,7 @@ from opendatasoft_automation.models.csw_harvester import CSWHarvester as CSWHarv
 from opendatasoft_automation.models.code_editor_page import CodeEditorPage as CodeEditorPage
 from opendatasoft_automation.models.code_editor_page_content import CodeEditorPageContent as CodeEditorPageContent
 from opendatasoft_automation.models.connection import Connection as Connection
+from opendatasoft_automation.models.connection_uid import ConnectionUID as ConnectionUID
 from opendatasoft_automation.models.creatable_or_editable_metadata_template import CreatableOrEditableMetadataTemplate as CreatableOrEditableMetadataTemplate
 from opendatasoft_automation.models.datagouv_harvester import DatagouvHarvester as DatagouvHarvester
 from opendatasoft_automation.models.datajson_harvester import DatajsonHarvester as DatajsonHarvester
@@ -378,7 +383,6 @@ from opendatasoft_automation.models.http_connection import HTTPConnection as HTT
 from opendatasoft_automation.models.http_connection_all_of_headers import HTTPConnectionAllOfHeaders as HTTPConnectionAllOfHeaders
 from opendatasoft_automation.models.http_datasource import HTTPDatasource as HTTPDatasource
 from opendatasoft_automation.models.http_datasource1_connection import HTTPDatasource1Connection as HTTPDatasource1Connection
-from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf as HTTPDatasource1ConnectionOneOf
 from opendatasoft_automation.models.http_datasource1_headers import HTTPDatasource1Headers as HTTPDatasource1Headers
 from opendatasoft_automation.models.httpo_auth2_auth import HTTPOAuth2Auth as HTTPOAuth2Auth
 from opendatasoft_automation.models.httpoidc_auth import HTTPOIDCAuth as HTTPOIDCAuth
@@ -434,6 +438,7 @@ from opendatasoft_automation.models.o_auth2_auth import OAuth2Auth as OAuth2Auth
 from opendatasoft_automation.models.odsoidc_auth import ODSOIDCAuth as ODSOIDCAuth
 from opendatasoft_automation.models.oidc_auth import OIDCAuth as OIDCAuth
 from opendatasoft_automation.models.omi_node_harvester import OMINodeHarvester as OMINodeHarvester
+from opendatasoft_automation.models.ods_form_datasource import OdsFormDatasource as OdsFormDatasource
 from opendatasoft_automation.models.opendatasoft_harvester import OpendatasoftHarvester as OpendatasoftHarvester
 from opendatasoft_automation.models.order_dataset_field_configuration import OrderDatasetFieldConfiguration as OrderDatasetFieldConfiguration
 from opendatasoft_automation.models.origin_infos import OriginInfos as OriginInfos
@@ -459,6 +464,9 @@ from opendatasoft_automation.models.sharepoint_connection import SharepointConne
 from opendatasoft_automation.models.sharepoint_datasource import SharepointDatasource as SharepointDatasource
 from opendatasoft_automation.models.sharepoint_datasource1_connection import SharepointDatasource1Connection as SharepointDatasource1Connection
 from opendatasoft_automation.models.sharepoint_oidc_auth import SharepointOIDCAuth as SharepointOIDCAuth
+from opendatasoft_automation.models.snowflake_odbc_connection import SnowflakeODBCConnection as SnowflakeODBCConnection
+from opendatasoft_automation.models.snowflake_odbc_datasource import SnowflakeODBCDatasource as SnowflakeODBCDatasource
+from opendatasoft_automation.models.snowflake_odbc_datasource_all_of_connection import SnowflakeODBCDatasourceAllOfConnection as SnowflakeODBCDatasourceAllOfConnection
 from opendatasoft_automation.models.socrata_harvester import SocrataHarvester as SocrataHarvester
 from opendatasoft_automation.models.studio_page import StudioPage as StudioPage
 from opendatasoft_automation.models.studio_page_contents_inner import StudioPageContentsInner as StudioPageContentsInner

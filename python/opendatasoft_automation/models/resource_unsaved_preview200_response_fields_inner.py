@@ -78,9 +78,9 @@ class ResourceUnsavedPreview200ResponseFieldsInner(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
         _items = []
         if self.annotations:
-            for _item in self.annotations:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_annotations in self.annotations:
+                if _item_annotations:
+                    _items.append(_item_annotations.to_dict())
             _dict['annotations'] = _items
         return _dict
 

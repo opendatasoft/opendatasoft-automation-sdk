@@ -231,7 +231,7 @@ with opendatasoft_automation.ApiClient(configuration) as api_client:
     api_instance = opendatasoft_automation.DatasourcesConnectionsApi(api_client)
     limit = 20 # float | The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \"limit\" set to 0 to get only the metadata (\"results\" property will contain an empty array). (optional) (default to 20)
     offset = 0 # float | The number of results to skip before beginning the listing in case of a paginated response (optional)
-    sort = 'created_at' # str | Sort results with respect to the specified properties. You can prefix the property with the minus sign (`-`) for descending order, e.g. `-created_at`. (optional) (default to 'created_at')
+    sort = created_at # str | Sort results with respect to the specified properties. You can prefix the property with the minus sign (`-`) for descending order, e.g. `-created_at`. (optional) (default to created_at)
 
     try:
         # List connections
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **float**| The maximum number of results returned by the API when the response is paginated. Tip: You can make a request with the parameter \&quot;limit\&quot; set to 0 to get only the metadata (\&quot;results\&quot; property will contain an empty array). | [optional] [default to 20]
  **offset** | **float**| The number of results to skip before beginning the listing in case of a paginated response | [optional] 
- **sort** | **str**| Sort results with respect to the specified properties. You can prefix the property with the minus sign (&#x60;-&#x60;) for descending order, e.g. &#x60;-created_at&#x60;. | [optional] [default to &#39;created_at&#39;]
+ **sort** | **str**| Sort results with respect to the specified properties. You can prefix the property with the minus sign (&#x60;-&#x60;) for descending order, e.g. &#x60;-created_at&#x60;. | [optional] [default to created_at]
 
 ### Return type
 

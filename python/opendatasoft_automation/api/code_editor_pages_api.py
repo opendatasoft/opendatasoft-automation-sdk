@@ -21,8 +21,8 @@ from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing import List, Optional, Union
 from typing_extensions import Annotated
 from opendatasoft_automation.models.code_editor_page import CodeEditorPage
+from opendatasoft_automation.models.inline_object3 import InlineObject3
 from opendatasoft_automation.models.list_code_editor_pages200_response import ListCodeEditorPages200Response
-from opendatasoft_automation.models.publish_dataset200_response import PublishDataset200Response
 
 from opendatasoft_automation.api_client import ApiClient, RequestSerialized
 from opendatasoft_automation.api_response import ApiResponse
@@ -58,7 +58,7 @@ class CodeEditorPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Archive page
 
         Archive a code editor page
@@ -96,8 +96,8 @@ class CodeEditorPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -126,7 +126,7 @@ class CodeEditorPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Archive page
 
         Archive a code editor page
@@ -164,8 +164,8 @@ class CodeEditorPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -232,8 +232,8 @@ class CodeEditorPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -260,7 +260,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -273,11 +275,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -533,7 +536,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -552,11 +557,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -638,7 +644,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "CodeEditorPage",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -706,7 +712,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "CodeEditorPage",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -774,7 +780,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "CodeEditorPage",
-            '400': "CreateDataset400Response",
+            '400': "InlineObject1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -801,7 +807,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -814,11 +822,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -913,7 +922,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -981,7 +990,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1049,7 +1058,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1076,7 +1085,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1089,11 +1100,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1348,7 +1360,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1367,11 +1381,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1453,7 +1468,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CodeEditorPage",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1521,7 +1536,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CodeEditorPage",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1589,7 +1604,7 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CodeEditorPage",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1616,7 +1631,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1629,11 +1646,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1676,7 +1694,7 @@ class CodeEditorPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PublishDataset200Response:
+    ) -> InlineObject3:
         """Unarchive page
 
         Unarchive a code editor page
@@ -1714,8 +1732,8 @@ class CodeEditorPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1744,7 +1762,7 @@ class CodeEditorPagesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PublishDataset200Response]:
+    ) -> ApiResponse[InlineObject3]:
         """Unarchive page
 
         Unarchive a code editor page
@@ -1782,8 +1800,8 @@ class CodeEditorPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1850,8 +1868,8 @@ class CodeEditorPagesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PublishDataset200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject3",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1878,7 +1896,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1891,11 +1911,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1981,8 +2002,8 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CodeEditorPage",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2054,8 +2075,8 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CodeEditorPage",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2127,8 +2148,8 @@ class CodeEditorPagesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CodeEditorPage",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2156,7 +2177,9 @@ class CodeEditorPagesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2171,11 +2194,12 @@ class CodeEditorPagesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:

@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 Invite users
 
-This bulk endpoint creates an account for each of the given users and sends them an email so that they can log in. Each item in the payload must contain at least an email address, and may contain additional fields, such as groups and permissions. Returned body is an object in which each key is the number of the requested user in the payload (\"0\" = first user) and value contains a status_code (\"success\" or \"error\") and either \"data\" corresponding to the user or \"error\" describing the error.
+This bulk endpoint creates an account for each of the given users and sends them an email so that they can log in. Each item in the payload must contain at least an email address, and may contain additional fields, such as groups and permissions. Returned body is an object in which each key is the number of the requested user in the payload ("0" = first user) and value contains a status_code ("success" or "error") and either "data" corresponding to the user or "error" describing the error.
 
 ### Example
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 Provision users
 
-This bulk endpoint creates an account for each of the given users using the given identity provider. Each item in the payload must contain at least an identity provider, and may contain additional fields, such as groups and permissions. Returned body is an object in which each key is the number of the requested user in the payload (\"0\" = first user) and value contains a status_code (\"success\" or \"error\") and either \"data\" corresponding to the user or \"error\" describing the error.
+This bulk endpoint creates an account for each of the given users using the given identity provider. Each item in the payload must contain at least an identity provider, and may contain additional fields, such as groups and permissions. Returned body is an object in which each key is the number of the requested user in the payload ("0" = first user) and value contains a status_code ("success" or "error") and either "data" corresponding to the user or "error" describing the error.
 
 ### Example
 

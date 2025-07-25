@@ -19,23 +19,23 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from opendatasoft_automation.models.azure_blob_storage_connection import AzureBlobStorageConnection
-from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
+from opendatasoft_automation.models.connection_uid import ConnectionUID
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-AZUREBLOBSTORAGEDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["AzureBlobStorageConnection", "HTTPDatasource1ConnectionOneOf"]
+AZUREBLOBSTORAGEDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["AzureBlobStorageConnection", "ConnectionUID"]
 
 class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
     """
     AzureBlobStorageDatasourceAllOfConnection
     """
-    # data type: HTTPDatasource1ConnectionOneOf
-    oneof_schema_1_validator: Optional[HTTPDatasource1ConnectionOneOf] = None
+    # data type: ConnectionUID
+    oneof_schema_1_validator: Optional[ConnectionUID] = None
     # data type: AzureBlobStorageConnection
     oneof_schema_2_validator: Optional[AzureBlobStorageConnection] = None
-    actual_instance: Optional[Union[AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf]] = None
-    one_of_schemas: Set[str] = { "AzureBlobStorageConnection", "HTTPDatasource1ConnectionOneOf" }
+    actual_instance: Optional[Union[AzureBlobStorageConnection, ConnectionUID]] = None
+    one_of_schemas: Set[str] = { "AzureBlobStorageConnection", "ConnectionUID" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -58,9 +58,9 @@ class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
         instance = AzureBlobStorageDatasourceAllOfConnection.model_construct()
         error_messages = []
         match = 0
-        # validate data type: HTTPDatasource1ConnectionOneOf
-        if not isinstance(v, HTTPDatasource1ConnectionOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `HTTPDatasource1ConnectionOneOf`")
+        # validate data type: ConnectionUID
+        if not isinstance(v, ConnectionUID):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ConnectionUID`")
         else:
             match += 1
         # validate data type: AzureBlobStorageConnection
@@ -70,10 +70,10 @@ class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, ConnectionUID. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, ConnectionUID. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -88,9 +88,9 @@ class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
         error_messages = []
         match = 0
 
-        # deserialize data into HTTPDatasource1ConnectionOneOf
+        # deserialize data into ConnectionUID
         try:
-            instance.actual_instance = HTTPDatasource1ConnectionOneOf.from_json(json_str)
+            instance.actual_instance = ConnectionUID.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -103,10 +103,10 @@ class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, ConnectionUID. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into AzureBlobStorageDatasourceAllOfConnection with oneOf schemas: AzureBlobStorageConnection, ConnectionUID. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -120,7 +120,7 @@ class AzureBlobStorageDatasourceAllOfConnection(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AzureBlobStorageConnection, HTTPDatasource1ConnectionOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AzureBlobStorageConnection, ConnectionUID]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

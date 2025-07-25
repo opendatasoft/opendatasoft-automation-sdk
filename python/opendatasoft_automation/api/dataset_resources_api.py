@@ -18,17 +18,17 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictBytes, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import List, Optional, Union
+from typing import List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from opendatasoft_automation.models.dataset_file import DatasetFile
 from opendatasoft_automation.models.extractor import Extractor
 from opendatasoft_automation.models.guess_unsaved_resource_extractor_params200_response import GuessUnsavedResourceExtractorParams200Response
 from opendatasoft_automation.models.guess_unsaved_resource_extractor_params_request import GuessUnsavedResourceExtractorParamsRequest
 from opendatasoft_automation.models.guess_unsaved_resource_extractors_request import GuessUnsavedResourceExtractorsRequest
+from opendatasoft_automation.models.inline_object6 import InlineObject6
 from opendatasoft_automation.models.list_dataset_resources200_response import ListDatasetResources200Response
 from opendatasoft_automation.models.resource import Resource
 from opendatasoft_automation.models.resource_guess_extractor_params200_response import ResourceGuessExtractorParams200Response
-from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
 from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
 
 from opendatasoft_automation.api_client import ApiClient, RequestSerialized
@@ -108,8 +108,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -181,8 +181,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -254,8 +254,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -283,7 +283,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -298,11 +300,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -388,8 +391,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -461,8 +464,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -534,8 +537,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -563,7 +566,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -578,11 +583,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -681,7 +687,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -753,7 +759,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -825,7 +831,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -853,7 +859,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -868,11 +876,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -958,8 +967,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1031,8 +1040,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1104,8 +1113,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1133,7 +1142,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1148,11 +1159,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1238,7 +1250,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1310,7 +1322,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1382,7 +1394,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1410,7 +1422,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1425,11 +1439,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1515,7 +1530,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1587,7 +1602,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1659,7 +1674,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytearray",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1687,7 +1702,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1702,12 +1719,13 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/octet-stream', 
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/octet-stream', 
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1793,7 +1811,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1865,7 +1883,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1937,7 +1955,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1965,7 +1983,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1980,11 +2000,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -2070,8 +2091,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GuessUnsavedResourceExtractorParams200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2143,8 +2164,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GuessUnsavedResourceExtractorParams200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2216,8 +2237,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GuessUnsavedResourceExtractorParams200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2245,7 +2266,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2260,11 +2283,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2363,8 +2387,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2436,8 +2460,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2509,8 +2533,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2538,7 +2562,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2553,11 +2579,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -2664,7 +2691,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetResources200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2744,7 +2771,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetResources200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2824,7 +2851,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetResources200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2854,7 +2881,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2879,11 +2908,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3112,7 +3142,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3123,11 +3155,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3213,8 +3246,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3286,8 +3319,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3359,8 +3392,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "PublishDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject4",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3388,7 +3421,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3403,11 +3438,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3493,7 +3529,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ResourceGuessExtractorParams200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3565,7 +3601,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ResourceGuessExtractorParams200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3637,7 +3673,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ResourceGuessExtractorParams200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3665,7 +3701,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3680,11 +3718,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -3770,7 +3809,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3842,7 +3881,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3914,7 +3953,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[Extractor]",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3942,7 +3981,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3957,11 +3998,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4005,7 +4047,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceUnsavedPreview200Response:
+    ) -> InlineObject6:
         """Preview resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4046,8 +4088,8 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4077,7 +4119,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceUnsavedPreview200Response]:
+    ) -> ApiResponse[InlineObject6]:
         """Preview resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4118,8 +4160,8 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4190,8 +4232,8 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4219,7 +4261,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4234,11 +4278,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4324,7 +4369,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4396,7 +4441,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4468,7 +4513,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4496,7 +4541,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4511,11 +4558,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -4559,7 +4607,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceUnsavedPreview200Response:
+    ) -> InlineObject6:
         """Preview unsaved resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4600,9 +4648,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4632,7 +4680,7 @@ class DatasetResourcesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceUnsavedPreview200Response]:
+    ) -> ApiResponse[InlineObject6]:
         """Preview unsaved resource records
 
         In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
@@ -4673,9 +4721,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4746,9 +4794,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceUnsavedPreview200Response",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '200': "InlineObject6",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4776,7 +4824,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -4791,11 +4841,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -4898,7 +4949,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4974,7 +5025,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5050,7 +5101,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5079,7 +5130,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5098,11 +5151,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5188,7 +5242,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5260,7 +5314,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5332,7 +5386,7 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFile",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5360,7 +5414,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5375,11 +5431,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -5469,8 +5526,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5546,8 +5603,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5623,8 +5680,8 @@ class DatasetResourcesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Resource",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5653,7 +5710,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5670,11 +5729,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -5718,7 +5778,7 @@ class DatasetResourcesApi:
     def upload_resource_file(
         self,
         dataset_uid: StrictStr,
-        file: Union[StrictBytes, StrictStr],
+        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5772,9 +5832,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DatasetFile",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '201': "DatasetFile",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5791,7 +5851,7 @@ class DatasetResourcesApi:
     def upload_resource_file_with_http_info(
         self,
         dataset_uid: StrictStr,
-        file: Union[StrictBytes, StrictStr],
+        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5845,9 +5905,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DatasetFile",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '201': "DatasetFile",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5864,7 +5924,7 @@ class DatasetResourcesApi:
     def upload_resource_file_without_preload_content(
         self,
         dataset_uid: StrictStr,
-        file: Union[StrictBytes, StrictStr],
+        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5918,9 +5978,9 @@ class DatasetResourcesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DatasetFile",
-            '400': "CreateDataset400Response",
-            '404': "UpdateDataset404Response",
+            '201': "DatasetFile",
+            '400': "InlineObject1",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5948,7 +6008,9 @@ class DatasetResourcesApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -5963,11 +6025,12 @@ class DatasetResourcesApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:

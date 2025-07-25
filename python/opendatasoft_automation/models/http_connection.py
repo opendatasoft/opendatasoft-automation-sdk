@@ -78,9 +78,9 @@ class HTTPConnection(Connection):
         # override the default output from pydantic by calling `to_dict()` of each item in headers (list)
         _items = []
         if self.headers:
-            for _item in self.headers:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_headers in self.headers:
+                if _item_headers:
+                    _items.append(_item_headers.to_dict())
             _dict['headers'] = _items
         # override the default output from pydantic by calling `to_dict()` of auth
         if self.auth:

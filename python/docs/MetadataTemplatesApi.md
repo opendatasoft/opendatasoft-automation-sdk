@@ -192,7 +192,7 @@ void (empty response body)
 
 Suggest field choices
 
-List suggestions (\"choices\") for the provided template field name.
+List suggestions ("choices") for the provided template field name.
 
 ### Example
 

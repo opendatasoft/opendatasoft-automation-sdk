@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
+from opendatasoft_automation.models.connection_uid import ConnectionUID
 from opendatasoft_automation.models.google_drive_connection import GoogleDriveConnection
-from opendatasoft_automation.models.http_datasource1_connection_one_of import HTTPDatasource1ConnectionOneOf
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GOOGLEDRIVEDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["GoogleDriveConnection", "HTTPDatasource1ConnectionOneOf"]
+GOOGLEDRIVEDATASOURCEALLOFCONNECTION_ONE_OF_SCHEMAS = ["ConnectionUID", "GoogleDriveConnection"]
 
 class GoogleDriveDatasourceAllOfConnection(BaseModel):
     """
     GoogleDriveDatasourceAllOfConnection
     """
-    # data type: HTTPDatasource1ConnectionOneOf
-    oneof_schema_1_validator: Optional[HTTPDatasource1ConnectionOneOf] = None
+    # data type: ConnectionUID
+    oneof_schema_1_validator: Optional[ConnectionUID] = None
     # data type: GoogleDriveConnection
     oneof_schema_2_validator: Optional[GoogleDriveConnection] = None
-    actual_instance: Optional[Union[GoogleDriveConnection, HTTPDatasource1ConnectionOneOf]] = None
-    one_of_schemas: Set[str] = { "GoogleDriveConnection", "HTTPDatasource1ConnectionOneOf" }
+    actual_instance: Optional[Union[ConnectionUID, GoogleDriveConnection]] = None
+    one_of_schemas: Set[str] = { "ConnectionUID", "GoogleDriveConnection" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -58,9 +58,9 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
         instance = GoogleDriveDatasourceAllOfConnection.model_construct()
         error_messages = []
         match = 0
-        # validate data type: HTTPDatasource1ConnectionOneOf
-        if not isinstance(v, HTTPDatasource1ConnectionOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `HTTPDatasource1ConnectionOneOf`")
+        # validate data type: ConnectionUID
+        if not isinstance(v, ConnectionUID):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ConnectionUID`")
         else:
             match += 1
         # validate data type: GoogleDriveConnection
@@ -70,10 +70,10 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GoogleDriveDatasourceAllOfConnection with oneOf schemas: GoogleDriveConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GoogleDriveDatasourceAllOfConnection with oneOf schemas: GoogleDriveConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -88,9 +88,9 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
         error_messages = []
         match = 0
 
-        # deserialize data into HTTPDatasource1ConnectionOneOf
+        # deserialize data into ConnectionUID
         try:
-            instance.actual_instance = HTTPDatasource1ConnectionOneOf.from_json(json_str)
+            instance.actual_instance = ConnectionUID.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -103,10 +103,10 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GoogleDriveDatasourceAllOfConnection with oneOf schemas: GoogleDriveConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GoogleDriveDatasourceAllOfConnection with oneOf schemas: GoogleDriveConnection, HTTPDatasource1ConnectionOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GoogleDriveDatasourceAllOfConnection with oneOf schemas: ConnectionUID, GoogleDriveConnection. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -120,7 +120,7 @@ class GoogleDriveDatasourceAllOfConnection(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GoogleDriveConnection, HTTPDatasource1ConnectionOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ConnectionUID, GoogleDriveConnection]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

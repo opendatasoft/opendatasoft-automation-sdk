@@ -1286,11 +1286,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resource_preview**
-> ResourceUnsavedPreview200Response resource_preview(dataset_uid, resource_uid)
+> InlineObject6 resource_preview(dataset_uid, resource_uid)
 
 Preview resource records
 
-In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
+In order to test a resource configuration, it can be useful to preview the data. This endpoint uses the configuration of a resource specified by its `uid` to generate a preview.
+
+The preview is composed of the fields definitions and the content of the first records up to 20.
 
 ### Example
 
@@ -1299,7 +1301,7 @@ In order to test a resource configuration, it can be useful to preview the data.
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
+from opendatasoft_automation.models.inline_object6 import InlineObject6
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
 
@@ -1354,7 +1356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceUnsavedPreview200Response**](ResourceUnsavedPreview200Response.md)
+[**InlineObject6**](InlineObject6.md)
 
 ### Authorization
 
@@ -1466,11 +1468,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resource_unsaved_preview**
-> ResourceUnsavedPreview200Response resource_unsaved_preview(dataset_uid, resource_unsaved_preview_request=resource_unsaved_preview_request)
+> InlineObject6 resource_unsaved_preview(dataset_uid, resource_unsaved_preview_request=resource_unsaved_preview_request)
 
 Preview unsaved resource records
 
-In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.  The preview is composed of the fields definitions and the content of the first records up to 20.
+In order to test a resource configuration, it can be useful to preview the data. This endpoint uses a resource configuration passed in the payload to generate a preview.
+
+The preview is composed of the fields definitions and the content of the first records up to 20.
 
 ### Example
 
@@ -1479,7 +1483,7 @@ In order to test a resource configuration, it can be useful to preview the data.
 
 ```python
 import opendatasoft_automation
-from opendatasoft_automation.models.resource_unsaved_preview200_response import ResourceUnsavedPreview200Response
+from opendatasoft_automation.models.inline_object6 import InlineObject6
 from opendatasoft_automation.models.resource_unsaved_preview_request import ResourceUnsavedPreviewRequest
 from opendatasoft_automation.rest import ApiException
 from pprint import pprint
@@ -1535,7 +1539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceUnsavedPreview200Response**](ResourceUnsavedPreview200Response.md)
+[**InlineObject6**](InlineObject6.md)
 
 ### Authorization
 
@@ -1916,7 +1920,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**201** | OK |  -  |
 **400** | Validation error |  -  |
 **404** | Not found |  -  |
 **0** | An error occurred |  -  |

@@ -93,9 +93,9 @@ class StudioPage(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in contents (list)
         _items = []
         if self.contents:
-            for _item in self.contents:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_contents in self.contents:
+                if _item_contents:
+                    _items.append(_item_contents.to_dict())
             _dict['contents'] = _items
         # override the default output from pydantic by calling `to_dict()` of created_by
         if self.created_by:

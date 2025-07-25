@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import ConfigDict, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from opendatasoft_automation.models.sharepoint_auth import SharepointAuth
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,10 @@ class SharepointOIDCAuth(SharepointAuth):
     """
     SharepointOIDCAuth
     """ # noqa: E501
-    nonce: StrictStr
+    nonce: Optional[StrictStr] = None
     grant_type: StrictStr
-    code: StrictStr
-    claims: Dict[str, Any]
+    code: Optional[StrictStr] = None
+    claims: Optional[Dict[str, Any]]
     __properties: ClassVar[List[str]] = ["type", "nonce", "grant_type", "code", "claims"]
 
     @field_validator('grant_type')
@@ -82,6 +82,21 @@ class SharepointOIDCAuth(SharepointAuth):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if nonce (nullable) is None
+        # and model_fields_set contains the field
+        if self.nonce is None and "nonce" in self.model_fields_set:
+            _dict['nonce'] = None
+
+        # set to None if code (nullable) is None
+        # and model_fields_set contains the field
+        if self.code is None and "code" in self.model_fields_set:
+            _dict['code'] = None
+
+        # set to None if claims (nullable) is None
+        # and model_fields_set contains the field
+        if self.claims is None and "claims" in self.model_fields_set:
+            _dict['claims'] = None
+
         return _dict
 
     @classmethod

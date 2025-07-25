@@ -100,7 +100,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFeedback",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -172,7 +172,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFeedback",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -244,7 +244,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFeedback",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -272,7 +272,9 @@ class DatasetFeedbacksApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -287,11 +289,12 @@ class DatasetFeedbacksApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -385,7 +388,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetFeedbacks200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -465,7 +468,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetFeedbacks200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -545,7 +548,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ListDatasetFeedbacks200Response",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -575,7 +578,9 @@ class DatasetFeedbacksApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -600,11 +605,12 @@ class DatasetFeedbacksApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -690,7 +696,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFeedback",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -762,7 +768,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFeedback",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -834,7 +840,7 @@ class DatasetFeedbacksApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DatasetFeedback",
-            '404': "UpdateDataset404Response",
+            '404': "InlineObject2",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -862,7 +868,9 @@ class DatasetFeedbacksApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -877,11 +885,12 @@ class DatasetFeedbacksApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting

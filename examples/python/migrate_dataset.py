@@ -1,4 +1,4 @@
-"""""""""
+"""
 Dataset Migration Script for Opendatasoft
 
 This script migrates a dataset from a source Opendatasoft domain to a destination domain.
@@ -12,6 +12,8 @@ processing pipeline, and metadata.
 - Applies all metadata from the source dataset to the destination dataset (default and custom templates).
 - Can either create a new dataset on the destination or update an existing one.
 - Optionally publishes the dataset on the destination after a successful migration.
+- Includes a `--dry-run` mode to simulate migration without making any changes.
+- Saves logs to a dedicated `migration_logs` directory, even if the script fails.
 
 **Prerequisites:**
 - The Opendatasoft Automation SDK must be installed (`pip install opendatasoft_automation`).
@@ -43,6 +45,17 @@ python migrate_dataset.py \
     --destination-apikey "YOUR_DESTINATION_API_KEY" \
     --destination-dataset-uid "existing_destination_dataset_uid"
 ```
+
+**Example: Simulate a migration**
+```bash
+python migrate_dataset.py \
+    --source-domain "my-source-domain.opendatasoft.com" \
+    --source-apikey "YOUR_SOURCE_API_KEY" \
+    --source-dataset-id "source_dataset_identifier" \
+    --destination-domain "my-destination-domain.opendatasoft.com" \
+    --destination-apikey "YOUR_DESTINATION_API_KEY" \
+    --dry-run
+```
 """
 import argparse
 import sys
@@ -50,6 +63,13 @@ from email.policy import default
 from pprint import pprint
 import requests
 import json
+import datetime
+import getpass
+import socket
+import platform
+import time
+import os
+import traceback
 
 import opendatasoft_automation
 from opendatasoft_automation.rest import ApiException
@@ -249,9 +269,13 @@ def get_custom_template_manually(domain, dataset_uid, template_name, apikey):
         print(f"  - ERROR: A network error occurred while fetching template '{template_name}' manually: {e}")
         return None
 
-def migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid):
+def migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid, dry_run=False):
     """Migrates a resource that is an uploaded file by downloading, re-uploading, and relinking."""
     print(f"  - Migrating uploaded file resource: {resource.title}")
+    if dry_run:
+        print(f"    - [DRY RUN] Would download file from source, re-upload to destination, and create resource.")
+        return
+
     source_resources_api = opendatasoft_automation.DatasetResourcesApi(source_client)
     destination_resources_api = opendatasoft_automation.DatasetResourcesApi(destination_client)
 
@@ -298,68 +322,79 @@ def migrate_attachment_resource(resource, source_client, destination_client, sou
         print(f"    - Error: {e}")
 
 
-def migrate_dataset(args):
-    """Main function to orchestrate the dataset migration."""
-    migration_warnings = []
-    source_client = get_api_client(args.source_domain, args.source_apikey)
-    destination_client = get_api_client(args.destination_domain, args.destination_apikey)
+def write_migration_log(warnings, source_domain, source_id, source_uid, dest_domain, dest_id, dest_uid, source_apikey, dest_apikey, duration, migration_type, exception_info=None):
+    """Writes a log file with a summary of the migration."""
+    now = datetime.datetime.now()
+    logs_dir = "migration_logs"
+    os.makedirs(logs_dir, exist_ok=True)
+    log_filename = os.path.join(logs_dir, f"migration_log_{now.strftime('%Y%m%d_%H%M%S')}.log")
 
-    # Get source and destination themes
-    source_themes = get_domain_themes(args.source_domain, args.source_apikey)
-    destination_themes = get_domain_themes(args.destination_domain, args.destination_apikey)
+    try:
+        user = getpass.getuser()
+        hostname = socket.gethostname()
+        os_info = platform.platform()
+        python_version = platform.python_version()
+    except Exception:
+        user = "N/A"
+        hostname = "N/A"
+        os_info = "N/A"
+        python_version = "N/A"
 
-    # Step 1: Determine source and destination UIDs
-    source_dataset_uid = args.source_dataset_uid or get_dataset_uid_from_id(args.source_dataset_id, source_client, args.source_domain)
-    if not source_dataset_uid:
-        print("ERROR: Source dataset could not be found. Please provide a valid source_dataset_uid or source_dataset_id.")
-        return
+    # Mask API keys for security
+    masked_source_apikey = f"*{source_apikey[-4:]}" if source_apikey and len(source_apikey) > 4 else "N/A"
+    masked_dest_apikey = f"*{dest_apikey[-4:]}" if dest_apikey and len(dest_apikey) > 4 else "N/A"
 
-    destination_dataset_uid = args.destination_dataset_uid or get_dataset_uid_from_id(args.destination_dataset_id, destination_client, args.destination_domain)
+    log_content = f"""
+# Opendatasoft Dataset Migration Log
 
-    # Step 2: Fetch all data from the source
-    source_dataset, source_resources, source_processors, source_metadata = fetch_source_data(
-        source_client, source_dataset_uid
-    )
-    if not source_dataset:
-        return
+## Execution Summary
+- **Date and Time**: {now.strftime('%Y-%m-%d %H:%M:%S')}
+- **Execution Duration**: {duration:.2f} seconds
+- **User**: {user}
+- **Machine**: {hostname}
+- **Operating System**: {os_info}
+- **Python Version**: {python_version}
 
-    destination_datasets_api = opendatasoft_automation.DatasetsApi(destination_client)
+## Migration Details
+- **Migration Type**: {migration_type}
+- **Source Domain**: {source_domain}
+- **Source Dataset ID**: {source_id} (UID: {source_uid})
+- **Source API Key (masked)**: {masked_source_apikey}
+- **Destination Domain**: {dest_domain}
+- **Destination Dataset ID**: {dest_id} (UID: {dest_uid})
+- **Destination API Key (masked)**: {masked_dest_apikey}
+"""
+    if exception_info:
+        log_content += f"""
+## SCRIPT FAILED
+- **Status**: The script terminated unexpectedly with an error.
 
-    # Step 3: Create or retrieve the destination dataset
-    if not destination_dataset_uid:
-        print(f"\nCreating new dataset on destination domain '{args.destination_domain}'...")
-        new_dataset_metadata = opendatasoft_automation.DatasetMetadata(
-            default=opendatasoft_automation.DatasetMetadataDefault(
-                title=opendatasoft_automation.DatasetMetadataValue(value=f"{source_dataset.metadata.default.title.value}"),
-                description=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.description.value if source_dataset.metadata.default.description else ""),
-                timezone=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.timezone.value if source_dataset.metadata.default.timezone else "UTC"),
-                modified=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.modified.value if source_dataset.metadata.default.modified else None),
-                language=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.language.value if source_dataset.metadata.default.language else None),
-            )
-        )
-
-        new_dataset_payload = opendatasoft_automation.Dataset(
-            dataset_id=args.destination_dataset_id if args.destination_dataset_id else source_dataset.dataset_id,
-            is_restricted=source_dataset.is_restricted,
-            metadata=new_dataset_metadata
-        )
-        try:
-            created_dataset = destination_datasets_api.create_dataset(dataset=new_dataset_payload)
-            destination_dataset_uid = created_dataset.uid
-            print(f"- Successfully created new dataset with UID: {destination_dataset_uid}")
-        except ApiException as e:
-            print(f"ERROR: Failed to create dataset on destination. Status: {e.status}, Reason: {e.reason}")
-            pprint(e.body)
-            return
+### Error Details
+```
+{exception_info}
+```
+"""
     else:
-        print(f"\nUsing existing destination dataset '{destination_dataset_uid}'.")
-        try:
-            destination_datasets_api.retrieve_dataset(destination_dataset_uid)
-        except ApiException as e:
-            print(f"ERROR: Could not retrieve destination dataset '{destination_dataset_uid}'. Status: {e.status}, Reason: {e.reason}")
-            return
+        log_content += """
+## Migration Warnings & Issues
+"""
+        if warnings:
+            log_content += "The migration finished, but the following issues were encountered and require manual attention:\n"
+            for i, warning in enumerate(warnings, 1):
+                log_content += f"{i}. {warning}\n"
+        else:
+            log_content += "The migration completed successfully with no warnings.\n"
 
-    # Step 4: Migrate Resources
+    try:
+        with open(log_filename, 'w') as f:
+            f.write(log_content.strip())
+        print(f"\n{bcolors.OKGREEN}Log file saved to: {log_filename}{bcolors.ENDC}")
+    except IOError as e:
+        print(f"\n{bcolors.FAIL}ERROR: Could not write log file '{log_filename}'. Reason: {e}{bcolors.ENDC}")
+
+
+def migrate_resources(source_resources, source_dataset_uid, destination_dataset_uid, source_client, destination_client, dry_run):
+    """Migrate all resources for a dataset."""
     print("\nMigrating resources...")
     destination_resources_api = opendatasoft_automation.DatasetResourcesApi(destination_client)
     for resource in source_resources:
@@ -367,7 +402,7 @@ def migrate_dataset(args):
         new_datasource = None
         if resource.datasource:
             if resource.datasource.type == 'uploaded_file':
-                migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid)
+                migrate_attachment_resource(resource, source_client, destination_client, source_dataset_uid, destination_dataset_uid, dry_run)
                 continue
 
             source_connections_api = opendatasoft_automation.DatasourcesConnectionsApi(source_client)
@@ -405,15 +440,21 @@ def migrate_dataset(args):
             params=resource.params,
             datasource=new_datasource
         )
-        try:
-            destination_resources_api.create_dataset_resource(destination_dataset_uid, resource=new_resource)
-            print(f"- Successfully migrated resource '{resource.title}'.")
-        except ApiException as e:
-            print(f"  - WARNING: Could not migrate resource '{resource.title}'. Status: {e.status}, Reason: {e.reason}, Resource: {new_resource.datasource.connection}")
-            pprint(e.body)
+        if dry_run:
+            print(f"  - [DRY RUN] Would create resource '{resource.title}'.")
+        else:
+            try:
+                destination_resources_api.create_dataset_resource(destination_dataset_uid, resource=new_resource)
+                print(f"- Successfully migrated resource '{resource.title}'.")
+            except ApiException as e:
+                print(f"  - WARNING: Could not migrate resource '{resource.title}'. Status: {e.status}, Reason: {e.reason}, Resource: {new_resource.datasource.connection}")
+                pprint(e.body)
 
-    # Step 5: Migrate Processors
+
+def migrate_processors(source_processors, destination_dataset_uid, destination_domain, destination_client, dry_run):
+    """Migrate all processors for a dataset."""
     print("\nMigrating processors...")
+    warnings = []
     destination_processors_api = opendatasoft_automation.DatasetProcessorsApi(destination_client)
     for processor in source_processors:
         print(f"- Migrating processor: {processor.type}")
@@ -423,88 +464,89 @@ def migrate_dataset(args):
             additional_props = processor.additional_properties
             join_username = additional_props.get('permissions_user', {}).get('username')
             join_dataset_id = additional_props.get('dataset', {}).get('dataset_id')
-            join_domain_id = args.destination_domain.replace('.opendatasoft.com','')
+            join_domain_id = destination_domain.replace('.opendatasoft.com','')
 
             if not join_username or not join_dataset_id:
                 print(f"  - FATAL: Processor has invalid or missing properties for user or dataset join.")
                 sys.exit(1)
 
-            # The validation of the existence of the dataset on the destination has been removed to avoid a crash
-            # when listing datasets with unexpected metadata format.
-            # The API will return an error during the processor creation if the dataset does not exist.
-
-            # All dependencies exist, update domain and proceed
             print("  - All dependencies found. Updating domain for the join.")
             additional_props["impersonate_permissions"] = True
-            additional_props["dataset"] = {
-                "dataset_id": join_dataset_id
-            }
-            additional_props["domain"] = {
-                "domain_id": join_domain_id
-            }
+            additional_props["dataset"] = {"dataset_id": join_dataset_id}
+            additional_props["domain"] = {"domain_id": join_domain_id}
 
         new_processor = opendatasoft_automation.DatasetProcessor(
             type=processor.type,
             label=processor.label,
             additional_properties=processor.additional_properties
         )
-        try:
-            destination_processors_api.create_dataset_processor(destination_dataset_uid, dataset_processor=new_processor)
-        except ApiException as e:
-            base_message = f"Could not migrate processor '{processor.type}'"
-            warning_message = format_api_error(e, base_message)
-            print(f"  - WARNING: {warning_message}")
-            migration_warnings.append(warning_message)
+        if dry_run:
+            print(f"  - [DRY RUN] Would create processor '{processor.type}'.")
+        else:
+            try:
+                destination_processors_api.create_dataset_processor(destination_dataset_uid, dataset_processor=new_processor)
+            except ApiException as e:
+                base_message = f"Could not migrate processor '{processor.type}'"
+                warning_message = format_api_error(e, base_message)
+                print(f"  - WARNING: {warning_message}")
+                warnings.append(warning_message)
+    return warnings
 
-    # Step 6: Migrate Metadata
+
+def migrate_metadata(source_metadata, source_dataset_uid, destination_dataset_uid, source_domain, source_apikey, destination_client, source_themes, destination_themes, dry_run):
+    """Migrate all metadata for a dataset."""
     print("\nMigrating metadata...")
+    warnings = []
     destination_metadata_api = opendatasoft_automation.DatasetMetadataApi(destination_client)
 
-    if source_metadata:
-        # Handle theme ID translation before migrating standard templates
-        if source_metadata.internal and source_metadata.internal.theme_id and source_metadata.internal.theme_id.value:
-            print("  - Translating theme IDs...")
-            source_theme_ids = source_metadata.internal.theme_id.value
-            destination_theme_ids = []
-            for source_theme_id in source_theme_ids:
-                source_theme = get_theme_by_id(source_themes, source_theme_id)
-                if source_theme:
-                    source_theme_name = next(iter(source_theme.get('labels', {}).values()), None)
-                    if source_theme_name:
-                        destination_theme = get_theme_by_name(destination_themes, source_theme_name)
-                        if destination_theme:
-                            destination_theme_ids.append(destination_theme['id'])
-                        else:
-                            warning_message = f"Theme '{source_theme_name}' not found on destination. It will be skipped."
-                            print(f"    - WARNING: {warning_message}")
-                            migration_warnings.append(warning_message)
-                else:
-                    print(f"    - WARNING: Source theme with ID '{source_theme_id}' not found. Skipping theme.")
-            source_metadata.internal.theme_id.value = destination_theme_ids
+    if not source_metadata:
+        print("- No metadata to migrate.")
+        return warnings
 
-        # First, migrate the standard metadata templates (default, internal)
+    if source_metadata.internal and source_metadata.internal.theme_id and source_metadata.internal.theme_id.value:
+        print("  - Translating theme IDs...")
+        source_theme_ids = source_metadata.internal.theme_id.value
+        destination_theme_ids = []
+        for source_theme_id in source_theme_ids:
+            source_theme = get_theme_by_id(source_themes, source_theme_id)
+            if source_theme:
+                source_theme_name = next(iter(source_theme.get('labels', {}).values()), None)
+                if source_theme_name:
+                    destination_theme = get_theme_by_name(destination_themes, source_theme_name)
+                    if destination_theme:
+                        destination_theme_ids.append(destination_theme['id'])
+                    else:
+                        warning_message = f"Theme '{source_theme_name}' not found on destination. It will be skipped."
+                        print(f"    - WARNING: {warning_message}")
+                        warnings.append(warning_message)
+            else:
+                print(f"    - WARNING: Source theme with ID '{source_theme_id}' not found. Skipping theme.")
+        source_metadata.internal.theme_id.value = destination_theme_ids
+
+    if dry_run:
+        print("- [DRY RUN] Would migrate standard metadata templates (default, internal).")
+    else:
         try:
-            standard_metadata_payload = opendatasoft_automation.DatasetMetadata(
-                default=source_metadata.default,
-                internal=source_metadata.internal
-            )
+            standard_metadata_payload = opendatasoft_automation.DatasetMetadata(default=source_metadata.default, internal=source_metadata.internal)
             destination_metadata_api.update_all_dataset_metadata(destination_dataset_uid, dataset_metadata=standard_metadata_payload)
             print("- Successfully migrated standard metadata templates (default, internal).")
         except ApiException as e:
             print(f"  - WARNING: Could not migrate standard metadata. Status: {e.status}, Reason: {e.reason}")
             pprint(e.body)
 
-        # Second, migrate other templates field by field using manual API calls
-        templates_to_migrate_manually = ['visualization', 'asset_content_configuration', 'custom']
-        for template_name in templates_to_migrate_manually:
-            print(f"  - Checking for '{template_name}' metadata template...")
-            template_data = get_custom_template_manually(args.source_domain, source_dataset_uid, template_name, args.source_apikey)
-            if template_data:
-                print(f"    - Found '{template_name}' template. Migrating fields one by one...")
-                for field_name, field_data in template_data.items():
-                    try:
-                        field_value = field_data.get('value')
-                        if field_value is not None:
+    templates_to_migrate_manually = ['visualization', 'asset_content_configuration', 'custom']
+    for template_name in templates_to_migrate_manually:
+        print(f"  - Checking for '{template_name}' metadata template...")
+        template_data = get_custom_template_manually(source_domain, source_dataset_uid, template_name, source_apikey)
+        if template_data:
+            print(f"    - Found '{template_name}' template. Migrating fields one by one...")
+            for field_name, field_data in template_data.items():
+                try:
+                    field_value = field_data.get('value')
+                    if field_value is not None:
+                        if dry_run:
+                            print(f"      - [DRY RUN] Would migrate field: '{field_name}'")
+                        else:
                             print(f"      - Migrating field: '{field_name}'")
                             metadata_value_payload = opendatasoft_automation.DatasetMetadataValue(value=field_value)
                             destination_metadata_api.update_template_field_dataset_metadata(
@@ -513,66 +555,187 @@ def migrate_dataset(args):
                                 template_field_name=field_name,
                                 dataset_metadata_value=metadata_value_payload
                             )
-                    except ApiException as e:
-                        base_message = f"Could not migrate field '{field_name}' from template '{template_name}'"
-                        warning_message = format_api_error(e, base_message)
-                        print(f"    - WARNING: {warning_message}")
-                        migration_warnings.append(warning_message)
-                print(f"    - Finished migrating '{template_name}' template fields.")
-            else:
-                print(f"    - No '{template_name}' metadata template found on source dataset or failed to fetch it.")
+                except ApiException as e:
+                    base_message = f"Could not migrate field '{field_name}' from template '{template_name}'"
+                    warning_message = format_api_error(e, base_message)
+                    print(f"    - WARNING: {warning_message}")
+                    warnings.append(warning_message)
+            print(f"    - Finished migrating '{template_name}' template fields.")
+        else:
+            print(f"    - No '{template_name}' metadata template found on source dataset or failed to fetch it.")
+    return warnings
 
-    else:
-        print("- No metadata to migrate.")
 
-    # Step 7: Migrate Schedules
+def migrate_schedules(source_dataset_uid, destination_dataset_uid, source_client, destination_client, dry_run):
+    """Migrate all schedules for a dataset."""
     print("\nMigrating dataset schedules...")
+    warnings = []
     source_schedules_api = opendatasoft_automation.DatasetSchedulesApi(source_client)
     destination_schedules_api = opendatasoft_automation.DatasetSchedulesApi(destination_client)
     try:
-        # List schedules from the source dataset
         source_schedules = source_schedules_api.list_dataset_schedules(dataset_uid=source_dataset_uid)
         if source_schedules.results:
             print(f"  - Found {len(source_schedules.results)} schedule(s) on source dataset. Migrating...")
             for source_schedule in source_schedules.results:
-                try:
-                    # Create each schedule on the destination
-                    destination_schedules_api.create_dataset_schedule(destination_dataset_uid, dataset_schedule=source_schedule)
-                    print(f"  - Successfully migrated schedule: '{source_schedule.cron_schedule}'.")
-                except ApiException as e:
-                    # If a schedule already exists, it might return a 409 Conflict error, which we can ignore.
-                    if e.status == 409:
-                        print("  - A schedule already exists on the destination dataset. Skipping creation.")
-                    else:
-                        base_message = "Could not create schedule on destination"
-                        warning_message = format_api_error(e, base_message)
-                        print(f"  - WARNING: {warning_message}")
-                        migration_warnings.append(warning_message)
+                if dry_run:
+                    print(f"  - [DRY RUN] Would migrate schedule: '{source_schedule.cron_schedule}'.")
+                else:
+                    try:
+                        destination_schedules_api.create_dataset_schedule(destination_dataset_uid, dataset_schedule=source_schedule)
+                        print(f"  - Successfully migrated schedule: '{source_schedule.cron_schedule}'.")
+                    except ApiException as e:
+                        if e.status == 409:
+                            print("  - A schedule already exists on the destination dataset. Skipping creation.")
+                        else:
+                            base_message = "Could not create schedule on destination"
+                            warning_message = format_api_error(e, base_message)
+                            print(f"  - WARNING: {warning_message}")
+                            warnings.append(warning_message)
         else:
             print("  - No schedules found on source dataset. Skipping.")
     except ApiException as e:
         print(f"  - WARNING: An error occurred while fetching source schedules. Status: {e.status}, Reason: {e.reason}")
         pprint(e.body)
+    return warnings
 
-    # Step 8: Publish the dataset if requested
-    if args.publish:
-        print(f"\nPublishing dataset '{destination_dataset_uid}'...")
+
+def publish_dataset_if_requested(destination_dataset_uid, destination_client, publish, dry_run):
+    """Publish the dataset if the --publish flag is set."""
+    if not publish:
+        return
+
+    print(f"\nPublishing dataset '{destination_dataset_uid}'...")
+    if dry_run:
+        print("- [DRY RUN] Would publish dataset.")
+    else:
         try:
+            destination_datasets_api = opendatasoft_automation.DatasetsApi(destination_client)
             destination_datasets_api.publish_dataset(destination_dataset_uid)
             print("- Dataset published successfully.")
         except ApiException as e:
             print(f"ERROR: Failed to publish dataset. Status: {e.status}, Reason: {e.reason}")
             pprint(e.body)
 
-    print("\nMigration process complete!")
-    if migration_warnings:
-        print("\n--- Migration Summary: Warnings ---")
-        print("The migration finished, but the following issues were encountered and require manual attention:")
-        for warning in migration_warnings:
-            print(f"- {warning}")
-        print("-------------------------------------")
 
-    print(f"\nCheck your new dataset at: https://{args.destination_domain}/explore/dataset/{destination_dataset_uid}/")
+def migrate_dataset(args):
+    """Main function to orchestrate the dataset migration."""
+    start_time = time.time()
+    if args.dry_run:
+        print(f"{bcolors.HEADER}--- DRY RUN MODE ENABLED ---{bcolors.ENDC}")
+        print("No changes will be made to the destination domain.")
+
+    # Initialize variables for the finally block
+    migration_warnings = []
+    exception_info = None
+    source_dataset_uid = None
+    destination_dataset_uid = None
+    source_dataset_id = None
+    destination_dataset_id = None
+    migration_type = "Unknown"
+
+    try:
+        source_client = get_api_client(args.source_domain, args.source_apikey)
+        destination_client = get_api_client(args.destination_domain, args.destination_apikey)
+
+        source_themes = get_domain_themes(args.source_domain, args.source_apikey)
+        destination_themes = get_domain_themes(args.destination_domain, args.destination_apikey)
+
+        source_dataset_uid = args.source_dataset_uid or get_dataset_uid_from_id(args.source_dataset_id, source_client, args.source_domain)
+        if not source_dataset_uid:
+            raise ValueError("Source dataset could not be found. Please provide a valid source_dataset_uid or source_dataset_id.")
+
+        destination_dataset_uid = args.destination_dataset_uid or get_dataset_uid_from_id(args.destination_dataset_id, destination_client, args.destination_domain)
+        migration_type = "Dataset Update" if destination_dataset_uid else "Dataset Creation"
+
+        source_dataset, source_resources, source_processors, source_metadata = fetch_source_data(source_client, source_dataset_uid)
+        if not source_dataset:
+            raise ValueError("Could not fetch source dataset data.")
+        source_dataset_id = source_dataset.dataset_id
+
+        destination_datasets_api = opendatasoft_automation.DatasetsApi(destination_client)
+
+        if not destination_dataset_uid:
+            target_dataset_id = args.destination_dataset_id if args.destination_dataset_id else source_dataset.dataset_id
+            print(f"\nChecking if dataset ID '{target_dataset_id}' already exists on destination domain '{args.destination_domain}'...")
+            existing_uid = get_dataset_uid_from_id(target_dataset_id, destination_client, args.destination_domain)
+
+            if existing_uid:
+                print(f"{bcolors.FAIL}ERROR: Dataset with ID '{target_dataset_id}' already exists on the destination domain '{args.destination_domain}'.{bcolors.ENDC}")
+                print("To update this dataset, please use one of the following arguments:")
+                print(f"  --destination-dataset-id {target_dataset_id}")
+                print(f"  --destination-dataset-uid {existing_uid}")
+                sys.exit(1)
+
+            print(f"\nCreating new dataset on destination domain '{args.destination_domain}'...")
+            destination_dataset_id = target_dataset_id
+            if args.dry_run:
+                print(f"[DRY RUN] Would create new dataset with ID '{target_dataset_id}'.")
+                destination_dataset_uid = "placeholder-uid-for-dry-run"
+            else:
+                new_dataset_metadata = opendatasoft_automation.DatasetMetadata(
+                    default=opendatasoft_automation.DatasetMetadataDefault(
+                        title=opendatasoft_automation.DatasetMetadataValue(value=f"{source_dataset.metadata.default.title.value}"),
+                        description=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.description.value if source_dataset.metadata.default.description else ""),
+                        timezone=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.timezone.value if source_dataset.metadata.default.timezone else "UTC"),
+                        modified=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.modified.value if source_dataset.metadata.default.modified else None),
+                        language=opendatasoft_automation.DatasetMetadataValue(value=source_dataset.metadata.default.language.value if source_dataset.metadata.default.language else None),
+                    )
+                )
+                new_dataset_payload = opendatasoft_automation.Dataset(dataset_id=target_dataset_id, is_restricted=True, metadata=new_dataset_metadata)
+                created_dataset = destination_datasets_api.create_dataset(dataset=new_dataset_payload)
+                destination_dataset_uid = created_dataset.uid
+                print(f"- Successfully created new dataset with UID: {destination_dataset_uid}")
+        else:
+            print(f"\nUsing existing destination dataset '{destination_dataset_uid}'.")
+            dest_dataset_obj = destination_datasets_api.retrieve_dataset(destination_dataset_uid)
+            destination_dataset_id = dest_dataset_obj.dataset_id
+
+        migrate_resources(source_resources, source_dataset_uid, destination_dataset_uid, source_client, destination_client, args.dry_run)
+        migration_warnings.extend(migrate_processors(source_processors, destination_dataset_uid, args.destination_domain, destination_client, args.dry_run))
+        migration_warnings.extend(migrate_metadata(source_metadata, source_dataset_uid, destination_dataset_uid, args.source_domain, args.source_apikey, destination_client, source_themes, destination_themes, args.dry_run))
+        migration_warnings.extend(migrate_schedules(source_dataset_uid, destination_dataset_uid, source_client, destination_client, args.dry_run))
+        publish_dataset_if_requested(destination_dataset_uid, destination_client, args.publish, args.dry_run)
+
+        print("\nMigration process complete!")
+        print(f"Migration Type: {migration_type}")
+        if migration_warnings:
+            print("\n--- Migration Summary: Warnings ---")
+            print("The migration finished, but the following issues were encountered and require manual attention:")
+            for warning in migration_warnings:
+                print(f"- {warning}")
+            print("-------------------------------------")
+
+        if args.dry_run:
+            print(f"\n{bcolors.OKCYAN}Dry run finished. No changes were applied.{bcolors.ENDC}")
+        elif destination_dataset_id:
+            message = "Check your updated dataset at" if migration_type == "Dataset Update" else "Check your new dataset at"
+            print(f"\n{message}: https://{args.destination_domain}/explore/dataset/{destination_dataset_id}/")
+
+    except Exception as e:
+        print(f"\n{bcolors.FAIL}--- SCRIPT FAILED ---{bcolors.ENDC}")
+        print("An unexpected error occurred. A log file with details has been created.")
+        exception_info = traceback.format_exc()
+        # Re-raise the exception to ensure the script exits with a non-zero status code
+        raise
+
+    finally:
+        if not args.dry_run:
+            end_time = time.time()
+            duration = end_time - start_time
+            write_migration_log(
+                warnings=migration_warnings,
+                source_domain=args.source_domain,
+                source_id=source_dataset_id or args.source_dataset_id,
+                source_uid=source_dataset_uid,
+                dest_domain=args.destination_domain,
+                dest_id=destination_dataset_id or args.destination_dataset_id,
+                dest_uid=destination_dataset_uid,
+                source_apikey=args.source_apikey,
+                dest_apikey=args.destination_apikey,
+                duration=duration,
+                migration_type=migration_type,
+                exception_info=exception_info
+            )
 
 
 if __name__ == "__main__":
@@ -595,6 +758,8 @@ if __name__ == "__main__":
     # Action arguments
     parser.add_argument("--publish", action='store_true',
                         help="If set, the script will attempt to publish the dataset on the destination after migration.")
+    parser.add_argument("--dry-run", action='store_true',
+                        help="If set, the script will simulate the migration without applying any changes.")
 
     parsed_args = parser.parse_args()
 
